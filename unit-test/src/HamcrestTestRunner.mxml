@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+  xmlns:mx="http://www.adobe.com/2006/mxml" 
+  xmlns="*"
+  xmlns:flexunit="flexunit.flexui.*"
+  creationComplete="onCreationComplete()">
+
+  <flexunit:TestRunnerBase 
+    id="testRunner" 
+    width="100%" height="100%" 
+    />
+  
+  <mx:Script>
+    <![CDATA[
+        
+      import flexunit.framework.*;
+      import org.hamcrest.*;
+
+      private function onCreationComplete():void
+      {
+        testRunner.test = new HamcrestTestSuite();
+        testRunner.startTest();
+      }
+    ]]>
+  </mx:Script>
+
+</mx:Application>

@@ -2,6 +2,8 @@ package org.hamcrest {
   
   public interface Description {
     
+    function toString():String;
+    
     function appendText(text:String):Description;
     
     function appendDescriptionOf(value:SelfDescribing):Description;

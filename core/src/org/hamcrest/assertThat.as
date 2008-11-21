@@ -14,25 +14,45 @@ package org.hamcrest {
       throw new ArgumentError("Insufficient arguments or incorrect types, received:", rest); 
     }
   }
+}
+
+import org.hamcrest.Matcher;
+import org.hamcrest.Description;
+import org.hamcrest.StringDescription;
+
+internal function _assertThatMatcher(reason:String, actual:Object, matcher:Matcher):void {
   
-  private function _assertThatMatcher(reason:String, actual:Object, matcher:Matcher):void {
+  if (!matcher.matches(actual)) {
     
-    if (!matcher.matches(actual)) {
-      
-      var message:String = reason 
-          + "\nExpected: "
-          + matcher.describe()
-          + "\n\tbut: ";
-          + matcher.describeMismatch(actual);
-      
-      throw new AssertionError(message);
-    }
+    var description:Description = new StringDescription();
+    description.appendText(reason)
+               .appendText("\nExpected: ")
+               .appendDescriptionOf(matcher)
+               .appendText("\n     but: ")
+    matcher.describeMismatch(actual, description);
+    
+    throw new AssertionError(description.toString());
+  }
+}
+
+internal function _assertThatBoolean(reason:String, result:Boolean):void {
+  
+  if (!result) {
+    throw new AssertionError(reason);
+  }
+}
+
+internal class AssertionError extends Error {
+  
+  private var _cause:Error;
+  
+  public function AssertionError(message:String, cause:Error = null) {
+    
+    super(message);
   }
   
-  private function _assertThatBoolean(reason:String, actual:Object, result:Boolean):void {
+  public function get cause():Error {
     
-    if (!result) {
-      throw new AssertionError(reason);
-    }
+    return _cause;
   }
 }

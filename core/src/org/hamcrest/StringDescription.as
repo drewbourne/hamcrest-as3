@@ -12,11 +12,11 @@ package org.hamcrest {
       _out = "";
     }
     
-    public function append(string:String):void {
-      _out += string;
+    override protected function append(string:Object):void {
+      _out += String(string);
     }
     
-    public function toString():String {
+    override public function toString():String {
       return _out;
     }
   }

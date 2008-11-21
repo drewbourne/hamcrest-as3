@@ -1,8 +1,14 @@
 package org.hamcrest {
   
+  import flash.errors.IllegalOperationError;
+  
   public class BaseMatcher implements Matcher {
     
-    public function matches():Boolean {
+    public function BaseMatcher() {
+      super();
+    }
+    
+    public function matches(item:Object):Boolean {
       throw new IllegalOperationError('BaseMatcher#matches must be override by subclass');
     }
     
@@ -10,7 +16,7 @@ package org.hamcrest {
       mismatchDescription.appendText("was ").appendValue(item);
     }
     
-    public function describeTo(description:Desciption):void {
+    public function describeTo(description:Description):void {
       throw new IllegalOperationError('BaseMatcher#describeTo must be override by subclass');
     }
     

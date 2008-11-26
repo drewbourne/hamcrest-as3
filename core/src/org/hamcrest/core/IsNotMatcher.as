@@ -1,6 +1,10 @@
 package org.hamcrest.core {
+
+  import org.hamcrest.BaseMatcher;
+  import org.hamcrest.Description;
+  import org.hamcrest.Matcher;
   
-  public class IsNotMatcher implements Matcher {
+  public class IsNotMatcher extends BaseMatcher {
     
     private var _matcher:Matcher;
     
@@ -9,14 +13,14 @@ package org.hamcrest.core {
       _matcher = matcher;
     }
     
-    public function matches(item:Object):Boolean {
+    override public function matches(item:Object):Boolean {
       
       return !_matcher.matches(item);
     }
     
-    public function describeMismatch(item:Object, mismatchDescription:Description):void {
+    override public function describeTo(description:Description):void {
       
-      mismatchDescription.append("not ").appendDescriptionOf(_matcher);
+      description.appendText("not ").appendDescriptionOf(_matcher);
     }
   }
 }

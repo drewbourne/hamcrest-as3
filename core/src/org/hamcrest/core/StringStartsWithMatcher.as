@@ -2,7 +2,7 @@ package org.hamcrest.core {
   
   public class StringStartsWithMatcher extends SubstringMatcher {
     
-    public function StringStartsMatcher(substring:String) {
+    public function StringStartsWithMatcher(substring:String) {
       super(substring);
     }
     

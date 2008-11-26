@@ -16,6 +16,7 @@ package org.hamcrest {
   }
 }
 
+import org.hamcrest.AssertionError;
 import org.hamcrest.Matcher;
 import org.hamcrest.Description;
 import org.hamcrest.StringDescription;
@@ -28,7 +29,7 @@ internal function _assertThatMatcher(reason:String, actual:Object, matcher:Match
     description.appendText(reason)
                .appendText("\nExpected: ")
                .appendDescriptionOf(matcher)
-               .appendText("\n     but: ")
+               .appendText("\n    but: ")
     matcher.describeMismatch(actual, description);
     
     throw new AssertionError(description.toString());
@@ -39,20 +40,5 @@ internal function _assertThatBoolean(reason:String, result:Boolean):void {
   
   if (!result) {
     throw new AssertionError(reason);
-  }
-}
-
-internal class AssertionError extends Error {
-  
-  private var _cause:Error;
-  
-  public function AssertionError(message:String, cause:Error = null) {
-    
-    super(message);
-  }
-  
-  public function get cause():Error {
-    
-    return _cause;
   }
 }

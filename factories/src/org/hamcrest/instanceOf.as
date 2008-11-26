@@ -1,6 +1,8 @@
 package org.hamcrest {
   
-  public function instanceOf(type:Class) {
+  import org.hamcrest.core.IsInstanceOfMatcher;
+  
+  public function instanceOf(type:Class):Matcher {
     return new IsInstanceOfMatcher(type);
   }
 }

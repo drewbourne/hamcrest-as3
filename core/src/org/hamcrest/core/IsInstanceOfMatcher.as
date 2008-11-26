@@ -15,7 +15,7 @@ package org.hamcrest.core {
       _typeName = getQualifiedClassName(type);
     }
     
-    override public function matches(item:Object):void {
+    override public function matches(item:Object):Boolean {
       return item is _type;
     }
     

@@ -5,7 +5,9 @@ package org.hamcrest {
     private var _fixedDescription:String;
     private var _matchesFunc:Function;
     
-    public function CustomTypeSafeMatcher(description:String, expectedType:Class, matchesFunc:Function) {
+    public function CustomMatcher(description:String, matchesFunc:Function) {
+ 
+      super();
       
       if (description == null) {
         throw new ArgumentError('description must be non null');
@@ -15,13 +17,11 @@ package org.hamcrest {
         throw new ArgumentError('matchesFunc must be non null');
       }
       
-      super(expectedType);
-      
       _fixedDescription = description;
       _matchesFunc = matchesFunc;
     }
     
-    override public function matches(item:Object):void {
+    override public function matches(item:Object):Boolean {
       return _matchesFunc(item);
     }
     

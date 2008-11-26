@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+  xmlns:mx="http://www.adobe.com/2006/mxml" 
+  xmlns="*"
+  xmlns:flexunit="flexunit.flexui.*"
+  creationComplete="onCreationComplete()">
+
+  <flexunit:TestRunnerBase 
+    id="testRunner" 
+    width="100%" height="100%" 
+    />
+  
+  <mx:Script>
+    <![CDATA[
+        
+      import flexunit.framework.*;
+      import org.hamcrest.*;
+      import org.hamcrest.core.*;
+
+      private function onCreationComplete():void
+      {
+        var suite:TestSuite = new TestSuite();
+        
+        var tests:Array = [
+          BaseMatcherTest, 
+          CustomMatcherTest, 
+          CustomTypeSafeMatcherTest, 
+          MatcherAssertTest, 
+          TypeSafeMatcherTest, 
+        
+          AllOfTest, 
+          AnyOfTest, 
+          DescribedAsTest, 
+          EveryTest, 
+          IsAnythingTest, 
+          IsEqualTest, 
+          IsInstanceOfTest, 
+          IsNotTest, 
+          IsNullTest, 
+          IsSameTest
+        ];
+        
+        tests.forEach(function(test:Class, i:int, a:Array):void {
+          
+          suite.addTestSuite(test);
+        });
+        
+        testRunner.test = suite;
+        testRunner.startTest();
+      }
+    ]]>
+  </mx:Script>
+
+</mx:Application>

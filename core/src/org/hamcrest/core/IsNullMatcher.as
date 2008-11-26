@@ -1,4 +1,7 @@
 package org.hamcrest.core {
+
+  import org.hamcrest.BaseMatcher;
+  import org.hamcrest.Description;
   
   public class IsNullMatcher extends BaseMatcher {
     

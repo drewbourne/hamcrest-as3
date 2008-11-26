@@ -1,17 +1,20 @@
 package org.hamcrest.core {
   
+  import org.hamcrest.Description;
+  import org.hamcrest.DiagnosingMatcher;
   import org.hamcrest.Matcher;
   
-  public class AllOf extends DiagnosingMatcher {
+  public class AllOfMatcher extends DiagnosingMatcher {
     
     private var _matchers:Array;
     
-    public function AllOf(matchers:Array) {
+    public function AllOfMatcher(matchers:Array) {
       
+      super();
       _matchers = matchers || [];
     }
     
-    public function matchesOrDescribesMismatch(item:Object, mismatchDescription:Description):Boolean {
+    override protected function matchesOrDescribesMismatch(item:Object, mismatchDescription:Description):Boolean {
 
       for each (var matcher:Matcher in _matchers) {
         if (!matcher.matches(item)) {
@@ -25,7 +28,7 @@ package org.hamcrest.core {
     }
     
     override public function describeTo(description:Description):void {
-      description.appendList("(", " and ", ")", matchers);
+      description.appendList("(", " and ", ")", _matchers);
     }
   }
 }

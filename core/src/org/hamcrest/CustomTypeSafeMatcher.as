@@ -6,6 +6,8 @@ package org.hamcrest {
     private var _matchesSafelyFunc:Function;
     
     public function CustomTypeSafeMatcher(description:String, expectedType:Class, matchesSafelyFunc:Function) {
+
+      super(expectedType);
       
       if (description == null) {
         throw new ArgumentError('description must be non null');
@@ -15,13 +17,11 @@ package org.hamcrest {
         throw new ArgumentError('matchesSafelyFunc must be non null');
       }
       
-      super(expectedType);
-      
       _fixedDescription = description;
       _matchesSafelyFunc = matchesSafelyFunc;
     }
     
-    override public function matchesSafely(item:Object):void {
+    override public function matchesSafely(item:Object):Boolean {
       return _matchesSafelyFunc(item);
     }
     

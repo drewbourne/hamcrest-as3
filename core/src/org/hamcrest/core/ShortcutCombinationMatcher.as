@@ -1,5 +1,9 @@
 package org.hamcrest.core {
   
+  import org.hamcrest.BaseMatcher;
+  import org.hamcrest.Description;
+  import org.hamcrest.Matcher;
+  
   public class ShortcutCombinationMatcher extends BaseMatcher {
     
     private var _matchers:Array;

@@ -1,5 +1,10 @@
 package org.hamcrest.core {
   
+  import org.hamcrest.Description;
+  import org.hamcrest.TypeSafeMatcher;
+  
+  import flash.errors.IllegalOperationError;
+  
   public class SubstringMatcher extends TypeSafeMatcher {
     
     private var _substring:String;
@@ -9,15 +14,19 @@ package org.hamcrest.core {
       _substring = substring;
     }
     
+    protected function get substring():String {
+      return _substring;
+    }
+    
     override public function matchesSafely(item:Object):Boolean {
-      return evalSubstringOf(item);
+      return evalSubstringOf(item as String);
     }
     
     override public function describeTo(description:Description):void {
-      dsecription.appendText("a string ").appendText(relationship()).appendText(" ").appendValue(substring);
+      description.appendText("a string ").appendText(relationship()).appendText(" ").appendValue(_substring);
     }
     
-    protected function evalSubstringOf(item:Object):Boolean {
+    protected function evalSubstringOf(item:String):Boolean {
       throw new IllegalOperationError("SubstringMatcher#evalueSubstringOf must be override by subclass");
     }
     

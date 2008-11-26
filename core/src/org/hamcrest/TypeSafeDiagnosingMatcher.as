@@ -1,4 +1,6 @@
 package org.hamcrest {
+
+  import flash.errors.IllegalOperationError;
   
   public class TypeSafeDiagnosingMatcher extends BaseMatcher {
     
@@ -9,21 +11,21 @@ package org.hamcrest {
       _expectedType = expectedType;
     }
     
-    public function matchesSafely(item:Object, mismatchDescription:Description):void {
+    public function matchesSafely(item:Object, mismatchDescription:Description):Boolean {
       
       throw new IllegalOperationError('TypeSafeDiagnosingMatcher#matchesSafely is abstract and must be override in subclass');
     }
     
-    public final function matches(item:Object):Boolean {
+    override public function matches(item:Object):Boolean {
       
       return item != null
           && item is _expectedType
           && matchesSafely(item, new NullDescription());
     }
     
-    public final function describeMismatch(item:Object, mismatchDescription:Description):void {
+    override public function describeMismatch(item:Object, mismatchDescription:Description):void {
       
-      return matchesSafely(item, mismatchDescription);
+      matchesSafely(item, mismatchDescription);
     }
   }
 }

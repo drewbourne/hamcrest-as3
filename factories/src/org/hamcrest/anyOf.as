@@ -1,7 +1,7 @@
 package org.hamcrest {
   
   import org.hamcrest.Matcher;
-  import org.hamcrest.core.AllOfMatcher;
+  import org.hamcrest.core.AnyOfMatcher;
   
   /**
    * Factory method for AnyOfMatcher

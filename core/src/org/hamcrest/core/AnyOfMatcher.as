@@ -6,7 +6,7 @@ package org.hamcrest.core {
       super(matchers, "or");
     }
     
-    public function matches(item:Object):Boolean {
+    override public function matches(item:Object):Boolean {
       return matchesOrShortcuts(item, true);
     }
   }

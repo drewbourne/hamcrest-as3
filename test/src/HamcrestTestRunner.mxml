@@ -14,8 +14,10 @@
     <![CDATA[
         
       import flexunit.framework.*;
+      
       import org.hamcrest.*;
       import org.hamcrest.core.*;
+      import org.hamcrest.text.*;
 
       private function onCreationComplete():void
       {
@@ -28,6 +30,7 @@
           MatcherAssertTest, 
           TypeSafeMatcherTest, 
         
+          // core
           AllOfTest, 
           AnyOfTest, 
           DescribedAsTest, 
@@ -37,7 +40,12 @@
           IsInstanceOfTest, 
           IsNotTest, 
           IsNullTest, 
-          IsSameTest
+          IsSameTest,
+          
+          // text
+          StringContainsTest,
+          StringEndsWithTest,
+          StringStartsWithTest
         ];
         
         tests.forEach(function(test:Class, i:int, a:Array):void {

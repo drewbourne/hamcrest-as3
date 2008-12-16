@@ -20,7 +20,10 @@ package org.hamcrest.core {
     }
     
     private function areEqual(o1:Object, o2:Object):Boolean {
-      if (o1 == null) {
+      // remember your NaN is super special
+      if (isNaN(o1 as Number)) {
+        return isNaN(o2 as Number);
+      } else if (o1 == null) {
         return o2 == null;
       } else if (o1 is Array) {
         return o2 is Array && areArraysEqual(o1 as Array, o2 as Array);

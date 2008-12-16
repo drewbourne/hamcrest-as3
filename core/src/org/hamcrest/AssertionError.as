@@ -7,6 +7,8 @@ package org.hamcrest {
     public function AssertionError(message:String, cause:Error = null) {
 
       super(message);
+      
+      _cause = cause;
     }
 
     public function get cause():Error {

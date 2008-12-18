@@ -21,11 +21,6 @@ package org.hamcrest.core {
       assertThat("good", not(anyOf(equalTo("bad"), equalTo("bad"), equalTo("bad"), equalTo("bad"), equalTo("bad"))));
     }
     
-    public function testSupportsMixedTypes():void {
-      
-      fail('not tested');
-    }
-    
     public function testHasAReadableDescription():void {
       assertDescription("(\"good\" or \"bad\" or \"ugly\")", 
         anyOf(equalTo("good"), equalTo("bad"), equalTo("ugly")));

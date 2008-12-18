@@ -1,5 +1,9 @@
 package org.hamcrest.core {
   
+  import org.hamcrest.Description;
+  import org.hamcrest.Matcher;
+  import org.hamcrest.TypeSafeMatcher;
+  
   public class IsCollectionContainingMatcher extends TypeSafeMatcher {
     
     private var _elementMatcher:Matcher;
@@ -10,7 +14,7 @@ package org.hamcrest.core {
       _elementMatcher = elementMatcher;
     }
     
-    override public function matchesSafely(collection:Object, mismatchDescription:Description):void {
+    override public function matchesSafely(collection:Object):Boolean {
       
       for each (var item:Object in (collection as Array)) {
         if (_elementMatcher.matches(item)) {

@@ -17,6 +17,7 @@
       
       import org.hamcrest.*;
       import org.hamcrest.core.*;
+      import org.hamcrest.collection.*;
       import org.hamcrest.text.*;
 
       private function onCreationComplete():void
@@ -41,6 +42,11 @@
           IsNotTest, 
           IsNullTest, 
           IsSameTest,
+          
+          // collection
+          IsArrayTest,
+          IsArrayWithSizeTest,
+          IsCollectionContainingTest,
           
           // text
           StringContainsTest,

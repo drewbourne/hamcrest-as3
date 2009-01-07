@@ -33,7 +33,12 @@ package org.hamcrest.core {
       } 
       finally {  
         
-        _matcher.describeMismatch(error, mismatchDescription);
+        if (error) {
+          _matcher.describeMismatch(error, mismatchDescription);
+        } else {
+          mismatchDescription.appendText("was not thrown");
+        }
+        
         return thrown;
       }
     }

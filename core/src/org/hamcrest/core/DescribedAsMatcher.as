@@ -26,7 +26,6 @@ package org.hamcrest.core {
     
     override public function describeTo(description:Description):void {
       
-      
       var textStart:int = 0;
       _descriptionTemplate.replace(ARG_PATTERN, function(...rest):String {
         var index:int = rest[1];

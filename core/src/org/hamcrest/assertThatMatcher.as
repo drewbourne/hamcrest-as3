@@ -8,7 +8,7 @@ package org.hamcrest {
       description.appendText(reason)
                  .appendText("\nExpected: ")
                  .appendDescriptionOf(matcher)
-                 .appendText("\n    but: ")
+                 .appendText("\n     but: ")
       matcher.describeMismatch(actual, description);
 
       throw new AssertionError(description.toString());

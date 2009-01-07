@@ -8,7 +8,7 @@ package org.hamcrest {
       
       var expected:String = "expected";
       var actual:String = "actual";
-      var expectedMessage:String = "identifier\nExpected: \"expected\"\n    but: was \"actual\"";
+      var expectedMessage:String = "identifier\nExpected: \"expected\"\n     but: was \"actual\"";
       
       try {
         assertThat("identifier", actual, equalTo(expected));
@@ -24,7 +24,7 @@ package org.hamcrest {
       
       var expected:String = "expected";
       var actual:String = "actual";
-      var expectedMessage:String = "\nExpected: \"expected\"\n    but: was \"actual\"";
+      var expectedMessage:String = "\nExpected: \"expected\"\n     but: was \"actual\"";
       
       try {
         assertThat(actual, equalTo(expected));
@@ -53,7 +53,7 @@ package org.hamcrest {
     public function tetIncludedsMismatchDescription():void {
       
       var matcher:Matcher = new MatcherForTestingAssertThat();
-      var expectedMessage:String = "\nExpected: something cool\n    but: was: not cool"
+      var expectedMessage:String = "\nExpected: something cool\n     but: was: not cool"
       
       try {
         assertThat("value", matcher);

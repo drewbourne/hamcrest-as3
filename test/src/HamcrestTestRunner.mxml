@@ -51,7 +51,10 @@
           // text
           StringContainsTest,
           StringEndsWithTest,
-          StringStartsWithTest
+          StringStartsWithTest,
+          
+          // extras
+          ThrowsTest
         ];
         
         tests.forEach(function(test:Class, i:int, a:Array):void {

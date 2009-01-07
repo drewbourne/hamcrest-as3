@@ -15,5 +15,16 @@ package org.hamcrest {
 
       return _cause;
     }
+    
+    override public function getStackTrace():String {
+      
+      var stackTrace:String = super.getStackTrace();
+      if (_cause) {
+        stackTrace += "\n\n";
+        stackTrace += "Nested Error:\n";
+        stackTrace += _cause.getStackTrace();
+      }
+      return stackTrace;
+    }
   }
 }

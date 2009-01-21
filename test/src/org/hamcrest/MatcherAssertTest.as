@@ -24,7 +24,7 @@ package org.hamcrest {
       
       var expected:String = "expected";
       var actual:String = "actual";
-      var expectedMessage:String = "\nExpected: \"expected\"\n     but: was \"actual\"";
+      var expectedMessage:String = "Expected: \"expected\"\n     but: was \"actual\"";
       
       try {
         assertThat(actual, equalTo(expected));

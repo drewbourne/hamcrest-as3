@@ -5,8 +5,11 @@ package org.hamcrest {
     if (!matcher.matches(actual)) {
 
       var description:Description = new StringDescription();
-      description.appendText(reason)
-                 .appendText("\nExpected: ")
+      if (reason && reason.length > 0) {
+        description.appendText(reason).appendText("\n");
+      }
+      
+      description.appendText("Expected: ")
                  .appendDescriptionOf(matcher)
                  .appendText("\n     but: ")
       matcher.describeMismatch(actual, description);

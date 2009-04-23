@@ -1,0 +1,18 @@
+package org.hamcrest.text {
+
+    public class StringStartsWithMatcher extends SubstringMatcher {
+
+        public function StringStartsWithMatcher(substring:String) {
+            super(substring);
+        }
+
+        override protected function evalSubstringOf(s:String):Boolean {
+            // FIXME optimize this by storing the regexp
+            return (new RegExp('^' + substring)).test(s);
+        }
+
+        override protected function relationship():String {
+            return "starting with";
+        }
+    }
+}

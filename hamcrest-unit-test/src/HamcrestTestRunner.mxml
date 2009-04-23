@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    creationComplete="onCreationComplete()"
+    xmlns="*"
+    xmlns:flexunit="flexunit.flexui.*"
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    >
+
+    <flexunit:TestRunnerBase 
+        height="100%"
+        id="testRunner"
+        width="100%"
+        />
+
+    <mx:Script>
+        <![CDATA[
+            import flexunit.framework.*;
+
+            import org.hamcrest.*;
+            import org.hamcrest.core.*;
+            import org.hamcrest.collection.*;
+            import org.hamcrest.number.*;
+            import org.hamcrest.object.*;
+            import org.hamcrest.text.*;
+
+            private function onCreationComplete():void {
+                var suite:TestSuite = new TestSuite();
+
+                var tests:Array = [
+                    BaseMatcherTest,
+                    CustomMatcherTest,
+                    CustomTypeSafeMatcherTest,
+                    MatcherAssertTest,
+                    TypeSafeMatcherTest,
+
+                    // core
+                    AllOfTest,
+                    AnyOfTest,
+                    DescribedAsTest,
+                    EveryTest,
+                    IsAnythingTest,
+                    IsNotTest,
+
+                    // collection
+                    IsArrayTest,
+                    IsArrayWithSizeTest,
+                    IsArrayContainingTest,
+
+                    // number
+                    BetweenTest,
+                    CloseToTest,
+                    GreaterThanTest,
+                    LessThanTest,
+
+                    // object
+                    IsEqualTest,
+                    IsInstanceOfTest,
+                    IsNullTest,
+                    IsSameTest,
+
+                    // text
+                    StringContainsTest,
+                    StringEndsWithTest,
+                    StringStartsWithTest,
+
+                    // extras
+                    ThrowsTest
+                    ];
+
+                tests.forEach(function(test:Class, i:int, a:Array):void {
+
+                        suite.addTestSuite(test);
+                    });
+
+                testRunner.test = suite;
+                testRunner.startTest();
+            }
+        ]]>
+    </mx:Script>
+
+</mx:Application>

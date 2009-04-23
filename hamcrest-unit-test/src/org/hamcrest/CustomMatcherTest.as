@@ -1,0 +1,14 @@
+package org.hamcrest {
+
+    public class CustomMatcherTest extends AbstractMatcherTestCase {
+
+        public function testUsesStaticDescription():void {
+
+            var matcher:Matcher = new CustomMatcher("I match Strings", function(item:Object):Boolean {
+                    return (item is String);
+                });
+
+            assertDescription("I match Strings", matcher);
+        }
+    }
+}

@@ -1,8 +1,8 @@
 package org.hamcrest.collection {
 
     import org.hamcrest.Description;
-    import org.hamcrest.DiagnosingMatcher;
     import org.hamcrest.Matcher;
+    import org.hamcrest.TypeSafeDiagnosingMatcher;
 
     /**
      * Matches an Array or Array-like Object if every item matches the given Matcher.
@@ -15,7 +15,7 @@ package org.hamcrest.collection {
      *  assertThat([1, 2, 3], everyItem(instanceOf(Number)));
      * </listing>
      */
-    public class EveryMatcher extends DiagnosingMatcher {
+    public class EveryMatcher extends TypeSafeDiagnosingMatcher {
 
         private var _matcher:Matcher;
 
@@ -26,7 +26,7 @@ package org.hamcrest.collection {
          */
         public function EveryMatcher(matcher:Matcher) {
 
-            super();
+            super(Array);
             _matcher = matcher;
         }
 
@@ -36,7 +36,7 @@ package org.hamcrest.collection {
          * @param collection Array / Array-like Object
          * @param mismatchDescription Description object to report mismatch to.
          */
-        override protected function matchesOrDescribesMismatch(collection:Object, description:Description):Boolean {
+        override public function matchesSafely(collection:Object, description:Description):Boolean {
 
             for each (var item:Object in collection) {
                 if (!_matcher.matches(item)) {

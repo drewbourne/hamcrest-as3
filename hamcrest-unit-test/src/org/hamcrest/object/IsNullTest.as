@@ -10,9 +10,8 @@ package org.hamcrest.object {
             assertThat(null, nullValue());
             assertThat("not null", not(nullValue()));
 
-            // just use not(nullValue()) please
-            // assertThat("not null", notNullValue());
-            // assertThat(null, not(notNullValue()));
+            assertThat("not null", notNullValue());
+            assertThat(null, not(notNullValue()));
         }
     }
 }

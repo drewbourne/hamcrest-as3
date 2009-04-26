@@ -53,6 +53,8 @@
                     LessThanTest,
 
                     // object
+                    HasPropertyTest,
+                    HasPropertyWithValueTest,
                     IsEqualTest,
                     IsInstanceOfTest,
                     IsNullTest,

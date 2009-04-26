@@ -22,10 +22,9 @@ package org.hamcrest.collection {
             var every:EveryMatcher = new EveryMatcher(containsString("a"));
             assertEquals("every item is a string containing \"a\"", every.toString());
 
-            fail("everyItem was changed without tests and now its broken");
-            // var description:Description = new StringDescription();
-            // every.matchesSafely(["BbB"], description);
-            // assertEquals("an item was \"BbB\"", description.toString());
+            var description:Description = new StringDescription();
+            every.matchesSafely(["BbB"], description);
+            assertEquals("an item was \"BbB\"", description.toString());
         }
     }
 }

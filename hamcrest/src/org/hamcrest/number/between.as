@@ -17,13 +17,13 @@ package org.hamcrest.number {
      * @example
      * <listing version="3.0">
      * assertThat(2, between(2, 4));
-     * // fails
+     * // passes
      *
      * assertThat(2, between(2, 4, true));
-     * // passes
+     * // fails
      * </listing>
      */
-    public function between(min:Number, max:Number, inclusive:Boolean=false):Matcher {
+    public function between(min:Number, max:Number, exclusive:Boolean=false):Matcher {
 
         if (min > max) {
             throw new ArgumentError("min value cannot be greater than the max value");
@@ -33,13 +33,13 @@ package org.hamcrest.number {
             throw new ArgumentError("max value cannot be less than the min value");
         }
 
-        var matcher:Matcher = inclusive
+        var matcher:Matcher = !exclusive
             ? allOf(lessThanOrEqualTo(max), greaterThanOrEqualTo(min))
             : allOf(lessThan(max), greaterThan(min));
 
         var description:String = "a Number between %0 and %1";
-        if (inclusive) {
-            description += " inclusive";
+        if (exclusive) {
+            description += " exclusive";
         }
 
         return describedAs(description, matcher, min, max);

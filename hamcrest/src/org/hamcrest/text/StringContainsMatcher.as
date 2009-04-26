@@ -1,15 +1,32 @@
 package org.hamcrest.text {
 
+    /**
+     * Matches a String if it contains the given substring.
+     *
+     * @see org.hamcrest.text.containsString
+     * @see org.hamcrest.text.SubstringMatcher
+     */
     public class StringContainsMatcher extends SubstringMatcher {
 
+        /**
+         * Constructor
+         *
+         * @param substring Substring to search for
+         */
         public function StringContainsMatcher(substring:String) {
             super(substring);
         }
 
-        override protected function evalSubstringOf(s:String):Boolean {
+        /**
+         * @inheritDoc
+         */
+        override protected function evaluateSubstringOf(s:String):Boolean {
             return s.indexOf(substring) >= 0;
         }
 
+        /**
+         * @inheritDoc
+         */
         override protected function relationship():String {
             return "containing";
         }

@@ -29,7 +29,7 @@ package org.hamcrest {
          * @example
          * <listing version="3.0">
          *    var result:String = description.appendValue(3).toString();
-         *    // result is "<3>"
+         *    // result is "&lt;3&gt;"
          * </listing>
          */
         function appendValue(value:Object):Description;

@@ -29,6 +29,7 @@
 <classEntry path="org.hamcrest.collection.hasItems"/>
 <classEntry path="org.hamcrest.core.AllOfMatcher"/>
 <classEntry path="org.hamcrest.core.AnyOfMatcher"/>
+<classEntry path="org.hamcrest.core.CombinableMatcher"/>
 <classEntry path="org.hamcrest.core.DescribedAsMatcher"/>
 <classEntry path="org.hamcrest.core.IsAnythingMatcher"/>
 <classEntry path="org.hamcrest.core.IsMatcher"/>
@@ -38,7 +39,9 @@
 <classEntry path="org.hamcrest.core.allOf"/>
 <classEntry path="org.hamcrest.core.anyOf"/>
 <classEntry path="org.hamcrest.core.anything"/>
+<classEntry path="org.hamcrest.core.both"/>
 <classEntry path="org.hamcrest.core.describedAs"/>
+<classEntry path="org.hamcrest.core.either"/>
 <classEntry path="org.hamcrest.core.isA"/>
 <classEntry path="org.hamcrest.core.not"/>
 <classEntry path="org.hamcrest.core.throws"/>

@@ -7,13 +7,7 @@ package org.hamcrest.core {
     /**
      * Checks if an item matches all of the given Matchers.
      *
-     * @param ...rest Matcher instances
-     *
      * @see org.hamcrest.core.allOf
-     * @example
-     * <listing version="3.0">
-     *  assertThat("good", allOf(equalTo("good"), not(equalTo("bad"))));
-     * </listing>
      */
     public class AllOfMatcher extends DiagnosingMatcher {
 

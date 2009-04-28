@@ -3,11 +3,7 @@ package org.hamcrest.core {
     /**
      * Checks if the item being matched matches any of the given Matchers.
      *
-     * @see org.hamcrest.core.AnyOfMatcher
-     * @example
-     * <listing version="3.0">
-     *  assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
-     * </listing>
+     * @see org.hamcrest.core.anyOf
      */
     public class AnyOfMatcher extends ShortcutCombinationMatcher {
 

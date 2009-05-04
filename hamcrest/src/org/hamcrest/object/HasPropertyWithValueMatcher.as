@@ -1,8 +1,10 @@
 package org.hamcrest.object {
 
+    import flash.utils.describeType;
+
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
-    import org.hamcrest.TypeSafeMatcher;
+    import org.hamcrest.TypeSafeDiagnosingMatcher;
 
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>, and the value
@@ -10,7 +12,7 @@ package org.hamcrest.object {
      *
      * @see org.hamcrest.object.hasProperty
      */
-    public class HasPropertyWithValueMatcher extends TypeSafeMatcher {
+    public class HasPropertyWithValueMatcher extends TypeSafeDiagnosingMatcher {
 
         private var _propertyName:String;
         private var _valueMatcher:Matcher;
@@ -31,10 +33,21 @@ package org.hamcrest.object {
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object):Boolean {
+        override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean {
 
-            return item.hasOwnProperty(_propertyName)
-                && _valueMatcher.matches(item[_propertyName]);
+            if (!item.hasOwnProperty(_propertyName)) {
+                mismatchDescription.appendText('No property "' + _propertyName + '"');
+                return false;
+            }
+
+            var propertyValue:* = item[_propertyName];
+            var valueMatches:Boolean = _valueMatcher.matches(propertyValue);
+
+            if (!valueMatches) {
+                mismatchDescription.appendText('property "' + _propertyName + '" ');
+                _valueMatcher.describeMismatch(propertyValue, mismatchDescription);
+            }
+            return valueMatches;
         }
 
         /**

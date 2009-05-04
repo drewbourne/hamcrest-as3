@@ -1,8 +1,8 @@
 package org.hamcrest {
 
-    import flexunit.framework.TestCase;
+    import org.flexunit.Assert;
 
-    public class AbstractMatcherTestCase extends TestCase {
+    public class AbstractMatcherTestCase extends Assert {
 
         public function assertMatches(message:String, matcher:Matcher, arg:Object):void {
             assertTrue(message, matcher.matches(arg));

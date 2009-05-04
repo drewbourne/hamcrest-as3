@@ -1,13 +1,12 @@
 package org.hamcrest {
 
-    import flexunit.framework.TestCase;
-
     import org.hamcrest.object.equalTo;
     import org.hamcrest.text.startsWith;
 
-    public class MatcherAssertTest extends TestCase {
+    public class MatcherAssertTest extends AbstractMatcherTestCase {
 
-        public function testIncludesDescriptionOfTestedValueInErrorMessage():void {
+        [Test]
+        public function includesDescriptionOfTestedValueInErrorMessage():void {
 
             var expected:String = "expected";
             var actual:String = "actual";
@@ -18,13 +17,12 @@ package org.hamcrest {
                 fail("should have failed");
             }
             catch (error:AssertionError) {
-                trace("testIncludesDescriptionOfTestedValueInErrorMessage");
-                trace(">", error.message);
                 assertTrue(startsWith(expectedMessage).matches(error.message));
             }
         }
 
-        public function testDescriptionCanBeElided():void {
+        [Test]
+        public function descriptionCanBeElided():void {
 
             var expected:String = "expected";
             var actual:String = "actual";
@@ -35,15 +33,12 @@ package org.hamcrest {
                 fail("should have failed");
             }
             catch (error:AssertionError) {
-                trace("testDescriptionCanBeElided")
-                trace(">", error.message);
-                trace(startsWith(expectedMessage).matches(error.message));
-
                 assertTrue(startsWith(expectedMessage).matches(error.message));
             }
         }
 
-        public function testCanTestBooleanDirectly():void {
+        [Test]
+        public function canTestBooleanDirectly():void {
 
             assertThat("success reason message", true);
 
@@ -56,10 +51,11 @@ package org.hamcrest {
             }
         }
 
-        public function tetIncludedsMismatchDescription():void {
+        [Test]
+        public function includesMismatchDescription():void {
 
             var matcher:Matcher = new MatcherForTestingAssertThat();
-            var expectedMessage:String = "\nExpected: something cool\n     but: was: not cool"
+            var expectedMessage:String = "Expected: something cool\n     but: not cool"
 
             try {
                 assertThat("value", matcher);

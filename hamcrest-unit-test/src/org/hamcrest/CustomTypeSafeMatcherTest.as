@@ -4,7 +4,8 @@ package org.hamcrest {
 
         private static const STATIC_DESCRIPTION:String = "I match non empty Strings";
 
-        public function testUsesStaticDescription():void {
+        [Test]
+        public function usesStaticDescription():void {
 
             var matcher:Matcher = new CustomTypeSafeMatcher(STATIC_DESCRIPTION, String, function(item:String):Boolean {
                     return false;

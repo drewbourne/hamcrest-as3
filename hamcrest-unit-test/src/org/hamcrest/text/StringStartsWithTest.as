@@ -3,37 +3,48 @@ package org.hamcrest.text {
     import org.hamcrest.*;
     import org.hamcrest.core.*;
 
+    import org.flexunit.Assert;
+
     public class StringStartsWithTest extends AbstractMatcherTestCase {
 
         private static const EXCERPT:String = "EXCERPT";
+
         private var stringStartsWith:Matcher;
 
-        override public function setUp():void {
+        [Before]
+        public function setUp():void {
             stringStartsWith = startsWith(EXCERPT);
         }
 
-        public function testEvaluatesToTrueIfArgumentContainsSpecifiedSubstring():void {
-            assertTrue("should be true if excerpt at beginning",
-                stringStartsWith.matches(EXCERPT + "END"));
-            assertFalse("should be false if excerpt at end",
-                stringStartsWith.matches("START" + EXCERPT));
-            assertFalse("should be false if excerpt in middle",
-                stringStartsWith.matches("START" + EXCERPT + "END"));
-            assertTrue("should be true if excerpt is at beginning and repeated",
-                stringStartsWith.matches(EXCERPT + EXCERPT));
+        [Test]
+        public function evaluatesToTrueIfArgumentContainsSpecifiedSubstring():void {
+            assertMatches("should be true if excerpt at beginning",
+                stringStartsWith, EXCERPT + "END");
 
-            assertFalse("should be false if excerpt is not in string",
-                stringStartsWith.matches("Something else"));
-            assertFalse("should be false if part of excerpt is at start of string",
-                stringStartsWith.matches(EXCERPT.substring(1)));
+            assertDoesNotMatch("should be false if excerpt at end",
+                stringStartsWith, "START" + EXCERPT);
+
+            assertDoesNotMatch("should be false if excerpt in middle",
+                stringStartsWith, "START" + EXCERPT + "END");
+
+            assertMatches("should be true if excerpt is at beginning and repeated",
+                stringStartsWith, EXCERPT + EXCERPT);
+
+            assertDoesNotMatch("should be false if excerpt is not in string",
+                stringStartsWith, "Something else");
+
+            assertDoesNotMatch("should be false if part of excerpt is at start of string",
+                stringStartsWith, EXCERPT.substring(1));
         }
 
-        public function testEvaluatesToTrueIfArgumentIsEqualToSubstring():void {
-            assertTrue("should be true if excerpt is entire string",
-                stringStartsWith.matches(EXCERPT));
+        [Test]
+        public function evaluatesToTrueIfArgumentIsEqualToSubstring():void {
+            assertMatches("should be true if excerpt is entire string",
+                stringStartsWith, EXCERPT);
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("a string starting with \"EXCERPT\"", stringStartsWith);
         }
     }

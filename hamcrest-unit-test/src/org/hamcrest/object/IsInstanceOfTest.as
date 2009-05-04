@@ -5,7 +5,8 @@ package org.hamcrest.object {
 
     public class IsInstanceOfTest extends AbstractMatcherTestCase {
 
-        public function testEvaluatesToTrueIfArgumentIsInstanceOfASpecificClass():void {
+        [Test]
+        public function evaluatesToTrueIfArgumentIsInstanceOfASpecificClass():void {
 
             assertThat(1, instanceOf(Number));
             assertThat(1.0, instanceOf(Number));
@@ -14,7 +15,8 @@ package org.hamcrest.object {
             assertThat("hello", not(instanceOf(Number)));
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("an instance of Number", instanceOf(Number));
         }
     }

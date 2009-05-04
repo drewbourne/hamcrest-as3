@@ -4,19 +4,22 @@ package org.hamcrest.core {
 
     public class IsAnythingTest extends AbstractMatcherTestCase {
 
-        public function testAlwaysEvaluatesToTrue():void {
+        [Test]
+        public function alwaysEvaluatesToTrue():void {
 
             assertThat(null, anything());
             assertThat(new Object(), anything());
             assertThat("hi", anything());
         }
 
-        public function testHasUsefulDefaultDescription():void {
+        [Test]
+        public function hasUsefulDefaultDescription():void {
 
             assertDescription("ANYTHING", anything());
         }
 
-        public function testCanOverrideDescription():void {
+        [Test]
+        public function canOverrideDescription():void {
 
             var description:String = "description";
             assertDescription(description, anything(description));

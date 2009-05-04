@@ -4,20 +4,25 @@ package org.hamcrest.collection {
     import org.hamcrest.core.not;
     import org.hamcrest.text.containsString;
 
+    import org.flexunit.Assert;
+
     public class EveryTest extends AbstractMatcherTestCase {
 
-        public function testIsTrueWhenEveryValueMatches():void {
+        [Test]
+        public function isTrueWhenEveryValueMatches():void {
 
             assertThat(["AaA", "BaB", "CaC"], everyItem(containsString("a")));
             assertThat(["ABA", "BbB", "CbC"], not(everyItem(containsString("b"))));
         }
 
-        public function testIsAlwaysTrueForEmptyLists():void {
+        [Test]
+        public function isAlwaysTrueForEmptyLists():void {
 
             assertThat([], everyItem(containsString("a")));
         }
 
-        public function testDescribesItself():void {
+        [Test]
+        public function describesItself():void {
 
             var every:EveryMatcher = new EveryMatcher(containsString("a"));
             assertEquals("every item is a string containing \"a\"", every.toString());

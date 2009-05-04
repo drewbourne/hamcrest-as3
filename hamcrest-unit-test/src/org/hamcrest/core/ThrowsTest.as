@@ -6,7 +6,8 @@ package org.hamcrest.core {
 
     public class ThrowsTest extends AbstractMatcherTestCase {
 
-        public function testRethrowsUnexpectedError():void {
+        [Test]
+        public function rethrowsUnexpectedError():void {
 
             var fn:Function = function():void {
                 throw new IllegalOperationError("crumpets face inwards");
@@ -15,7 +16,8 @@ package org.hamcrest.core {
             assertDoesNotMatch("", throws(ArgumentError), fn);
         }
 
-        public function testMatchesIfFunctionThrowsExpectedError():void {
+        [Test]
+        public function matchesIfFunctionThrowsExpectedError():void {
 
             var fn:Function = function():void {
                 throw new ArgumentError("no waffles given");
@@ -25,7 +27,8 @@ package org.hamcrest.core {
             assertMatches("", throws(Error), fn);
         }
 
-        public function testDoesNotMatchesIfFunctionDoesNotThrowAnyError():void {
+        [Test]
+        public function doesNotMatchesIfFunctionDoesNotThrowAnyError():void {
 
             var fn:Function = function():void {
                 ; // dont throw an error
@@ -34,7 +37,8 @@ package org.hamcrest.core {
             assertDoesNotMatch("", throws(ArgumentError), fn);
         }
 
-        public function testAcceptsInstanceMethod():void {
+        [Test]
+        public function acceptsInstanceMethod():void {
 
             var complainer:Complainer = new Complainer();
             assertThat(complainer.complain, throws(Complaint))

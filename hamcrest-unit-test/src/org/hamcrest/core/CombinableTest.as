@@ -14,44 +14,52 @@ package org.hamcrest.core {
         private static const NOT_3_AND_NOT_4:CombinableMatcher = both(not(equalTo(3))).and(not(equalTo(4))) as
             CombinableMatcher;
 
-        public function testBothAcceptsAndRejects():void {
+        [Test]
+        public function bothAcceptsAndRejects():void {
             assertThat(2, NOT_3_AND_NOT_4);
             assertThat(3, not(NOT_3_AND_NOT_4));
         }
 
-        public function testAcceptsAndRejects():void {
+        [Test]
+        public function acceptsAndRejects():void {
             var tripleAnd:Matcher = NOT_3_AND_NOT_4.and(equalTo(2));
             assertThat(2, tripleAnd);
             assertThat(3, not(tripleAnd));
         }
 
-        public function testBothDescribesItself():void {
+        [Test]
+        public function bothDescribesItself():void {
             assertDescription("(not <3> and not <4>)", NOT_3_AND_NOT_4);
             assertMismatch("was <3>", NOT_3_AND_NOT_4, 3);
         }
 
-        public function testEitherAcceptsAndRejects():void {
+        [Test]
+        public function eitherAcceptsAndRejects():void {
             assertThat(3, EITHER_3_OR_4);
             assertThat(6, not(EITHER_3_OR_4));
         }
 
-        public function testAcceptsAndRejectsThreeOrs():void {
+        [Test]
+        public function acceptsAndRejectsThreeOrs():void {
             var tripleOr:Matcher = EITHER_3_OR_4.or(greaterThan(10));
             assertThat(11, tripleOr);
             assertThat(9, not(tripleOr));
         }
 
-        public function testEitherDescribesItself():void {
+        [Test]
+        public function eitherDescribesItself():void {
             assertDescription("(<3> or <4>)", EITHER_3_OR_4);
             assertMismatch("was <6>", EITHER_3_OR_4, 6);
         }
 
         // TODO this is of dubious value given no generics? 
-        public function testPicksUpTypeFromLeftHandSideOfExpression():void {
+        [Test]
+        public function picksUpTypeFromLeftHandSideOfExpression():void {
             assertThat("yellow", both(equalTo("yellow")).and(notNullValue()));
         }
 
-        public function testMixedAndsAndOrs():void {
+        [Test]
+        public function mixedAndsAndOrs():void {
             var matcher:Matcher = both(equalTo("good")).and(not(equalTo("bad"))).or(equalTo("ugly"));
             assertDescription('(("good" and not "bad") or "ugly")', matcher);
         }

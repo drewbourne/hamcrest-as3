@@ -5,7 +5,8 @@ package org.hamcrest.object {
 
     public class IsEqualTest extends AbstractMatcherTestCase {
 
-        public function testComparesObjectsUsingEqualsEquals():void {
+        [Test]
+        public function comparesObjectsUsingEqualsEquals():void {
 
             assertThat("hi", equalTo("hi"));
             assertThat("bye", not(equalTo("hi")));
@@ -14,7 +15,8 @@ package org.hamcrest.object {
             assertThat(1, not(equalTo(2)));
         }
 
-        public function testCanCompareNullValues():void {
+        [Test]
+        public function canCompareNullValues():void {
 
             assertThat(null, equalTo(null));
 
@@ -22,7 +24,8 @@ package org.hamcrest.object {
             assertThat("hi", not(equalTo(null)));
         }
 
-        public function testComparesTheElementsOfAnArray():void {
+        [Test]
+        public function comparesTheElementsOfAnArray():void {
 
             var s1:Array = ["a", "b"];
             var s2:Array = ["a", "b"];
@@ -35,7 +38,8 @@ package org.hamcrest.object {
             assertThat(s4, not(equalTo(s1)));
         }
 
-        public function testRecursivelyTestsElementsOfArrays():void {
+        [Test]
+        public function recursivelyTestsElementsOfArrays():void {
 
             var i1:Array = [[1, 2], [3, 4]];
             var i2:Array = [[1, 2], [3, 4]];
@@ -48,7 +52,8 @@ package org.hamcrest.object {
             assertThat(i4, not(equalTo(i1)));
         }
 
-        public function testIncludesTheResultsOfCallingToStringOnItsArgumentsInTheDescription():void {
+        [Test]
+        public function includesTheResultsOfCallingToStringOnItsArgumentsInTheDescription():void {
             var argumentDescription:String = "";
             var argument:Object = {
                     toString: function():String {
@@ -59,12 +64,14 @@ package org.hamcrest.object {
             assertDescription("<" + argumentDescription + ">", equalTo(argument));
         }
 
-        public function testReturnsAnObviousDescriptionIfCreatedWithANestedMatcherByMistake():void {
+        [Test]
+        public function returnsAnObviousDescriptionIfCreatedWithANestedMatcherByMistake():void {
             var matcher:Matcher = equalTo("nestedMatcher");
             assertDescription("<" + matcher + ">", equalTo(matcher));
         }
 
-        public function testReturnsGoodDesriptionIfCreatedWithNullReference():void {
+        [Test]
+        public function returnsGoodDesriptionIfCreatedWithNullReference():void {
             assertDescription("null", equalTo(null));
         }
     }

@@ -5,7 +5,8 @@ package org.hamcrest.object {
 
     public class IsSameTest extends AbstractMatcherTestCase {
 
-        public function testEvaluatesToTrueIfArgumentIsReferenceToASpecificObject():void {
+        [Test]
+        public function evaluatesToTrueIfArgumentIsReferenceToASpecificObject():void {
 
             var o1:Object = {};
             var o2:Object = {};
@@ -14,11 +15,13 @@ package org.hamcrest.object {
             assertThat(o2, not(sameInstance(o1)));
         }
 
-        public function testReturnsReadableDescriptionFromToString():void {
+        [Test]
+        public function returnsReadableDescriptionFromToString():void {
             assertDescription("sameInstance(\"ARG\")", sameInstance("ARG"));
         }
 
-        public function testReturnsReadableDescriptionFromToStringWhenInitializedithNull():void {
+        [Test]
+        public function returnsReadableDescriptionFromToStringWhenInitializedithNull():void {
             assertDescription("sameInstance(null)", sameInstance(null));
         }
     }

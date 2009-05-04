@@ -1,84 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application 
-    creationComplete="onCreationComplete()"
-    xmlns="*"
-    xmlns:flexunit="flexunit.flexui.*"
+    creationComplete="runMe()"
+    styleName="flexUnitApplication"
+    xmlns:flexui="flexunit.flexui.*"
     xmlns:mx="http://www.adobe.com/2006/mxml"
     >
 
-    <flexunit:TestRunnerBase 
-        height="100%"
-        id="testRunner"
-        width="100%"
-        />
-
     <mx:Script>
         <![CDATA[
-            import flexunit.framework.*;
+            import org.hamcrest.HamcrestSuite;
+            import org.flexunit.listeners.UIListener;
+            import org.flexunit.runner.FlexUnitCore;
 
-            import org.hamcrest.*;
-            import org.hamcrest.core.*;
-            import org.hamcrest.collection.*;
-            import org.hamcrest.number.*;
-            import org.hamcrest.object.*;
-            import org.hamcrest.text.*;
+            private var core:FlexUnitCore;
 
-            private function onCreationComplete():void {
-                var suite:TestSuite = new TestSuite();
+            public function runMe():void {
 
-                var tests:Array = [
-                    BaseMatcherTest,
-                    CustomMatcherTest,
-                    CustomTypeSafeMatcherTest,
-                    MatcherAssertTest,
-                    TypeSafeMatcherTest,
-
-                    // core
-                    AllOfTest,
-                    AnyOfTest,
-                    CombinableTest,
-                    DescribedAsTest,
-                    EveryTest,
-                    IsAnythingTest,
-                    IsNotTest,
-
-                    // collection
-                    IsArrayTest,
-                    IsArrayWithSizeTest,
-                    IsArrayContainingTest,
-
-                    // number
-                    BetweenTest,
-                    CloseToTest,
-                    GreaterThanTest,
-                    LessThanTest,
-
-                    // object
-                    HasPropertyTest,
-                    HasPropertyWithValueTest,
-                    IsEqualTest,
-                    IsInstanceOfTest,
-                    IsNullTest,
-                    IsSameTest,
-
-                    // text
-                    StringContainsTest,
-                    StringEndsWithTest,
-                    StringStartsWithTest,
-
-                    // extras
-                    ThrowsTest
-                    ];
-
-                tests.forEach(function(test:Class, i:int, a:Array):void {
-
-                        suite.addTestSuite(test);
-                    });
-
-                testRunner.test = suite;
-                testRunner.startTest();
+                core = new FlexUnitCore();
+                core.addListener(new UIListener(uiListener));
+                core.run(HamcrestSuite);
             }
         ]]>
     </mx:Script>
+
+    <mx:Style>
+        Application {
+               backgroundColor: #3872b2;
+               backgroundGradientColors: #3872b2, #0c1a3d;
+               backgroundGradientAlphas: 1, 1;
+               themeColor: #ffffff;
+               color: #444444;
+               fontFamily: "Myriad Pro Semibold";
+               fontSize: 12;
+            }
+    </mx:Style>
+
+    <flexui:TestRunnerBase 
+        height="100%"
+        id="uiListener"
+        width="100%"
+        />
 
 </mx:Application>

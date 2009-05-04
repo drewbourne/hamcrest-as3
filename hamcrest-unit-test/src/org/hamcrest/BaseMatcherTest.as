@@ -1,10 +1,9 @@
 package org.hamcrest {
 
-    import flexunit.framework.TestCase;
+    public class BaseMatcherTest extends AbstractMatcherTestCase {
 
-    public class BaseMatcherTest extends TestCase {
-
-        public function testDescribesItselfWithToStringMethod():void {
+        [Test]
+        public function describesItselfWithToStringMethod():void {
 
             var matcher:BaseMatcher = new BaseMatcherForTesting();
             assertEquals("SOME DESCRIPTION", matcher.toString());

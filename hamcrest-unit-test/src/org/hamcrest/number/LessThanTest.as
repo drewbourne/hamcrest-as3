@@ -4,17 +4,20 @@ package org.hamcrest.number {
 
     public class LessThanTest extends AbstractMatcherTestCase {
 
-        public function testLessThan():void {
+        [Test]
+        public function comparesValuesUsingLessThan():void {
             assertMatches("less than", lessThan(10), 9);
             assertDoesNotMatch("not less than", lessThan(10), 11);
         }
 
-        public function testLessThanOrEqualTo():void {
+        [Test]
+        public function comparesValuesUsingLessThanOrEqualTo():void {
             assertMatches("less than", lessThanOrEqualTo(10), 10);
             assertDoesNotMatch("not less than", lessThanOrEqualTo(10), 11);
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("a value less than <3>", lessThan(3));
             assertDescription("a value less than or equal to <3>", lessThanOrEqualTo(3));
         }

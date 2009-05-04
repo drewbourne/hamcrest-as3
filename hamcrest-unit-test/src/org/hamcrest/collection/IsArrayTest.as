@@ -5,34 +5,40 @@ package org.hamcrest.collection {
 
     public class IsArrayTest extends AbstractMatcherTestCase {
 
-        public function testMatchesAnArrayThatMatchesAllTheElementMatchers():void {
+        [Test]
+        public function matchesAnArrayThatMatchesAllTheElementMatchers():void {
             assertMatches("should match array with matching elements",
                 array(equalTo("a"), equalTo("b"), equalTo("c")), ["a", "b", "c"]);
         }
 
-        public function testDoesNotMatchAnArrayWhenElementDoNotMatch():void {
+        [Test]
+        public function doesNotMatchAnArrayWhenElementDoNotMatch():void {
             assertDoesNotMatch("should not match array with different elements",
                 array(equalTo("a"), equalTo("b")), ["b", "c"]);
         }
 
-        public function testDoesNotMatchAnArrayOfDifferentSize():void {
+        [Test]
+        public function doesNotMatchAnArrayOfDifferentSize():void {
             assertDoesNotMatch("should not match larger array",
                 array(equalTo("a"), equalTo("b")), ["a", "b", "c"]);
             assertDoesNotMatch("should not match smaller array",
                 array(equalTo("a"), equalTo("b")), ["a"]);
         }
 
-        public function testDoesNotMatchNull():void {
+        [Test]
+        public function doesNotMatchNull():void {
             assertDoesNotMatch("should not match null",
                 array(equalTo("a")), null);
         }
 
-        public function testConvertsLiteralValuesToEqualToMatcher():void {
+        [Test]
+        public function convertsLiteralValuesToEqualToMatcher():void {
             assertMatches("should convert items and match array with matching elements",
                 array("a", "b", "c"), ["a", "b", "c"]);
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("[\"a\", \"b\"]", array(equalTo("a"), equalTo("b")));
         }
     }

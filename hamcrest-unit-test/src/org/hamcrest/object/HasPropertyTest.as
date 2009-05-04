@@ -4,13 +4,15 @@ package org.hamcrest.object {
 
     public class HasPropertyTest extends AbstractMatcherTestCase {
 
-        public function testEvaluatesToTrueIfArgumentHasOwnProperty():void {
+        [Test]
+        public function evaluatesToTrueIfArgumentHasOwnProperty():void {
 
             assertMatches("has property", hasProperty("value"), { value: "one" });
             assertDoesNotMatch("does not have property", hasProperty("value"), { other: true });
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
 
             assertDescription('an object with property "value"', hasProperty("value"));
         }

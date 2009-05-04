@@ -7,7 +7,8 @@ package org.hamcrest.core {
 
     public class AnyOfTest extends AbstractMatcherTestCase {
 
-        public function testEvaluatesToTheTheLogicalDisjunctionOfTwoOtherMatchers():void {
+        [Test]
+        public function evaluatesToTheTheLogicalDisjunctionOfTwoOtherMatchers():void {
 
             assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
             assertThat("good", anyOf(equalTo("good"), equalTo("good")));
@@ -16,13 +17,17 @@ package org.hamcrest.core {
             assertThat("good", not(anyOf(equalTo("bad"), equalTo("bad"))));
         }
 
-        public function testEvaluatesToTheTheLogicalDisjunctionOfManyOtherMatchers():void {
+        [Test]
+        public function evaluatesToTheTheLogicalDisjunctionOfManyOtherMatchers():void {
 
-            assertThat("good", anyOf(equalTo("bad"), equalTo("good"), equalTo("bad"), equalTo("bad"), equalTo("bad")));
-            assertThat("good", not(anyOf(equalTo("bad"), equalTo("bad"), equalTo("bad"), equalTo("bad"), equalTo("bad"))));
+            assertThat("good", anyOf(equalTo("bad"), equalTo("good"), equalTo("bad"), equalTo("bad"),
+                equalTo("bad")));
+            assertThat("good", not(anyOf(equalTo("bad"), equalTo("bad"), equalTo("bad"), equalTo("bad"),
+                equalTo("bad"))));
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("(\"good\" or \"bad\" or \"ugly\")",
                 anyOf(equalTo("good"), equalTo("bad"), equalTo("ugly")));
         }

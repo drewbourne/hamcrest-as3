@@ -5,7 +5,8 @@ package org.hamcrest.object {
 
     public class IsNullTest extends AbstractMatcherTestCase {
 
-        public function testEvaluatesToTrueIfArgumentIsNull():void {
+        [Test]
+        public function evaluatesToTrueIfArgumentIsNull():void {
 
             assertThat(null, nullValue());
             assertThat("not null", not(nullValue()));

@@ -2,7 +2,8 @@ package org.hamcrest {
 
     public class TypeSafeMatcherTest extends AbstractMatcherTestCase {
 
-        public function testClassMatchesSafelyIfTypesMatch():void {
+        [Test]
+        public function classMatchesSafelyIfTypesMatch():void {
 
             var called:Boolean = false;
 

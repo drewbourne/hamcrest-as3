@@ -8,12 +8,14 @@ package org.hamcrest.collection {
 
     public class IsArrayContainingTest extends AbstractMatcherTestCase {
 
-        public function testMatchesACollectionThatContainsAnElementMatchingTheGivenMatcher():void {
+        [Test]
+        public function matchesACollectionThatContainsAnElementMatchingTheGivenMatcher():void {
             var itemMatcher:Matcher = hasItems(equalTo("a"));
             assertMatches("should match list that contains 'a'", itemMatcher, ["a", "b", "c"]);
         }
 
-        public function testDoesNotMatchCollectionThatDoesntContainAnElementMatchingTheGivenMatcher():void {
+        [Test]
+        public function doesNotMatchCollectionThatDoesntContainAnElementMatchingTheGivenMatcher():void {
             var matcher1:Matcher = hasItem(equalTo("a"));
             assertDoesNotMatch("should not match list that doesn't contain 'a'", matcher1, ["b", "c"]);
 
@@ -21,15 +23,18 @@ package org.hamcrest.collection {
             assertDoesNotMatch("should not match the empty list", matcher2, []);
         }
 
-        public function testDoesNotMatchNull():void {
+        [Test]
+        public function doesNotMatchNull():void {
             assertDoesNotMatch("should not match null", hasItem(equalTo("a")), null);
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("an Array containing \"a\"", hasItem(equalTo("a")));
         }
 
-        public function testMatchesAllItemsInCollection():void {
+        [Test]
+        public function matchesAllItemsInCollection():void {
             var matcher1:Matcher = hasItems(equalTo("a"), equalTo("b"), equalTo("c"));
             assertMatches("should match list containing all items",
                 matcher1,

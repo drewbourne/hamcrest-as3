@@ -5,17 +5,20 @@ package org.hamcrest.number {
 
     public class BetweenTest extends AbstractMatcherTestCase {
 
-        public function testBetweenInclusive():void {
+        [Test]
+        public function betweenInclusive():void {
             assertMatches("inside range", between(2, 4), 3);
             assertDoesNotMatch("outside range", between(2, 3), 4);
         }
 
-        public function testBetweenExclusive():void {
+        [Test]
+        public function betweenExclusive():void {
             assertMatches("inside range", between(2, 4, true), 3);
             assertDoesNotMatch("outside range", between(2, 3, true), 3);
         }
 
-        public function testHasAReadableDescription():void {
+        [Test]
+        public function hasAReadableDescription():void {
             assertDescription("a Number between <2> and <4>", between(2, 4));
             assertDescription("a Number between <2> and <4> exclusive", between(2, 4, true));
         }

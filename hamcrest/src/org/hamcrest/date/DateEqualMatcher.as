@@ -16,10 +16,7 @@ package org.hamcrest.date
 		
 		override public function matchesSafely( value : Object ) : Boolean
 		{
-			if( value.getTime() == _compareDate.getTime() )
-				return true;
-			else
-				return false; 
+			return ( value.getTime() == _compareDate.getTime() );
 		}
 		
 		override public function describeMismatch(item:Object, mismatchDescription:Description):void {

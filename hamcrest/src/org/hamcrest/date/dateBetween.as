@@ -37,7 +37,7 @@ package org.hamcrest.date
             ? allOf( dateBeforeOrEqual(max), dateAfterOrEqual(min))
             : allOf( dateBefore(max), dateAfter(min));
 
-        var description:String = "a Number between %0 and %1";
+        var description:String = "a date between %0 and %1";
         if (exclusive) {
             description += " exclusive";
         }

@@ -11,6 +11,9 @@ package org.hamcrest
 	import org.hamcrest.core.IsAnythingTest;
 	import org.hamcrest.core.IsNotTest;
 	import org.hamcrest.core.ThrowsTest;
+	import org.hamcrest.date.DateAfterTest;
+	import org.hamcrest.date.DateBeforeTest;
+	import org.hamcrest.date.DateBetweenTest;
 	import org.hamcrest.number.BetweenTest;
 	import org.hamcrest.number.CloseToTest;
 	import org.hamcrest.number.GreaterThanTest;
@@ -71,6 +74,12 @@ package org.hamcrest
 		
 		// extras
 		public var t29:ThrowsTest;
+		
+		// date
+		public var t30 : DateBetweenTest;
+		public var t31 : DateAfterTest;
+		public var t32 : DateBeforeTest;
+		
 
 	}
 }

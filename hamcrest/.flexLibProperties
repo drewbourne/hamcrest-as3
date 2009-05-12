@@ -45,6 +45,15 @@
 <classEntry path="org.hamcrest.core.isA"/>
 <classEntry path="org.hamcrest.core.not"/>
 <classEntry path="org.hamcrest.core.throws"/>
+<classEntry path="org.hamcrest.date.DateAfterMatcher"/>
+<classEntry path="org.hamcrest.date.DateBeforeMatcher"/>
+<classEntry path="org.hamcrest.date.DateEqualMatcher"/>
+<classEntry path="org.hamcrest.date.dateAfter"/>
+<classEntry path="org.hamcrest.date.dateAfterOrEqual"/>
+<classEntry path="org.hamcrest.date.dateBefore"/>
+<classEntry path="org.hamcrest.date.dateBeforeOrEqual"/>
+<classEntry path="org.hamcrest.date.dateBetween"/>
+<classEntry path="org.hamcrest.date.dateEqual"/>
 <classEntry path="org.hamcrest.number.IsCloseToMatcher"/>
 <classEntry path="org.hamcrest.number.IsGreaterThanMatcher"/>
 <classEntry path="org.hamcrest.number.IsLessThanMatcher"/>

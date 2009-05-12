@@ -19,9 +19,9 @@ package org.hamcrest.date
 		override public function matchesSafely( value : Object ) : Boolean
 		{
 			if( _inclusive )
-				return value <= _compareDate;
+				return ( value <= _compareDate );
 			else
-				return value < _compareDate;
+				return ( value < _compareDate );
 		}
 		
 		override public function describeMismatch(item:Object, mismatchDescription:Description):void {
@@ -33,7 +33,7 @@ package org.hamcrest.date
 		
 		override public function describeTo( description : Description ) : void
 		{
-			description.appendText( _compareDate.toString() + " should be less than"  );
+			description.appendText( "a date before <" + _compareDate.toString() + ">"  );
 		}
 		
 	}

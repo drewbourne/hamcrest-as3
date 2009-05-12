@@ -1,3 +1,6 @@
 .DS_Store
+
 bin
 doc
+bin-debug
+html-template

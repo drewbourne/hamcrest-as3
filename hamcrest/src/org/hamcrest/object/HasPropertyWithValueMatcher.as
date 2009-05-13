@@ -56,9 +56,9 @@ package org.hamcrest.object {
         override public function describeTo(description:Description):void {
 
             description
-                .appendText("an object with property ")
+                .appendText("has property ")
                 .appendValue(_propertyName)
-                .appendText(" and value ")
+                .appendText(" with value ")
                 .appendDescriptionOf(_valueMatcher);
         }
 

@@ -41,7 +41,7 @@ package org.hamcrest.object {
 
         [Test]
         public function describeTo():void {
-            assertDescription('an object with property "property" and value <true>',
+            assertDescription('has property "property" with value <true>',
                 hasPropertyWithValue("property", equalTo(true)));
         }
 
@@ -65,7 +65,7 @@ package org.hamcrest.object {
         [Test]
         public function hasAReadableDescription():void {
 
-            assertDescription('an object with property "value" and value <3>',
+            assertDescription('has property "value" with value <3>',
                 hasPropertyWithValue("value", equalTo(3)));
         }
     }

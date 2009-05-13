@@ -1,8 +1,8 @@
-package org.hamcrest.date
-{
-	import org.hamcrest.Matcher;
-	
-	 /**
+package org.hamcrest.date {
+
+    import org.hamcrest.Matcher;
+
+    /**
      * Matches if the date item is equal to the given date.
      *
      * @param value Date the matched item must be equal.
@@ -13,10 +13,7 @@ package org.hamcrest.date
      * assertThat(new Date(), dateEqual( new Date() ));
      * </listing>
      */
-	
-	public function dateEqual( value : Date ) : Matcher
-	{
-		return new DateEqualMatcher( value );
-	}
-
+    public function dateEqual(value:Date):Matcher {
+        return new DateEqualMatcher(value);
+    }
 }

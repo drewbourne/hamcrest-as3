@@ -2,8 +2,7 @@
 <mx:Application 
     creationComplete="runMe()"
     styleName="flexUnitApplication"
-    xmlns:flexUnitUIRunner="http://www.adobe.com/2009/flexUnitUIRunner" 
-    
+    xmlns:flexui="flexunit.flexui.*"
     xmlns:mx="http://www.adobe.com/2006/mxml"
     >
 
@@ -35,10 +34,11 @@
                fontSize: 12;
             }
     </mx:Style>
-	<flexUnitUIRunner:TestRunnerBase
-		height="100%"
+
+    <flexui:TestRunnerBase 
+        height="100%"
         id="uiListener"
         width="100%"
         />
-    
+
 </mx:Application>

@@ -1,10 +1,10 @@
-package org.hamcrest.date
-{
-	import org.hamcrest.Matcher;
-	import org.hamcrest.core.allOf;
-	import org.hamcrest.core.describedAs;
-	
-	/**
+package org.hamcrest.date {
+
+    import org.hamcrest.Matcher;
+    import org.hamcrest.core.allOf;
+    import org.hamcrest.core.describedAs;
+
+    /**
      * Matches if the values is between the min and max values.
      *
      * @param min Minimum value
@@ -23,7 +23,7 @@ package org.hamcrest.date
      * // fails
      * </listing>
      */
-    public function dateBetween(min : Date, max : Date, exclusive:Boolean=false):Matcher {
+    public function dateBetween(min:Date, max:Date, exclusive:Boolean=false):Matcher {
 
         if (min > max) {
             throw new ArgumentError("min value cannot be greater than the max value");
@@ -34,8 +34,8 @@ package org.hamcrest.date
         }
 
         var matcher:Matcher = !exclusive
-            ? allOf( dateBeforeOrEqual(max), dateAfterOrEqual(min))
-            : allOf( dateBefore(max), dateAfter(min));
+            ? allOf(dateBeforeOrEqual(max), dateAfterOrEqual(min))
+            : allOf(dateBefore(max), dateAfter(min));
 
         var description:String = "a date between %0 and %1";
         if (exclusive) {
@@ -44,5 +44,4 @@ package org.hamcrest.date
 
         return describedAs(description, matcher, min, max);
     }
-
 }

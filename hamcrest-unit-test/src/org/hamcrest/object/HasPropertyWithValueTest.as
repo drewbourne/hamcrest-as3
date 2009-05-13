@@ -32,6 +32,7 @@ package org.hamcrest.object {
                 shouldNotMatch);
         }
 
+        [Ignore]
         [Test]
         public function doesNotMatchWriteOnlyProperty():void {
             assertMismatch('property "writeOnlyProperty" is not readable',

@@ -1,41 +1,61 @@
-package org.hamcrest.date
-{
-	import org.hamcrest.Description;
-	import org.hamcrest.TypeSafeMatcher;
-	
+package org.hamcrest.date {
 
-	public class DateAfterMatcher extends TypeSafeMatcher
-	{
-		private var _compareDate:Date;
-		private var _inclusive : Boolean;
-		
-		public function DateAfterMatcher( value : Date, inclusive : Boolean = false )
-		{
-			super(Date);
-			this._compareDate = value;
-			this._inclusive = inclusive;
-		}
-		
-		override public function matchesSafely( value : Object ) : Boolean
-		{
-			if( _inclusive )
-				return ( value >= _compareDate );
-			else
-				return ( value > _compareDate );
-				
-		}
-		
-		override public function describeMismatch(item:Object, mismatchDescription:Description):void {
+    import org.hamcrest.Description;
+    import org.hamcrest.TypeSafeMatcher;
+
+    /**
+     * Matches a Date after the expected Date
+     *
+     * @see org.hamcrest.date.dateAfter
+     */
+    public class DateAfterMatcher extends TypeSafeMatcher {
+
+        private var _compareDate:Date;
+        private var _inclusive:Boolean;
+
+        /**
+         * Constructor.
+         *
+         * @param value Expected Date the matched value must occur after
+         * @param inclusive
+         *  <code>true</code> to match a Date exactly equal or after the expected Date,
+         *  <code>false</code> to match a Date only if it is after the expected.
+         */
+        public function DateAfterMatcher(value:Date, inclusive:Boolean=false) {
+            super(Date);
+            _compareDate = value;
+            _inclusive = inclusive;
+        }
+
+        /**
+         * @inheritDoc
+         */
+        override public function matchesSafely(value:Object):Boolean {
+            if (_inclusive) {
+                return (value >= _compareDate);
+            }
+            else {
+                return (value > _compareDate);
+            }
+
+        }
+
+        /**
+         * @inheritDoc
+         */
+        override public function describeMismatch(item:Object, mismatchDescription:Description):void {
             mismatchDescription.appendValue(item)
                 .appendText(" is not after ");
 
             mismatchDescription.appendValue(_compareDate);
         }
-		
-		override public function describeTo( description : Description ) : void
-		{
-			description.appendText("a date after <" + _compareDate.toString() + ">"  );
-		}
-		
-	}
+
+        /**
+         * @inheritDoc
+         */
+        override public function describeTo(description:Description):void {
+            description.appendText("a date after <" + _compareDate.toString() + ">");
+        }
+
+    }
 }

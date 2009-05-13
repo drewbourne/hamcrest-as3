@@ -1,8 +1,8 @@
-package org.hamcrest.date
-{
-	import org.hamcrest.Matcher;
-	
-	/**
+package org.hamcrest.date {
+
+    import org.hamcrest.Matcher;
+
+    /**
      * Matches if the date item is after the given date.
      *
      * @param value Date the matched number must be after.
@@ -13,10 +13,8 @@ package org.hamcrest.date
      * assertThat( new Date(), dateAfter( new Date( 1920, 1, 1)));
      * </listing>
      */
-	
-	public function dateAfter( value : Date ) : Matcher
-	{
-		return new DateAfterMatcher( value );
-	}
+    public function dateAfter(value:Date):Matcher {
+        return new DateAfterMatcher(value);
+    }
 
 }

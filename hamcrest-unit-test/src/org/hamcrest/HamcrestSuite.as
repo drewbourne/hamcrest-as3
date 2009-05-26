@@ -78,5 +78,7 @@ package org.hamcrest {
         public var t31:DateAfterTest;
         public var t32:DateBeforeTest;
 
+        // mxml
+        public var t33:HamcrestMXMLSuite;
     }
 }

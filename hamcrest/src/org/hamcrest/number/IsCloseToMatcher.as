@@ -27,7 +27,7 @@ package org.hamcrest.number {
 
         override public function describeTo(description:Description):void {
             description
-                .appendText("a numeric value within ")
+                .appendText("a Number within ")
                 .appendValue(_delta)
                 .appendText(" of ")
                 .appendValue(_value);

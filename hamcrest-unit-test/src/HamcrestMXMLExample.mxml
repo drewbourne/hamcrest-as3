@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application 
+    layout="absolute"
+    xmlns:core="org.hamcrest.mxml.core.*"
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    xmlns:object="org.hamcrest.mxml.object.*"
+    xmlns:number="org.hamcrest.mxml.number.*"
+    >
+
+    <core:Not 
+        id="notMatcher"
+        target="{ Number(notInput.text) }"
+        >
+        <core:AnyOf>
+            <object:EqualTo 
+                value="3"
+                />
+            <object:EqualTo 
+                value="4"
+                />
+            <object:EqualTo 
+                value="5"
+                />
+        </core:AnyOf>
+    </core:Not>
+
+    <core:AllOf 
+        id="allOfMatcher"
+        target="{ Number(allOfInput.text) }"
+        >
+        <object:NotNull />
+        <number:CloseTo 
+            value="5"
+            delta="3"
+            />
+        <number:Between 
+            min="1"
+            max="9"
+            />
+    </core:AllOf>
+
+    <mx:Panel>
+        <mx:Form>
+            <mx:FormItem 
+                label="notInput"
+                >
+                <mx:TextInput 
+                    id="notInput"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="description"
+                >
+                <mx:Label 
+                    text="{ notMatcher.description }"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="matched"
+                >
+                <mx:Label 
+                    text="{ notMatcher.matched }"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="mismatchDescription"
+                >
+                <mx:Label 
+                    text="{ notMatcher.mismatchDescription }"
+                    />
+            </mx:FormItem>
+        </mx:Form>
+        <mx:Form>
+            <mx:FormItem 
+                label="input"
+                >
+                <mx:TextInput 
+                    id="allOfInput"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="description"
+                >
+                <mx:Label 
+                    text="{ allOfMatcher.description }"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="matched"
+                >
+                <mx:Label 
+                    text="{ allOfMatcher.matched }"
+                    />
+            </mx:FormItem>
+            <mx:FormItem 
+                label="mismatchDescription"
+                >
+                <mx:Label 
+                    text="{ allOfMatcher.mismatchDescription }"
+                    />
+            </mx:FormItem>
+        </mx:Form>
+
+    </mx:Panel>
+
+
+</mx:Application>

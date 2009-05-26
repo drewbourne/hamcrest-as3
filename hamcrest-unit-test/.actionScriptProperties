@@ -12,6 +12,7 @@
 </compiler>
 <applications>
 <application path="HamcrestTestRunner.mxml"/>
+<application path="HamcrestMXMLExample.mxml"/>
 </applications>
 <modules/>
 <buildCSSFiles/>

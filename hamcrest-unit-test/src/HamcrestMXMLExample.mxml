@@ -5,6 +5,9 @@
     xmlns:mx="http://www.adobe.com/2006/mxml"
     xmlns:object="org.hamcrest.mxml.object.*"
     xmlns:number="org.hamcrest.mxml.number.*"
+    xmlns:collection="org.hamcrest.mxml.collection.*"
+    xmlns:date="org.hamcrest.mxml.date.*"
+    xmlns:text="org.hamcrest.mxml.text.*"
     >
 
     <core:Not 
@@ -29,6 +32,68 @@
         target="{ Number(allOfInput.text) }"
         >
         <object:NotNull />
+        <core:DescribedAs 
+            message="what comes after %0, %1, %2 ?"
+            values="{[ 1, 2, 3 ]}"
+            >
+            <object:EqualTo 
+                value="4"
+                />
+        </core:DescribedAs>
+    </core:AllOf>
+
+    <core:AnyOf 
+        id="collectionMatchers"
+        >
+        <collection:Array>
+            <object:EqualTo 
+                value="1"
+                />
+            <object:EqualTo 
+                value="2"
+                />
+            <object:EqualTo 
+                value="3"
+                />
+        </collection:Array>
+        <collection:ArrayWithSize 
+            size="3"
+            />
+        <collection:EmptyArray />
+        <collection:EveryItem>
+            <number:Between 
+                min="1"
+                max="2"
+                />
+        </collection:EveryItem>
+        <collection:HasItem>
+            <object:EqualTo 
+                value="4"
+                />
+        </collection:HasItem>
+    </core:AnyOf>
+
+    <core:AllOf 
+        id="dateMatcher"
+        >
+        <date:DateAfter 
+            date="{ new Date() }"
+            />
+        <date:DateBefore 
+            date="{ new Date() }"
+            />
+        <date:DateBetween 
+            min="{ new Date() }"
+            max="{ new Date() }"
+            />
+        <date:DateEqualTo 
+            date="{ new Date() }"
+            />
+    </core:AllOf>
+
+    <core:AllOf 
+        id="numberMatchers"
+        >
         <number:CloseTo 
             value="5"
             delta="3"
@@ -36,6 +101,66 @@
         <number:Between 
             min="1"
             max="9"
+            />
+        <number:LessThan 
+            value="1"
+            />
+        <number:LessThanOrEqualTo 
+            value="2"
+            />
+        <number:GreaterThan 
+            value="3"
+            />
+        <number:GreaterThanOrEqualTo 
+            value="4"
+            />
+    </core:AllOf>
+
+    <core:AllOf 
+        id="objectMatchers"
+        >
+        <object:InstanceOf 
+            type="{ String }"
+            />
+        <object:SameInstance 
+            value="{ 1 }"
+            />
+        <object:HasProperty 
+            property="propertyName"
+            />
+        <object:HasProperty 
+            value="{ 1 }"
+            property="propertyName"
+            />
+        <object:HasProperties 
+            properties="{ { waffles: 'yum' } }"
+            />
+    </core:AllOf>
+
+    <core:AllOf 
+        id="textMatchers"
+        >
+        <text:ContainsString 
+            string=""
+            />
+        <text:ContainsString>
+            <![CDATA[
+can you
+match with a 
+multiline string?
+yes.
+            ]]>
+        </text:ContainsString>
+
+        <text:StartsWith 
+            string=""
+            />
+        <text:EndsWith 
+            string=""
+            />
+        <text:MatchesPattern 
+            expression=""
+            flags=""
             />
     </core:AllOf>
 

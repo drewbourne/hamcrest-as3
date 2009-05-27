@@ -1,22 +1,20 @@
 package org.hamcrest.mxml.object {
 
-    import flash.events.Event;
-
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
-    import org.hamcrest.object.equalTo;
+    import org.hamcrest.object.sameInstance;
 
     /**
-     * MXML wrapper for equalTo() / IsEqualMatcher.
+     * MXML wrapper for sameInstance() Matcher
      */
-    public class EqualTo extends BaseMXMLMatcher {
+    public class SameInstance extends BaseMXMLMatcher {
 
         private var _value:*;
 
         /**
          * Constructor.
          */
-        public function EqualTo() {
+        public function SameInstance() {
             super();
         }
 
@@ -38,7 +36,7 @@ package org.hamcrest.mxml.object {
         }
 
         override protected function createMatcher():Matcher {
-            return equalTo(value);
+            return sameInstance(value);
         }
     }
 }

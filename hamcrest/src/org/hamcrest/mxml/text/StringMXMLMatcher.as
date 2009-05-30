@@ -5,6 +5,12 @@ package org.hamcrest.mxml.text {
     import org.hamcrest.text.containsString;
 
     [DefaultProperty('string')]
+
+    /**
+     * Dispatched when the <code>string</code> property is changed.
+     */
+    [Event(name='stringChanged', type = 'flash.events.Event')]
+
     /**
      * BaseMXMLMatcher for string matcher
      */
@@ -28,12 +34,10 @@ package org.hamcrest.mxml.text {
         }
 
         public function set string(value:*):void {
-            if (_string == value) {
-                return;
+            if (_string != value) {
+                _string = value;
+                changed('string');
             }
-
-            _string = value;
-            changed('string');
         }
     }
 }

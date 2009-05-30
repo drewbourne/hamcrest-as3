@@ -6,12 +6,34 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.hasPropertyWithValue;
 
     /**
-     * MXML wrapper for hasProperty() / hasPropertyWithValue() Matchers
+     * Dispatched when the <code>property</code> property is changed.
      */
+    [Event(name='propertyChanged', type = 'flash.events.Event')]
+
+    /**
+     * Dispatched when the <code>value</code> property is changed.
+     */
+    [Event(name='valueChanged', type = 'flash.events.Event')]
+
+    /**
+     * MXML façade for hasProperty() / hasPropertyWithValue() Matchers.
+     *
+     * @see org.hamcrest.object.hasProperty
+     * @see org.hamcrest.object.hasPropertyWithValue
+     * @see org.hamcrest.object.HasPropertyMatcher
+     * @see org.hamcrest.object.HasPropertyWithValueMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:hasProperty property="prop" />
+     *  <hc:hasProperty property="otherProp" value="{ 123 }" />
+     * </listing>
+     */
+    [DefaultProperty('value')]
     public class HasProperty extends BaseMXMLMatcher {
 
         private var _property:String;
-        private var _value:*;
+        private var _value:Matcher;
 
         /**
          * Constructor.
@@ -29,33 +51,29 @@ package org.hamcrest.mxml.object {
         }
 
         public function set property(val:*):void {
-            if (val == _property) {
-                return;
+            if (_property != val) {
+                _property = val;
+                changed('property');
             }
-
-            _property = val;
-            changed('property');
         }
 
         /**
-         * Expected Value of the property
+         * Matcher for the expected value of the property
          */
         [Bindable('valueChanged')]
-        public function get value():* {
+        public function get value():Matcher {
             return _value;
         }
 
-        public function set value(value:*):void {
-            if (value == _value) {
-                return;
+        public function set value(value:Matcher):void {
+            if (value != _value) {
+                _value = value;
+                changed('value');
             }
-
-            _value = value;
-            changed('value');
         }
 
         override protected function createMatcher():Matcher {
-            return value === undefined
+            return value == null
                 ? hasProperty(property)
                 : hasPropertyWithValue(property, value);
         }

@@ -5,7 +5,20 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.instanceOf;
 
     /**
-     * MXML wrapper for instanceOf() Matcher
+     * Dispatched when the <code>type</code> property is changed.
+     */
+    [Event(name='typeChanged', type = 'flash.events.Event')]
+
+    /**
+     * MXML façade for instanceOf() / IsInstanceOfMatcher.
+     *
+     * @see org.hamcrest.object.instanceOf
+     * @see org.hamcrest.object.IsInstanceOfMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:InstanceOf type="{ CustomClass }" />
+     * </listing>
      */
     public class InstanceOf extends BaseMXMLMatcher {
 
@@ -19,7 +32,7 @@ package org.hamcrest.mxml.object {
         }
 
         /**
-         * Expected Value
+         * Class the target value must be an instance of.
          */
         [Bindable('typeChanged')]
         public function get type():Class {
@@ -27,12 +40,10 @@ package org.hamcrest.mxml.object {
         }
 
         public function set type(value:Class):void {
-            if (value == _type) {
-                return;
+            if (_type != value) {
+                _type = value;
+                changed('type');
             }
-
-            _type = value;
-            changed('type');
         }
 
         override protected function createMatcher():Matcher {

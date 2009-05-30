@@ -5,7 +5,15 @@ package org.hamcrest.mxml.text {
     import org.hamcrest.text.endsWith;
 
     /**
-     * MXML wrapper for endsWith()
+     * MXML façade for endsWith() / StringEndsWithMatcher
+     *
+     * @see org.hamcrest.text.endsWith
+     * @see org.hamcrest.text.StringEndsWithMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:EndsWith string="lazy dog" />
+     * </listing>
      */
     public class EndsWith extends StringMXMLMatcher {
 

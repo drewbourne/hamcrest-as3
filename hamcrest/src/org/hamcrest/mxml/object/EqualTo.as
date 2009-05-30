@@ -7,7 +7,20 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.equalTo;
 
     /**
-     * MXML wrapper for equalTo() / IsEqualMatcher.
+     * Dispatched when the <code>value</code> property is changed.
+     */
+    [Event(name='valueChanged', type = 'flash.events.Event')]
+
+    /**
+     * MXML façade for equalTo() / IsEqualMatcher.
+     *
+     * @see org.hamcrest.object.equalTo
+     * @see org.hamcrest.object.IsEqualMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:EqualTo value="{ 123 }" />
+     * </listing>
      */
     public class EqualTo extends BaseMXMLMatcher {
 
@@ -21,20 +34,18 @@ package org.hamcrest.mxml.object {
         }
 
         /**
-         * Expected Value
+         * Value the target value must match.
          */
         [Bindable('valueChanged')]
-        public function get value():* {
+        public function get value():Number {
             return _value;
         }
 
-        public function set value(value:*):void {
-            if (value == _value) {
-                return;
+        public function set value(value:Number):void {
+            if (_value != value) {
+                _value = value;
+                changed('value');
             }
-
-            _value = value;
-            changed('value');
         }
 
         override protected function createMatcher():Matcher {

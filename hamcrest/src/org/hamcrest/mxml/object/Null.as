@@ -5,7 +5,15 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.nullValue;
 
     /**
-     * MXML wrapper for notNullValue()
+     * MXML façade for nullValue / IsNullMatcher.
+     *
+     * @see org.hamcrest.object.nullValue
+     * @see org.hamcrest.object.IsNullMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:Null />
+     * </listing>
      */
     public class Null extends BaseMXMLMatcher {
 

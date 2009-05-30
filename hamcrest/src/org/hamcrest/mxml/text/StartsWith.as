@@ -5,7 +5,15 @@ package org.hamcrest.mxml.text {
     import org.hamcrest.text.startsWith;
 
     /**
-     * MXML wrapper for startsWith()
+     * MXML façade for startsWith() / StringStartsWithMatcher
+     *
+     * @see org.hamcrest.text.startsWith
+     * @see org.hamcrest.text.StringStartsWithMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:StringWith string="the quick brown fox" />
+     * </listing>
      */
     public class StartsWith extends StringMXMLMatcher {
 

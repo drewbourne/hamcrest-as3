@@ -3,7 +3,7 @@ package org.hamcrest.mxml {
     import org.hamcrest.Matcher;
 
     /**
-     * Interface for MXML wrappers to Hamcrest Matchers.
+     * Interface for MXML façades to Hamcrest Matchers.
      */
     public interface MXMLMatcher extends Matcher {
 
@@ -28,10 +28,5 @@ package org.hamcrest.mxml {
          * Indicates if the #target matches the Matcher.
          */
         function get matched():Boolean;
-
-//        /**
-//         * Sets #target, creates the internal matcher, calls matcher#matchers, sets #matched, and #mismatchDescription.
-//         */
-//        function matches(value:*):Boolean;
     }
 }

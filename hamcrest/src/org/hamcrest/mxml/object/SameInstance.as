@@ -5,7 +5,20 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.sameInstance;
 
     /**
-     * MXML wrapper for sameInstance() Matcher
+     * Dispatched when the <code>value</code> property is changed.
+     */
+    [Event(name='valueChanged', type = 'flash.events.Event')]
+
+    /**
+     * MXML façade for sameInstance() / IsSameMatcher.
+     *
+     * @see org.hamcrest.object.sameInstance
+     * @see org.hamcrest.object.IsSameMatcher
+     *
+     * @example
+     * <listing version="3.0">
+     *  <hc:SameInstance value="{ anInstanceOfSomething }" />
+     * </listing>
      */
     public class SameInstance extends BaseMXMLMatcher {
 
@@ -19,7 +32,7 @@ package org.hamcrest.mxml.object {
         }
 
         /**
-         * Expected Value
+         * Instnace the target value must be exactly equal to.
          */
         [Bindable('valueChanged')]
         public function get value():* {
@@ -27,12 +40,10 @@ package org.hamcrest.mxml.object {
         }
 
         public function set value(value:*):void {
-            if (value == _value) {
-                return;
+            if (_value != value) {
+                _value = value;
+                changed('value');
             }
-
-            _value = value;
-            changed('value');
         }
 
         override protected function createMatcher():Matcher {

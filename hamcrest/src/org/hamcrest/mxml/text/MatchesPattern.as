@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.text {
-
+package org.hamcrest.mxml.text
+{
     import flash.errors.IllegalOperationError;
 
     import org.hamcrest.Matcher;
@@ -16,17 +16,20 @@ package org.hamcrest.mxml.text {
     [Event(name='flagsChanged', type = 'flash.events.Event')]
 
     /**
-     * MXML wrapper for nothing yet.
+     * MXML wrapper for RegExpMatcher.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class MatchesPattern extends BaseMXMLMatcher {
-
+    public class MatchesPattern extends BaseMXMLMatcher
+    {
         private var _expression:String;
         private var _flags:String;
 
         /**
          * Constructor.
          */
-        public function MatchesPattern() {
+        public function MatchesPattern()
+        {
             super();
         }
 
@@ -34,11 +37,13 @@ package org.hamcrest.mxml.text {
          * RegExp expression
          */
         [Bindable('expressionChanged')]
-        public function get expression():String {
+        public function get expression():String
+        {
             return _expression;
         }
 
-        public function set expression(value:String):void {
+        public function set expression(value:String):void
+        {
             _expression = value;
             changed('expression');
         }
@@ -47,11 +52,13 @@ package org.hamcrest.mxml.text {
          * RegExp flags
          */
         [Bindable('flagsChanged')]
-        public function get flags():String {
+        public function get flags():String
+        {
             return _flags;
         }
 
-        public function set flags(value:String):void {
+        public function set flags(value:String):void
+        {
             _flags = value;
             changed('flags');
         }
@@ -59,7 +66,8 @@ package org.hamcrest.mxml.text {
         /**
          * @inheritDoc
          */
-        override protected function createMatcher():Matcher {
+        override protected function createMatcher():Matcher
+        {
             throw new IllegalOperationError('MatchesPattern MXML facade doesnt yet have a Matcher implementation');
             return null;
         }

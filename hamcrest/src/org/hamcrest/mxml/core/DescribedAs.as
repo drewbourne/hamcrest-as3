@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.core {
-
+package org.hamcrest.mxml.core
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -18,45 +18,64 @@ package org.hamcrest.mxml.core {
      *      <hc:EqualTo value="{ 4 }" />
      *  </hc:DescribedAs>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class DescribedAs extends BaseMXMLMatcherComposite {
-
+    public class DescribedAs extends BaseMXMLMatcherComposite
+    {
         private var _message:String;
         private var _values:Array;
 
         /**
          * Constructor.
          */
-        public function DescribedAs() {
+        public function DescribedAs()
+        {
             super();
         }
 
+        /**
+         * Messages to use to describe the composited Matcher.
+         */
         [Bindable('messageChanged')]
-        public function get message():String {
+        public function get message():String
+        {
             return _message;
         }
 
-        public function set message(value:String):void {
-            if (_message != value) {
+        public function set message(value:String):void
+        {
+            if (_message != value)
+            {
                 _message = value;
                 changed('message');
             }
         }
 
+        /**
+         * Values to interpolate into the <code>message</code>
+         */
         [Bindable('valuesChanged')]
-        public function get values():Array {
+        public function get values():Array
+        {
             return _values;
         }
 
-        public function set values(value:Array):void {
-            if (_values != value) {
+        public function set values(value:Array):void
+        {
+            if (_values != value)
+            {
                 _values = value;
                 changed('values');
             }
         }
 
-        override protected function createMatcher():Matcher {
-            return describedAs.apply(null, [message, matcher].concat(values || []));
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
+            return describedAs.apply(null, [ message, matcher ].concat(values || []));
         }
     }
 }

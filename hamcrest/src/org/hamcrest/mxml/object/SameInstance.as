@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.object.sameInstance;
@@ -19,15 +19,18 @@ package org.hamcrest.mxml.object {
      * <listing version="3.0">
      *  <hc:SameInstance value="{ anInstanceOfSomething }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class SameInstance extends BaseMXMLMatcher {
-
+    public class SameInstance extends BaseMXMLMatcher
+    {
         private var _value:*;
 
         /**
          * Constructor.
          */
-        public function SameInstance() {
+        public function SameInstance()
+        {
             super();
         }
 
@@ -35,18 +38,25 @@ package org.hamcrest.mxml.object {
          * Instnace the target value must be exactly equal to.
          */
         [Bindable('valueChanged')]
-        public function get value():* {
+        public function get value():*
+        {
             return _value;
         }
 
-        public function set value(value:*):void {
-            if (_value != value) {
+        public function set value(value:*):void
+        {
+            if (_value != value)
+            {
                 _value = value;
                 changed('value');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return sameInstance(value);
         }
     }

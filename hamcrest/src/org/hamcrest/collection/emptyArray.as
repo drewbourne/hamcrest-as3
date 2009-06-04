@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.describedAs;
 
@@ -10,8 +10,11 @@ package org.hamcrest.collection {
      * <listing version="3.0">
      *  assertThat([], emptyArray());
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function emptyArray():Matcher {
+    public function emptyArray():Matcher
+    {
         return describedAs("an empty Array", arrayWithSize(0));
     }
 }

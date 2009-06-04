@@ -1,5 +1,5 @@
-package org.hamcrest.object {
-
+package org.hamcrest.object
+{
     import flash.utils.getQualifiedClassName;
 
     import org.hamcrest.BaseMatcher;
@@ -14,9 +14,11 @@ package org.hamcrest.object {
      * <listing version="3.0">
      *  assertThat("waffles", instanceOf(String));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsInstanceOfMatcher extends BaseMatcher {
-
+    public class IsInstanceOfMatcher extends BaseMatcher
+    {
         private var _type:Class;
         private var _typeName:String;
 
@@ -25,7 +27,8 @@ package org.hamcrest.object {
          *
          * @param type Class the item must be an instance of.
          */
-        public function IsInstanceOfMatcher(type:Class) {
+        public function IsInstanceOfMatcher(type:Class)
+        {
             _type = type;
             _typeName = getQualifiedClassName(type);
         }
@@ -33,14 +36,16 @@ package org.hamcrest.object {
         /**
          * @inheritDoc
          */
-        override public function matches(item:Object):Boolean {
+        override public function matches(item:Object):Boolean
+        {
             return item is _type;
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("an instance of ").appendText(_typeName);
         }
     }

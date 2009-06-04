@@ -1,5 +1,5 @@
-package org.hamcrest.number {
-
+package org.hamcrest.number
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.allOf;
     import org.hamcrest.core.describedAs;
@@ -22,14 +22,18 @@ package org.hamcrest.number {
      * assertThat(2, between(2, 4, true));
      * // fails
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function between(min:Number, max:Number, exclusive:Boolean=false):Matcher {
-
-        if (min > max) {
+    public function between(min:Number, max:Number, exclusive:Boolean = false):Matcher
+    {
+        if (min > max)
+        {
             throw new ArgumentError("min value cannot be greater than the max value");
         }
 
-        if (max < min) {
+        if (max < min)
+        {
             throw new ArgumentError("max value cannot be less than the min value");
         }
 
@@ -38,7 +42,8 @@ package org.hamcrest.number {
             : allOf(lessThan(max), greaterThan(min));
 
         var description:String = "a Number between %0 and %1";
-        if (exclusive) {
+        if (exclusive)
+        {
             description += " exclusive";
         }
 

@@ -1,17 +1,20 @@
-package org.hamcrest {
-
+package org.hamcrest
+{
     import org.hamcrest.Description;
     import org.hamcrest.SelfDescribing;
 
     /**
      * No-Op implementation of Description.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class NullDescription implements Description {
-
+    public class NullDescription implements Description
+    {
         /**
          * Returns an empty String
          */
-        public function toString():String {
+        public function toString():String
+        {
             return "";
         }
 
@@ -19,7 +22,8 @@ package org.hamcrest {
          * No-op.
          * @return this
          */
-        public function appendText(text:String):Description {
+        public function appendText(text:String):Description
+        {
             return this;
         }
 
@@ -27,7 +31,8 @@ package org.hamcrest {
          * No-op.
          * @return this
          */
-        public function appendDescriptionOf(value:SelfDescribing):Description {
+        public function appendDescriptionOf(value:SelfDescribing):Description
+        {
             return this;
         }
 
@@ -35,7 +40,8 @@ package org.hamcrest {
          * No-op.
          * @return this
          */
-        public function appendValue(value:Object):Description {
+        public function appendValue(value:Object):Description
+        {
             return this;
         }
 
@@ -43,7 +49,8 @@ package org.hamcrest {
          * No-op.
          * @return this
          */
-        public function appendList(start:String, separator:String, end:String, list:Array):Description {
+        public function appendList(start:String, separator:String, end:String, list:Array):Description
+        {
             return this;
         }
     }

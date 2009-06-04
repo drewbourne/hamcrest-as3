@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.object.hasProperties;
@@ -18,15 +18,18 @@ package org.hamcrest.mxml.object {
      * <listing version="3.0">
      *  <hc:HasProperties properties="{{ prop: value, other: otherValue }}" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class HasProperties extends BaseMXMLMatcher {
-
+    public class HasProperties extends BaseMXMLMatcher
+    {
         private var _properties:Object;
 
         /**
          * Constructor.
          */
-        public function HasProperties() {
+        public function HasProperties()
+        {
             super();
         }
 
@@ -34,18 +37,25 @@ package org.hamcrest.mxml.object {
          * Property name target object must have.
          */
         [Bindable('propertiesChanged')]
-        public function get properties():* {
+        public function get properties():*
+        {
             return _properties;
         }
 
-        public function set properties(value:*):void {
-            if (_properties != value) {
+        public function set properties(value:*):void
+        {
+            if (_properties != value)
+            {
                 _properties = value;
                 changed('properties');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return hasProperties(properties);
         }
     }

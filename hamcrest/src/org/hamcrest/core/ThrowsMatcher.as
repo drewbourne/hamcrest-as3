@@ -1,51 +1,87 @@
-package org.hamcrest.core {
-   
-  import org.hamcrest.Description;
-  import org.hamcrest.Matcher;
-  import org.hamcrest.TypeSafeDiagnosingMatcher;
-  
-  public class ThrowsMatcher extends TypeSafeDiagnosingMatcher {
+package org.hamcrest.core
+{
+    import org.hamcrest.Description;
+    import org.hamcrest.Matcher;
+    import org.hamcrest.TypeSafeDiagnosingMatcher;
 
-    private var _matcher:Matcher;
+    /**
+     * Matches if the item under test is a Function, and throws an Error matching the given Matcher.
+     *
+     * @see org.hamcrest.core.throws
+     *
+     * @example
+     * <listing version="3.0">
+     *  assertThat(function():void {
+     *      systemUnderTest.methodCall(given, bad, args);
+     *  }, throws(allOf(
+     *      instanceOf(OhNoItsAnError),
+     *      hasPropertyValue("message", "oh no"))));
+     * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
+     */
+    public class ThrowsMatcher extends TypeSafeDiagnosingMatcher
+    {
+        private var _matcher:Matcher;
 
-    public function ThrowsMatcher(matcher:Matcher) {
-      
-      super(Function);
-      _matcher = matcher;
-    }
-    
-    override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean {
-      
-      var fn:Function = item as Function;
-      var thrown:Boolean = false;
-      var error:Error = null;
-      
-      try {
-        fn();
-      } 
-      catch (e:Error) {
-        error = e;
-        if (_matcher.matches(e)) {
-          thrown = true;
-        } else {
-          throw e;
+        /**
+         * Constructor.
+         *
+         * @param matcher Matcher to match the thrown error with.
+         */
+        public function ThrowsMatcher(matcher:Matcher)
+        {
+
+            super(Function);
+            _matcher = matcher;
         }
-      } 
-      finally {  
-        
-        if (error) {
-          _matcher.describeMismatch(error, mismatchDescription);
-        } else {
-          mismatchDescription.appendText("was not thrown");
+
+        /**
+         * @inheritDoc
+         */
+        override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
+        {
+            var fn:Function = item as Function;
+            var thrown:Boolean = false;
+            var error:Error = null;
+
+            try
+            {
+                fn();
+            }
+            catch (e:Error)
+            {
+                error = e;
+                if (_matcher.matches(e))
+                {
+                    thrown = true;
+                }
+                else
+                {
+                    throw e;
+                }
+            }
+            finally
+            {
+                if (error)
+                {
+                    _matcher.describeMismatch(error, mismatchDescription);
+                }
+                else
+                {
+                    mismatchDescription.appendText("was not thrown");
+                }
+
+                return thrown;
+            }
         }
-        
-        return thrown;
-      }
+
+        /**
+         * @inheritDoc
+         */
+        override public function describeTo(description:Description):void
+        {
+            description.appendDescriptionOf(_matcher).appendText(" to be thrown");
+        }
     }
-    
-    override public function describeTo(description:Description):void {
-      
-      description.appendDescriptionOf(_matcher).appendText(" to be thrown");
-    }
-  }
 }

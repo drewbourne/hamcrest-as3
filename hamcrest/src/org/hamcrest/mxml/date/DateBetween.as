@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.date {
-
+package org.hamcrest.mxml.date
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -16,9 +16,11 @@ package org.hamcrest.mxml.date {
      * <listing version="3.0">
      *  <hc:DateBetween min="{ today() }" max="{ advanceDate(today(), { month: 1 }) }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class DateBetween extends BaseMXMLMatcher {
-
+    public class DateBetween extends BaseMXMLMatcher
+    {
         private var _min:Date;
         private var _max:Date;
         private var _exclusive:Boolean;
@@ -26,7 +28,8 @@ package org.hamcrest.mxml.date {
         /**
          * Constructor.
          */
-        public function DateBetween() {
+        public function DateBetween()
+        {
             super();
         }
 
@@ -34,12 +37,15 @@ package org.hamcrest.mxml.date {
          * Date the target value must be after.
          */
         [Bindable('minChanged')]
-        public function get min():Date {
+        public function get min():Date
+        {
             return _min;
         }
 
-        public function set min(value:Date):void {
-            if (_min != value) {
+        public function set min(value:Date):void
+        {
+            if (_min != value)
+            {
                 _min = value;
                 changed('min');
             }
@@ -49,12 +55,15 @@ package org.hamcrest.mxml.date {
          * Date the target value must be before.
          */
         [Bindable('maxChanged')]
-        public function get max():Date {
+        public function get max():Date
+        {
             return _max;
         }
 
-        public function set max(value:Date):void {
-            if (_max != value) {
+        public function set max(value:Date):void
+        {
+            if (_max != value)
+            {
                 _max = value;
                 changed('max');
             }
@@ -64,16 +73,22 @@ package org.hamcrest.mxml.date {
          * Indicates whether to exclude the exact min and max values.
          */
         [Bindable('exclusiveChanged')]
-        public function get exclusive():Boolean {
+        public function get exclusive():Boolean
+        {
             return _exclusive;
         }
 
-        public function set exclusive(value:Boolean):void {
+        public function set exclusive(value:Boolean):void
+        {
             _exclusive = value;
             changed('exclusive');
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return dateBetween(min, max, exclusive);
         }
     }

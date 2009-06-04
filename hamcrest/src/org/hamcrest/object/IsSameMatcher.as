@@ -1,5 +1,5 @@
-package org.hamcrest.object {
-
+package org.hamcrest.object
+{
     import org.hamcrest.BaseMatcher;
     import org.hamcrest.Description;
 
@@ -7,9 +7,11 @@ package org.hamcrest.object {
      * Matches an item if it is === to the given value.
      *
      * @see org.hamcrest.sameInstance
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsSameMatcher extends BaseMatcher {
-
+    public class IsSameMatcher extends BaseMatcher
+    {
         private var _value:Object;
 
         /**
@@ -17,21 +19,24 @@ package org.hamcrest.object {
          *
          * @param value Object the item must be === to
          */
-        public function IsSameMatcher(value:Object) {
+        public function IsSameMatcher(value:Object)
+        {
             _value = value;
         }
 
         /**
          * @inheritDoc
          */
-        override public function matches(item:Object):Boolean {
+        override public function matches(item:Object):Boolean
+        {
             return item === _value;
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("sameInstance(").appendValue(_value).appendText(")");
         }
     }

@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.core {
-
+package org.hamcrest.mxml.core
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.anyOf;
     import org.hamcrest.mxml.BaseMXMLMatcherContainer;
@@ -18,17 +18,24 @@ package org.hamcrest.mxml.core {
      *      <hc:EqualTo value="{ 5 }" />
      *  </hc:AnyOf>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class AnyOf extends BaseMXMLMatcherContainer {
-
+    public class AnyOf extends BaseMXMLMatcherContainer
+    {
         /**
          * Constructor.
          */
-        public function AnyOf() {
+        public function AnyOf()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return anyOf.apply(null, matchers);
         }
     }

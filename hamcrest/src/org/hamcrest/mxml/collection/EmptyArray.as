@@ -1,4 +1,5 @@
-package org.hamcrest.mxml.collection {
+package org.hamcrest.mxml.collection
+{
 
     import org.hamcrest.Matcher;
     import org.hamcrest.collection.emptyArray;
@@ -14,19 +15,27 @@ package org.hamcrest.mxml.collection {
      * <listing version="3.0">
      *  <hc:EmptyArray />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class EmptyArray extends BaseMXMLMatcher {
+    public class EmptyArray extends BaseMXMLMatcher
+    {
 
         private var _size:int;
 
         /**
          * Constructor.
          */
-        public function EmptyArray() {
+        public function EmptyArray()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return emptyArray();
         }
     }

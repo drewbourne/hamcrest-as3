@@ -1,5 +1,5 @@
-package org.hamcrest.number {
-
+package org.hamcrest.number
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.anyOf;
     import org.hamcrest.core.describedAs;
@@ -15,8 +15,11 @@ package org.hamcrest.number {
      * <listing version="3.0">
      * assertThat(4, greaterThanOrEqualTo(4));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function greaterThanOrEqualTo(value:Number):Matcher {
+    public function greaterThanOrEqualTo(value:Number):Matcher
+    {
         // composition is a winner
         return describedAs("a value greater than or equal to %0", anyOf(greaterThan(value), equalTo(value)), value);
     }

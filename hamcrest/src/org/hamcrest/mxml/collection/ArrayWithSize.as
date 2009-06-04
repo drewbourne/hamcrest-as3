@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.collection {
-
+package org.hamcrest.mxml.collection
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -21,15 +21,19 @@ package org.hamcrest.mxml.collection {
      * <listing version="3.0">
      *  <hc:ArrayWithSize size="3" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class ArrayWithSize extends BaseMXMLMatcher {
+    public class ArrayWithSize extends BaseMXMLMatcher
+    {
 
         private var _size:int;
 
         /**
          * Constructor.
          */
-        public function ArrayWithSize() {
+        public function ArrayWithSize()
+        {
             super();
         }
 
@@ -37,18 +41,25 @@ package org.hamcrest.mxml.collection {
          * Expected size of the target Array.
          */
         [Bindable('sizeChanged')]
-        public function get size():int {
+        public function get size():int
+        {
             return _size;
         }
 
-        public function set size(value:int):void {
-            if (_size != value) {
+        public function set size(value:int):void
+        {
+            if (_size != value)
+            {
                 _size = value;
                 changed('size');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return arrayWithSize(size);
         }
     }

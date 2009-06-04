@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -12,8 +12,11 @@ package org.hamcrest.collection {
      * <listing version="3.0">
      *  assertThat([1, 2, 3], everyItem(isA(Number)));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function everyItem(itemMatcher:Matcher):Matcher {
+    public function everyItem(itemMatcher:Matcher):Matcher
+    {
         return new EveryMatcher(itemMatcher);
     }
 }

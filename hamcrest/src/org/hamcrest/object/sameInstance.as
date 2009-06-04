@@ -1,5 +1,5 @@
-package org.hamcrest.object {
-
+package org.hamcrest.object
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -17,8 +17,11 @@ package org.hamcrest.object {
      *  assertThat(event, sameInstance(event));
      *  assertThat(event, not(sameInstance(new Event("example"))));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function sameInstance(value:Object):Matcher {
+    public function sameInstance(value:Object):Matcher
+    {
         return new IsSameMatcher(value);
     }
 }

@@ -1,5 +1,5 @@
-package org.hamcrest.text {
-
+package org.hamcrest.text
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -13,8 +13,11 @@ package org.hamcrest.text {
      * <listing version="3.0">
      *  assertThat("The quick brown fox", endsWith("fox"));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function endsWith(substring:String):Matcher {
+    public function endsWith(substring:String):Matcher
+    {
         return new StringEndsWithMatcher(substring);
     }
 }

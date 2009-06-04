@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.core {
-
+package org.hamcrest.mxml.core
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.allOf;
     import org.hamcrest.mxml.BaseMXMLMatcherContainer;
@@ -18,17 +18,24 @@ package org.hamcrest.mxml.core {
      *      <hc:CloseTo value="{ 4 }" delta="{ 0.3 }" />
      *  </hc:AllOf>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class AllOf extends BaseMXMLMatcherContainer {
-
+    public class AllOf extends BaseMXMLMatcherContainer
+    {
         /**
          * Constructor.
          */
-        public function AllOf() {
+        public function AllOf()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return allOf.apply(null, matchers);
         }
     }

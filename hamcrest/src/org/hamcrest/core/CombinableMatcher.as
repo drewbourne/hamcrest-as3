@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.BaseMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
@@ -9,13 +9,16 @@ package org.hamcrest.core {
      *
      * @see org.hamcrest.core.both
      * @see org.hamcrest.core.either
+     *
      * @example
      * <listing version="3.0">
-     *
+     *  assertThat(5.5, both(between(3, 7)).and(closeTo(4, 2)));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class CombinableMatcher extends BaseMatcher {
-
+    public class CombinableMatcher extends BaseMatcher
+    {
         private var _matcher:Matcher;
 
         /**
@@ -23,7 +26,8 @@ package org.hamcrest.core {
          *
          * @param matcher to match with
          */
-        public function CombinableMatcher(matcher:Matcher) {
+        public function CombinableMatcher(matcher:Matcher)
+        {
             super();
             _matcher = matcher;
         }
@@ -31,14 +35,16 @@ package org.hamcrest.core {
         /**
          * @inheritDoc
          */
-        override public function matches(item:Object):Boolean {
+        override public function matches(item:Object):Boolean
+        {
             return _matcher.matches(item);
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendDescriptionOf(_matcher);
         }
 
@@ -50,7 +56,8 @@ package org.hamcrest.core {
          *  assertThat(string, both(containsString("a")).and(containsString("b"));
          * </listing>
          */
-        public function and(matcher:Matcher):CombinableMatcher {
+        public function and(matcher:Matcher):CombinableMatcher
+        {
             return new CombinableMatcher(allOf(_matcher, matcher));
         }
 
@@ -62,7 +69,8 @@ package org.hamcrest.core {
          *  assertThat(string, either(containsString("a")).or(containsString("b"));
          * </listing>
          */
-        public function or(matcher:Matcher):CombinableMatcher {
+        public function or(matcher:Matcher):CombinableMatcher
+        {
             return new CombinableMatcher(anyOf(_matcher, matcher));
         }
     }

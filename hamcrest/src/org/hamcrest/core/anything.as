@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -8,12 +8,16 @@ package org.hamcrest.core {
      * @param message Custom message to use in <code>describeTo</code>
      *
      * @see org.hamcrest.core.IsAnythingMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat("the great void", anything());
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function anything(message:String=null):Matcher {
+    public function anything(message:String = null):Matcher
+    {
         return new IsAnythingMatcher(message);
     }
 }

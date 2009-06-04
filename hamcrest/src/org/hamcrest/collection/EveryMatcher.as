@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -14,9 +14,11 @@ package org.hamcrest.collection {
      * <listing version="3.0">
      *  assertThat([1, 2, 3], everyItem(instanceOf(Number)));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class EveryMatcher extends TypeSafeDiagnosingMatcher {
-
+    public class EveryMatcher extends TypeSafeDiagnosingMatcher
+    {
         private var _matcher:Matcher;
 
         /**
@@ -24,8 +26,8 @@ package org.hamcrest.collection {
          *
          * @param matcher Matcher to apply to each item
          */
-        public function EveryMatcher(matcher:Matcher) {
-
+        public function EveryMatcher(matcher:Matcher)
+        {
             super(Array);
             _matcher = matcher;
         }
@@ -36,10 +38,12 @@ package org.hamcrest.collection {
          * @param collection Array / Array-like Object
          * @param mismatchDescription Description object to report mismatch to.
          */
-        override public function matchesSafely(collection:Object, description:Description):Boolean {
-
-            for each (var item:Object in collection) {
-                if (!_matcher.matches(item)) {
+        override public function matchesSafely(collection:Object, description:Description):Boolean
+        {
+            for each (var item:Object in collection)
+            {
+                if (!_matcher.matches(item))
+                {
                     description.appendText("an item ");
                     _matcher.describeMismatch(item, description);
                     return false;
@@ -51,7 +55,8 @@ package org.hamcrest.collection {
         /**
          * @param description Description to describe this matcher to.
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("every item is ").appendDescriptionOf(_matcher);
         }
     }

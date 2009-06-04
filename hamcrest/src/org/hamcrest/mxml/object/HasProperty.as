@@ -1,7 +1,8 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import org.hamcrest.Matcher;
-    import org.hamcrest.mxml.BaseMXMLMatcher;
+    import org.hamcrest.mxml.BaseMXMLMatcherComposite;
+    import org.hamcrest.mxml.MXMLMatcher;
     import org.hamcrest.object.hasProperty;
     import org.hamcrest.object.hasPropertyWithValue;
 
@@ -28,17 +29,20 @@ package org.hamcrest.mxml.object {
      *  <hc:hasProperty property="prop" />
      *  <hc:hasProperty property="otherProp" value="{ 123 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
     [DefaultProperty('value')]
-    public class HasProperty extends BaseMXMLMatcher {
-
+    public class HasProperty extends BaseMXMLMatcherComposite
+    {
         private var _property:String;
         private var _value:Matcher;
 
         /**
          * Constructor.
          */
-        public function HasProperty() {
+        public function HasProperty()
+        {
             super();
         }
 
@@ -46,36 +50,50 @@ package org.hamcrest.mxml.object {
          * Property name target object must have.
          */
         [Bindable('propertyChanged')]
-        public function get property():* {
+        public function get property():*
+        {
             return _property;
         }
 
-        public function set property(val:*):void {
-            if (_property != val) {
+        public function set property(val:*):void
+        {
+            if (_property != val)
+            {
                 _property = val;
                 changed('property');
             }
         }
 
         /**
-         * Matcher for the expected value of the property
+         * Value or Matcher for the expected value of the property
          */
         [Bindable('valueChanged')]
-        public function get value():Matcher {
+        public function get value():*
+        {
             return _value;
         }
 
-        public function set value(value:Matcher):void {
-            if (value != _value) {
-                _value = value;
+        public function set value(val:*):void
+        {
+            if (_value != val)
+            {
+                _value = val;
+                if (val is MXMLMatcher)
+                {
+                    matcher = (val as MXMLMatcher);
+                }
                 changed('value');
             }
         }
 
-        override protected function createMatcher():Matcher {
-            return value == null
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
+            return matcher == null
                 ? hasProperty(property)
-                : hasPropertyWithValue(property, value);
+                : hasPropertyWithValue(property, matcher);
         }
     }
 }

@@ -1,4 +1,5 @@
-package org.hamcrest.mxml.core {
+package org.hamcrest.mxml.core
+{
 
     import org.hamcrest.Matcher;
     import org.hamcrest.core.anything;
@@ -14,17 +15,24 @@ package org.hamcrest.mxml.core {
      * <listing version="3.0">
      *  <hc:Anything />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class Anything extends BaseMXMLMatcher {
-
+    public class Anything extends BaseMXMLMatcher
+    {
         /**
          * Constructor.
          */
-        public function Anything() {
+        public function Anything()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return anything();
         }
     }

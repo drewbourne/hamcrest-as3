@@ -1,7 +1,7 @@
-package org.hamcrest.collection {
+package org.hamcrest.collection
+{
 
     import org.hamcrest.Matcher;
-    import org.hamcrest.object.equalTo;
 
     /**
      * Creates a Matcher that only matches if each of the matchers given are satisfied by the
@@ -26,13 +26,20 @@ package org.hamcrest.collection {
      *  assertThat([1, 2], array(1, 2, 3));
      *  // fails as different lengths
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function array(... rest):Matcher {
-
-        var elementMatchers:Array = rest.map(function(item:Object, i:int, a:Array):Matcher {
-                return item is Matcher ? item as Matcher : equalTo(item);
-            });
-
+    public function array(... rest):Matcher
+    {
+        var elementMatchers:Array = rest.map(wrapInEqualToIfNotMatcher);
         return new IsArrayMatcher(elementMatchers);
     }
+}
+
+import org.hamcrest.mxml.object.EqualTo;
+import org.hamcrest.Matcher;
+
+internal function wrapInEqualToIfNotMatcher(item:Object, i:int, a:Array):Matcher
+{
+    return item is Matcher ? item as Matcher : EqualTo(item);
 }

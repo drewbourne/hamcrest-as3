@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.AllOfMatcher;
 
@@ -9,12 +9,16 @@ package org.hamcrest.core {
      * @param ...rest Matcher instances
      *
      * @see org.hamcrest.core.AllOfMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat("good", allOf(equalTo("good"), not(equalTo("bad"))));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function allOf(... rest):Matcher {
+    public function allOf(... rest):Matcher
+    {
         return new AllOfMatcher(rest);
     }
 }

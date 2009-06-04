@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.object.notNullValue;
@@ -15,17 +15,24 @@ package org.hamcrest.mxml.object {
      * <listing version="3.0">
      *  <hc:NotNull />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class NotNull extends BaseMXMLMatcher {
-
+    public class NotNull extends BaseMXMLMatcher
+    {
         /**
          * Constructor.
          */
-        public function NotNull() {
+        public function NotNull()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return notNullValue();
         }
     }

@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.text {
-
+package org.hamcrest.mxml.text
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.text.startsWith;
@@ -14,17 +14,24 @@ package org.hamcrest.mxml.text {
      * <listing version="3.0">
      *  <hc:StringWith string="the quick brown fox" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class StartsWith extends StringMXMLMatcher {
-
+    public class StartsWith extends StringMXMLMatcher
+    {
         /**
          * Constructor.
          */
-        public function StartsWith() {
+        public function StartsWith()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return startsWith(string);
         }
     }

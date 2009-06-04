@@ -1,10 +1,12 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.object.equalTo;
+
+    [DefaultProperty('value')]
 
     /**
      * Dispatched when the <code>value</code> property is changed.
@@ -21,15 +23,18 @@ package org.hamcrest.mxml.object {
      * <listing version="3.0">
      *  <hc:EqualTo value="{ 123 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class EqualTo extends BaseMXMLMatcher {
-
+    public class EqualTo extends BaseMXMLMatcher
+    {
         private var _value:*;
 
         /**
          * Constructor.
          */
-        public function EqualTo() {
+        public function EqualTo()
+        {
             super();
         }
 
@@ -37,18 +42,25 @@ package org.hamcrest.mxml.object {
          * Value the target value must match.
          */
         [Bindable('valueChanged')]
-        public function get value():Number {
+        public function get value():*
+        {
             return _value;
         }
 
-        public function set value(value:Number):void {
-            if (_value != value) {
+        public function set value(value:*):void
+        {
+            if (_value != value)
+            {
                 _value = value;
                 changed('value');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return equalTo(value);
         }
     }

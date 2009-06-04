@@ -1,5 +1,5 @@
-package org.hamcrest.date {
-
+package org.hamcrest.date
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.describedAs;
 
@@ -14,9 +14,9 @@ package org.hamcrest.date {
      * assertThat( new Date(1920, 1, 1), dateBefore( new Date() ) );
      * </listing>
      */
-    public function dateBeforeOrEqual(value:Date):Matcher {
+    public function dateBeforeOrEqual(value:Date):Matcher
+    {
         var beforeMatcher:DateBeforeMatcher = new DateBeforeMatcher(value, true);
         return describedAs("a date before or equal to %0", beforeMatcher, value);
     }
-
 }

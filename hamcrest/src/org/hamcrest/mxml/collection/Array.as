@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.collection {
-
+package org.hamcrest.mxml.collection
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.collection.array;
     import org.hamcrest.mxml.BaseMXMLMatcherContainer;
@@ -18,17 +18,24 @@ package org.hamcrest.mxml.collection {
      *      <hc:EqualTo value="{ 3 }" />
      *  </hc:Array>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class Array extends BaseMXMLMatcherContainer {
-
+    public class Array extends BaseMXMLMatcherContainer
+    {
         /**
          * Constructor.
          */
-        public function Array() {
+        public function Array()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return array.apply(null, matchers || []);
         }
     }

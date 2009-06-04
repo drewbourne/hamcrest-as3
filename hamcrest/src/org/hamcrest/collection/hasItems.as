@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.core.allOf;
 
@@ -13,12 +13,16 @@ package org.hamcrest.collection {
      * @see org.hamcrest.collection.hasItem
      * @see org.hamcrest.core.allOf
      * @see org.hamcrest.object.equalTo
+     *
      * @example
      * <listing version="3.0">
      *  assertThat([1, 2, 3, 4], hasItems(equalTo(2), equalTo(4)));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function hasItems(... rest):Matcher {
+    public function hasItems(... rest):Matcher
+    {
         return allOf.apply(null, rest.map(hasItemsIterator));
     }
 }
@@ -26,6 +30,7 @@ package org.hamcrest.collection {
 import org.hamcrest.Matcher;
 import org.hamcrest.collection.hasItem;
 
-internal function hasItemsIterator(value:Object, i:int, a:Array):Matcher {
+internal function hasItemsIterator(value:Object, i:int, a:Array):Matcher
+{
     return hasItem(value);
 }

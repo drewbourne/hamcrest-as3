@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.object.equalTo;
 
@@ -13,13 +13,17 @@ package org.hamcrest.collection {
      * <listing version="3.0">
      *  assertThat([], arrayWithSize(0));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function arrayWithSize(size:Number):Matcher {
-
-        if (size is Number || size is int || size is uint) {
+    public function arrayWithSize(size:Number):Matcher
+    {
+        if (size is Number || size is int || size is uint)
+        {
             return new IsArrayWithSizeMatcher(equalTo(size));
         }
-        else {
+        else
+        {
             throw new ArgumentError("Expecting Number, int, or uint for size, received:" + size);
         }
     }

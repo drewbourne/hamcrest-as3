@@ -1,4 +1,5 @@
-package org.hamcrest.mxml.number {
+package org.hamcrest.mxml.number
+{
 
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
@@ -14,12 +15,18 @@ package org.hamcrest.mxml.number {
      * <listing version="3.0">
      *  <hc:LessThan value="{ 4 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class LessThan extends BaseMXMLMatcher {
-
+    public class LessThan extends BaseMXMLMatcher
+    {
         private var _value:Number;
 
-        public function LessThan() {
+        /**
+         * Constructor.
+         */
+        public function LessThan()
+        {
             super();
         }
 
@@ -27,18 +34,25 @@ package org.hamcrest.mxml.number {
          * Number the target value must be less than.
          */
         [Bindable('valueChanged')]
-        public function get value():Number {
+        public function get value():Number
+        {
             return _value;
         }
 
-        public function set value(value:Number):void {
-            if (_value != value) {
+        public function set value(value:Number):void
+        {
+            if (_value != value)
+            {
                 _value = value;
                 changed('value');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return lessThan(value);
         }
     }

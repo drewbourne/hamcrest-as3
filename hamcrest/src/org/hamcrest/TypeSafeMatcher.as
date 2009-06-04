@@ -1,5 +1,5 @@
-package org.hamcrest {
-
+package org.hamcrest
+{
     import flash.errors.IllegalOperationError;
 
     // TODO @example TypeSafeMatcher
@@ -7,9 +7,11 @@ package org.hamcrest {
      * Matcher that checks the value to be matched is of an expected type before passing it to <code>matchesSafely</code>.
      *
      * Subclasses should override <code>matchesSafely</code>.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class TypeSafeMatcher extends BaseMatcher {
-
+    public class TypeSafeMatcher extends BaseMatcher
+    {
         private var _expectedType:Class;
 
         /**
@@ -17,9 +19,10 @@ package org.hamcrest {
          *
          * @param expectedType Class the value to match must be or extend.
          */
-        public function TypeSafeMatcher(expectedType:Class) {
-
-            if (expectedType == null) {
+        public function TypeSafeMatcher(expectedType:Class)
+        {
+            if (expectedType == null)
+            {
                 throw new ArgumentError('expectedType must be non null');
             }
 
@@ -29,16 +32,16 @@ package org.hamcrest {
         /**
          * Abstract. Subclasses should override <code>matchesSafely</code> to implement their matching logic on a real value of the expected Class.
          */
-        public function matchesSafely(item:Object):Boolean {
-
+        public function matchesSafely(item:Object):Boolean
+        {
             throw new IllegalOperationError('TypeSafeMatcher#matchesSafely is abstract and must be override in subclass');
         }
 
         /**
          * Matches an item against the expected type given in the constructor before calling <code>matchSafely</code>
          */
-        override public final function matches(item:Object):Boolean {
-
+        override public final function matches(item:Object):Boolean
+        {
             return item is _expectedType
                 && matchesSafely(item);
         }

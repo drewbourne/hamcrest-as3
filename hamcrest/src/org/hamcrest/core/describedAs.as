@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -13,12 +13,16 @@ package org.hamcrest.core {
      * @param ...values replacement values for the message
      *
      * @see org.hamcrest.core.DescribedAsMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(3, describedAs("%0 is a magic number", equalTo(4), 3);
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function describedAs(description:String, matcher:Matcher, ... values):Matcher {
+    public function describedAs(description:String, matcher:Matcher, ... values):Matcher
+    {
         return new DescribedAsMatcher(description, matcher, values);
     }
 }

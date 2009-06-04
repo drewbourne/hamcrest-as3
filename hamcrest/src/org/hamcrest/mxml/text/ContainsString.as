@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.text {
-
+package org.hamcrest.mxml.text
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.text.containsString;
@@ -21,17 +21,24 @@ package org.hamcrest.mxml.text {
      *      ]]>
      *  </hc:ContainsString>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class ContainsString extends StringMXMLMatcher {
-
+    public class ContainsString extends StringMXMLMatcher
+    {
         /**
          * Constructor.
          */
-        public function ContainsString() {
+        public function ContainsString()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return containsString(string);
         }
     }

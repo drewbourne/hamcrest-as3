@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.core {
-
+package org.hamcrest.mxml.core
+{
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.core.not;
@@ -17,17 +17,24 @@ package org.hamcrest.mxml.core {
      *      <hc:EqualTo value="{ 4 }" />
      *  </hc:Not>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class Not extends BaseMXMLMatcherComposite {
-
+    public class Not extends BaseMXMLMatcherComposite
+    {
         /**
          * Constructor.
          */
-        public function Not() {
+        public function Not()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return not(matcher);
         }
     }

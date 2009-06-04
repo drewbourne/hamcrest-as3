@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.number {
-
+package org.hamcrest.mxml.number
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.number.greaterThanOrEqualTo;
@@ -14,15 +14,18 @@ package org.hamcrest.mxml.number {
      * <listing version="3.0">
      *  <hc:GreaterThanOrEqualTo value="{ 4 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class GreaterThanOrEqualTo extends BaseMXMLMatcher {
-
+    public class GreaterThanOrEqualTo extends BaseMXMLMatcher
+    {
         private var _value:Number;
 
         /**
          * Constructor.
          */
-        public function GreaterThanOrEqualTo() {
+        public function GreaterThanOrEqualTo()
+        {
             super();
         }
 
@@ -30,18 +33,25 @@ package org.hamcrest.mxml.number {
          * Number the target value must be greater than or equal to.
          */
         [Bindable('valueChanged')]
-        public function get value():Number {
+        public function get value():Number
+        {
             return _value;
         }
 
-        public function set value(value:Number):void {
-            if (_value != value) {
+        public function set value(value:Number):void
+        {
+            if (_value != value)
+            {
                 _value = value;
                 changed('value');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return greaterThanOrEqualTo(value);
         }
     }

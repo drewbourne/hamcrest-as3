@@ -1,4 +1,5 @@
-package org.hamcrest.mxml.collection {
+package org.hamcrest.mxml.collection
+{
 
     import org.hamcrest.Matcher;
     import org.hamcrest.collection.hasItem;
@@ -16,17 +17,24 @@ package org.hamcrest.mxml.collection {
      *      <hc:EqualTo value="{ 3 }" />
      *  </hc:EveryItem>
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class HasItem extends BaseMXMLMatcherComposite {
-
+    public class HasItem extends BaseMXMLMatcherComposite
+    {
         /**
          * Constructor.
          */
-        public function HasItem() {
+        public function HasItem()
+        {
             super();
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return hasItem(matcher);
         }
     }

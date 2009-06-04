@@ -1,5 +1,5 @@
-package org.hamcrest.object {
-
+package org.hamcrest.object
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -18,8 +18,11 @@ package org.hamcrest.object {
      *  assertThat("hi", equalTo("hi"));
      *  assertThat("bye", not(equalTo("hi")));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function equalTo(value:Object):Matcher {
+    public function equalTo(value:Object):Matcher
+    {
         return new IsEqualMatcher(value);
     }
 }

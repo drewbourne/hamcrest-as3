@@ -1,5 +1,5 @@
-package org.hamcrest.date {
-
+package org.hamcrest.date
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -13,7 +13,8 @@ package org.hamcrest.date {
      * assertThat(new Date(), dateEqual( new Date() ));
      * </listing>
      */
-    public function dateEqual(value:Date):Matcher {
+    public function dateEqual(value:Date):Matcher
+    {
         return new DateEqualMatcher(value);
     }
 }

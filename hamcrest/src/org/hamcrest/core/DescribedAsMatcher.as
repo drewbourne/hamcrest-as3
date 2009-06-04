@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.BaseMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
@@ -11,13 +11,16 @@ package org.hamcrest.core {
      * is a number into the extra values given.
      *
      * @see org.hamcrest.core.describedAs
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(3, describedAs("%0 is a magic number", equalTo(4), 3);
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class DescribedAsMatcher extends BaseMatcher {
-
+    public class DescribedAsMatcher extends BaseMatcher
+    {
         private static const ARG_PATTERN:RegExp = /%([\d+])/g;
 
         private var _descriptionTemplate:String;
@@ -31,8 +34,8 @@ package org.hamcrest.core {
          * @param matcher Matcher to wrap
          * @param values Array of replacement values for the description
          */
-        public function DescribedAsMatcher(descriptionTemplate:String, matcher:Matcher, values:Array) {
-
+        public function DescribedAsMatcher(descriptionTemplate:String, matcher:Matcher, values:Array)
+        {
             _descriptionTemplate = descriptionTemplate;
             _matcher = matcher;
             _values = values;
@@ -41,18 +44,19 @@ package org.hamcrest.core {
         /**
          * @inheritDoc
          */
-        override public function matches(item:Object):Boolean {
-
+        override public function matches(item:Object):Boolean
+        {
             return _matcher.matches(item);
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
-
+        override public function describeTo(description:Description):void
+        {
             var textStart:int = 0;
-            _descriptionTemplate.replace(ARG_PATTERN, function(... rest):String {
+            _descriptionTemplate.replace(ARG_PATTERN, function(... rest):String
+                {
                     var index:int = rest[1];
                     description.appendText(_descriptionTemplate.substring(textStart, rest[2]));
                     description.appendValue(_values[index]);
@@ -60,7 +64,8 @@ package org.hamcrest.core {
                     return "";
                 });
 
-            if (textStart < _descriptionTemplate.length) {
+            if (textStart < _descriptionTemplate.length)
+            {
                 description.appendText(_descriptionTemplate.substring(textStart));
             }
         }

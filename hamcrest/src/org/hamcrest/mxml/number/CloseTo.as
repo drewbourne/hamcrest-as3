@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.number {
-
+package org.hamcrest.mxml.number
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -16,8 +16,11 @@ package org.hamcrest.mxml.number {
      * <listing version="3.0">
      *  <hc:CloseTo value="{ 3 }" delta="{ 0.5 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class CloseTo extends BaseMXMLMatcher {
+    public class CloseTo extends BaseMXMLMatcher
+    {
 
         private var _value:Number;
         private var _delta:Number;
@@ -25,7 +28,8 @@ package org.hamcrest.mxml.number {
         /**
          * Constructor.
          */
-        public function CloseTo() {
+        public function CloseTo()
+        {
             super();
         }
 
@@ -33,12 +37,15 @@ package org.hamcrest.mxml.number {
          * Number the target value must be close to.
          */
         [Bindable('valueChanged')]
-        public function get value():Number {
+        public function get value():Number
+        {
             return _value;
         }
 
-        public function set value(value:Number):void {
-            if (_value != value) {
+        public function set value(value:Number):void
+        {
+            if (_value != value)
+            {
                 _value = value;
                 changed('value');
             }
@@ -48,18 +55,25 @@ package org.hamcrest.mxml.number {
          * Amount of error to include when checking the target value.
          */
         [Bindable('deltaChanged')]
-        public function get delta():Number {
+        public function get delta():Number
+        {
             return _delta;
         }
 
-        public function set delta(val:Number):void {
-            if (_delta != val) {
+        public function set delta(val:Number):void
+        {
+            if (_delta != val)
+            {
                 _delta = val;
                 changed('delta');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return closeTo(value, delta);
         }
     }

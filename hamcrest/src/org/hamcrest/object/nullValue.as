@@ -1,5 +1,5 @@
-package org.hamcrest.object {
-
+package org.hamcrest.object
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -11,8 +11,11 @@ package org.hamcrest.object {
      * <listing version="3.0">
      * assertThat(null, nullValue());
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function nullValue():Matcher {
+    public function nullValue():Matcher
+    {
         return new IsNullMatcher();
     }
 }

@@ -1,5 +1,5 @@
-package org.hamcrest.mxml {
-
+package org.hamcrest.mxml
+{
     import flash.events.Event;
 
     [DefaultProperty('matchers')]
@@ -11,16 +11,19 @@ package org.hamcrest.mxml {
 
     /**
      * MXMLMatcher that composes zero or more MXMLMatchers.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class BaseMXMLMatcherContainer extends BaseMXMLMatcher {
-
+    public class BaseMXMLMatcherContainer extends BaseMXMLMatcher
+    {
         private var _matchers:Array;
         private var _matchersChanged:Boolean;
 
         /**
          * Constructor.
          */
-        public function BaseMXMLMatcherContainer() {
+        public function BaseMXMLMatcherContainer()
+        {
             super();
         }
 
@@ -29,12 +32,15 @@ package org.hamcrest.mxml {
          */
         [ArrayElementType('org.hamcrest.mxml.MXMLMatcher')]
         [Bindable('matchersChanged')]
-        public function get matchers():Array {
+        public function get matchers():Array
+        {
             return _matchers;
         }
 
-        public function set matchers(value:Array):void {
-            if (_matchers != value) {
+        public function set matchers(value:Array):void
+        {
+            if (_matchers != value)
+            {
                 _matchers = value;
                 changed('matchers');
             }

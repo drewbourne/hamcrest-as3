@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.object {
-
+package org.hamcrest.mxml.object
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.object.instanceOf;
@@ -19,15 +19,18 @@ package org.hamcrest.mxml.object {
      * <listing version="3.0">
      *  <hc:InstanceOf type="{ CustomClass }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class InstanceOf extends BaseMXMLMatcher {
-
+    public class InstanceOf extends BaseMXMLMatcher
+    {
         private var _type:Class;
 
         /**
          * Constructor.
          */
-        public function InstanceOf() {
+        public function InstanceOf()
+        {
             super();
         }
 
@@ -35,18 +38,25 @@ package org.hamcrest.mxml.object {
          * Class the target value must be an instance of.
          */
         [Bindable('typeChanged')]
-        public function get type():Class {
+        public function get type():Class
+        {
             return _type;
         }
 
-        public function set type(value:Class):void {
-            if (_type != value) {
+        public function set type(value:Class):void
+        {
+            if (_type != value)
+            {
                 _type = value;
                 changed('type');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return instanceOf(type);
         }
     }

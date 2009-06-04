@@ -1,12 +1,14 @@
-package org.hamcrest.mxml {
-
+package org.hamcrest.mxml
+{
     import org.hamcrest.Matcher;
 
     /**
      * Interface for MXML façades to Hamcrest Matchers.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public interface MXMLMatcher extends Matcher {
-
+    public interface MXMLMatcher extends Matcher
+    {
         /**
          * Value to match against the Matcher.
          */

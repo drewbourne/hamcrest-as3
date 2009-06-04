@@ -1,5 +1,5 @@
-package org.hamcrest.date {
-
+package org.hamcrest.date
+{
     import org.hamcrest.Description;
     import org.hamcrest.TypeSafeMatcher;
 
@@ -8,8 +8,8 @@ package org.hamcrest.date {
      *
      * @see org.hamcrest.date.dateAfter
      */
-    public class DateAfterMatcher extends TypeSafeMatcher {
-
+    public class DateAfterMatcher extends TypeSafeMatcher
+    {
         private var _compareDate:Date;
         private var _inclusive:Boolean;
 
@@ -21,7 +21,8 @@ package org.hamcrest.date {
          *  <code>true</code> to match a Date exactly equal or after the expected Date,
          *  <code>false</code> to match a Date only if it is after the expected.
          */
-        public function DateAfterMatcher(value:Date, inclusive:Boolean=false) {
+        public function DateAfterMatcher(value:Date, inclusive:Boolean = false)
+        {
             super(Date);
             _compareDate = value;
             _inclusive = inclusive;
@@ -30,11 +31,14 @@ package org.hamcrest.date {
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(value:Object):Boolean {
-            if (_inclusive) {
+        override public function matchesSafely(value:Object):Boolean
+        {
+            if (_inclusive)
+            {
                 return (value >= _compareDate);
             }
-            else {
+            else
+            {
                 return (value > _compareDate);
             }
 
@@ -43,7 +47,8 @@ package org.hamcrest.date {
         /**
          * @inheritDoc
          */
-        override public function describeMismatch(item:Object, mismatchDescription:Description):void {
+        override public function describeMismatch(item:Object, mismatchDescription:Description):void
+        {
             mismatchDescription.appendValue(item)
                 .appendText(" is not after ");
 
@@ -53,9 +58,10 @@ package org.hamcrest.date {
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("a date after <" + _compareDate.toString() + ">");
         }
-
     }
 }
+

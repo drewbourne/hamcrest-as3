@@ -1,5 +1,5 @@
-package org.hamcrest.date {
-
+package org.hamcrest.date
+{
     import org.hamcrest.Description;
     import org.hamcrest.TypeSafeMatcher;
 
@@ -8,8 +8,8 @@ package org.hamcrest.date {
      *
      * @see org.hamcrest.date.dateBefore
      */
-    public class DateEqualMatcher extends TypeSafeMatcher {
-
+    public class DateEqualMatcher extends TypeSafeMatcher
+    {
         private var _compareDate:Date;
 
         /**
@@ -17,7 +17,8 @@ package org.hamcrest.date {
          *
          * @param value Expected Date the matched value must be exactly equal to
          */
-        public function DateEqualMatcher(value:Date) {
+        public function DateEqualMatcher(value:Date)
+        {
             super(Date);
             _compareDate = value;
         }
@@ -25,14 +26,16 @@ package org.hamcrest.date {
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(value:Object):Boolean {
+        override public function matchesSafely(value:Object):Boolean
+        {
             return (value.getTime() == _compareDate.getTime());
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeMismatch(item:Object, mismatchDescription:Description):void {
+        override public function describeMismatch(item:Object, mismatchDescription:Description):void
+        {
             mismatchDescription.appendValue(item)
                 .appendText(" is not the same as ");
 
@@ -42,7 +45,8 @@ package org.hamcrest.date {
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("a date equal to " + _compareDate);
         }
 

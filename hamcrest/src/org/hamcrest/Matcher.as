@@ -1,11 +1,14 @@
-package org.hamcrest {
+package org.hamcrest
+{
 
     // @example Matcher implementation  
     /**
      * Describes methods a Matcher is expected to implement.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public interface Matcher extends SelfDescribing {
-
+    public interface Matcher extends SelfDescribing
+    {
         /**
          * Given an item, a Matcher implementation should return true if the item is correct, false if the item is not wrong.
          */

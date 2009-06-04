@@ -1,10 +1,12 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.object.instanceOf;
 
     /**
      * Matches if the item under test is a Function, and throws an Error matching the given Matcher.
+     *
+     * @see org.hamcrest.core.ThrowsMatcher
      *
      * @example
      * <listing version="3.0">
@@ -14,16 +16,21 @@ package org.hamcrest.core {
      *      instanceOf(OhNoItsAnError),
      *      hasPropertyValue("message", "oh no"))));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function throws(error:Object):Matcher {
-
-        if (error is Class) {
+    public function throws(error:Object):Matcher
+    {
+        if (error is Class)
+        {
             return throws(instanceOf(error as Class));
         }
-        else if (error is Matcher) {
+        else if (error is Matcher)
+        {
             return new ThrowsMatcher(error as Matcher);
         }
-        else {
+        else
+        {
             throw new ArgumentError("error must be either Class or Matcher");
         }
     }

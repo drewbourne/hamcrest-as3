@@ -1,13 +1,16 @@
-package org.hamcrest {
+package org.hamcrest
+{
 
     /**
      * Description allows an implementation to normalise the description of text, values, and lists from <code>SelfDescribing</code> and<code>Matcher</code> implementations.
      *
      * @see org.hamcrest.Matcher;
      * @see org.hamcrest.SelfDescribing
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public interface Description {
-
+    public interface Description
+    {
         /**
          * Should return the collected description
          */

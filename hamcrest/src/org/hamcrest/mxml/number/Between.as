@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.number {
-
+package org.hamcrest.mxml.number
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -17,16 +17,19 @@ package org.hamcrest.mxml.number {
      * <listing version="3.0">
      *  <hc:Between min="{ 3 }" max="{ 5 }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class Between extends BaseMXMLMatcher {
-
+    public class Between extends BaseMXMLMatcher
+    {
         private var _minimum:Number;
         private var _maximum:Number;
 
         /**
          * Constructor.
          */
-        public function Between() {
+        public function Between()
+        {
             super();
         }
 
@@ -34,12 +37,15 @@ package org.hamcrest.mxml.number {
          * Number the target value must be after.
          */
         [Bindable('minChanged')]
-        public function get min():Number {
+        public function get min():Number
+        {
             return _minimum;
         }
 
-        public function set min(value:Number):void {
-            if (_minimum != value) {
+        public function set min(value:Number):void
+        {
+            if (_minimum != value)
+            {
                 _minimum = value;
                 changed('min');
             }
@@ -49,18 +55,25 @@ package org.hamcrest.mxml.number {
          * Number the target value must be after.
          */
         [Bindable('maxChanged')]
-        public function get max():Number {
+        public function get max():Number
+        {
             return _maximum;
         }
 
-        public function set max(value:Number):void {
-            if (_maximum != value) {
+        public function set max(value:Number):void
+        {
+            if (_maximum != value)
+            {
                 _maximum = value;
                 changed('max');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return between(min, max);
         }
     }

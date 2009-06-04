@@ -1,21 +1,27 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Matcher;
     import org.hamcrest.object.equalTo;
     import org.hamcrest.object.instanceOf;
 
     // TODO @example isA
-    // TODO @asdoc isA
     /**
+     * Decorates another Matcher, retaining the behavior but allowing tests
+     * to be slightly more expressive.
      *
+     * @see org.hamcrest.core.IsMatcher
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function isA(value:Object):Matcher {
-
-        if (value is Class) {
+    public function isA(value:Object):Matcher
+    {
+        if (value is Class)
+        {
             return isA(instanceOf(value as Class));
         }
 
-        if (value is Matcher) {
+        if (value is Matcher)
+        {
             return new IsMatcher(value as Matcher);
         }
 

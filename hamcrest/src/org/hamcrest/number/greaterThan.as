@@ -1,5 +1,5 @@
-package org.hamcrest.number {
-
+package org.hamcrest.number
+{
     import org.hamcrest.Matcher;
 
     /**
@@ -12,8 +12,11 @@ package org.hamcrest.number {
      * <listing version="3.0">
      * assertThat(5, greaterThan(4));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function greaterThan(value:Number):Matcher {
+    public function greaterThan(value:Number):Matcher
+    {
         return new IsGreaterThanMatcher(value);
     }
 }

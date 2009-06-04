@@ -1,5 +1,5 @@
-package org.hamcrest.mxml.date {
-
+package org.hamcrest.mxml.date
+{
     import flash.events.Event;
 
     import org.hamcrest.Matcher;
@@ -16,15 +16,18 @@ package org.hamcrest.mxml.date {
      * <listing version="3.0">
      *  <hc:DateAfter date="{ new Date() }" />
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class DateAfter extends BaseMXMLMatcher {
-
+    public class DateAfter extends BaseMXMLMatcher
+    {
         private var _date:Date;
 
         /**
          * Constructor.
          */
-        public function DateAfter() {
+        public function DateAfter()
+        {
             super();
         }
 
@@ -32,18 +35,25 @@ package org.hamcrest.mxml.date {
          * Date the target value must be after.
          */
         [Bindable('dateChanged')]
-        public function get date():Date {
+        public function get date():Date
+        {
             return _date;
         }
 
-        public function set date(value:Date):void {
-            if (_date != value) {
+        public function set date(value:Date):void
+        {
+            if (_date != value)
+            {
                 _date = value;
                 changed('date');
             }
         }
 
-        override protected function createMatcher():Matcher {
+        /**
+         * @inheritDoc
+         */
+        override protected function createMatcher():Matcher
+        {
             return dateAfter(date);
         }
     }

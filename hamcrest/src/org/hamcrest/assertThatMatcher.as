@@ -1,19 +1,22 @@
-package org.hamcrest {
-
+package org.hamcrest
+{
     /**
      * Used internally by <code>assertThat</code>.
      *
      * @param reason Description of failure should <code>actual</code> not match <code>matcher</code>
      * @param actual Object to match
      * @param matcher Matcher to match <code>actual</code> with.
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    internal function assertThatMatcher(reason:String, actual:Object, matcher:Matcher):void {
-
-        if (!matcher.matches(actual)) {
-
+    internal function assertThatMatcher(reason:String, actual:Object, matcher:Matcher):void
+    {
+        if (!matcher.matches(actual))
+        {
             var description:Description = new StringDescription();
 
-            if (reason && reason.length > 0) {
+            if (reason && reason.length > 0)
+            {
                 description.appendText(reason).appendText("\n");
             }
 

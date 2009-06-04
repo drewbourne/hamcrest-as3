@@ -1,4 +1,5 @@
-package org.hamcrest {
+package org.hamcrest
+{
 
     /**
      * Used internally by <code>assertThat</code>.
@@ -7,10 +8,13 @@ package org.hamcrest {
      * @param result Boolean indicating a pass if <code>true</code> or a failure if <code>false</code>
      *
      * @private
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    internal function assertThatBoolean(reason:String, result:Boolean):void {
-
-        if (!result) {
+    internal function assertThatBoolean(reason:String, result:Boolean):void
+    {
+        if (!result)
+        {
             throw new AssertionError(reason);
         }
     }

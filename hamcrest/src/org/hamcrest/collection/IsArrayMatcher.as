@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeMatcher;
@@ -25,9 +25,11 @@ package org.hamcrest.collection {
      *  assertThat([1, 2], array(1, 2, 3));
      *  // fails as different lengths
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsArrayMatcher extends TypeSafeMatcher {
-
+    public class IsArrayMatcher extends TypeSafeMatcher
+    {
         private var _elementMatchers:Array;
 
         /**
@@ -35,8 +37,8 @@ package org.hamcrest.collection {
          *
          * @param elementMatchers
          */
-        public function IsArrayMatcher(elementMatchers:Array) {
-
+        public function IsArrayMatcher(elementMatchers:Array)
+        {
             super(Array);
             _elementMatchers = elementMatchers;
         }
@@ -44,15 +46,17 @@ package org.hamcrest.collection {
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object):Boolean {
-
+        override public function matchesSafely(item:Object):Boolean
+        {
             var array:Array = item as Array;
 
-            if (array.length != _elementMatchers.length) {
+            if (array.length != _elementMatchers.length)
+            {
                 return false;
             }
 
-            return _elementMatchers.every(function(matcher:Matcher, i:int, a:Array):Boolean {
+            return _elementMatchers.every(function(matcher:Matcher, i:int, a:Array):Boolean
+                {
                     return matcher.matches(array[i]);
                 });
         }
@@ -60,29 +64,32 @@ package org.hamcrest.collection {
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
-
+        override public function describeTo(description:Description):void
+        {
             description.appendList(descriptionStart(), descriptionSeparator(), descriptionEnd(), _elementMatchers);
         }
 
         /**
          * @private
          */
-        protected function descriptionStart():String {
+        protected function descriptionStart():String
+        {
             return "[";
         }
 
         /**
          * @private
          */
-        protected function descriptionSeparator():String {
+        protected function descriptionSeparator():String
+        {
             return ", ";
         }
 
         /**
          * @private
          */
-        protected function descriptionEnd():String {
+        protected function descriptionEnd():String
+        {
             return "]";
         }
     }

@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeMatcher;
@@ -10,14 +10,17 @@ package org.hamcrest.collection {
      *
      * @see org.hamcrest.collection.hasItem
      * @see org.hamcrest.collection.hasItems
+     *
      * @example
      * <listing version="3.0">
      *  assertThat([1, 2, 3], hasItem(equalTo(3)));
      *  assertThat([1, 2, 3], hasItems(equalTo(2), equalTo(3)));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsArrayContainingMatcher extends TypeSafeMatcher {
-
+    public class IsArrayContainingMatcher extends TypeSafeMatcher
+    {
         private var _elementMatcher:Matcher;
 
         /**
@@ -25,8 +28,8 @@ package org.hamcrest.collection {
          *
          * @param elementMatcher Matcher to apply to items in the Array being matched.
          */
-        public function IsArrayContainingMatcher(elementMatcher:Matcher) {
-
+        public function IsArrayContainingMatcher(elementMatcher:Matcher)
+        {
             super(Array);
             _elementMatcher = elementMatcher;
         }
@@ -36,10 +39,12 @@ package org.hamcrest.collection {
          *
          * @param collection Array to check items for a match.
          */
-        override public function matchesSafely(collection:Object):Boolean {
-
-            for each (var item:Object in collection) {
-                if (_elementMatcher.matches(item)) {
+        override public function matchesSafely(collection:Object):Boolean
+        {
+            for each (var item:Object in collection)
+            {
+                if (_elementMatcher.matches(item))
+                {
                     return true;
                 }
             }
@@ -50,7 +55,8 @@ package org.hamcrest.collection {
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("an Array containing ").appendDescriptionOf(_elementMatcher);
         }
     }

@@ -1,5 +1,5 @@
-package org.hamcrest.core {
-
+package org.hamcrest.core
+{
     import org.hamcrest.Description;
     import org.hamcrest.DiagnosingMatcher;
     import org.hamcrest.Matcher;
@@ -8,9 +8,11 @@ package org.hamcrest.core {
      * Checks if an item matches all of the given Matchers.
      *
      * @see org.hamcrest.core.allOf
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class AllOfMatcher extends DiagnosingMatcher {
-
+    public class AllOfMatcher extends DiagnosingMatcher
+    {
         private var _matchers:Array;
 
         /**
@@ -18,8 +20,8 @@ package org.hamcrest.core {
          *
          * @param matchers Array of Matcher instances
          */
-        public function AllOfMatcher(matchers:Array) {
-
+        public function AllOfMatcher(matchers:Array)
+        {
             super();
 
             // TODO check matchers are actually Matcher instances
@@ -29,10 +31,12 @@ package org.hamcrest.core {
         /**
          * @inheritDoc
          */
-        override protected function matchesOrDescribesMismatch(item:Object, mismatchDescription:Description):Boolean {
-
-            for each (var matcher:Matcher in _matchers) {
-                if (!matcher.matches(item)) {
+        override protected function matchesOrDescribesMismatch(item:Object, mismatchDescription:Description):Boolean
+        {
+            for each (var matcher:Matcher in _matchers)
+            {
+                if (!matcher.matches(item))
+                {
                     mismatchDescription.appendDescriptionOf(matcher).appendText(" ");
                     matcher.describeMismatch(item, mismatchDescription);
                     return false;
@@ -45,7 +49,8 @@ package org.hamcrest.core {
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendList("(", " and ", ")", _matchers);
         }
     }

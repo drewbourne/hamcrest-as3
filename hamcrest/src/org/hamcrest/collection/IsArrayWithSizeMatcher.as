@@ -1,5 +1,5 @@
-package org.hamcrest.collection {
-
+package org.hamcrest.collection
+{
     import org.hamcrest.TypeSafeMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
@@ -9,13 +9,16 @@ package org.hamcrest.collection {
      *
      * @see org.hamcrest.collection.arrayWithSize
      * @see org.hamcrest.collection.emptyArray
+     *
      * @example
      * <listing version="3.0">
      *  assertThat([true, false], arrayWithSize(2));
      * </listing>
+     *
+     * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsArrayWithSizeMatcher extends TypeSafeMatcher {
-
+    public class IsArrayWithSizeMatcher extends TypeSafeMatcher
+    {
         private var _sizeMatcher:Matcher;
 
         /**
@@ -23,7 +26,8 @@ package org.hamcrest.collection {
          *
          * @param sizeMatcher should be an instance of equalTo(n) where n is the expected size.
          */
-        public function IsArrayWithSizeMatcher(sizeMatcher:Matcher) {
+        public function IsArrayWithSizeMatcher(sizeMatcher:Matcher)
+        {
             super(Array);
             _sizeMatcher = sizeMatcher;
         }
@@ -31,14 +35,16 @@ package org.hamcrest.collection {
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object):Boolean {
+        override public function matchesSafely(item:Object):Boolean
+        {
             return _sizeMatcher.matches((item as Array).length);
         }
 
         /**
          * @inheritDoc
          */
-        override public function describeTo(description:Description):void {
+        override public function describeTo(description:Description):void
+        {
             description.appendText("an Array with size ")
                 .appendDescriptionOf(_sizeMatcher);
         }

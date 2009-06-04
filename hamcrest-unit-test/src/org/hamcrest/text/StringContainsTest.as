@@ -1,23 +1,27 @@
-package org.hamcrest.text {
+package org.hamcrest.text
+{
 
     import org.hamcrest.*;
     import org.hamcrest.core.*;
 
     import org.flexunit.Assert;
 
-    public class StringContainsTest extends AbstractMatcherTestCase {
+    public class StringContainsTest extends AbstractMatcherTestCase
+    {
 
         private static const EXCERPT:String = "EXCERPT";
 
         private var stringContains:Matcher;
 
         [Before]
-        public function setUp():void {
+        public function setUp():void
+        {
             stringContains = containsString(EXCERPT);
         }
 
         [Test]
-        public function evaluatesToTrueIfArgumentContainsSpecifiedSubstring():void {
+        public function evaluatesToTrueIfArgumentContainsSpecifiedSubstring():void
+        {
             assertMatches("should be true if excerpt at beginning",
                 stringContains, EXCERPT + "END");
 
@@ -38,12 +42,14 @@ package org.hamcrest.text {
         }
 
         [Test]
-        public function evaluatesToTrueIfArgumentIsEqualToSubstring():void {
+        public function evaluatesToTrueIfArgumentIsEqualToSubstring():void
+        {
             assertMatches("should be true if excerpt is entire string", stringContains, EXCERPT);
         }
 
         [Test]
-        public function hasAReadableDescription():void {
+        public function hasAReadableDescription():void
+        {
             assertDescription("a string containing \"EXCERPT\"", stringContains);
         }
     }

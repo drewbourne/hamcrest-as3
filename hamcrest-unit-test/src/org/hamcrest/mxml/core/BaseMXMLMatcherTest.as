@@ -1,46 +1,52 @@
-package org.hamcrest.mxml.core {
-
+package org.hamcrest.mxml.core
+{
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.mxml.MXMLMatcher;
 
-    public class BaseMXMLMatcherTest extends AbstractMXMLMatcherTestCase {
+    public class BaseMXMLMatcherTest extends AbstractMXMLMatcherTestCase
+    {
 
         [Test]
-        public function targetPropertyIsBindable():void {
+        public function targetPropertyIsBindable():void
+        {
 
         }
 
         [Test]
-        public function matchedPropertyIsTrueWhenTargetMatches():void {
+        public function matchedPropertyIsTrueWhenTargetMatches():void
+        {
 
         }
 
         [Test]
-        public function matchedPropertyIsFalseWhenTargetDoesNotMatch():void {
+        public function matchedPropertyIsFalseWhenTargetDoesNotMatch():void
+        {
 
         }
 
         [Test]
-        public function matchedPropertyIsBindable():void {
+        public function matchedPropertyIsBindable():void
+        {
 
         }
 
         [Test]
-        public function mismatchDescriptionPropertyIsBindable():void {
+        public function mismatchDescriptionPropertyIsBindable():void
+        {
 
         }
 
         [Test]
-        public function mismatchDescriptionIsNullWhenTargetMatches():void {
+        public function mismatchDescriptionIsNullWhenTargetMatches():void
+        {
 
-            var matcher:MXMLMatcher = new BaseMXMLMatcher();
-            matcher.target = 
+
         }
 
         [Test]
-        public function mismatchDescriptionHasDescriptionOfMatcherWhenTargetDoesNotMatch():void {
+        public function mismatchDescriptionHasDescriptionOfMatcherWhenTargetDoesNotMatch():void
+        {
 
         }
     }
 }
-

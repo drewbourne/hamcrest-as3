@@ -1,21 +1,25 @@
-package org.hamcrest.object {
+package org.hamcrest.object
+{
 
     import org.hamcrest.AbstractMatcherTestCase;
     import org.hamcrest.core.anything;
 
-    public class HasPropertiesTest extends AbstractMatcherTestCase {
+    public class HasPropertiesTest extends AbstractMatcherTestCase
+    {
 
         private var shouldMatch:Object;
         private var shouldNotMatch:Object;
 
         [Before]
-        public function setup():void {
+        public function setup():void
+        {
             shouldMatch = new PropertyTester("is expected", "also expected");
             shouldNotMatch = new PropertyTester("not expected", "also expected");
         }
 
         [Test]
-        public function matchesObjectWithAllNamedProperties():void {
+        public function matchesObjectWithAllNamedProperties():void
+        {
             assertMatches("with all properties",
                 hasProperties({
                     property1: equalTo("is expected"),
@@ -31,7 +35,8 @@ package org.hamcrest.object {
         }
 
         [Test]
-        public function doesNotMatchObjectWithoutNamedProperties():void {
+        public function doesNotMatchObjectWithoutNamedProperties():void
+        {
             assertMismatch('No property "nonExistantProperty"',
                 hasProperties({
                     nonExistantProperty: anything()
@@ -40,7 +45,8 @@ package org.hamcrest.object {
         }
 
         [Test]
-        public function doesNotMatchWriteOnlyProperty():void {
+        public function doesNotMatchWriteOnlyProperty():void
+        {
             assertMismatch('property "writeOnlyProperty" is not readable',
                 hasProperties({
                     writeOnlyProperty: anything()
@@ -49,7 +55,8 @@ package org.hamcrest.object {
         }
 
         [Test]
-        public function describeTo():void {
+        public function describeTo():void
+        {
             assertDescription('(has property "property1" with value <true> and has property "property2" with value <true>)',
                 hasProperties({
                     property1: equalTo(true),
@@ -58,7 +65,8 @@ package org.hamcrest.object {
         }
 
         [Test]
-        public function describesMissingPropertyMismatch():void {
+        public function describesMissingPropertyMismatch():void
+        {
             assertMismatch('No property "honk"',
                 hasProperties({
                     honk: anything()
@@ -69,33 +77,40 @@ package org.hamcrest.object {
     }
 }
 
-internal class PropertyTester {
+internal class PropertyTester
+{
 
     private var _property1:String;
     private var _property2:String;
 
-    public function PropertyTester(value1:String, value2:String) {
+    public function PropertyTester(value1:String, value2:String)
+    {
         _property1 = value1;
         _property2 = value2;
     }
 
-    public function get property1():String {
+    public function get property1():String
+    {
         return _property1;
     }
 
-    public function set property1(value:String):void {
+    public function set property1(value:String):void
+    {
         _property1 = value;
     }
 
-    public function get property2():String {
+    public function get property2():String
+    {
         return _property2;
     }
 
-    public function set property2(value:String):void {
+    public function set property2(value:String):void
+    {
         _property2 = value;
     }
 
-    public function set writeOnlyProperty(value:Number):void {
+    public function set writeOnlyProperty(value:Number):void
+    {
         ;
     }
 }

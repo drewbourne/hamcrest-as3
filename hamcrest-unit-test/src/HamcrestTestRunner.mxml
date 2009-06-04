@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application 
-    creationComplete="runMe()"
     styleName="flexUnitApplication"
+    creationComplete="runMe()"
     xmlns:flexui="flexunit.flexui.*"
     xmlns:mx="http://www.adobe.com/2006/mxml"
     >
@@ -14,7 +14,8 @@
 
             private var core:FlexUnitCore;
 
-            public function runMe():void {
+            public function runMe():void
+            {
 
                 core = new FlexUnitCore();
                 core.addListener(new UIListener(uiListener));
@@ -36,8 +37,8 @@
     </mx:Style>
 
     <flexui:TestRunnerBase 
-        height="100%"
         id="uiListener"
+        height="100%"
         width="100%"
         />
 

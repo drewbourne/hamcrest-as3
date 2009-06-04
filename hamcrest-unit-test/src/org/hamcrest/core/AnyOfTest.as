@@ -1,14 +1,17 @@
-package org.hamcrest.core {
+package org.hamcrest.core
+{
 
     import flexunit.framework.*;
 
     import org.hamcrest.*;
     import org.hamcrest.object.equalTo;
 
-    public class AnyOfTest extends AbstractMatcherTestCase {
+    public class AnyOfTest extends AbstractMatcherTestCase
+    {
 
         [Test]
-        public function evaluatesToTheTheLogicalDisjunctionOfTwoOtherMatchers():void {
+        public function evaluatesToTheTheLogicalDisjunctionOfTwoOtherMatchers():void
+        {
 
             assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
             assertThat("good", anyOf(equalTo("good"), equalTo("good")));
@@ -18,7 +21,8 @@ package org.hamcrest.core {
         }
 
         [Test]
-        public function evaluatesToTheTheLogicalDisjunctionOfManyOtherMatchers():void {
+        public function evaluatesToTheTheLogicalDisjunctionOfManyOtherMatchers():void
+        {
 
             assertThat("good", anyOf(equalTo("bad"), equalTo("good"), equalTo("bad"), equalTo("bad"),
                 equalTo("bad")));
@@ -27,7 +31,8 @@ package org.hamcrest.core {
         }
 
         [Test]
-        public function hasAReadableDescription():void {
+        public function hasAReadableDescription():void
+        {
             assertDescription("(\"good\" or \"bad\" or \"ugly\")",
                 anyOf(equalTo("good"), equalTo("bad"), equalTo("ugly")));
         }

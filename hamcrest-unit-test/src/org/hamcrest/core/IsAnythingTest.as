@@ -1,11 +1,14 @@
-package org.hamcrest.core {
+package org.hamcrest.core
+{
 
     import org.hamcrest.*;
 
-    public class IsAnythingTest extends AbstractMatcherTestCase {
+    public class IsAnythingTest extends AbstractMatcherTestCase
+    {
 
         [Test]
-        public function alwaysEvaluatesToTrue():void {
+        public function alwaysEvaluatesToTrue():void
+        {
 
             assertThat(null, anything());
             assertThat(new Object(), anything());
@@ -13,13 +16,15 @@ package org.hamcrest.core {
         }
 
         [Test]
-        public function hasUsefulDefaultDescription():void {
+        public function hasUsefulDefaultDescription():void
+        {
 
             assertDescription("ANYTHING", anything());
         }
 
         [Test]
-        public function canOverrideDescription():void {
+        public function canOverrideDescription():void
+        {
 
             var description:String = "description";
             assertDescription(description, anything(description));

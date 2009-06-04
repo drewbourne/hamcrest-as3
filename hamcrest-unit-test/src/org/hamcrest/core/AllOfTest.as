@@ -1,4 +1,5 @@
-package org.hamcrest.core {
+package org.hamcrest.core
+{
 
     import flexunit.framework.*;
 
@@ -6,10 +7,12 @@ package org.hamcrest.core {
     import org.hamcrest.assertThat;
     import org.hamcrest.object.equalTo;
 
-    public class AllOfTest extends AbstractMatcherTestCase {
+    public class AllOfTest extends AbstractMatcherTestCase
+    {
 
         [Test]
-        public function evaluatesToTheTheLogicalConjunctionOfTwoOtherMatchers():void {
+        public function evaluatesToTheTheLogicalConjunctionOfTwoOtherMatchers():void
+        {
 
             assertThat("good", allOf(equalTo("good"), equalTo("good")));
 
@@ -19,7 +22,8 @@ package org.hamcrest.core {
         }
 
         [Test]
-        public function evaluatesToTheTheLogicalConjunctionOfManyOtherMatchers():void {
+        public function evaluatesToTheTheLogicalConjunctionOfManyOtherMatchers():void
+        {
 
             assertThat("good", allOf(equalTo("good"), equalTo("good"), equalTo("good"), equalTo("good"),
                 equalTo("good")));
@@ -28,14 +32,16 @@ package org.hamcrest.core {
         }
 
         [Test]
-        public function hasAReadableDescription():void {
+        public function hasAReadableDescription():void
+        {
 
             assertDescription("(\"good\" and \"bad\" and \"ugly\")",
                 allOf(equalTo("good"), equalTo("bad"), equalTo("ugly")));
         }
 
         [Test]
-        public function mismatchDescriptionDescribesFirstFailingMatch():void {
+        public function mismatchDescriptionDescribesFirstFailingMatch():void
+        {
 
             assertMismatch("\"good\" was \"bad\"", allOf(equalTo("bad"), equalTo("good")), "bad");
         }

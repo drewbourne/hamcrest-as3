@@ -1,11 +1,14 @@
-package org.hamcrest.date {
+package org.hamcrest.date
+{
 
     import org.hamcrest.AbstractMatcherTestCase;
 
-    public class DateBetweenTest extends AbstractMatcherTestCase {
+    public class DateBetweenTest extends AbstractMatcherTestCase
+    {
 
         [Test]
-        public function betweenInclusive():void {
+        public function betweenInclusive():void
+        {
             assertMatches("inside range",
                 dateBetween(new Date(1900, 1, 1), new Date(2000, 1, 1)), new Date(2000, 1, 1));
             assertDoesNotMatch("outside range",
@@ -13,7 +16,8 @@ package org.hamcrest.date {
         }
 
         [Test]
-        public function betweenExclusive():void {
+        public function betweenExclusive():void
+        {
             assertMatches("inside range",
                 dateBetween(new Date(1900, 1, 1), new Date(2000, 1, 1), true), new Date(1990, 1, 1));
             assertDoesNotMatch("outside range",
@@ -21,7 +25,8 @@ package org.hamcrest.date {
         }
 
         [Test]
-        public function hasAReadableDescription():void {
+        public function hasAReadableDescription():void
+        {
             assertDescription("a date between <" + new Date(1900, 1, 1) + "> and <" + new Date(2000, 1, 1) + ">",
                 dateBetween(new Date(1900, 1, 1), new Date(2000, 1, 1)));
             assertDescription("a date between <" + new Date(1900, 1, 1) + "> and <" + new Date(2000, 1, 1) + "> exclusive",

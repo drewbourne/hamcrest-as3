@@ -1,4 +1,5 @@
-package org.hamcrest {
+package org.hamcrest
+{
 
     import org.hamcrest.collection.EveryTest;
     import org.hamcrest.collection.IsArrayContainingTest;
@@ -30,7 +31,8 @@ package org.hamcrest {
 
     [Suite]
     [RunWith("org.flexunit.runners.Suite")]
-    public class HamcrestSuite {
+    public class HamcrestSuite
+    {
         public var t1:BaseMatcherTest;
         public var t2:CustomMatcherTest;
         public var t3:CustomTypeSafeMatcherTest;

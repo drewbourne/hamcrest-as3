@@ -1,12 +1,15 @@
-package org.hamcrest.object {
+package org.hamcrest.object
+{
 
     import org.hamcrest.*;
     import org.hamcrest.core.not;
 
-    public class IsSameTest extends AbstractMatcherTestCase {
+    public class IsSameTest extends AbstractMatcherTestCase
+    {
 
         [Test]
-        public function evaluatesToTrueIfArgumentIsReferenceToASpecificObject():void {
+        public function evaluatesToTrueIfArgumentIsReferenceToASpecificObject():void
+        {
 
             var o1:Object = {};
             var o2:Object = {};
@@ -16,12 +19,14 @@ package org.hamcrest.object {
         }
 
         [Test]
-        public function returnsReadableDescriptionFromToString():void {
+        public function returnsReadableDescriptionFromToString():void
+        {
             assertDescription("sameInstance(\"ARG\")", sameInstance("ARG"));
         }
 
         [Test]
-        public function returnsReadableDescriptionFromToStringWhenInitializedithNull():void {
+        public function returnsReadableDescriptionFromToStringWhenInitializedithNull():void
+        {
             assertDescription("sameInstance(null)", sameInstance(null));
         }
     }

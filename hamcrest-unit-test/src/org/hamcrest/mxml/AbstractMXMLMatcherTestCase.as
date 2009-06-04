@@ -1,8 +1,10 @@
-package org.hamcrest.mxml {
+package org.hamcrest.mxml
+{
 
     import org.hamcrest.AbstractMatcherTestCase;
 
-    public class AbstractMXMLMatcherTestCase extends AbstractMatcherTestCase {
+    public class AbstractMXMLMatcherTestCase extends AbstractMatcherTestCase
+    {
 
 
     }

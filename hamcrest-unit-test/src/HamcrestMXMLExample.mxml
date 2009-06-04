@@ -132,6 +132,11 @@
             value="{ 1 }"
             property="propertyName"
             />
+        <object:HasProperty 
+            property="propertyName"
+            >
+            <object:EqualTo>3</object:EqualTo>
+        </object:HasProperty>
         <object:HasProperties 
             properties="{ { waffles: 'yum' } }"
             />

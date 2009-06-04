@@ -5,6 +5,9 @@ package org.hamcrest.number
     /**
      * Matches if a value is within +/- the error value from the given value.
      *
+     * @param value
+     * @param error
+     *
      * @example
      * <listing version="3.0">
      * assertThat(3, closeTo(4, 1));

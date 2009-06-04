@@ -36,10 +36,10 @@ package org.hamcrest.collection
     }
 }
 
-import org.hamcrest.mxml.object.EqualTo;
+import org.hamcrest.object.equalTo;
 import org.hamcrest.Matcher;
 
 internal function wrapInEqualToIfNotMatcher(item:Object, i:int, a:Array):Matcher
 {
-    return item is Matcher ? item as Matcher : EqualTo(item);
+    return item is Matcher ? item as Matcher : equalTo(item);
 }

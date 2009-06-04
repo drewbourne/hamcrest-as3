@@ -1,4 +1,5 @@
-package org.hamcrest.mxml.object {
+package org.hamcrest.mxml.object
+{
 
     import org.flexunit.assertThat;
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
@@ -6,21 +7,24 @@ package org.hamcrest.mxml.object {
     import org.hamcrest.object.equalTo;
     import org.hamcrest.object.nullValue;
 
-    public class EqualToTest extends AbstractMXMLMatcherTestCase {
+    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    {
 
         /*
            <EqualTo value="3" target="{ someBindableValue }" />
          */
 
         [Test]
-        public function hasDescription():void {
+        public function hasDescription():void
+        {
             var matcher:EqualTo = new EqualTo();
             matcher.value = 3;
             assertThat(matcher.description, "<3>");
         }
 
         [Test]
-        public function matchedIsTrueIfTargetMatches():void {
+        public function matchedIsTrueIfTargetMatches():void
+        {
             var matcher:EqualTo = new EqualTo();
             matcher.value = 3;
             matcher.target = 3;
@@ -28,7 +32,8 @@ package org.hamcrest.mxml.object {
         }
 
         [Test]
-        public function matchedIsFalseIFTargetDoesNotMatch():void {
+        public function matchedIsFalseIFTargetDoesNotMatch():void
+        {
             var matcher:EqualTo = new EqualTo();
             matcher.value = 3;
             matcher.target = 4;
@@ -36,19 +41,22 @@ package org.hamcrest.mxml.object {
         }
 
         [Test]
-        public function mismatchDescriptionIsNulIfTargetMatches():void {
+        public function mismatchDescriptionIsNullIfTargetMatches():void
+        {
             var matcher:EqualTo = new EqualTo();
             matcher.value = 3;
             matcher.target = 3;
-            assertThat(matcher.mismatchDescription, nullValue());
+            assertThat("mismatchDescription should be an empty string",
+                matcher.mismatchDescription, equalTo(""));
         }
 
         [Test]
-        public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void {
+        public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
+        {
             var matcher:EqualTo = new EqualTo();
             matcher.value = 3;
             matcher.target = 4;
-            assertThat(matcher.mismatchDescription, equalTo(""));
+            assertThat(matcher.mismatchDescription, equalTo("was <4>"));
         }
     }
 }

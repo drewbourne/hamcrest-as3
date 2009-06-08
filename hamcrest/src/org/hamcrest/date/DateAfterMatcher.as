@@ -60,7 +60,7 @@ package org.hamcrest.date
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("a date after <" + _compareDate.toString() + ">");
+            description.appendText("a date after ").appendValue(_compareDate);
         }
     }
 }

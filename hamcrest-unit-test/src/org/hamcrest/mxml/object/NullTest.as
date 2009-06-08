@@ -1,47 +1,47 @@
 package org.hamcrest.mxml.object
 {
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
+    import org.hamcrest.mxml.number.Between;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <Null />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class NullTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:Null;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
-            matcher.value = 3;
+            matcher = new Null();
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription("null", matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = null;
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = "anything";
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
         public function mismatchDescriptionIsNullIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = null;
 
             assertMatchedMismatchDescription(matcher);
         }
@@ -49,9 +49,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = "anything";
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription('was "anything"', matcher);
         }
     }
 }

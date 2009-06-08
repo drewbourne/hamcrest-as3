@@ -27,12 +27,16 @@ package org.hamcrest.object
             assertMismatch('property "property" was "not expected"',
                 hasPropertyWithValue("property", equalTo("is expected")),
                 shouldNotMatch);
+
+            assertMismatch('no property "property" on null object',
+                hasPropertyWithValue("property", equalTo("is expected")),
+                null);
         }
 
         [Test]
         public function doesNotMatchObjectWithoutNamedProperty():void
         {
-            assertMismatch('No property "nonExistantProperty"',
+            assertMismatch('no property "nonExistantProperty"',
                 hasPropertyWithValue("nonExistantProperty", anything()),
                 shouldNotMatch);
         }
@@ -56,7 +60,13 @@ package org.hamcrest.object
         [Test]
         public function describesMissingPropertyMismatch():void
         {
-            assertMismatch('No property "honk"', hasPropertyWithValue("honk", anything()), shouldNotMatch);
+            assertMismatch('no property "honk"', hasPropertyWithValue("honk", anything()), shouldNotMatch);
+        }
+
+        [Test]
+        public function describesMissingPropertyMismatchForNull():void
+        {
+            assertMismatch('no property "honk" on null object', hasPropertyWithValue("honk", anything()), null);
         }
 
         [Test]

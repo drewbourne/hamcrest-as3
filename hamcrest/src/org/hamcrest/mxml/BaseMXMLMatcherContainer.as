@@ -17,7 +17,6 @@ package org.hamcrest.mxml
     public class BaseMXMLMatcherContainer extends BaseMXMLMatcher
     {
         private var _matchers:Array;
-        private var _matchersChanged:Boolean;
 
         /**
          * Constructor.
@@ -25,6 +24,7 @@ package org.hamcrest.mxml
         public function BaseMXMLMatcherContainer()
         {
             super();
+            invalidateProperties();
         }
 
         /**

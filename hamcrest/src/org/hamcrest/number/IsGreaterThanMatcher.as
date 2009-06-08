@@ -36,7 +36,7 @@ package org.hamcrest.number
             mismatchDescription.appendValue(item)
                 .appendText(" was less than ");
 
-            mismatchDescription.appendValue(item);
+            mismatchDescription.appendValue(_value);
         }
 
         override public function describeTo(description:Description):void

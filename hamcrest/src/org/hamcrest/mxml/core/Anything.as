@@ -26,6 +26,7 @@ package org.hamcrest.mxml.core
         public function Anything()
         {
             super();
+            invalidateProperties();
         }
 
         /**

@@ -25,6 +25,7 @@ package org.hamcrest.mxml.object
         public function Null()
         {
             super();
+            invalidateProperties();
         }
 
         /**

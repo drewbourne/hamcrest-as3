@@ -1,47 +1,47 @@
-package org.hamcrest.mxml.object
+package org.hamcrest.mxml.collection
 {
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <ArrayWithSize size="{ 4 }" />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class ArrayWithSizeTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:ArrayWithSize;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
-            matcher.value = 3;
+            matcher = new ArrayWithSize();
+            matcher.size = 4;
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription("an Array with size <4>", matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = [ 1, 2, 3, 4 ];
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = [ 2, 3, 4 ];
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
         public function mismatchDescriptionIsNullIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = [ 1, 2, 3, 4 ];
 
             assertMatchedMismatchDescription(matcher);
         }
@@ -49,9 +49,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = [ 2, 3, 4 ];
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription("was [<2>,<3>,<4>]", matcher);
         }
     }
 }

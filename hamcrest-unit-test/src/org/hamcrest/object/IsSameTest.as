@@ -10,7 +10,6 @@ package org.hamcrest.object
         [Test]
         public function evaluatesToTrueIfArgumentIsReferenceToASpecificObject():void
         {
-
             var o1:Object = {};
             var o2:Object = {};
 
@@ -21,13 +20,13 @@ package org.hamcrest.object
         [Test]
         public function returnsReadableDescriptionFromToString():void
         {
-            assertDescription("sameInstance(\"ARG\")", sameInstance("ARG"));
+            assertDescription("same instance \"ARG\"", sameInstance("ARG"));
         }
 
         [Test]
         public function returnsReadableDescriptionFromToStringWhenInitializedithNull():void
         {
-            assertDescription("sameInstance(null)", sameInstance(null));
+            assertDescription("same instance null", sameInstance(null));
         }
     }
 }

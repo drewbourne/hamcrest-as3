@@ -37,9 +37,15 @@ package org.hamcrest.object
          */
         override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
         {
+            if (!item)
+            {
+                mismatchDescription.appendText('no property "' + _propertyName + '" on null object');
+                return false;
+            }
+
             if (!item.hasOwnProperty(_propertyName))
             {
-                mismatchDescription.appendText('No property "' + _propertyName + '"');
+                mismatchDescription.appendText('no property "' + _propertyName + '"');
                 return false;
             }
 

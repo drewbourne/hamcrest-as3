@@ -32,6 +32,8 @@ package org.hamcrest.mxml.core
         public function DescribedAs()
         {
             super();
+            _message = "";
+            _values = [];
         }
 
         /**
@@ -75,6 +77,7 @@ package org.hamcrest.mxml.core
          */
         override protected function createMatcher():Matcher
         {
+            trace('DescribedAs.createMatcher', [ message, matcher ].concat(values || []));
             return describedAs.apply(null, [ message, matcher ].concat(values || []));
         }
     }

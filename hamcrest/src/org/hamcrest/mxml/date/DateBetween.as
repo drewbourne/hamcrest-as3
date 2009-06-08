@@ -1,7 +1,5 @@
 package org.hamcrest.mxml.date
 {
-    import flash.events.Event;
-
     import org.hamcrest.Matcher;
     import org.hamcrest.date.dateBetween;
     import org.hamcrest.mxml.BaseMXMLMatcher;
@@ -90,6 +88,23 @@ package org.hamcrest.mxml.date
         override protected function createMatcher():Matcher
         {
             return dateBetween(min, max, exclusive);
+        }
+
+        // TODO other matchers require this pattern if multiple dependant parameters, push to BaseMXMLMatcher
+        override protected function evaluateDescription():void
+        {
+            if (min && max)
+            {
+                super.evaluateDescription();
+            }
+        }
+
+        override protected function evaluateMatchTarget():void
+        {
+            if (min && max)
+            {
+                super.evaluateMatchTarget();
+            }
         }
     }
 }

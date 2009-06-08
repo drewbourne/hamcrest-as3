@@ -26,5 +26,17 @@ package org.hamcrest.number
             assertDescription("a value less than <3>", lessThan(3));
             assertDescription("a value less than or equal to <3>", lessThanOrEqualTo(3));
         }
+
+        [Test]
+        public function hasMismatchDescription():void
+        {
+            assertMismatch("<3> was greater than <3>", lessThan(3), 3);
+        }
+
+        [Test]
+        public function hasMismatchDescriptionIfNotEqualTo():void
+        {
+            assertMismatch("was <4>", lessThanOrEqualTo(3), 4);
+        }
     }
 }

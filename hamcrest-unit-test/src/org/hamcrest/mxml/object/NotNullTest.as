@@ -1,47 +1,47 @@
 package org.hamcrest.mxml.object
 {
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
+    import org.hamcrest.mxml.number.Between;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <NotNull />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class NotNullTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:NotNull;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
-            matcher.value = 3;
+            matcher = new NotNull();
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription("not null", matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = 9;
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = null;
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
         public function mismatchDescriptionIsNullIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = 9;
 
             assertMatchedMismatchDescription(matcher);
         }
@@ -49,9 +49,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = null;
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription("was null", matcher);
         }
     }
 }

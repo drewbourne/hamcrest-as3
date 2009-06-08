@@ -20,7 +20,6 @@ package org.hamcrest.mxml
     public class BaseMXMLMatcherComposite extends BaseMXMLMatcher implements MXMLMatcherComposite
     {
         private var _matcher:MXMLMatcher;
-        private var _matcherChanged:Boolean;
 
         /**
          * Constructor.

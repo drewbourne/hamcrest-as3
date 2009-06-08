@@ -20,7 +20,6 @@ package org.hamcrest.mxml.collection
      */
     public class EmptyArray extends BaseMXMLMatcher
     {
-
         private var _size:int;
 
         /**
@@ -29,6 +28,7 @@ package org.hamcrest.mxml.collection
         public function EmptyArray()
         {
             super();
+            invalidateProperties();
         }
 
         /**

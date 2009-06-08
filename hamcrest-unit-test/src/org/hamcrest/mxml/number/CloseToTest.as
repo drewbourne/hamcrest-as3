@@ -1,41 +1,42 @@
-package org.hamcrest.mxml.object
+package org.hamcrest.mxml.number
 {
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <CloseTo value="{ 3 }" delta="{ 2 }" />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class CloseToTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:CloseTo;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
+            matcher = new CloseTo();
             matcher.value = 3;
+            matcher.delta = 2;
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription("a Number within <2> of <3>", matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = 4;
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = 8;
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
@@ -49,9 +50,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = 8;
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription("<8> differed by <3>", matcher);
         }
     }
 }

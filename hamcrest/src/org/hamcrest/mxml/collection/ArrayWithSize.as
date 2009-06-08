@@ -35,6 +35,7 @@ package org.hamcrest.mxml.collection
         public function ArrayWithSize()
         {
             super();
+            size = 0;
         }
 
         /**

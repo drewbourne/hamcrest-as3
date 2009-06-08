@@ -21,6 +21,7 @@ package org.hamcrest.number
     public function lessThanOrEqualTo(value:Number):Matcher
     {
         // composition is a winner
+        // TODO create an actual Matcher so we can include an appropriate mismatch description
         return describedAs("a value less than or equal to %0", anyOf(lessThan(value), equalTo(value)), value);
     }
 }

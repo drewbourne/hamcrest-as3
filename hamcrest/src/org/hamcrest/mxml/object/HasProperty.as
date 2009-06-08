@@ -36,7 +36,7 @@ package org.hamcrest.mxml.object
     public class HasProperty extends BaseMXMLMatcherComposite
     {
         private var _property:String;
-        private var _value:Matcher;
+        private var _value:*;
 
         /**
          * Constructor.
@@ -50,12 +50,12 @@ package org.hamcrest.mxml.object
          * Property name target object must have.
          */
         [Bindable('propertyChanged')]
-        public function get property():*
+        public function get property():String
         {
             return _property;
         }
 
-        public function set property(val:*):void
+        public function set property(val:String):void
         {
             if (_property != val)
             {
@@ -78,10 +78,19 @@ package org.hamcrest.mxml.object
             if (_value != val)
             {
                 _value = val;
+
+                if (val && !(val is MXMLMatcher))
+                {
+                    var m:EqualTo = new EqualTo();
+                    m.value = val;
+                    val = m;
+                }
+
                 if (val is MXMLMatcher)
                 {
                     matcher = (val as MXMLMatcher);
                 }
+
                 changed('value');
             }
         }
@@ -94,6 +103,22 @@ package org.hamcrest.mxml.object
             return matcher == null
                 ? hasProperty(property)
                 : hasPropertyWithValue(property, matcher);
+        }
+
+        override protected function evaluateDescription():void
+        {
+            if (property)
+            {
+                super.evaluateDescription();
+            }
+        }
+
+        override protected function evaluateMatchTarget():void
+        {
+            if (property)
+            {
+                super.evaluateMatchTarget();
+            }
         }
     }
 }

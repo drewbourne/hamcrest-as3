@@ -1,47 +1,50 @@
 package org.hamcrest.mxml.object
 {
+    import flash.events.Event;
+
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <HasProperty property="" />
+       <HasProperty property="" value="" />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class HasPropertyTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:HasProperty;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
-            matcher.value = 3;
+            matcher = new HasProperty();
+            matcher.property = "type";
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription('an object with property "type"', matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = new Event(Event.ADDED);
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = null;
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
         public function mismatchDescriptionIsNullIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = new Event(Event.ADDED);
 
             assertMatchedMismatchDescription(matcher);
         }
@@ -49,9 +52,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = null;
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription("was null", matcher);
         }
     }
 }

@@ -47,7 +47,7 @@ package org.hamcrest.date
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("a date equal to " + _compareDate);
+            description.appendText("a date equal to ").appendValue(_compareDate);
         }
 
     }

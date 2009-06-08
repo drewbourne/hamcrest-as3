@@ -37,7 +37,7 @@ package org.hamcrest.object
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("sameInstance(").appendValue(_value).appendText(")");
+            description.appendText("same instance ").appendValue(_value);
         }
     }
 }

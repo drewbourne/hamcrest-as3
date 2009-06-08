@@ -40,12 +40,12 @@ package org.hamcrest.number
             mismatchDescription.appendValue(item)
                 .appendText(" was greater than ");
 
-            if (!_inclusive)
+            if (_inclusive)
             {
                 mismatchDescription.appendText("or equal to ")
             }
 
-            mismatchDescription.appendValue(item);
+            mismatchDescription.appendValue(_value);
         }
 
         override public function describeTo(description:Description):void

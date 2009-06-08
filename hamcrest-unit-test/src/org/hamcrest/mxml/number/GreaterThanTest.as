@@ -1,47 +1,47 @@
-package org.hamcrest.mxml.object
+package org.hamcrest.mxml.number
 {
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
-       <EqualTo value="3" target="{ someBindableValue }" />
+       <GreaterThan value="{ 3 }" />
      */
-    public class EqualToTest extends AbstractMXMLMatcherTestCase
+    public class GreaterThanTest extends AbstractMXMLMatcherTestCase
     {
-        private var matcher:EqualTo;
+        private var matcher:GreaterThan;
 
         [Before]
         public function createMatcher():void
         {
-            matcher = new EqualTo();
+            matcher = new GreaterThan();
             matcher.value = 3;
         }
 
         [Test]
         public function hasDescription():void
         {
-            assertDescription("<3>", matcher);
+            assertDescription("a value greater than <3>", matcher);
         }
 
         [Test]
         public function matchedIsTrueIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = 4;
 
-            assertMatched("", matcher);
+            assertMatched("matched if target matches", matcher);
         }
 
         [Test]
         public function matchedIsFalseIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = 2;
 
-            assertNotMatched("", matcher);
+            assertNotMatched("not matched if target does not match", matcher);
         }
 
         [Test]
         public function mismatchDescriptionIsNullIfTargetMatches():void
         {
-            matcher.target = 3;
+            matcher.target = 4;
 
             assertMatchedMismatchDescription(matcher);
         }
@@ -49,9 +49,9 @@ package org.hamcrest.mxml.object
         [Test]
         public function mismatchDescriptionIsSetIfTargetDoesNotMatch():void
         {
-            matcher.target = 4;
+            matcher.target = 2;
 
-            assertMismatchDescription("was <4>", matcher);
+            assertMismatchDescription("<2> was less than <3>", matcher);
         }
     }
 }

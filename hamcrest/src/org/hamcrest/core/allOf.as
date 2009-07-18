@@ -19,6 +19,13 @@ package org.hamcrest.core
      */
     public function allOf(... rest):Matcher
     {
-        return new AllOfMatcher(rest);
+        var matchers:Array = rest;
+
+        if (rest.length == 1 && rest[0] is Array)
+        {
+            matchers = rest[0];
+        }
+
+        return new AllOfMatcher(matchers);
     }
 }

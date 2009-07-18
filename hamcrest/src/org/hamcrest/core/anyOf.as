@@ -16,6 +16,14 @@ package org.hamcrest.core
      */
     public function anyOf(... rest):Matcher
     {
-        return new AnyOfMatcher(rest);
+        // FIXME enable passing a single array to anyOf([ matcher, ...matchers ]) so the matchers can be built out of line.
+        var matchers:Array = rest;
+
+        if (rest.length == 1 && rest[0] is Array)
+        {
+            matchers = rest[0];
+        }
+
+        return new AnyOfMatcher(matchers);
     }
 }

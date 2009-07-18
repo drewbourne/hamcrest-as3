@@ -37,6 +37,7 @@ package org.hamcrest.core
             {
                 if (!matcher.matches(item))
                 {
+                    // TODO would the error messages be better if the appendText was " but was "
                     mismatchDescription.appendDescriptionOf(matcher).appendText(" ");
                     matcher.describeMismatch(item, mismatchDescription);
                     return false;

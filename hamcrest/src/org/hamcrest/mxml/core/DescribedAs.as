@@ -1,11 +1,11 @@
 package org.hamcrest.mxml.core
 {
     import flash.events.Event;
-
+    
     import org.hamcrest.Matcher;
     import org.hamcrest.core.describedAs;
     import org.hamcrest.mxml.BaseMXMLMatcherComposite;
-
+    
     /**
      * MXML facade for the describedAs() / DescribedAsMatcher.
      *
@@ -25,7 +25,7 @@ package org.hamcrest.mxml.core
     {
         private var _message:String;
         private var _values:Array;
-
+        
         /**
          * Constructor.
          */
@@ -35,7 +35,7 @@ package org.hamcrest.mxml.core
             _message = "";
             _values = [];
         }
-
+        
         /**
          * Messages to use to describe the composited Matcher.
          */
@@ -44,7 +44,7 @@ package org.hamcrest.mxml.core
         {
             return _message;
         }
-
+        
         public function set message(value:String):void
         {
             if (_message != value)
@@ -53,7 +53,7 @@ package org.hamcrest.mxml.core
                 changed('message');
             }
         }
-
+        
         /**
          * Values to interpolate into the <code>message</code>
          */
@@ -62,7 +62,7 @@ package org.hamcrest.mxml.core
         {
             return _values;
         }
-
+        
         public function set values(value:Array):void
         {
             if (_values != value)
@@ -71,13 +71,12 @@ package org.hamcrest.mxml.core
                 changed('values');
             }
         }
-
+        
         /**
          * @inheritDoc
          */
         override protected function createMatcher():Matcher
         {
-            trace('DescribedAs.createMatcher', [ message, matcher ].concat(values || []));
             return describedAs.apply(null, [ message, matcher ].concat(values || []));
         }
     }

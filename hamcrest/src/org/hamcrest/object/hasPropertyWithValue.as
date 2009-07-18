@@ -1,7 +1,7 @@
 package org.hamcrest.object
 {
     import org.hamcrest.Matcher;
-
+    
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>, and the value
      * for that property matches the given valueMatcher.
@@ -17,8 +17,12 @@ package org.hamcrest.object
      *
      * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function hasPropertyWithValue(propertyName:String, valueMatcher:Matcher):Matcher
+    public function hasPropertyWithValue(propertyName:String, valueOrMatcher:Object):Matcher
     {
+        var valueMatcher:Matcher = valueOrMatcher is Matcher
+            ? valueOrMatcher as Matcher
+            : equalTo(valueOrMatcher);
+        
         return new HasPropertyWithValueMatcher(propertyName, valueMatcher);
     }
 }

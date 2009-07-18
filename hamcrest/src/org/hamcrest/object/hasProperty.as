@@ -1,23 +1,35 @@
 package org.hamcrest.object
 {
     import org.hamcrest.Matcher;
-
+    
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>.
      *
      * @param propertyName Name of the property the item being matched must have.
+     * @param valueOrMatcher Optional value or Matcher to compare the property value against.
      *
      * @see org.hamcrest.object.HasPropertyMatcher
      *
      * @example
      * <listing version="3.0">
      *  assertThat({ id: 1234, data: null }, hasProperty("data"));
+     *  assertThat({ id: 1234, data: null }, hasProperty("data", nullValue()));
      * </listing>
      *
      * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public function hasProperty(propertyName:String):Matcher
+    public function hasProperty(propertyName:String, ... rest):Matcher
     {
-        return new HasPropertyMatcher(propertyName);
+        switch (rest.length)
+        {
+            case 0:
+                return new HasPropertyMatcher(propertyName);
+            case 1:
+                return hasPropertyWithValue(propertyName, rest[0]);
+            default:
+                throw new ArgumentError('hasProperty accepts 1 or 2 arguments only.');
+        }
+        
+        return null;
     }
 }

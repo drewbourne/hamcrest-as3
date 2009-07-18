@@ -1,9 +1,9 @@
 package org.hamcrest.object
 {
-
+    
     import org.hamcrest.Description;
     import org.hamcrest.TypeSafeMatcher;
-
+    
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>.
      *
@@ -14,7 +14,7 @@ package org.hamcrest.object
     public class HasPropertyMatcher extends TypeSafeMatcher
     {
         private var _propertyName:String;
-
+        
         /**
          * Constructor.
          *
@@ -25,7 +25,7 @@ package org.hamcrest.object
             super(Object);
             _propertyName = propertyName;
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -33,14 +33,14 @@ package org.hamcrest.object
         {
             return item.hasOwnProperty(_propertyName);
         }
-
+        
         /**
          * @inheritDoc
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("an object with property ").appendValue(_propertyName);
+            description.appendText("has property ").appendValue(_propertyName);
         }
-
+    
     }
 }

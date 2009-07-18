@@ -2,15 +2,15 @@ package org.hamcrest.object
 {
     import org.hamcrest.BaseMatcher;
     import org.hamcrest.Description;
-
+    
     /**
-     * Checks the item being matched is equal (==) or strictly equal (===) depending on the item type.
+     * Checks the item being matched is equal (==).
      *
      * <ul>
-     * <li><code>Number</code>s match if they are strictly equal (===) </li>
+     * <li><code>Number</code>s match if they are equal (==) </li>
      * <li><code>Number</code>s match if they are both <code>NaN</code>. </li>
-     * <li><code>null</code>s match if they are both <code>null</code> </li>
-     * <li><code>Array</code>s match if they are the same length and each item is strictly equal.
+     * <li><code>null</code>s match.</li>
+     * <li><code>Array</code>s match if they are the same length and each item is equal.
      *  Checked recursively for child arrays. </li>
      * </ul>
      *
@@ -27,7 +27,7 @@ package org.hamcrest.object
     public class IsEqualMatcher extends BaseMatcher
     {
         private var _value:Object;
-
+        
         /**
          * Constructor
          *
@@ -35,9 +35,11 @@ package org.hamcrest.object
          */
         public function IsEqualMatcher(value:Object)
         {
+            super();
+            
             _value = value;
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -45,7 +47,7 @@ package org.hamcrest.object
         {
             return areEqual(item, _value);
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -53,7 +55,7 @@ package org.hamcrest.object
         {
             description.appendValue(_value);
         }
-
+        
         /**
          * Checks if the given items are equal
          *
@@ -76,10 +78,10 @@ package org.hamcrest.object
             }
             else
             {
-                return o1 === o2;
+                return o1 == o2;
             }
         }
-
+        
         /**
          * Checks if the given arrays are of equal length, and contain the same elements.
          *
@@ -89,7 +91,7 @@ package org.hamcrest.object
         {
             return areArraysLengthsEqual(o1, o2) && areArrayElementsEqual(o1, o2);
         }
-
+        
         /**
          * Checks if the given arrays are of equal length
          *
@@ -99,7 +101,7 @@ package org.hamcrest.object
         {
             return o1.length == o2.length;
         }
-
+        
         /**
          * Checks the elements of both arrays are the equal
          *

@@ -1,17 +1,19 @@
 package org.hamcrest.object
 {
     import org.hamcrest.Matcher;
-
+    
     /**
-     * Checks the item being matched is equal (==) or strictly equal (===) depending on the item type.
+     * Checks the item being matched is equal (==).
      *
      * <ul>
-     * <li><code>Number</code>s match if they are strictly equal (===) </li>
+     * <li><code>Number</code>s match if they are equal (==) </li>
      * <li><code>Number</code>s match if they are both <code>NaN</code>. </li>
-     * <li><code>null</code>s match if they are both <code>null</code> </li>
-     * <li><code>Array</code>s match if they are the same length and each item is strictly equal.
+     * <li><code>null</code>s match.</li>
+     * <li><code>Array</code>s match if they are the same length and each item is equal.
      *  Checked recursively for child arrays. </li>
      * </ul>
+     *
+     * @see org.hamcrest.object.IsEqualMatcher
      *
      * @example
      * <listing version="3.0">

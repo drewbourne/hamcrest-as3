@@ -50,13 +50,6 @@ package org.hamcrest.object
         }
         
         [Test]
-        public function describeTo():void
-        {
-            assertDescription('has property "property" with value <true>',
-                hasPropertyWithValue("property", equalTo(true)));
-        }
-        
-        [Test]
         public function describesMissingPropertyMismatch():void
         {
             assertMismatch('no property "honk"', hasPropertyWithValue("honk", anything()), shouldNotMatch);
@@ -71,7 +64,6 @@ package org.hamcrest.object
         [Test]
         public function evaluatesToTrueIfArgumentHasOwnProperty():void
         {
-            
             assertMatches("has property",
                 hasPropertyWithValue("value", equalTo("one")),
                 { value: "one" });
@@ -84,8 +76,7 @@ package org.hamcrest.object
         [Test]
         public function hasAReadableDescription():void
         {
-            
-            assertDescription('has property "value" with value <3>',
+            assertDescription('has property "value" with <3>',
                 hasPropertyWithValue("value", equalTo(3)));
         }
         

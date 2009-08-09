@@ -3,7 +3,7 @@ package org.hamcrest.mxml.text
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
     import org.hamcrest.text.containsString;
-
+    
     /**
      * MXML façade for containsString() / StringContainsMatcher.
      *
@@ -33,7 +33,7 @@ package org.hamcrest.mxml.text
         {
             super();
         }
-
+        
         /**
          * @inheritDoc
          */

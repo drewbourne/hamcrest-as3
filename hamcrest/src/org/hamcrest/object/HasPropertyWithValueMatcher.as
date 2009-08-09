@@ -1,11 +1,11 @@
 package org.hamcrest.object
 {
     import flash.utils.describeType;
-
+    
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeDiagnosingMatcher;
-
+    
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>, and the value
      * for that property matches the given valueMatcher.
@@ -18,7 +18,7 @@ package org.hamcrest.object
     {
         private var _propertyName:String;
         private var _valueMatcher:Matcher;
-
+        
         /**
          * Constructor.
          *
@@ -31,7 +31,7 @@ package org.hamcrest.object
             _propertyName = propertyName;
             _valueMatcher = valueMatcher;
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -42,16 +42,16 @@ package org.hamcrest.object
                 mismatchDescription.appendText('no property "' + _propertyName + '" on null object');
                 return false;
             }
-
+            
             if (!item.hasOwnProperty(_propertyName))
             {
                 mismatchDescription.appendText('no property "' + _propertyName + '"');
                 return false;
             }
-
+            
             var propertyValue:* = item[_propertyName];
             var valueMatches:Boolean = _valueMatcher.matches(propertyValue);
-
+            
             if (!valueMatches)
             {
                 mismatchDescription.appendText('property "' + _propertyName + '" ');
@@ -59,7 +59,7 @@ package org.hamcrest.object
             }
             return valueMatches;
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -68,9 +68,9 @@ package org.hamcrest.object
             description
                 .appendText("has property ")
                 .appendValue(_propertyName)
-                .appendText(" with value ")
+                .appendText(" with ")
                 .appendDescriptionOf(_valueMatcher);
         }
-
+    
     }
 }

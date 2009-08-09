@@ -1,20 +1,21 @@
 package org.hamcrest.mxml.text
 {
     import flash.errors.IllegalOperationError;
-
+    
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
-
+    import org.hamcrest.text.re;
+    
     /**
      * Dispatched when the <code>expression</code> property is changed.
      */
-    [Event(name='expressionChanged', type = 'flash.events.Event')]
-
+    [Event(name='expressionChanged',type='flash.events.Event')]
+    
     /**
      * Dispatched when the <code>flags</code> property is changed.
      */
-    [Event(name='flagsChanged', type = 'flash.events.Event')]
-
+    [Event(name='flagsChanged',type='flash.events.Event')]
+    
     /**
      * MXML wrapper for RegExpMatcher.
      *
@@ -24,7 +25,7 @@ package org.hamcrest.mxml.text
     {
         private var _expression:String;
         private var _flags:String;
-
+        
         /**
          * Constructor.
          */
@@ -32,7 +33,7 @@ package org.hamcrest.mxml.text
         {
             super();
         }
-
+        
         /**
          * RegExp expression
          */
@@ -41,13 +42,13 @@ package org.hamcrest.mxml.text
         {
             return _expression;
         }
-
+        
         public function set expression(value:String):void
         {
             _expression = value;
             changed('expression');
         }
-
+        
         /**
          * RegExp flags
          */
@@ -56,20 +57,19 @@ package org.hamcrest.mxml.text
         {
             return _flags;
         }
-
+        
         public function set flags(value:String):void
         {
             _flags = value;
             changed('flags');
         }
-
+        
         /**
          * @inheritDoc
          */
         override protected function createMatcher():Matcher
         {
-            throw new IllegalOperationError('MatchesPattern MXML facade doesnt yet have a Matcher implementation');
-            return null;
+            return re(new RegExp(expression, flags));
         }
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<componentPackage>
+  <component class="org.hamcrest.mxml.collection.Array"/>
+  <component class="org.hamcrest.mxml.collection.ArrayWithSize"/>
+  <component class="org.hamcrest.mxml.collection.EmptyArray"/>
+  <component class="org.hamcrest.mxml.collection.EveryItem"/>
+  <component class="org.hamcrest.mxml.collection.HasItem"/>
+  <component class="org.hamcrest.mxml.collection.HasItems"/>
+  <component class="org.hamcrest.mxml.core.AllOf"/>
+  <component class="org.hamcrest.mxml.core.AnyOf"/>
+  <component class="org.hamcrest.mxml.core.Anything"/>
+  <component class="org.hamcrest.mxml.core.DescribedAs"/>
+  <component class="org.hamcrest.mxml.core.Not"/>
+  <component class="org.hamcrest.mxml.date.DateAfter"/>
+  <component class="org.hamcrest.mxml.date.DateBefore"/>
+  <component class="org.hamcrest.mxml.date.DateBetween"/>
+  <component class="org.hamcrest.mxml.date.DateEqualTo"/>
+  <component class="org.hamcrest.mxml.number.Between"/>
+  <component class="org.hamcrest.mxml.number.CloseTo"/>
+  <component class="org.hamcrest.mxml.number.GreaterThan"/>
+  <component class="org.hamcrest.mxml.number.GreaterThanOrEqualTo"/>
+  <component class="org.hamcrest.mxml.number.LessThan"/>
+  <component class="org.hamcrest.mxml.number.LessThanOrEqualTo"/>
+  <component class="org.hamcrest.mxml.object.EqualTo"/>
+  <component class="org.hamcrest.mxml.object.HasProperties"/>
+  <component class="org.hamcrest.mxml.object.HasProperty"/>
+  <component class="org.hamcrest.mxml.object.InstanceOf"/>
+  <component class="org.hamcrest.mxml.object.NotNull"/>
+  <component class="org.hamcrest.mxml.object.Null"/>
+  <component class="org.hamcrest.mxml.object.SameInstance"/>
+  <component class="org.hamcrest.mxml.text.ContainsString"/>
+  <component class="org.hamcrest.mxml.text.EndsWith"/>
+  <component class="org.hamcrest.mxml.text.MatchesPattern"/>
+  <component class="org.hamcrest.mxml.text.StartsWith"/>
+</componentPackage>

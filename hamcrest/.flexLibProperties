@@ -118,15 +118,21 @@
 <classEntry path="org.hamcrest.object.nullValue"/>
 <classEntry path="org.hamcrest.object.sameInstance"/>
 <classEntry path="org.hamcrest.object.strictlyEqualTo"/>
+<classEntry path="org.hamcrest.text.EmptyStringMatcher"/>
+<classEntry path="org.hamcrest.text.RegExpMatcher"/>
 <classEntry path="org.hamcrest.text.StringContainsMatcher"/>
 <classEntry path="org.hamcrest.text.StringEndsWithMatcher"/>
 <classEntry path="org.hamcrest.text.StringStartsWithMatcher"/>
 <classEntry path="org.hamcrest.text.SubstringMatcher"/>
 <classEntry path="org.hamcrest.text.containsString"/>
+<classEntry path="org.hamcrest.text.emptyString"/>
 <classEntry path="org.hamcrest.text.endsWith"/>
+<classEntry path="org.hamcrest.text.re"/>
 <classEntry path="org.hamcrest.text.startsWith"/>
 <classEntry path="org.hamcrest.validator.MatcherValidator"/>
 </includeClasses>
 <includeResources/>
-<namespaceManifests/>
+<namespaceManifests>
+<namespaceManifestEntry manifest="hamcrest-manifest.xml" namespace="http://hamcrest.org/2009/mxml"/>
+</namespaceManifests>
 </flexLibProperties>

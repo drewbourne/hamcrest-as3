@@ -27,9 +27,11 @@ package org.hamcrest
     import org.hamcrest.object.IsNullTest;
     import org.hamcrest.object.IsSameTest;
     import org.hamcrest.object.IsStrictlyEqualTest;
+    import org.hamcrest.text.EmptyStringTest;
     import org.hamcrest.text.StringContainsTest;
     import org.hamcrest.text.StringEndsWithTest;
     import org.hamcrest.text.StringStartsWithTest;
+    import org.hamcrest.validation.MatcherValidatorTest;
     
     [Suite]
     [RunWith("org.flexunit.runners.Suite")]
@@ -74,6 +76,7 @@ package org.hamcrest
         public var t26:StringContainsTest;
         public var t27:StringEndsWithTest;
         public var t28:StringStartsWithTest;
+        public var emptyString:EmptyStringTest;
         
         // extras
         public var t29:ThrowsTest;
@@ -86,5 +89,8 @@ package org.hamcrest
         
         // mxml
         public var t33:HamcrestMXMLSuite;
+        
+        // extras / integration
+        public var validator:MatcherValidatorTest;
     }
 }

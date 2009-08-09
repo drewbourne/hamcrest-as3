@@ -55,7 +55,7 @@ package org.hamcrest.object
         [Test]
         public function describeTo():void
         {
-            assertDescription('(has property "property1" with value <true> and has property "property2" with value <true>)',
+            assertDescription('(has property "property1" with <true> and has property "property2" with <true>)',
                 hasProperties({
                     property1: equalTo(true),
                     property2: equalTo(true)

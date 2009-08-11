@@ -85,7 +85,7 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
     
 * Collections
     * array - test an array's elements against an array of matchers
-    * arrayWithSize - match an array's size against a matcher
+    * arrayWithSize - match an array's size against a number
     * hasItem, hasItems - test a collection contains elements
     * everyItem - test that a matcher matches every item in an array
 

@@ -64,41 +64,41 @@ Here is an example test case, which shows off some commonly used functions:
 
 Hamcrest comes with a library of useful matchers. Here are some of the most important ones.
 
-    * Core
-        * anything - always matches, useful if you don't care what the object under test is
-        * describedAs - decorator to adding custom failure description
-        * isA - matches a specific type
-        * throws - matches if a function throws the given exception
+* Core
+    * anything - always matches, useful if you don't care what the object under test is
+    * describedAs - decorator to adding custom failure description
+    * isA - matches a specific type
+    * throws - matches if a function throws the given exception
 
-    * Logical
-        * allOf - matches if all matchers match, short circuits (like &&)
-        * anyOf - matches if any matchers match, short circuits (like ||)
-        * not - matches if the wrapped matcher doesn't match and vice versa
+* Logical
+    * allOf - matches if all matchers match, short circuits (like &&)
+    * anyOf - matches if any matchers match, short circuits (like ||)
+    * not - matches if the wrapped matcher doesn't match and vice versa
 
-    * Object
-        * equalTo - compares objects using ==
-        * sameInstance, strictlyEqualTo - compare objects using ===
-        * hasProperty - checks that a property exists and, optionally, that it matches the provided matcher
-        * hasProperties - similar to hasProperty, but accepts a dictionary of properties and their associated matchers
-        * instanceOf - test type
-        * notNullValue, nullValue - test for null
-        
-    * Collections
-        * array - test an array's elements against an array of matchers
-        * arrayWithSize - match an array's size against a matcher
-        * hasItem, hasItems - test a collection contains elements
-        * everyItem - test that a matcher matches every item in an array
+* Object
+    * equalTo - compares objects using ==
+    * sameInstance, strictlyEqualTo - compare objects using ===
+    * hasProperty - checks that a property exists and, optionally, that it matches the provided matcher
+    * hasProperties - similar to hasProperty, but accepts a dictionary of properties and their associated matchers
+    * instanceOf - test type
+    * notNullValue, nullValue - test for null
+    
+* Collections
+    * array - test an array's elements against an array of matchers
+    * arrayWithSize - match an array's size against a matcher
+    * hasItem, hasItems - test a collection contains elements
+    * everyItem - test that a matcher matches every item in an array
 
-    * Number
-        * closeTo - test that values are close to a given value
-        * greaterThan, greaterThanOrEqualTo, lessThan, lessThanOrEqualTo - test ordering
-        * between - test that a value is between two given values
+* Number
+    * closeTo - test that values are close to a given value
+    * greaterThan, greaterThanOrEqualTo, lessThan, lessThanOrEqualTo - test ordering
+    * between - test that a value is between two given values
 
-    * Text
-        * containsString, endsWith, startsWith - test string matching
-        * re - text matches a regular expression
+* Text
+    * containsString, endsWith, startsWith - test string matching
+    * re - text matches a regular expression
 
-    * Date
-        * dateAfter, dateAfterOrEqual, dateBefore,  dateBeforeOrEqual - date comparisons
-        * dateBetween - test that a date is within a given range
-        * dateEqual - tests dates for equality
+* Date
+    * dateAfter, dateAfterOrEqual, dateBefore,  dateBeforeOrEqual - date comparisons
+    * dateBetween - test that a date is within a given range
+    * dateEqual - tests dates for equality

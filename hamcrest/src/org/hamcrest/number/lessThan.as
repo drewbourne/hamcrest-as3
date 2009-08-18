@@ -1,7 +1,7 @@
 package org.hamcrest.number
 {
     import org.hamcrest.Matcher;
-
+    
     /**
      * Matches if the item is less than the given value.
      *
@@ -10,7 +10,7 @@ package org.hamcrest.number
      *
      * @example
      * <listing version="3.0">
-     * assertThat(3, lessThan(4));
+     *  assertThat(3, lessThan(4));
      * </listing>
      *
      * @author Drew Bourne <andrew@firstbourne.com>

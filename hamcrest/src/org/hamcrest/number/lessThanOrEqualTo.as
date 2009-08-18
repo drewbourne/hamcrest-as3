@@ -4,7 +4,7 @@ package org.hamcrest.number
     import org.hamcrest.core.anyOf;
     import org.hamcrest.core.describedAs;
     import org.hamcrest.object.equalTo;
-
+    
     /**
      * Matches if the item is less than or equal to the given value.
      *
@@ -13,7 +13,7 @@ package org.hamcrest.number
      *
      * @example
      * <listing version="3.0">
-     * assertThat(4, lessThanOrEqualTo(4));
+     *  assertThat(4, lessThanOrEqualTo(4));
      * </listing>
      *
      * @author Drew Bourne <andrew@firstbourne.com>

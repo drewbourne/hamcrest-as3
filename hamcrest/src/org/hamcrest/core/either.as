@@ -9,7 +9,7 @@ package org.hamcrest.core
      *
      * @example
      * <listing version="3.0">
-     *  assertThat("good", both(equalTo("good")).and(not(equalTo("bad"));
+     *  assertThat("good", either(equalTo("good")).or(not(equalTo("bad"));
      * </listing>
      *
      * @author Drew Bourne <andrew@firstbourne.com>

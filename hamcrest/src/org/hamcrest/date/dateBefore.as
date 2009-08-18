@@ -1,7 +1,7 @@
 package org.hamcrest.date
 {
     import org.hamcrest.Matcher;
-
+    
     /**
      * Matches if the date item is before the given date.
      *
@@ -10,7 +10,7 @@ package org.hamcrest.date
      *
      * @example
      * <listing version="3.0">
-     * assertThat( new Date(1920, 1, 1), dateBefore( new Date() ) );
+     *  assertThat( new Date(1920, 1, 1), dateBefore( new Date() ) );
      * </listing>
      */
     public function dateBefore(value:Date):Matcher

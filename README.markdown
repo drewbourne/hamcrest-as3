@@ -31,19 +31,32 @@ The major advantage of using assertThat() and the Hamcrest matchers over traditi
 
 Most of the Matchers have also been made usable in the Flex MXML context by wrapping them in a facade that collects and proxies the Matcher arguments. The declarative format of MXML allows the Matchers to be composed, used and bound to. 
 
-    <core:AllOf id="numberMatcher" target="{ Number(numberInput.text) }">
-        <object:NotNull />
-        <core:AnyOf>
-            <object:EqualTo value="17" />
-            <number:CloseTo value="11" delta="0.3" />
-            <number:Between min="1" max="9" />
-        </core:AnyOf>
-    </core:AllOf>
+    <AllOf id="numberMatcher" target="{ Number(numberInput.text) }">
+        <NotNull />
+        <AnyOf>
+            <EqualTo value="17" />
+            <CloseTo value="11" delta="0.3" />
+            <Between min="1" max="9" />
+        </AnyOf>
+    </AllOf>
 
     <mx:TextInput id="numberInput" />
     <mx:Label text={ numberMatcher.description }"" />
     <mx:Label text={ numberMatcher.mismatchDescription }"" />
     <mx:Label text={ numberMatcher.matched }"" />
+
+## Validating with Hamcrest
+
+The MXML Matchers can be combined with the MatcherValidator to provide a very flexible and declarative way to define validation for UIComponents and other objects without additional ActionScript.  
+
+    <MatcherValidator id="validator" xmlns="http://hamcrest.org/2009/mxml">
+      <AllOf>
+        <ContainsString string="Win" />
+        <HasProperty property="length">
+          <GreaterThan value="3" />
+        </HasProperty>
+      </AllOf>
+    <MatcherValidtor>
 
 ## Commonly Used Functions
 
@@ -102,3 +115,4 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
     * dateAfter, dateAfterOrEqual, dateBefore,  dateBeforeOrEqual - date comparisons
     * dateBetween - test that a date is within a given range
     * dateEqual - tests dates for equality
+

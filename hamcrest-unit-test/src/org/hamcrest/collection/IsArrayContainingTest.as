@@ -12,6 +12,16 @@ package org.hamcrest.collection
     public class IsArrayContainingTest extends AbstractMatcherTestCase
     {
 
+		override public function assertMatches(message:String, matcher:Matcher, arg:Object):void {
+			super.assertMatches(message, matcher, arg);
+
+			// To ensure that the matcher properly matches non-Array collecitons,
+			// run the same test again, this time using an ArrayCollection.
+			if (arg is Array) {
+				super.assertMatches(message + " (as ArrayCollection)", matcher, new ArrayCollection(arg as Array));
+			}
+		}
+
         [Test]
         public function matchesACollectionThatContainsAnElementMatchingTheGivenMatcher():void
         {
@@ -68,15 +78,6 @@ package org.hamcrest.collection
             assertDoesNotMatch("should not match list unless it contains all items",
                 matcher5,
                 [ "e", "c", "b", "d" ]); // 'a' is missing
-        }
-        
-        [Test]
-        public function matchesNonArrayCollections():void
-        {
-        	var matcher:Matcher = hasItem("a");
-        	assertMatches("should match non-Array collecitons",
-        				  matcher,
-        				  new ArrayCollection([ "a", "b", "c" ]));
         }
     }
 }

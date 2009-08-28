@@ -2,7 +2,9 @@ package org.hamcrest.collection
 {
 
     import flexunit.framework.*;
-
+    
+    import mx.collections.ArrayCollection;
+    
     import org.hamcrest.AbstractMatcherTestCase;
     import org.hamcrest.Matcher;
     import org.hamcrest.object.equalTo;
@@ -66,6 +68,15 @@ package org.hamcrest.collection
             assertDoesNotMatch("should not match list unless it contains all items",
                 matcher5,
                 [ "e", "c", "b", "d" ]); // 'a' is missing
+        }
+        
+        [Test]
+        public function matchesNonArrayCollections():void
+        {
+        	var matcher:Matcher = hasItem("a");
+        	assertMatches("should match non-Array collecitons",
+        				  matcher,
+        				  new ArrayCollection([ "a", "b", "c" ]));
         }
     }
 }

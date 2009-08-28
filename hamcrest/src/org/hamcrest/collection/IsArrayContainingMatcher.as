@@ -1,8 +1,8 @@
 package org.hamcrest.collection
 {
+    import org.hamcrest.BaseMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
-    import org.hamcrest.TypeSafeMatcher;
 
     /**
      * Matches if the item being matched is an Array and contains at least one item that matches
@@ -19,7 +19,7 @@ package org.hamcrest.collection
      *
      * @author Drew Bourne <andrew@firstbourne.com>
      */
-    public class IsArrayContainingMatcher extends TypeSafeMatcher
+    public class IsArrayContainingMatcher extends BaseMatcher
     {
         private var _elementMatcher:Matcher;
 
@@ -30,7 +30,7 @@ package org.hamcrest.collection
          */
         public function IsArrayContainingMatcher(elementMatcher:Matcher)
         {
-            super(Array);
+            super();
             _elementMatcher = elementMatcher;
         }
 
@@ -39,7 +39,7 @@ package org.hamcrest.collection
          *
          * @param collection Array to check items for a match.
          */
-        override public function matchesSafely(collection:Object):Boolean
+        override public function matches(collection:Object):Boolean
         {
             for each (var item:Object in collection)
             {

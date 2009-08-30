@@ -4,7 +4,7 @@ package org.hamcrest.mxml
     /**
      * MXMLMatcher interface for Matchers that compose another MXMLMatcher.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public interface MXMLMatcherComposite extends MXMLMatcher
     {

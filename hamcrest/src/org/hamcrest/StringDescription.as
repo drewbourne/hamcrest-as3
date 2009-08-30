@@ -8,7 +8,7 @@ package org.hamcrest
      *
      * @see org.hamcrest.Description
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class StringDescription extends BaseDescription
     {

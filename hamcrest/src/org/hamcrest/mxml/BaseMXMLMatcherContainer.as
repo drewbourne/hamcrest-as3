@@ -12,7 +12,7 @@ package org.hamcrest.mxml
     /**
      * MXMLMatcher that composes zero or more MXMLMatchers.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class BaseMXMLMatcherContainer extends BaseMXMLMatcher
     {

@@ -14,10 +14,10 @@ package org.hamcrest.mxml.date
      *
      * @example
      * <listing version="3.0">
-     *  <hc:DateAfter date="{ new Date() }" />
+     *  &lt;hc:DateAfter date="{ new Date() }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class DateAfter extends BaseMXMLMatcher
     {

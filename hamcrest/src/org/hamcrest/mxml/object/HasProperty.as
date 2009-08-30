@@ -26,11 +26,11 @@ package org.hamcrest.mxml.object
      *
      * @example
      * <listing version="3.0">
-     *  <hc:hasProperty property="prop" />
-     *  <hc:hasProperty property="otherProp" value="{ 123 }" />
+     *  &lt;hc:hasProperty property="prop" /&gt;
+     *  &lt;hc:hasProperty property="otherProp" value="{ 123 }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     [DefaultProperty('value')]
     public class HasProperty extends BaseMXMLMatcherComposite

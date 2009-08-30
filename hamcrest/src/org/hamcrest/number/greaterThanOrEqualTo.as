@@ -16,7 +16,7 @@ package org.hamcrest.number
      * assertThat(4, greaterThanOrEqualTo(4));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function greaterThanOrEqualTo(value:Number):Matcher
     {

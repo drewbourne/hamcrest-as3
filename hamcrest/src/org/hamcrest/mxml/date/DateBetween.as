@@ -12,10 +12,10 @@ package org.hamcrest.mxml.date
      *
      * @example
      * <listing version="3.0">
-     *  <hc:DateBetween min="{ today() }" max="{ advanceDate(today(), { month: 1 }) }" />
+     *  &lt;hc:DateBetween min="{ today() }" max="{ advanceDate(today(), { month: 1 }) }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class DateBetween extends BaseMXMLMatcher
     {

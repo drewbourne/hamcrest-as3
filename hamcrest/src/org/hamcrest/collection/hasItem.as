@@ -14,7 +14,7 @@ package org.hamcrest.collection
      *  assertThat([1, 2, 3], hasItem(equalTo(3));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function hasItem(value:Object):Matcher
     {

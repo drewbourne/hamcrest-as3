@@ -13,7 +13,7 @@ package org.hamcrest.core
      * For example:  assertThat(cheese, equalTo(smelly))
      *          vs.  assertThat(cheese, isA(equalTo(smelly)))
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsMatcher extends BaseMatcher
     {

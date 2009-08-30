@@ -11,7 +11,7 @@ package org.hamcrest.collection
      *  assertThat([], emptyArray());
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function emptyArray():Matcher
     {

@@ -1,11 +1,11 @@
 package org.hamcrest
 {
 
-    // TODO @example CustomTypeSafeMatcher
+    // TODO example CustomTypeSafeMatcher
     /**
      * TypeSafeMatcher that defers logic for <code>matchesSafely</code> an another Function.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class CustomTypeSafeMatcher extends TypeSafeMatcher
     {

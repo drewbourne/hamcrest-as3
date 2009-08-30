@@ -14,7 +14,7 @@ package org.hamcrest.core
      *  assertThat("the great void", anything());
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function anything(message:String = null):Matcher
     {

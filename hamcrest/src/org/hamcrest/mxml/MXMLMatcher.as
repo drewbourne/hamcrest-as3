@@ -5,7 +5,7 @@ package org.hamcrest.mxml
     /**
      * Interface for MXML façades to Hamcrest Matchers.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public interface MXMLMatcher extends Matcher
     {

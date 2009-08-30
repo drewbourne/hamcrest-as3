@@ -13,10 +13,10 @@ package org.hamcrest.mxml.number
      *
      * @example
      * <listing version="3.0">
-     *  <hc:LessThan value="{ 4 }" />
+     *  &lt;hc:LessThan value="{ 4 }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class LessThan extends BaseMXMLMatcher
     {

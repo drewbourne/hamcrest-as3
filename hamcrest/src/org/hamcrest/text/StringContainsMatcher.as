@@ -7,7 +7,7 @@ package org.hamcrest.text
      * @see org.hamcrest.text.containsString
      * @see org.hamcrest.text.SubstringMatcher
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class StringContainsMatcher extends SubstringMatcher
     {

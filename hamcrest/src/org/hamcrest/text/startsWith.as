@@ -15,7 +15,7 @@ package org.hamcrest.text
      *  assertThat("The quick brown fox", startsWith("The"));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function startsWith(substring:String):Matcher
     {

@@ -13,10 +13,10 @@ package org.hamcrest.mxml.core
      *
      * @example
      * <listing version="3.0">
-     *  <hc:Anything />
+     *  &lt;hc:Anything /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class Anything extends BaseMXMLMatcher
     {

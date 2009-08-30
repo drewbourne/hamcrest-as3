@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MatcherValidator 
+    xmlns="http://hamcrest.org/2009/mxml"
+    xmlns:mx="http://www.adobe.com/2006/mxml">
+
+    <!--
+         Example to verify the hamcrest-manifest.xml is correct.
+    -->
+
+    <AllOf>
+        <!-- collection -->
+        <Array />
+        <ArrayWithSize size="1" />
+        <EmptyArray />
+        <EveryItem />
+        <HasItem />
+        <HasItems />
+        <!-- core -->
+        <AllOf />
+        <AnyOf />
+        <Anything />
+        <DescribedAs />
+        <Not />
+        <!-- date -->
+        <DateAfter />
+        <DateBefore />
+        <DateBetween />
+        <DateEqualTo />
+        <!-- number -->
+        <Between />
+        <CloseTo />
+        <GreaterThan />
+        <GreaterThanOrEqualTo />
+        <LessThan />
+        <LessThanOrEqualTo />
+        <!-- object -->
+        <EqualTo />
+        <HasProperties />
+        <HasProperty />
+        <InstanceOf />
+        <NotNull />
+        <Null />
+        <SameInstance />
+        <!-- text -->
+        <ContainsString />
+        <EndsWith />
+        <MatchesPattern />
+        <StartsWith />
+    </AllOf>
+
+</MatcherValidator>

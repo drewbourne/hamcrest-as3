@@ -13,12 +13,12 @@ package org.hamcrest.mxml.collection
      *
      * @example
      * <listing version="3.0">
-     *  <hc:EveryItem>
-     *      <hc:EqualTo value="{ 3 }" />
-     *  </hc:EveryItem>
+     *  &lt;hc:EveryItem&gt;
+     *      &lt;hc:EqualTo value="{ 3 }" /&gt;
+     *  &lt;hc:EveryItem&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class EveryItem extends BaseMXMLMatcherComposite
     {

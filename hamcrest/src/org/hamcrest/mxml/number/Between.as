@@ -15,10 +15,10 @@ package org.hamcrest.mxml.number
      *
      * @example
      * <listing version="3.0">
-     *  <hc:Between min="{ 3 }" max="{ 5 }" />
+     *  &lt;hc:Between min="{ 3 }" max="{ 5 }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class Between extends BaseMXMLMatcher
     {

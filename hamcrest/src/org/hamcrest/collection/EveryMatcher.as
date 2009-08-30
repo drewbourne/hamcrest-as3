@@ -15,7 +15,7 @@ package org.hamcrest.collection
      *  assertThat([1, 2, 3], everyItem(instanceOf(Number)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class EveryMatcher extends TypeSafeDiagnosingMatcher
     {

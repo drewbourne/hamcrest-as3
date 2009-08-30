@@ -9,7 +9,7 @@ package org.hamcrest
      *
      * @private
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     internal function assertThatBoolean(reason:String, result:Boolean):void
     {

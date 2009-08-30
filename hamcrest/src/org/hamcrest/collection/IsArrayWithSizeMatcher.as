@@ -3,7 +3,8 @@ package org.hamcrest.collection
     import org.hamcrest.TypeSafeMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
-
+    
+    // TODO arrayWithSize / IsArrayWithSizeMatcher should diagnose mismatch.
     /**
      * Checks the item being matched is an <code>Array</code> and has the expected number of items.
      *
@@ -15,12 +16,12 @@ package org.hamcrest.collection
      *  assertThat([true, false], arrayWithSize(2));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsArrayWithSizeMatcher extends TypeSafeMatcher
     {
         private var _sizeMatcher:Matcher;
-
+        
         /**
          * Constructor.
          *
@@ -31,7 +32,7 @@ package org.hamcrest.collection
             super(Array);
             _sizeMatcher = sizeMatcher;
         }
-
+        
         /**
          * @inheritDoc
          */
@@ -39,7 +40,7 @@ package org.hamcrest.collection
         {
             return _sizeMatcher.matches((item as Array).length);
         }
-
+        
         /**
          * @inheritDoc
          */

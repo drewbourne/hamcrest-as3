@@ -16,10 +16,10 @@ package org.hamcrest.mxml.object
      *
      * @example
      * <listing version="3.0">
-     *  <hc:HasProperties properties="{{ prop: value, other: otherValue }}" />
+     *  &lt;hc:HasProperties properties="{{ prop: value, other: otherValue }}" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class HasProperties extends BaseMXMLMatcher
     {

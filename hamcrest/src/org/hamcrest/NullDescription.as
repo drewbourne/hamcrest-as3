@@ -6,7 +6,7 @@ package org.hamcrest
     /**
      * No-Op implementation of Description.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class NullDescription implements Description
     {

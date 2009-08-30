@@ -14,7 +14,7 @@ package org.hamcrest.text
      *  assertThat("The quick brown fox", containsString("fox"));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function containsString(substring:String):Matcher
     {

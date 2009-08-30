@@ -12,7 +12,7 @@ package org.hamcrest.core
      *  assertThat("good", both(equalTo("good")).and(not(equalTo("bad"));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function both(... rest):CombinableMatcher
     {

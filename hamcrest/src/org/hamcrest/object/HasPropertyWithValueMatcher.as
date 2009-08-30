@@ -12,7 +12,7 @@ package org.hamcrest.object
      *
      * @see org.hamcrest.object.hasProperty
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class HasPropertyWithValueMatcher extends TypeSafeDiagnosingMatcher
     {

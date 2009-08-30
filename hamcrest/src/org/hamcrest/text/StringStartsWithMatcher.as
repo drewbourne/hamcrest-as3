@@ -7,7 +7,7 @@ package org.hamcrest.text
      * @see org.hamcrest.text.endsWith
      * @see org.hamcrest.text.SubstringMatcher
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class StringStartsWithMatcher extends SubstringMatcher
     {

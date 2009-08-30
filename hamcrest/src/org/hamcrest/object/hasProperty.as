@@ -16,7 +16,7 @@ package org.hamcrest.object
      *  assertThat({ id: 1234, data: null }, hasProperty("data", nullValue()));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function hasProperty(propertyName:String, ... rest):Matcher
     {

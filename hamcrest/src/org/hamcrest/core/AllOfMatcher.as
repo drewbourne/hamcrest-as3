@@ -9,7 +9,7 @@ package org.hamcrest.core
      *
      * @see org.hamcrest.core.allOf
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class AllOfMatcher extends DiagnosingMatcher
     {

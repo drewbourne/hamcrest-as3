@@ -9,7 +9,7 @@ package org.hamcrest.core
      *
      * @see org.hamcrest.core.AnyOfMatcher
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class ShortcutCombinationMatcher extends BaseMatcher
     {

@@ -7,7 +7,7 @@ package org.hamcrest
      * @param actual Object to match
      * @param matcher Matcher to match <code>actual</code> with.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     internal function assertThatMatcher(reason:String, actual:Object, matcher:Matcher):void
     {

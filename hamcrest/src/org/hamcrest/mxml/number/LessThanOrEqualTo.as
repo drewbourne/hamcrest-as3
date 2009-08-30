@@ -12,10 +12,10 @@ package org.hamcrest.mxml.number
      *
      * @example
      * <listing version="3.0">
-     *  <hc:LessThanOrEqualTo value="{ 4 }" />
+     *  &lt;hc:LessThanOrEqualTo value="{ 4 }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class LessThanOrEqualTo extends BaseMXMLMatcher
     {

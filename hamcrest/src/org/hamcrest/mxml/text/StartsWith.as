@@ -12,10 +12,10 @@ package org.hamcrest.mxml.text
      *
      * @example
      * <listing version="3.0">
-     *  <hc:StringWith string="the quick brown fox" />
+     *  &lt;hc:StringWith string="the quick brown fox" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class StartsWith extends StringMXMLMatcher
     {

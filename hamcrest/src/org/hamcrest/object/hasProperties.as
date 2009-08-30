@@ -3,10 +3,10 @@ package org.hamcrest.object
     import org.hamcrest.Matcher;
     import org.hamcrest.core.allOf;
 
-    // TODO @example for hasProperties
-    // TODO @asdoc for hasProperties
+    // TODO example for hasProperties
+    // TODO asdoc for hasProperties
     /**
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function hasProperties(object:Object):Matcher
     {

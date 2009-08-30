@@ -12,7 +12,7 @@ package org.hamcrest.object
      * assertThat(null, nullValue());
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function nullValue():Matcher
     {

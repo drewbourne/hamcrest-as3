@@ -13,7 +13,7 @@ package org.hamcrest.collection
      *  assertThat([1, 2, 3], everyItem(isA(Number)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function everyItem(itemMatcher:Matcher):Matcher
     {

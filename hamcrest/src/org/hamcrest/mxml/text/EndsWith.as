@@ -12,10 +12,10 @@ package org.hamcrest.mxml.text
      *
      * @example
      * <listing version="3.0">
-     *  <hc:EndsWith string="lazy dog" />
+     *  &lt;hc:EndsWith string="lazy dog" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class EndsWith extends StringMXMLMatcher
     {

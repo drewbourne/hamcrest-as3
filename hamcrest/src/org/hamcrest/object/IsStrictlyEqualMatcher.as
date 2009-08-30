@@ -16,7 +16,7 @@ package org.hamcrest.object
      *  assertThat(o1, not(strictlyEqualTo(o2)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsStrictlyEqualMatcher extends BaseMatcher
     {

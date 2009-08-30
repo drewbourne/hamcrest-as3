@@ -7,7 +7,7 @@ package org.hamcrest
      *
      * Typically used when the matching logic and description logic are the same and/or deferred to another Matcher.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class DiagnosingMatcher extends BaseMatcher
     {

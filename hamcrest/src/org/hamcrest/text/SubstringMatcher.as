@@ -12,7 +12,7 @@ package org.hamcrest.text
      * Subclasses should override <code>evalSubstringOf</code> for matching logic,
      * and <code>relationship</code> to describe the type of match being performed.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class SubstringMatcher extends TypeSafeMatcher
     {

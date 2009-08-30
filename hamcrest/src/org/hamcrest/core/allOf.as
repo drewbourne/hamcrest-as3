@@ -15,7 +15,7 @@ package org.hamcrest.core
      *  assertThat("good", allOf(equalTo("good"), not(equalTo("bad"))));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function allOf(... rest):Matcher
     {

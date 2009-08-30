@@ -14,7 +14,7 @@ package org.hamcrest.object
      *  assertThat("waffles", instanceOf(String));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function instanceOf(type:Class):Matcher
     {

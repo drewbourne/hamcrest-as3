@@ -15,7 +15,7 @@ package org.hamcrest.object
      *  assertThat({ id: 1234, data: [1, 2, 3] }, hasPropertyValue("data", everyItem(isA(Number))));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function hasPropertyWithValue(propertyName:String, valueOrMatcher:Object):Matcher
     {

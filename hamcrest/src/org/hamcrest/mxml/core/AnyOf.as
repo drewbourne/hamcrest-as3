@@ -12,14 +12,14 @@ package org.hamcrest.mxml.core
      *
      * @example
      * <listing version="3.0">
-     *  <hc:AnyOf>
-     *      <hc:EqualTo value="{ 3 }" />
-     *      <hc:EqualTo value="{ 4 }" />
-     *      <hc:EqualTo value="{ 5 }" />
-     *  </hc:AnyOf>
+     *  &lt;hc:AnyOf&gt;
+     *      &lt;hc:EqualTo value="{ 3 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 4 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 5 }" /&gt;
+     *  &lt;hc:AnyOf&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class AnyOf extends BaseMXMLMatcherContainer
     {

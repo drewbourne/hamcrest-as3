@@ -9,7 +9,7 @@ package org.hamcrest
      *
      * @see org.hamcrest.StringDescription
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class BaseDescription implements Description
     {

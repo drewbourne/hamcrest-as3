@@ -13,12 +13,12 @@ package org.hamcrest.mxml.core
      *
      * @example
      * <listing version="3.0">
-     *  <hc:Not>
-     *      <hc:EqualTo value="{ 4 }" />
-     *  </hc:Not>
+     *  &lt;hc:Not&gt;
+     *      &lt;hc:EqualTo value="{ 4 }" /&gt;
+     *  &lt;hc:Not&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class Not extends BaseMXMLMatcherComposite
     {

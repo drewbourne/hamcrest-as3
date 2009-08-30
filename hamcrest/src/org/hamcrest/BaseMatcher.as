@@ -2,11 +2,11 @@ package org.hamcrest
 {
     import flash.errors.IllegalOperationError;
 
-    // TODO @example BaseMatcher subclass implementation
+    // TODO example BaseMatcher subclass implementation
     /**
      * Abstract. Subclasses must override <code>matches</code> and <code>describeTo</code>, and should override <code>describeMismatch</code>.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class BaseMatcher implements Matcher
     {

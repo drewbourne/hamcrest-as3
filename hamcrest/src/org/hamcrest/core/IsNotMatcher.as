@@ -15,7 +15,7 @@ package org.hamcrest.core
      *  assertThat(3, not(closeTo(10, 1)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsNotMatcher extends BaseMatcher
     {

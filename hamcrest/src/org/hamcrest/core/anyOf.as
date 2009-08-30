@@ -12,7 +12,7 @@ package org.hamcrest.core
      *  assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function anyOf(... rest):Matcher
     {

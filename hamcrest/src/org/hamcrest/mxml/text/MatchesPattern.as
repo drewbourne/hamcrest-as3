@@ -19,7 +19,7 @@ package org.hamcrest.mxml.text
     /**
      * MXML wrapper for RegExpMatcher.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class MatchesPattern extends BaseMXMLMatcher
     {

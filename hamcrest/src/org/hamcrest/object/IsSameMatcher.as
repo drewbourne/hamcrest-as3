@@ -8,7 +8,7 @@ package org.hamcrest.object
      *
      * @see org.hamcrest.sameInstance
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsSameMatcher extends BaseMatcher
     {

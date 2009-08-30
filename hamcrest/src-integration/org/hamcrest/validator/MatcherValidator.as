@@ -14,19 +14,19 @@ package org.hamcrest.validator
      *
      * @example
      * <listing version="3.0">
-     *  <hc:MatcherValidator
+     *  &lt;hc:MatcherValidator
      *      id="exampleMatcherValidator"
      *      source="{ textInput }"
-     *      property="text">
-     *      <hc:AllOf>
-     *          <hc:NotNull />
-     *          <hc:StartsWith string="Ham" />
-     *          <hc:StringLength min="3" max="10" />
-     *      </hc:AllOf>
-     *  </hc:MatcherValidator>
+     *      property="text"&gt;
+     *      &lt;hc:AllOf&gt;
+     *          &lt;hc:NotNull /&gt;
+     *          &lt;hc:StartsWith string="Ham" /&gt;
+     *          &lt;hc:StringLength min="3" max="10" /&gt;
+     *      &lt;hc:AllOf&gt;
+     *  &lt;hc:MatcherValidator&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     [Bindable]
     public class MatcherValidator extends Validator

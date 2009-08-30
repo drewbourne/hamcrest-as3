@@ -6,7 +6,7 @@ package org.hamcrest.core
      *
      * @see org.hamcrest.core.anyOf
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class AnyOfMatcher extends ShortcutCombinationMatcher
     {

@@ -11,11 +11,11 @@ package org.hamcrest.mxml
      */
     [Event(name='matcherChanged', type = 'flash.events.Event')]
 
-    // TODO @example
+    // TODO example
     /**
      * MXMLMatcher that composes another MXMLMatcher.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class BaseMXMLMatcherComposite extends BaseMXMLMatcher implements MXMLMatcherComposite
     {

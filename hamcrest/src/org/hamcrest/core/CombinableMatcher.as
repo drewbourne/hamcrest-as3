@@ -15,7 +15,7 @@ package org.hamcrest.core
      *  assertThat(5.5, both(between(3, 7)).and(closeTo(4, 2)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class CombinableMatcher extends BaseMatcher
     {

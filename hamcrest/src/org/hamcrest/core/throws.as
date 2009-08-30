@@ -17,7 +17,7 @@ package org.hamcrest.core
      *      hasPropertyValue("message", "oh no"))));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function throws(error:Object):Matcher
     {

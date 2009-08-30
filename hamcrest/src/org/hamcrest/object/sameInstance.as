@@ -18,7 +18,7 @@ package org.hamcrest.object
      *  assertThat(event, not(sameInstance(new Event("example"))));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function sameInstance(value:Object):Matcher
     {

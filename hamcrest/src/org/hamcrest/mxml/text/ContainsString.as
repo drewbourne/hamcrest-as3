@@ -12,17 +12,17 @@ package org.hamcrest.mxml.text
      *
      * @example
      * <listing version="3.0">
-     *  <hc:ContainsString string="string that should be contained" />
+     *  &lt;hc:ContainsString string="string that should be contained" /&gt;
      *
-     *  <hc:ContainsString>
-     *      <![CDATA[
+     *  &lt;hc:ContainsString&gt;
+     *      &lt;![CDATA[
      * multiline strings
      * can be matched too
-     *      ]]>
-     *  </hc:ContainsString>
+     *      ]]&gt;
+     *  &lt;hc:ContainsString&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class ContainsString extends StringMXMLMatcher
     {

@@ -2,13 +2,13 @@ package org.hamcrest
 {
     import flash.errors.IllegalOperationError;
 
-    // TODO @example TypeSafeMatcher
+    // TODO example TypeSafeMatcher
     /**
      * Matcher that checks the value to be matched is of an expected type before passing it to <code>matchesSafely</code>.
      *
      * Subclasses should override <code>matchesSafely</code>.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class TypeSafeMatcher extends BaseMatcher
     {

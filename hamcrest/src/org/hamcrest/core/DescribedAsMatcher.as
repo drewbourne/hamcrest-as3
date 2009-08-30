@@ -17,7 +17,7 @@ package org.hamcrest.core
      *  assertThat(3, describedAs("%0 is a magic number", equalTo(4), 3);
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class DescribedAsMatcher extends BaseMatcher
     {

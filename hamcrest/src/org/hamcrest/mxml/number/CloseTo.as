@@ -14,10 +14,10 @@ package org.hamcrest.mxml.number
      *
      * @example
      * <listing version="3.0">
-     *  <hc:CloseTo value="{ 3 }" delta="{ 0.5 }" />
+     *  &lt;hc:CloseTo value="{ 3 }" delta="{ 0.5 }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class CloseTo extends BaseMXMLMatcher
     {

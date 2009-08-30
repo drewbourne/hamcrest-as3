@@ -14,7 +14,7 @@ package org.hamcrest.mxml.date
      *
      * @example
      * <listing version="3.0">
-     *  <hc:DateBefore date="{ new Date() }" />
+     *  &lt;hc:DateBefore date="{ new Date() }" /&gt;
      * </listing>
      */
     public class DateBefore extends BaseMXMLMatcher

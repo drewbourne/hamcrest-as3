@@ -23,7 +23,7 @@ package org.hamcrest.number
      *  // fails
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function between(min:Number, max:Number, exclusive:Boolean=false):Matcher
     {

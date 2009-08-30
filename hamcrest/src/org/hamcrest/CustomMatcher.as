@@ -1,12 +1,12 @@
 package org.hamcrest
 {
 
-    // TODO @example CustomMatcher
+    // TODO example CustomMatcher
     // TODO factory method for customMatcher
     /**
      * Matcher implementation that defers logic for <code>matches</code> an another Function.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class CustomMatcher extends BaseMatcher
     {

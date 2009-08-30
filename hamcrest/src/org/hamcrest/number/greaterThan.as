@@ -13,7 +13,7 @@ package org.hamcrest.number
      *  assertThat(5, greaterThan(4));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function greaterThan(value:Number):Matcher
     {

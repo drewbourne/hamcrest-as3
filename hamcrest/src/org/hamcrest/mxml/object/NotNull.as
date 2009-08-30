@@ -13,10 +13,10 @@ package org.hamcrest.mxml.object
      *
      * @example
      * <listing version="3.0">
-     *  <hc:NotNull />
+     *  &lt;hc:NotNull /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class NotNull extends BaseMXMLMatcher
     {

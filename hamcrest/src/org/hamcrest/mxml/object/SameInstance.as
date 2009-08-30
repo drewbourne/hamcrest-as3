@@ -17,10 +17,10 @@ package org.hamcrest.mxml.object
      *
      * @example
      * <listing version="3.0">
-     *  <hc:SameInstance value="{ anInstanceOfSomething }" />
+     *  &lt;hc:SameInstance value="{ anInstanceOfSomething }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class SameInstance extends BaseMXMLMatcher
     {

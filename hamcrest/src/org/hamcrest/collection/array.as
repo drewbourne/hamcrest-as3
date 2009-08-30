@@ -27,7 +27,7 @@ package org.hamcrest.collection
      *  // fails as different lengths
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function array(... rest):Matcher
     {

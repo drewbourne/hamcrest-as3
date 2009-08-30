@@ -12,14 +12,14 @@ package org.hamcrest.mxml.core
      *
      * @example
      * <listing version="3.0">
-     *  <hc:AllOf>
-     *      <hc:NotNull />
-     *      <hc:Between min="{ 1 }" max="{ 5 }" />
-     *      <hc:CloseTo value="{ 4 }" delta="{ 0.3 }" />
-     *  </hc:AllOf>
+     *  &lt;hc:AllOf&gt;
+     *      &lt;hc:NotNull /&gt;
+     *      &lt;hc:Between min="{ 1 }" max="{ 5 }" /&gt;
+     *      &lt;hc:CloseTo value="{ 4 }" delta="{ 0.3 }" /&gt;
+     *  &lt;hc:AllOf&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class AllOf extends BaseMXMLMatcherContainer
     {

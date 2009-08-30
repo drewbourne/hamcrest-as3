@@ -9,7 +9,7 @@ package org.hamcrest.object
      * @see org.hamcrest.object.nullValue
      * @see org.hamcrest.object.notNullValue
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsNullMatcher extends BaseMatcher
     {

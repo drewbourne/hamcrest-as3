@@ -20,7 +20,7 @@ package org.hamcrest.number
      * // passes
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsCloseToMatcher extends TypeSafeMatcher
     {

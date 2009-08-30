@@ -14,7 +14,7 @@ package org.hamcrest.text
      *  assertThat("The quick brown fox", endsWith("fox"));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function endsWith(substring:String):Matcher
     {

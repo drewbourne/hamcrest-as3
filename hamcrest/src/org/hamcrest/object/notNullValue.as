@@ -14,7 +14,7 @@ package org.hamcrest.object
      * assertThat({ any: "object" }, notNullValue());
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function notNullValue():Matcher
     {

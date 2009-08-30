@@ -17,10 +17,10 @@ package org.hamcrest.mxml.object
      *
      * @example
      * <listing version="3.0">
-     *  <hc:InstanceOf type="{ CustomClass }" />
+     *  &lt;hc:InstanceOf type="{ CustomClass }" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class InstanceOf extends BaseMXMLMatcher
     {

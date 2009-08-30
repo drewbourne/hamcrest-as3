@@ -7,7 +7,7 @@ package org.hamcrest
      * @see org.hamcrest.Matcher;
      * @see org.hamcrest.SelfDescribing
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public interface Description
     {

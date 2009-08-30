@@ -1,11 +1,11 @@
 package org.hamcrest
 {
 
-    // @example Matcher implementation  
+    // TODO example Matcher implementation  
     /**
      * Describes methods a Matcher is expected to implement.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public interface Matcher extends SelfDescribing
     {

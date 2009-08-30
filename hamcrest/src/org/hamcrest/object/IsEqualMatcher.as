@@ -22,7 +22,7 @@ package org.hamcrest.object
      *  assertThat("bye", not(equalTo("hi")));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsEqualMatcher extends BaseMatcher
     {

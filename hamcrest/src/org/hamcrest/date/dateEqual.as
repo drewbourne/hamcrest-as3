@@ -10,7 +10,7 @@ package org.hamcrest.date
      *
      * @example
      * <listing version="3.0">
-     * assertThat(new Date(), dateEqual( new Date() ));
+     *  assertThat(new Date(), dateEqual( new Date() ));
      * </listing>
      */
     public function dateEqual(value:Date):Matcher

@@ -12,14 +12,14 @@ package org.hamcrest.mxml.collection
      *
      * @example
      * <listing version="3.0">
-     *  <hc:HasItems>
-     *      <hc:EqualTo value="{ 3 }" />
-     *      <hc:EqualTo value="{ 4 }" />
-     *      <hc:EqualTo value="{ 5 }" />
-     *  </hc:HasItems>
+     *  &lt;hc:HasItems&gt;
+     *      &lt;hc:EqualTo value="{ 3 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 4 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 5 }" /&gt;
+     *  &lt;hc:HasItems&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class HasItems extends BaseMXMLMatcherContainer
     {

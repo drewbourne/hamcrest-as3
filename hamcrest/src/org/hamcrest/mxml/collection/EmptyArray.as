@@ -13,10 +13,10 @@ package org.hamcrest.mxml.collection
      *
      * @example
      * <listing version="3.0">
-     *  <hc:EmptyArray />
+     *  &lt;hc:EmptyArray /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class EmptyArray extends BaseMXMLMatcher
     {

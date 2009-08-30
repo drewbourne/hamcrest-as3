@@ -2,7 +2,6 @@ package org.hamcrest.mxml.text
 {
     import org.hamcrest.Matcher;
     import org.hamcrest.mxml.BaseMXMLMatcher;
-    import org.hamcrest.text.containsString;
 
     [DefaultProperty('string')]
 
@@ -14,7 +13,7 @@ package org.hamcrest.mxml.text
     /**
      * BaseMXMLMatcher for string matcher
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class StringMXMLMatcher extends BaseMXMLMatcher
     {

@@ -1,11 +1,11 @@
 package org.hamcrest
 {
 
-    // TODO @example SelfDescribing
+    // TODO example SelfDescribing
     /**
      * An implementation of SelfDescribing should describe itself in as much detail as relevant.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public interface SelfDescribing
     {

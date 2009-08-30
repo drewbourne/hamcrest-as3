@@ -14,7 +14,7 @@ package org.hamcrest.text
      *  assertThat("has some whitespace", "The quick brown fox", re(/\s+/));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function re(pattern:RegExp):Matcher
     {

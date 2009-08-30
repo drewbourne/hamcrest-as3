@@ -14,7 +14,7 @@ package org.hamcrest.text
      *  assertThat(textInput.text, not(emptyString()));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class EmptyStringMatcher extends TypeSafeMatcher
     {

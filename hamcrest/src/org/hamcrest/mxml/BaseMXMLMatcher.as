@@ -30,13 +30,13 @@ package org.hamcrest.mxml
      */
     [Event(name='matchedChanged', type = 'flash.events.Event')]
 
-    // TODO @example
+    // TODO example
     /**
      * BaseMXMLMatcher provides abstract functionality for Matchers to be used in MXML.
      *
      * MXMLMatcher implementations should subclass BaseMXMLMatcher and implement <code>createMatcher</code>.
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class BaseMXMLMatcher extends EventDispatcher implements MXMLMatcher, IMXMLObject
     {
@@ -170,7 +170,7 @@ package org.hamcrest.mxml
         }
 
         /**
-         * Dispatches a <code[property]Changed</code> Event, and invalidates the properties of this MXMLMatcher.
+         * Dispatches a <code>[property]Changed</code> Event, and invalidates the properties of this MXMLMatcher.
          *
          * @see #invalidateProperties()
          */

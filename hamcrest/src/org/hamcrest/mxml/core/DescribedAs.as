@@ -14,12 +14,12 @@ package org.hamcrest.mxml.core
      *
      * @example
      * <listing version="3.0">
-     *  <hc:DescribedAs message="four">
-     *      <hc:EqualTo value="{ 4 }" />
-     *  </hc:DescribedAs>
+     *  &lt;hc:DescribedAs message="four"&gt;
+     *      &lt;hc:EqualTo value="{ 4 }" /&gt;
+     *  &lt;hc:DescribedAs&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class DescribedAs extends BaseMXMLMatcherComposite
     {

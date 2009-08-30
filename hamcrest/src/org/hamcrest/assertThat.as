@@ -31,7 +31,7 @@ package org.hamcrest
      *    assertThat({ value: "is not false-y" });
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public function assertThat(... rest):void
     {

@@ -19,10 +19,10 @@ package org.hamcrest.mxml.collection
      *
      * @example
      * <listing version="3.0">
-     *  <hc:ArrayWithSize size="3" />
+     *  &lt;hc:ArrayWithSize size="3" /&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class ArrayWithSize extends BaseMXMLMatcher
     {

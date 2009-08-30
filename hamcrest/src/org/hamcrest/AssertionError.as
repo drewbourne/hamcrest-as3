@@ -6,7 +6,7 @@ package org.hamcrest
      *
      * @see org.hamcrest.assertThat
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class AssertionError extends Error
     {

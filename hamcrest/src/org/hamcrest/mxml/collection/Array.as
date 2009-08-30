@@ -12,14 +12,14 @@ package org.hamcrest.mxml.collection
      *
      * @example
      * <listing version="3.0">
-     *  <hc:Array>
-     *      <hc:EqualTo value="{ 1 }" />
-     *      <hc:EqualTo value="{ 2 }" />
-     *      <hc:EqualTo value="{ 3 }" />
-     *  </hc:Array>
+     *  &lt;hc:Array&gt;
+     *      &lt;hc:EqualTo value="{ 1 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 2 }" /&gt;
+     *      &lt;hc:EqualTo value="{ 3 }" /&gt;
+     *  &lt;hc:Array&gt;
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class Array extends BaseMXMLMatcherContainer
     {

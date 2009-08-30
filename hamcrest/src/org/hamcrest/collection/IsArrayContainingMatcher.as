@@ -17,7 +17,7 @@ package org.hamcrest.collection
      *  assertThat([1, 2, 3], hasItems(equalTo(2), equalTo(3)));
      * </listing>
      *
-     * @author Drew Bourne <andrew@firstbourne.com>
+     * @author Drew Bourne
      */
     public class IsArrayContainingMatcher extends TypeSafeMatcher
     {

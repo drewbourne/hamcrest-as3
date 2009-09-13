@@ -1,8 +1,8 @@
 package org.hamcrest.collection
 {
-
+    
     import org.hamcrest.Matcher;
-
+    
     /**
      * Creates a Matcher that only matches if each of the matchers given are satisfied by the
      * element at the same index in the array that is being matched.
@@ -31,7 +31,13 @@ package org.hamcrest.collection
      */
     public function array(... rest):Matcher
     {
-        var elementMatchers:Array = rest.map(wrapInEqualToIfNotMatcher);
+        var matchers:Array = rest;
+        if (rest.length == 1 && rest[0] is Array)
+        {
+            matchers = rest[0];
+        }
+        
+        var elementMatchers:Array = matchers.map(wrapInEqualToIfNotMatcher);
         return new IsArrayMatcher(elementMatchers);
     }
 }

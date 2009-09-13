@@ -12,15 +12,17 @@ package org.hamcrest.collection
     public class IsArrayContainingTest extends AbstractMatcherTestCase
     {
 
-		override public function assertMatches(message:String, matcher:Matcher, arg:Object):void {
-			super.assertMatches(message, matcher, arg);
+        override public function assertMatches(message:String, matcher:Matcher, arg:Object):void 
+        {
+            super.assertMatches(message, matcher, arg);
 
-			// To ensure that the matcher properly matches non-Array collecitons,
-			// run the same test again, this time using an ArrayCollection.
-			if (arg is Array) {
-				super.assertMatches(message + " (as ArrayCollection)", matcher, new ArrayCollection(arg as Array));
-			}
-		}
+            // To ensure that the matcher properly matches non-Array collecitons,
+            // run the same test again, this time using an ArrayCollection.
+            if (arg is Array) 
+            {
+                super.assertMatches(message + " (as ArrayCollection)", matcher, new ArrayCollection(arg as Array));
+            }
+        }
 
         [Test]
         public function matchesACollectionThatContainsAnElementMatchingTheGivenMatcher():void

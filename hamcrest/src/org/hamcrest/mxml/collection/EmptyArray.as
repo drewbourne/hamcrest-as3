@@ -8,8 +8,8 @@ package org.hamcrest.mxml.collection
     /**
      * MXML facade for the emptyArray() / IsArrayWithSizeMatcher.
      *
-     * @see org.hamcrest.collection.emptyArray;
-     * @see org.hamcrest.collection.IsArrayWithSizeMatcher;
+     * @see org.hamcrest.collection#emptyArray()
+     * @see org.hamcrest.collection.IsArrayWithSizeMatcher
      *
      * @example
      * <listing version="3.0">

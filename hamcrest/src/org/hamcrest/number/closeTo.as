@@ -8,6 +8,8 @@ package org.hamcrest.number
      * @param value
      * @param error
      *
+     * @see org.hamcrest.number.IsCloseToMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(3, closeTo(4, 1));

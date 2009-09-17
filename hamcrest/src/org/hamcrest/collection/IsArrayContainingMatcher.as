@@ -8,8 +8,8 @@ package org.hamcrest.collection
      * Matches if the item being matched is an Array and contains at least one item that matches
      * the given Matcher.
      *
-     * @see org.hamcrest.collection.hasItem
-     * @see org.hamcrest.collection.hasItems
+     * @see org.hamcrest.collection#hasItem()
+     * @see org.hamcrest.collection#hasItems()
      *
      * @example
      * <listing version="3.0">

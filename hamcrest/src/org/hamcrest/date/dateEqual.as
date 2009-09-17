@@ -8,6 +8,8 @@ package org.hamcrest.date
      * @param value Date the matched item must be equal.
      * @return Matcher
      *
+     * @see org.hamcrest.date.DateEqualMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(new Date(), dateEqual( new Date() ));

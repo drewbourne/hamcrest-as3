@@ -6,7 +6,7 @@ package org.hamcrest.object
     /**
      * Checks the item being matched are strictly equal (===).
      *
-     * @see org.hamcrest.object.strictlyEqualTo
+     * @see org.hamcrest.object#strictlyEqualTo()
      *
      * @example
      * <listing version="3.0">

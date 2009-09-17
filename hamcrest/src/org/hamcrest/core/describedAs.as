@@ -16,7 +16,7 @@ package org.hamcrest.core
      *
      * @example
      * <listing version="3.0">
-     *  assertThat(3, describedAs("%0 is a magic number", equalTo(4), 3);
+     *  assertThat(3, describedAs("%0 is a magic number", equalTo(4), 4);
      * </listing>
      *
      * @author Drew Bourne

@@ -7,7 +7,7 @@ package org.hamcrest.core
     /**
      * Matches if the item under test is a Function, and throws an Error matching the given Matcher.
      *
-     * @see org.hamcrest.core.throws
+     * @see org.hamcrest.core#throws()
      *
      * @example
      * <listing version="3.0">

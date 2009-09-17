@@ -7,7 +7,7 @@ package org.hamcrest.mxml.collection
     /**
      * MXML facade for the hasItems() / IsArrayContainingMatcher.
      *
-     * @see org.hamcrest.collection.hasItems
+     * @see org.hamcrest.collection#hasItems()
      * @see org.hamcrest.collection.IsArrayContainingMatcher
      *
      * @example

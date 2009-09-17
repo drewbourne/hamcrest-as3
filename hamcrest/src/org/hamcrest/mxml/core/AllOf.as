@@ -7,7 +7,7 @@ package org.hamcrest.mxml.core
     /**
      * MXML facade for the allOf() / AllOfMatcher.
      *
-     * @see org.hamcrest.core.allOf
+     * @see org.hamcrest.core#allOf()
      * @see org.hamcrest.core.AllOfMatcher
      *
      * @example

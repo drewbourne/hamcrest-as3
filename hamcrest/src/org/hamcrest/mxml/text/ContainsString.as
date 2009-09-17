@@ -7,7 +7,7 @@ package org.hamcrest.mxml.text
     /**
      * MXML façade for containsString() / StringContainsMatcher.
      *
-     * @see org.hamcrest.text.containsString
+     * @see org.hamcrest.text#containsString()
      * @see org.hamcrest.text.StringContainsMatcher
      *
      * @example

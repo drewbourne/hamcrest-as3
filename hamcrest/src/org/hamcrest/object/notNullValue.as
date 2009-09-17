@@ -7,7 +7,7 @@ package org.hamcrest.object
      * Matches if the item is not <code>null</code>
      *
      * @see org.hamcrest.object.IsNullMatcher
-     * @see org.hamcrest.object.nullValue
+     * @see org.hamcrest.object#nullValue()
      *
      * @example
      * <listing version="3.0">

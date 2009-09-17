@@ -7,7 +7,7 @@ package org.hamcrest.mxml.text
     /**
      * MXML façade for endsWith() / StringEndsWithMatcher
      *
-     * @see org.hamcrest.text.endsWith
+     * @see org.hamcrest.text#endsWith()
      * @see org.hamcrest.text.StringEndsWithMatcher
      *
      * @example

@@ -7,7 +7,7 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for nullValue / IsNullMatcher.
      *
-     * @see org.hamcrest.object.nullValue
+     * @see org.hamcrest.object#nullValue()
      * @see org.hamcrest.object.IsNullMatcher
      *
      * @example

@@ -19,8 +19,8 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for hasProperty() / hasPropertyWithValue() Matchers.
      *
-     * @see org.hamcrest.object.hasProperty
-     * @see org.hamcrest.object.hasPropertyWithValue
+     * @see org.hamcrest.object#hasProperty()
+     * @see org.hamcrest.object#hasPropertyWithValue()
      * @see org.hamcrest.object.HasPropertyMatcher
      * @see org.hamcrest.object.HasPropertyWithValueMatcher
      *

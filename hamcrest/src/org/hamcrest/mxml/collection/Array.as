@@ -7,8 +7,8 @@ package org.hamcrest.mxml.collection
     /**
      * MXML facade for the array() / IsArrayMatcher.
      *
-     * @see org.hamcrest.collection.array;
-     * @see org.hamcrest.collection.IsArrayMatcher;
+     * @see org.hamcrest.collection#array()
+     * @see org.hamcrest.collection.IsArrayMatcher
      *
      * @example
      * <listing version="3.0">

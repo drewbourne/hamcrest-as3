@@ -6,7 +6,7 @@ package org.hamcrest.date
     /**
      * Matches a Date before the expected Date
      *
-     * @see org.hamcrest.date.dateBefore
+     * @see org.hamcrest.date#dateBefore()
      */
     public class DateBeforeMatcher extends TypeSafeMatcher
     {

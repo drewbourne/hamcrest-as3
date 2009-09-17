@@ -9,7 +9,7 @@ package org.hamcrest.mxml.number
     /**
      * MXML facade for the closeTo() / IsCloseToMatcher
      *
-     * @see org.hamcrest.number.closeTo
+     * @see org.hamcrest.number#closeTo()
      * @see org.hamcrest.number.IsCloseToMatcher
      *
      * @example

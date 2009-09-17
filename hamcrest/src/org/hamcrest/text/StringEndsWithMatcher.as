@@ -4,7 +4,7 @@ package org.hamcrest.text
     /**
      * Matches a String if it ends with the given value
      *
-     * @see org.hamcrest.text.endsWith
+     * @see org.hamcrest.text#endsWith()
      * @see org.hamcrest.text.SubstringMatcher
      *
      * @author Drew Bourne

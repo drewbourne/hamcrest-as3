@@ -7,8 +7,8 @@ package org.hamcrest.core
     /**
      * Provides a Fluent Interface to combining Matchers
      *
-     * @see org.hamcrest.core.both
-     * @see org.hamcrest.core.either
+     * @see org.hamcrest.core#both()
+     * @see org.hamcrest.core#either()
      *
      * @example
      * <listing version="3.0">

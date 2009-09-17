@@ -8,8 +8,8 @@ package org.hamcrest.collection
     /**
      * Checks the item being matched is an <code>Array</code> and has the expected number of items.
      *
-     * @see org.hamcrest.collection.arrayWithSize
-     * @see org.hamcrest.collection.emptyArray
+     * @see org.hamcrest.collection#arrayWithSize()
+     * @see org.hamcrest.collection#emptyArray()
      *
      * @example
      * <listing version="3.0">

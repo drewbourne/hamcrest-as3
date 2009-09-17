@@ -7,7 +7,7 @@ package org.hamcrest.object
     /**
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>.
      *
-     * @see org.hamcrest.object.hasProperty
+     * @see org.hamcrest.object#hasProperty()
      *
      * @author Drew Bourne
      */

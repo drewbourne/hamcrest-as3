@@ -10,9 +10,9 @@ package org.hamcrest.collection
      *
      * @param ...rest Matcher or Object to be wrapped in <code>equalTo</code>
      *
-     * @see org.hamcrest.collection.hasItem
-     * @see org.hamcrest.core.allOf
-     * @see org.hamcrest.object.equalTo
+     * @see org.hamcrest.collection#hasItem()
+     * @see org.hamcrest.core#allOf()
+     * @see org.hamcrest.object#equalTo()
      *
      * @example
      * <listing version="3.0">

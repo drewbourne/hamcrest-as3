@@ -8,7 +8,7 @@ package org.hamcrest.mxml.core
     /**
      * MXML facade for the anything() / IsAnythingMatcher.
      *
-     * @see org.hamcrest.core.anything
+     * @see org.hamcrest.core#anything()
      * @see org.hamcrest.core.IsAnythingMatcher
      *
      * @example

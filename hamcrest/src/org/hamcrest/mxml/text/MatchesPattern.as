@@ -16,8 +16,12 @@ package org.hamcrest.mxml.text
      */
     [Event(name='flagsChanged',type='flash.events.Event')]
     
+    // TODO asdoc example
     /**
      * MXML wrapper for RegExpMatcher.
+     *
+     * @see org.hamcrest.text#re()
+     * @see org.hamcrest.text.RegExpMatcher
      *
      * @author Drew Bourne
      */

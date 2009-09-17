@@ -12,7 +12,7 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for hasProperties() Matcher.
      *
-     * @see org.hamcrest.object.hasProperties
+     * @see org.hamcrest.object#hasProperties()
      *
      * @example
      * <listing version="3.0">

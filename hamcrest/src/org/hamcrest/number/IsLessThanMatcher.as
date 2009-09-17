@@ -6,6 +6,9 @@ package org.hamcrest.number
     /**
      * Matches if the item is less than the given value.
      *
+     * @see org.hamcrest.number#lessThan()
+     * @see org.hamcrest.number#lessThanOrEqualTo()
+     *
      * @example
      * <listing version="3.0">
      * assertThat(3, lessThan(4));

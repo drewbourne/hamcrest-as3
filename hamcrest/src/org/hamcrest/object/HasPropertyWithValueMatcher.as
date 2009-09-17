@@ -10,7 +10,8 @@ package org.hamcrest.object
      * Matches if <code>item.hasOwnProperty(propertyName)</code> is <code>true</code>, and the value
      * for that property matches the given valueMatcher.
      *
-     * @see org.hamcrest.object.hasProperty
+     * @see org.hamcrest.object#hasProperty()
+     * @see org.hamcrest.object#hasPropertyWithValue()
      *
      * @author Drew Bourne
      */

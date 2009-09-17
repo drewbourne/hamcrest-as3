@@ -14,7 +14,7 @@ package org.hamcrest.mxml.collection
     /**
      * MXML facade for the arrayWithSize() / IsArrayWithSizeMatcher
      *
-     * @see org.hamcrest.collection.arrayWithSize
+     * @see org.hamcrest.collection#arrayWithSize()
      * @see org.hamcrest.collection.IsArrayWithSizeMatcher
      *
      * @example

@@ -6,7 +6,7 @@ package org.hamcrest.object
     /**
      * Matches an item if it is === to the given value.
      *
-     * @see org.hamcrest.sameInstance
+     * @see org.hamcrest#sameInstance()
      *
      * @author Drew Bourne
      */

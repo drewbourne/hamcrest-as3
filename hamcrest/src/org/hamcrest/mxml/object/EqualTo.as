@@ -16,7 +16,7 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for equalTo() / IsEqualMatcher.
      *
-     * @see org.hamcrest.object.equalTo
+     * @see org.hamcrest.object#equalTo()
      * @see org.hamcrest.object.IsEqualMatcher
      *
      * @example

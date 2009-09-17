@@ -9,7 +9,7 @@ package org.hamcrest.mxml.date
     /**
      * MXML facade for the dateAfter() / DateAfterMatcher.
      *
-     * @see org.hamcrest.date.dateAfter
+     * @see org.hamcrest.date#dateAfter()
      * @see org.hamcrest.date.DateAfterMatcher
      *
      * @example

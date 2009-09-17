@@ -9,7 +9,7 @@ package org.hamcrest.mxml.date
     /**
      * MXML facade for the dateBefore() / DateBeforeMatcher.
      *
-     * @see org.hamcrest.date.dateBefore
+     * @see org.hamcrest.date#dateBefore()
      * @see org.hamcrest.date.DateBeforeMatcher
      *
      * @example

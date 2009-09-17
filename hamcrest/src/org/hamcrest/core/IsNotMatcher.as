@@ -7,7 +7,7 @@ package org.hamcrest.core
     /**
      * Inverts the result of another Matcher or value.
      *
-     * @see org.hamcrest.core.not
+     * @see org.hamcrest.core#not()
      *
      * @example
      * <listing version="3.0">

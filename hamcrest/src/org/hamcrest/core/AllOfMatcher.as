@@ -7,7 +7,7 @@ package org.hamcrest.core
     /**
      * Checks if an item matches all of the given Matchers.
      *
-     * @see org.hamcrest.core.allOf
+     * @see org.hamcrest.core#allOf()
      *
      * @author Drew Bourne
      */

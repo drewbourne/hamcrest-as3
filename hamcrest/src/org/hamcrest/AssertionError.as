@@ -4,7 +4,7 @@ package org.hamcrest
     /**
      * Thrown by <code>assertThat</code>.
      *
-     * @see org.hamcrest.assertThat
+     * @see org.hamcrest#assertThat()
      *
      * @author Drew Bourne
      */

@@ -8,7 +8,7 @@ package org.hamcrest.object
     /**
      * Matches if the item is an instance of the given type.
      *
-     * @see org.hamcrest.object.instanceOf
+     * @see org.hamcrest.object#instanceOf()
      *
      * @exmaple
      * <listing version="3.0">

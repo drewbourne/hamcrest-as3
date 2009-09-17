@@ -7,8 +7,7 @@ package org.hamcrest.mxml.date
     /**
      * MXML facade for the dateBetween() / DateBetweenMatcher.
      *
-     * @see org.hamcrest.date.dateBetween
-     * @see org.hamcrest.date.DateBetweenMatcher
+     * @see org.hamcrest.date#dateBetween()
      *
      * @example
      * <listing version="3.0">

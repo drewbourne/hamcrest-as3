@@ -11,6 +11,8 @@ package org.hamcrest.number
      * @param value Number the matched item must be greater than or equal to.
      * @return Matcher
      *
+     * @see org.hamcrest.number.IsGreaterThanMatcher
+     *
      * @example
      * <listing version="3.0">
      * assertThat(4, greaterThanOrEqualTo(4));

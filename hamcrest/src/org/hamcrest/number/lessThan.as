@@ -8,6 +8,8 @@ package org.hamcrest.number
      * @param value Number the matched item must be less than.
      * @return Matcher
      *
+     * @see org.hamcrest.number.IsLessThanMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(3, lessThan(4));

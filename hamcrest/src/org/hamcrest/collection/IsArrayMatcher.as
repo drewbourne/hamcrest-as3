@@ -11,7 +11,7 @@ package org.hamcrest.collection
      * Matcher will fail if the number of items in the array being matched does not equal the number
      * of matchers given to this Matcher.
      *
-     * @see org.hamcrest.collection.array
+     * @see org.hamcrest.collection#array()
      * @example
      * <listing version="3.0">
      *  // explicit definition of matchers

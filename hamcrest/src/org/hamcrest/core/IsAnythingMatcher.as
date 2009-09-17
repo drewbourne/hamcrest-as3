@@ -6,7 +6,7 @@ package org.hamcrest.core
     /**
      * Checks if item being matched is anything, effectively always matches.
      *
-     * @see org.hamcrest.core.anything
+     * @see org.hamcrest.core#anything()
      *
      * @example
      * <listing version="3.0">

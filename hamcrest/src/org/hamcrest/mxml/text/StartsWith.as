@@ -7,7 +7,7 @@ package org.hamcrest.mxml.text
     /**
      * MXML façade for startsWith() / StringStartsWithMatcher
      *
-     * @see org.hamcrest.text.startsWith
+     * @see org.hamcrest.text#startsWith()
      * @see org.hamcrest.text.StringStartsWithMatcher
      *
      * @example

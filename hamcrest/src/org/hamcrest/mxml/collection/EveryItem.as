@@ -8,8 +8,8 @@ package org.hamcrest.mxml.collection
     /**
      * MXML facade for the everyItem() / EveryMatcher.
      *
-     * @see org.hamcrest.collection.everyItem;
-     * @see org.hamcrest.collection.EveryMatcher;
+     * @see org.hamcrest.collection#everyItem()
+     * @see org.hamcrest.collection.EveryMatcher
      *
      * @example
      * <listing version="3.0">

@@ -6,8 +6,8 @@ package org.hamcrest.object
     /**
      * Matches if the item is <code>null</code>
      *
-     * @see org.hamcrest.object.nullValue
-     * @see org.hamcrest.object.notNullValue
+     * @see org.hamcrest.object#nullValue()
+     * @see org.hamcrest.object#notNullValue()
      *
      * @author Drew Bourne
      */

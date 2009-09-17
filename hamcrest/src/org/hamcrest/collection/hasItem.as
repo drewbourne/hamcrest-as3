@@ -9,6 +9,7 @@ package org.hamcrest.collection
      *
      * @param value Object or Matcher that must be in the Array.
      *
+     * @see org.hamcrest.collection.IsArrayContainingMatcher
      * @example
      * <listing version="3.0">
      *  assertThat([1, 2, 3], hasItem(equalTo(3));

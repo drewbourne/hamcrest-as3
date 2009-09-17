@@ -9,7 +9,7 @@ package org.hamcrest.mxml.date
     /**
      * MXML facade for the dateEqual() / DateEqualMatcher
      *
-     * @see org.hamcrest.date.dateEqual
+     * @see org.hamcrest.date#dateEqual()
      * @see org.hamcrest.date.DateEqualMatcher
      *
      * @example

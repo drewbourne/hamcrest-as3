@@ -7,7 +7,7 @@ package org.hamcrest.text
     /**
      * Matches a String if it is zero-length, or contains only whitespace.
      *
-     * @see org.hamcrest.text.emptyString()
+     * @see org.hamcrest.text#emptyString()
      *
      * @example
      * <listing version="3.0">

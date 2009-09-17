@@ -12,7 +12,7 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for instanceOf() / IsInstanceOfMatcher.
      *
-     * @see org.hamcrest.object.instanceOf
+     * @see org.hamcrest.object#instanceOf()
      * @see org.hamcrest.object.IsInstanceOfMatcher
      *
      * @example

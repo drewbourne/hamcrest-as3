@@ -9,7 +9,7 @@ package org.hamcrest.mxml.number
     /**
      * MXML facade for the between() Matcher
      *
-     * @see org.hamcrest.number.between
+     * @see org.hamcrest.number#between()
      * @see org.hamcrest.number.IsLessThanMatcher
      * @see org.hamcrest.number.IsGreaterThanMatcher
      *

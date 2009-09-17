@@ -14,7 +14,7 @@ package org.hamcrest.object
      *  Checked recursively for child arrays. </li>
      * </ul>
      *
-     * @see org.hamcrest.object.equalTo
+     * @see org.hamcrest.object#equalTo()
      *
      * @example
      * <listing version="3.0">

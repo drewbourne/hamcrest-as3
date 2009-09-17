@@ -5,7 +5,7 @@ package org.hamcrest.core
     /**
      * Creates a CombinableMatcher
      *
-     * @see org.hamcrest.core.CombinableMatcher;
+     * @see org.hamcrest.core.CombinableMatcher
      *
      * @example
      * <listing version="3.0">

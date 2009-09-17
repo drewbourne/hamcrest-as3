@@ -6,7 +6,7 @@ package org.hamcrest.number
     /**
      * Matches if a value is within +/- the error value from the given value.
      *
-     * @see org.hamcrest.number.closeTo
+     * @see org.hamcrest.number#closeTo()
      *
      * @example
      * <listing version="3.0">

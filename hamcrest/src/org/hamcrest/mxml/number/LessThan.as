@@ -8,7 +8,7 @@ package org.hamcrest.mxml.number
     /**
      * MXML facade for the lessThan() / IsLessThanMatcher.
      *
-     * @see org.hamcrest.number.lessThan
+     * @see org.hamcrest.number#lessThan()
      * @see org.hamcrest.number.IsLessThanMatcher
      *
      * @example

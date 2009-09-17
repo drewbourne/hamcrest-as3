@@ -10,7 +10,7 @@ package org.hamcrest.core
      * Can replace values in the description using <code>%n</code> placeholders, where <code>n</code>
      * is a number into the extra values given.
      *
-     * @see org.hamcrest.core.describedAs
+     * @see org.hamcrest.core#describedAs()
      *
      * @example
      * <listing version="3.0">

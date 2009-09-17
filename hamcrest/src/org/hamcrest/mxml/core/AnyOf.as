@@ -7,7 +7,7 @@ package org.hamcrest.mxml.core
     /**
      * MXML facade for the anyOf() / AnyOfMatcher.
      *
-     * @see org.hamcrest.core.anyOf
+     * @see org.hamcrest.core#anyOf()
      * @see org.hamcrest.core.AnyOfMatcher
      *
      * @example

@@ -4,7 +4,7 @@ package org.hamcrest.text
     /**
      * Matches a String if it contains the given substring.
      *
-     * @see org.hamcrest.text.containsString
+     * @see org.hamcrest.text#containsString()
      * @see org.hamcrest.text.SubstringMatcher
      *
      * @author Drew Bourne

@@ -6,7 +6,7 @@ package org.hamcrest.date
     /**
      * Matches a Date after the expected Date
      *
-     * @see org.hamcrest.date.dateAfter
+     * @see org.hamcrest.date#dateAfter()
      */
     public class DateAfterMatcher extends TypeSafeMatcher
     {

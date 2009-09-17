@@ -8,7 +8,7 @@ package org.hamcrest.mxml.core
     /**
      * MXML facade for the not() / IsNotMatcher.
      *
-     * @see org.hamcrest.core.note
+     * @see org.hamcrest.core#not()
      * @see org.hamcrest.core.IsNotMatcher
      *
      * @example

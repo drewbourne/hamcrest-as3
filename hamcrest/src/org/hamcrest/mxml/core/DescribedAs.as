@@ -9,7 +9,7 @@ package org.hamcrest.mxml.core
     /**
      * MXML facade for the describedAs() / DescribedAsMatcher.
      *
-     * @see org.hamcrest.core.describedAs
+     * @see org.hamcrest.core#describedAs()
      * @see org.hamcrest.core.DescribedAsMatcher
      *
      * @example

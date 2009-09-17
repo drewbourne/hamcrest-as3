@@ -9,7 +9,7 @@ package org.hamcrest.collection
      *
      * Factory method is <code>everyItem</code>
      *
-     * @see org.hamcrest.everyItem
+     * @see org.hamcrest.collection#everyItem
      * @example
      * <listing version="3.0">
      *  assertThat([1, 2, 3], everyItem(instanceOf(Number)));

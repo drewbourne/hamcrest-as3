@@ -12,7 +12,7 @@ package org.hamcrest.mxml.object
     /**
      * MXML façade for sameInstance() / IsSameMatcher.
      *
-     * @see org.hamcrest.object.sameInstance
+     * @see org.hamcrest.object#sameInstance()
      * @see org.hamcrest.object.IsSameMatcher
      *
      * @example

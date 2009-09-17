@@ -11,6 +11,8 @@ package org.hamcrest.number
      * @param value Number the matched item must be less than or equal to.
      * @return Matcher
      *
+     * @see org.hamcrest.number.IsLessThanMatcher
+     *
      * @example
      * <listing version="3.0">
      *  assertThat(4, lessThanOrEqualTo(4));
@@ -20,7 +22,6 @@ package org.hamcrest.number
      */
     public function lessThanOrEqualTo(value:Number):Matcher
     {
-        // composition is a winner
         // TODO create an actual Matcher so we can include an appropriate mismatch description
         return describedAs("a value less than or equal to %0", anyOf(lessThan(value), equalTo(value)), value);
     }

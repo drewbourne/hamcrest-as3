@@ -4,9 +4,9 @@ package org.hamcrest.date
     import org.hamcrest.TypeSafeMatcher;
     
     /**
-     * Matches a Date before the expected Date
+     * Matches a Date equal to the expected Date
      *
-     * @see org.hamcrest.date.dateBefore
+     * @see org.hamcrest.date#dateEqual()
      */
     public class DateEqualMatcher extends TypeSafeMatcher
     {

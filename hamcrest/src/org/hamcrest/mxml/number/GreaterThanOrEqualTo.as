@@ -7,8 +7,8 @@ package org.hamcrest.mxml.number
     /**
      * MXML facade for the greaterThanOrEqualTo() / IsGreaterThanMatcher.
      *
-     * @see org.hamcrest.number.greaterThanOrEqualTo
-     * @see org.hamcrest.number.IsGreatherThanMatcher
+     * @see org.hamcrest.number#greaterThanOrEqualTo()
+     * @see org.hamcrest.number.IsGreaterThanMatcher
      *
      * @example
      * <listing version="3.0">

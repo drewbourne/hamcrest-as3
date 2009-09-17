@@ -4,7 +4,7 @@ package org.hamcrest
     /**
      * Description allows an implementation to normalise the description of text, values, and lists from <code>SelfDescribing</code> and<code>Matcher</code> implementations.
      *
-     * @see org.hamcrest.Matcher;
+     * @see org.hamcrest.Matcher
      * @see org.hamcrest.SelfDescribing
      *
      * @author Drew Bourne

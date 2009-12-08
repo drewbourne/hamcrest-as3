@@ -60,6 +60,7 @@ package org.hamcrest.object
             {
                 mismatchDescription.appendText('property ');
                 mismatchDescription.appendValue(_propertyName);
+                mismatchDescription.appendText(' ');
                 _valueMatcher.describeMismatch(propertyValue, mismatchDescription);
             }
             return valueMatches;

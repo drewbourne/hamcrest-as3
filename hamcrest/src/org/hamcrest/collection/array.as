@@ -32,12 +32,14 @@ package org.hamcrest.collection
     public function array(... rest):Matcher
     {
         var matchers:Array = rest;
+        
         if (rest.length == 1 && rest[0] is Array)
         {
             matchers = rest[0];
         }
         
         var elementMatchers:Array = matchers.map(wrapInEqualToIfNotMatcher);
+        
         return new IsArrayMatcher(elementMatchers);
     }
 }

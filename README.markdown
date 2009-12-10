@@ -116,3 +116,9 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
     * dateBetween - test that a date is within a given range
     * dateEqual - tests dates for equality
 
+## More Info
+
+[Source](http://github.com/drewbourne/hamcrest-as3)
+[Downloads](http://github.com/drewbourne/hamcrest-as3/downloads)
+[Issues](http://github.com/drewbourne/hamcrest-as3/issues)
+[Wiki](http://wiki.github.com/drewbourne/hamcrest-as3)

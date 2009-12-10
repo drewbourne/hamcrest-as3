@@ -15,6 +15,7 @@
         <EveryItem />
         <HasItem />
         <HasItems />
+        <InArray />
         <!-- core -->
         <AllOf />
         <AnyOf />

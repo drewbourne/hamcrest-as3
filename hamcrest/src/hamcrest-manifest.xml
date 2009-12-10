@@ -6,6 +6,7 @@
   <component class="org.hamcrest.mxml.collection.EveryItem"/>
   <component class="org.hamcrest.mxml.collection.HasItem"/>
   <component class="org.hamcrest.mxml.collection.HasItems"/>
+  <component class="org.hamcrest.mxml.collection.InArray"/>  
   <component class="org.hamcrest.mxml.core.AllOf"/>
   <component class="org.hamcrest.mxml.core.AnyOf"/>
   <component class="org.hamcrest.mxml.core.Anything"/>
@@ -32,4 +33,5 @@
   <component class="org.hamcrest.mxml.text.EndsWith"/>
   <component class="org.hamcrest.mxml.text.MatchesPattern"/>
   <component class="org.hamcrest.mxml.text.StartsWith"/>
+  <component class="org.hamcrest.validator.MatcherValidator"/>  
 </componentPackage>

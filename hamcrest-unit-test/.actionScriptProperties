@@ -20,8 +20,8 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="HamcrestTestRunner.mxml"/>
     <application path="HamcrestMXMLExample.mxml"/>
+    <application path="HamcrestTestRunner.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

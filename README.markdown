@@ -58,6 +58,71 @@ The MXML Matchers can be combined with the MatcherValidator to provide a very fl
       </AllOf>
     <MatcherValidtor>
 
+## Filtering with Hamcrest
+
+The MXML Matchers can be combined with FilterFunction and CompositeFilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with collection views (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollection, etc.).
+
+    <mx:Script>
+        <![CDATA[
+
+            protected function applyFilter():void
+            {
+                companies.filterFunction = enabledFilterFunctions.filter;
+                companies.refresh();
+            }
+            
+        ]]>
+    </mx:Script>
+
+    <mx:ArrayCollection id="companies">
+        <mx:Array>
+            <mx:Object name="Adobe Systems Inc." address="345 Park Ave., San Jose, CA 95110-2704" />
+            <mx:Object name="Apple Inc." address="1 Infinite Loop, Cupertino, CA 95014" />
+            <mx:Object name="Google Inc." address="1600 Amphitheatre Parkway, Mountain View, CA 94043" />
+            <mx:Object name="Microsoft Corporation" address="One Microsoft Way, Redmond, WA 98052-6399" />
+        </mx:Array>
+    </mx:ArrayCollection>
+    
+    <hc:CompositeFilterFunction id="enabledFilterFunctions" mode="all">
+        <hc:FilterFunction enabled="{ nameCheckBox.selected }">
+            <hc:HasProperty property="name">
+                <hc:ContainsString string="{ nameInput.text }" />
+            </hc:HasProperty>
+        </hc:FilterFunction>
+        <hc:FilterFunction enabled="{ addressCheckBox.selected }">
+            <hc:HasProperty property="address">
+                <hc:ContainsString string="{ addressInput.text }" />
+            </hc:HasProperty>
+        </hc:FilterFunction>
+    </hc:CompositeFilterFunction>
+    
+    <mx:Panel
+        width="640" height="480">
+        
+        <mx:DataGrid 
+            width="100%" height="100%"
+            dataProvider="{ companies }">
+            <mx:columns>
+                <mx:DataGridColumn headerText="Name" dataField="name" />
+                <mx:DataGridColumn headerText="Address" dataField="address" />
+            </mx:columns>
+        </mx:DataGrid>
+        
+        <mx:Form>
+            <mx:FormItem label="Name" direction="horizontal">
+                <mx:CheckBox id="nameCheckBox" />
+                <mx:TextInput id="nameInput" enabled="{ nameCheckBox.selected }" />
+            </mx:FormItem>
+            <mx:FormItem label="Address" direction="horizontal">
+                <mx:CheckBox id="addressCheckBox" />
+                <mx:TextInput id="addressInput" enabled="{ addressCheckBox.selected }" />
+            </mx:FormItem>
+        </mx:Form>
+        
+        <mx:Button label="Apply" click="applyFilter()" />
+        
+    </mx:Panel>
+
 ## Commonly Used Functions
 
 Here is an example test case, which shows off some commonly used functions:

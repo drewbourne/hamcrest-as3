@@ -60,7 +60,7 @@ The MXML Matchers can be combined with the MatcherValidator to provide a very fl
 
 ## Filtering with Hamcrest
 
-The MXML Matchers can be combined with FilterFunction and CompositeFilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with collection views (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollection, etc.).
+The MXML Matchers can be combined with FilterFunction and CompositeFilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with collection views (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollectionView, etc.).
 
     <mx:Script>
         <![CDATA[

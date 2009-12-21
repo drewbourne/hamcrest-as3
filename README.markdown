@@ -83,18 +83,18 @@ The MXML Matchers can be combined with FilterFunction and CompositeFilterFunctio
         </mx:Array>
     </mx:ArrayCollection>
     
-    <hc:CompositeFilterFunction id="enabledFilterFunctions" mode="all">
-        <hc:FilterFunction enabled="{ nameCheckBox.selected }">
-            <hc:HasProperty property="name">
-                <hc:ContainsString string="{ nameInput.text }" />
-            </hc:HasProperty>
-        </hc:FilterFunction>
-        <hc:FilterFunction enabled="{ addressCheckBox.selected }">
-            <hc:HasProperty property="address">
-                <hc:ContainsString string="{ addressInput.text }" />
-            </hc:HasProperty>
-        </hc:FilterFunction>
-    </hc:CompositeFilterFunction>
+    <CompositeFilterFunction id="enabledFilterFunctions" mode="all">
+        <FilterFunction enabled="{ nameCheckBox.selected }">
+            <HasProperty property="name">
+                <ContainsString string="{ nameInput.text }" />
+            </HasProperty>
+        </FilterFunction>
+        <FilterFunction enabled="{ addressCheckBox.selected }">
+            <HasProperty property="address">
+                <ContainsString string="{ addressInput.text }" />
+            </HasProperty>
+        </FilterFunction>
+    </CompositeFilterFunction>
     
     <mx:Panel
         width="640" height="480">

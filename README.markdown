@@ -62,6 +62,56 @@ The MXML Matchers can be combined with the MatcherValidator to provide a very fl
 
 The MXML Matchers can be combined with FilterFunction and CompositeFilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with collection views (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollectionView, etc.).
 
+FilterFunction implements IFilterFunction and defines a filter function that enforces the specified Matcher.
+
+    <FilterFunction>
+        <AllOf>
+            <HasProperty property="OS">
+                <ContainsString string="Win" />
+                <HasProperty property="length">
+                    <GreaterThan value="3" />
+                </HasProperty>
+            </HasProperty>
+        </AllOf>
+    </FilterFunction>
+
+CompositeFilterFunction implements IFilterFunction and is used to combine multiple IFilterFunctions.
+
+    <CompositeFilterFunction id="compositeFilterFunction" mode="any">
+        <FilterFunction>
+            <HasProperty property="children">
+                <NotNull />
+            </HasProperty>
+        </FilterFunction>
+        <FilterFunction>
+            <HasProperty property="OS">
+                <ContainsString string="Win" />
+                <HasProperty property="length">
+                    <GreaterThan value="3" />
+                </HasProperty>
+            </HasProperty>
+        </FilterFunction>
+    </CompositeFilterFunction>
+
+CompositeFilterFunction supports two composition modes: 'any' or 'all'.  
+
+When creating the composite filter function, CompositeFilterFunction ignores any IFilterFunction where enabled='false'.
+
+    <CompositeFilterFunction id="enabledFilterFunctions" mode="all">
+        <FilterFunction enabled="{ nameCheckBox.selected }">
+            <HasProperty property="name">
+                <ContainsString string="{ nameInput.text }" />
+            </HasProperty>
+        </FilterFunction>
+        <FilterFunction enabled="{ addressCheckBox.selected }">
+            <HasProperty property="address">
+                <ContainsString string="{ addressInput.text }" />
+            </HasProperty>
+        </FilterFunction>
+    </CompositeFilterFunction>
+    
+Example of applying the resulting composite filter function to a collection view:
+
     <mx:Script>
         <![CDATA[
 

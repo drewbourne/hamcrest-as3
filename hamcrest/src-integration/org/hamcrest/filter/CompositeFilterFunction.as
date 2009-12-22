@@ -113,12 +113,20 @@ package org.hamcrest.filter
 		 */
 		override protected function createFilterFunction():Function
 		{
+			return ( enabled ) ? createFilterFunctionForMode( mode ) : defaultFilterFunction;
+		}
+		
+		/**
+		 * Creates the composite filter function for the specified composition mode.
+		 */
+		protected function createFilterFunctionForMode( mode:String ):Function
+		{
 			switch ( mode )
 			{
 				default:
 				case "all":
 					return combineAll;
-				
+					
 				case "any":
 					return combineAny;
 			}

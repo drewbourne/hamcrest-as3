@@ -5,7 +5,6 @@ package org.hamcrest.filter
 	import mx.core.IMXMLObject;
 	
 	import org.hamcrest.Matcher;
-	import org.hamcrest.mxml.MXMLMatcher;
 
 	[DefaultProperty("matcher")]
 
@@ -82,7 +81,7 @@ package org.hamcrest.filter
 		 */
 		override protected function createFilterFunction():Function
 		{
-			return ( _matcher != null ) ? _matcher.matches : null;
-		}		
+			return ( ( enabled ) && ( _matcher != null ) ) ? _matcher.matches : defaultFilterFunction;
+		}
 	}
 }

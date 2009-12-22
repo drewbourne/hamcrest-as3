@@ -24,7 +24,7 @@ package org.hamcrest.filter
 		 * 
 		 * @private
 		 */
-		protected var _enabled:Boolean;
+		protected var _enabled:Boolean = true;
 		
 		// ========================================
 		// Public properties
@@ -90,6 +90,14 @@ package org.hamcrest.filter
 		protected function createFilterFunction():Function
 		{
 			throw new IllegalOperationError('BaseFilterFunction#createFilterFunction must be override by subclass');
+		}
+		
+		/**
+		 * Default filter function.
+		 */
+		protected function defaultFilterFunction( item:Object ):Boolean
+		{
+			return true;
 		}
 	}
 }

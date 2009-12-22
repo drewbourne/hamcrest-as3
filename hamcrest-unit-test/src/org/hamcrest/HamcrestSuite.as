@@ -17,6 +17,8 @@ package org.hamcrest
     import org.hamcrest.date.DateBeforeTest;
     import org.hamcrest.date.DateBetweenTest;
     import org.hamcrest.date.DateEqualTest;
+    import org.hamcrest.filter.CompositeFilterFunctionTest;
+    import org.hamcrest.filter.FilterFunctionTest;
     import org.hamcrest.number.BetweenTest;
     import org.hamcrest.number.CloseToTest;
     import org.hamcrest.number.GreaterThanTest;
@@ -94,5 +96,7 @@ package org.hamcrest
         
         // extras / integration
         public var validator:MatcherValidatorTest;
+        public var filterFunction:FilterFunctionTest;
+        public var compositeFilterFunction:CompositeFilterFunctionTest;
     }
 }

@@ -12,6 +12,8 @@ package org.hamcrest.collection
 	 * <listing version="3.0">
 	 * 	assertThat(3, inArray([1, 2, 3]));
 	 * </listing>
+	 * 
+	 * @author Drew Bourne
 	 */
 	public function inArray(...rest):Matcher
 	{

@@ -23,30 +23,30 @@ package org.hamcrest.mxml.collection
 		}
 		
 		/**
-         * Array of elements (values or Matchers).
-         */
-        [ArrayElementType('Object')]
-        [Bindable('elementsChanged')]
-        public function get elements():Array
-        {
-            return _elements;
-        }
+     * Array of elements (values or Matchers).
+     */
+    [ArrayElementType('Object')]
+    [Bindable('elementsChanged')]
+    public function get elements():Array
+    {
+        return _elements;
+    }
 
-        public function set elements(value:Array):void
+    public function set elements(value:Array):void
+    {
+        if (_elements != value)
         {
-            if (_elements != value)
-            {
-                _elements = value;
-                changed('elements');
-            }
+            _elements = value;
+            changed('elements');
         }
+    }
 
-        /**
-         * @inheritDoc
-         */
-        override protected function createMatcher():Matcher
-        {
-            return inArray.apply(null, elements || []);
-        }        		
+    /**
+     * @inheritDoc
+     */
+    override protected function createMatcher():Matcher
+    {
+        return inArray.apply(null, elements || []);
+    }        		
 	}
 }

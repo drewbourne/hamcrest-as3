@@ -6,6 +6,7 @@ package org.hamcrest
     import org.hamcrest.collection.IsArrayContainingTest;
     import org.hamcrest.collection.IsArrayTest;
     import org.hamcrest.collection.IsArrayWithSizeTest;
+    import org.hamcrest.collection.SortedByTest;
     import org.hamcrest.core.AllOfTest;
     import org.hamcrest.core.AnyOfTest;
     import org.hamcrest.core.CombinableTest;
@@ -60,6 +61,7 @@ package org.hamcrest
         public var t14:IsArrayWithSizeTest;
         public var t15:IsArrayContainingTest;
         public var inArray:InArrayTest;
+        public var sortedBy:SortedByTest;
         
         // number
         public var t16:BetweenTest;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="false" version="1">
+<flexLibProperties version="1">
   <includeClasses>
     <classEntry path="org.hamcrest.AssertionError"/>
     <classEntry path="org.hamcrest.BaseDescription"/>
@@ -22,6 +22,7 @@
     <classEntry path="org.hamcrest.collection.IsArrayContainingMatcher"/>
     <classEntry path="org.hamcrest.collection.IsArrayMatcher"/>
     <classEntry path="org.hamcrest.collection.IsArrayWithSizeMatcher"/>
+    <classEntry path="org.hamcrest.collection.SortedByMatcher"/>
     <classEntry path="org.hamcrest.collection.array"/>
     <classEntry path="org.hamcrest.collection.arrayWithSize"/>
     <classEntry path="org.hamcrest.collection.emptyArray"/>
@@ -29,6 +30,7 @@
     <classEntry path="org.hamcrest.collection.hasItem"/>
     <classEntry path="org.hamcrest.collection.hasItems"/>
     <classEntry path="org.hamcrest.collection.inArray"/>
+    <classEntry path="org.hamcrest.collection.sortedBy"/>
     <classEntry path="org.hamcrest.core.AllOfMatcher"/>
     <classEntry path="org.hamcrest.core.AnyOfMatcher"/>
     <classEntry path="org.hamcrest.core.CombinableMatcher"/>

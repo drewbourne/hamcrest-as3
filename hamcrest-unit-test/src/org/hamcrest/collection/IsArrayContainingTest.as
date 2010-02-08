@@ -11,7 +11,6 @@ package org.hamcrest.collection
 
     public class IsArrayContainingTest extends AbstractMatcherTestCase
     {
-
         override public function assertMatches(message:String, matcher:Matcher, arg:Object):void 
         {
             super.assertMatches(message, matcher, arg);

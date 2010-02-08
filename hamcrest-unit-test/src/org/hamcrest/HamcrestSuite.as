@@ -10,6 +10,8 @@ package org.hamcrest
     import org.hamcrest.core.AnyOfTest;
     import org.hamcrest.core.CombinableTest;
     import org.hamcrest.core.DescribedAsTest;
+	import org.hamcrest.core.EvaluateTest;
+	import org.hamcrest.core.GivenTest;
     import org.hamcrest.core.IsAnythingTest;
     import org.hamcrest.core.IsNotTest;
     import org.hamcrest.core.ThrowsTest;
@@ -17,7 +19,6 @@ package org.hamcrest
     import org.hamcrest.date.DateBeforeTest;
     import org.hamcrest.date.DateBetweenTest;
     import org.hamcrest.date.DateEqualTest;
-    import org.hamcrest.filter.CompositeFilterFunctionTest;
     import org.hamcrest.filter.FilterFunctionTest;
     import org.hamcrest.number.BetweenTest;
     import org.hamcrest.number.CloseToTest;
@@ -51,6 +52,8 @@ package org.hamcrest
         public var t7:AnyOfTest;
         public var t8:CombinableTest;
         public var t9:DescribedAsTest;
+		public var evaluate:EvaluateTest;
+		public var given:GivenTest;
         public var t10:EveryTest;
         public var t11:IsAnythingTest;
         public var t12:IsNotTest;
@@ -97,6 +100,5 @@ package org.hamcrest
         // extras / integration
         public var validator:MatcherValidatorTest;
         public var filterFunction:FilterFunctionTest;
-        public var compositeFilterFunction:CompositeFilterFunctionTest;
     }
 }

@@ -15,12 +15,6 @@ package org.hamcrest.filter
 		{
 			filterFunction = new FilterFunction();
 		}
-		
-		[Test]
-		public function isEnabledByDefault():void
-		{
-			assertEquals( filterFunction.enabled, true );
-		}
 
 		[Test]
 		public function returnsTrueIfNoMatcher():void
@@ -44,33 +38,6 @@ package org.hamcrest.filter
 			filterFunction.matcher = not( containsString("expected") );
 			
 			assertFalse( filterFunction.filter( "unexpected" ) );
-		}
-		
-		[Test]
-		public function returnsTrueIfIsNotEnabledAndNoMatcher():void
-		{
-			filterFunction.matcher = null;
-			filterFunction.enabled = false;
-			
-			assertTrue( filterFunction.filter( "test" ) );
-		}
-		
-		[Test]
-		public function returnsTrueIfNotEnabledAndValueMatchesMatcher():void
-		{
-			filterFunction.matcher = not( emptyString() );
-			filterFunction.enabled = false;
-			
-			assertTrue( filterFunction.filter( "a non-empty string" ) );
-		}
-		
-		[Test]
-		public function returnsTrueIfNotEnabledAndValueDoesNotMatchMatcher():void
-		{
-			filterFunction.matcher = not( containsString("expected") );
-			filterFunction.enabled = false;
-			
-			assertTrue( filterFunction.filter( "unexpected" ) );
 		}
 	}
 }

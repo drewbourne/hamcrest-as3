@@ -1,14 +1,18 @@
 package org.hamcrest.filter
 {
 	import flash.events.Event;
+	import flash.events.EventDispatcher;
 	
 	import mx.core.IMXMLObject;
 	
 	import org.hamcrest.Matcher;
 
-	[DefaultProperty("matcher")]
-
+	/**
+	 * @inheritDoc
+	 */
 	[Event( name="matcherChanged", type="flash.events.Event" )]
+
+	[DefaultProperty("matcher")]
 
 	/**
 	 * Defines an MXML filter function based on a Matcher.
@@ -24,7 +28,7 @@ package org.hamcrest.filter
 	 *
 	 * @author John Yanarella
 	 */
-	public class FilterFunction extends BaseFilterFunction implements IMXMLObject
+	public class FilterFunction extends EventDispatcher implements IFilterFunction, IMXMLObject
 	{
 		// ========================================
 		// Protected properties
@@ -59,7 +63,15 @@ package org.hamcrest.filter
 				dispatchEvent( new Event( "matcherChanged" ) );
 			}
 		}
-
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function get filterFunction():Function
+		{
+			return createFilterFunction();
+		}
+		
 		// ========================================
 		// Constructor
 		// ========================================	
@@ -73,15 +85,42 @@ package org.hamcrest.filter
 		}
 
 		// ========================================
+		// Public methods
+		// ========================================	
+
+		/**
+		 * @inheritDoc
+		 */
+		public function initialized(document:Object, id:String):void
+		{
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function filter( item:Object ):Boolean
+		{
+			return createFilterFunction().call( null, item );
+		}
+		
+		// ========================================
 		// Protected methods
 		// ========================================	
 	
 		/**
-		 * @inheritDoc
+		 * Create a filter function based on the current state.
 		 */
-		override protected function createFilterFunction():Function
+		protected function createFilterFunction():Function
 		{
-			return ( ( enabled ) && ( _matcher != null ) ) ? _matcher.matches : defaultFilterFunction;
+			return ( _matcher != null ) ? _matcher.matches : defaultFilterFunction;
+		}
+
+		/**
+		 * Default filter function.
+		 */
+		protected function defaultFilterFunction( item:Object ):Boolean
+		{
+			return true;
 		}
 	}
 }

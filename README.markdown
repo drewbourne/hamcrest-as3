@@ -45,6 +45,69 @@ Most of the Matchers have also been made usable in the Flex MXML context by wrap
     <mx:Label text={ numberMatcher.mismatchDescription }"" />
     <mx:Label text={ numberMatcher.matched }"" />
 
+## Conditional Matching with Hamcrest
+
+Hamcrest provides two core Matchers to support conditional expressions:
+
+* evaluate - matches if a specified Boolean condition evaluates to true.
+* given - matches a value or Matcher if a specified Boolean condition evaluates to true.
+
+These matchers are most powerful in their MXML form, when used in combination with other Hamcrest's MXML tags where the condition property of an Evaluate or Given tag can be populated via MXML bindings.
+
+Additionally, complex composition of matcher evaluations of different objects can be achieved by binding the <code>matched</code> property from one MXML Matcher into the <code>condition</code> property of an Evaluate or Given tag used in the definition of another MXML Matcher.  Using this approach, complex business rules can be described in a declarative form in MXML and bound to model state.
+
+Because Hamcrest describes Matchers using a declarative style, conditional logic can not be expressed in the imperative style most familiar to ActionScript developers.
+
+Instead, this imperative style conditional logic:
+ 
+     if ( condition1 ) {
+        matcher1();
+    } else if ( condition2 ) {
+        matcher2();
+    } else {
+        matcher3();
+    }
+ 
+can be realized in a functional / declarative style as:
+ 
+       ( condition1 and matcher1() ) 
+    or
+       ( condition2 and matcher2() ) 
+    or
+       ( matcher3() )
+ 
+(due to the short circuit nature of 'and' and 'or') 
+ 
+and expressed using Hamcrest Matchers as:
+ 
+    anyOf( 
+        allOf( 
+            evaluate( condition1 ), 
+            matcher1() 
+        ), 
+        allOf( 
+            evaluate( condition2 ), 
+            matcher2() 
+        ), 
+        matcher3() 
+    );
+ 
+or using Hamcrest Matcher MXML tags as:
+ 
+    <AnyOf>
+        <AllOf>
+            <Evaluate condition="{ condition1 }" />
+            <Matcher1 />
+        </AllOf>
+        <AllOf>
+            <Evaluate condition="{ condition2 }" />
+            <Matcher2 />
+        </AllOf>
+        <Matcher3 />
+    </AnyOf> 		
+ 
+(where condition1 and condition2 are valid Boolean expressions and Matcher3, Matcher2 and Matcher3 are valid Matcher tags).
+
 ## Validating with Hamcrest
 
 The MXML Matchers can be combined with the MatcherValidator to provide a very flexible and declarative way to define validation for UIComponents and other objects without additional ActionScript.  
@@ -60,7 +123,7 @@ The MXML Matchers can be combined with the MatcherValidator to provide a very fl
 
 ## Filtering with Hamcrest
 
-The MXML Matchers can be combined with FilterFunction and CompositeFilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with collection views (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollectionView, etc.).
+The MXML Matchers can be combined with FilterFunction to provide a very flexible and declarative way to define complex conditional filter functions for use with ICollectionViews (ArrayCollection, XMLListCollection, ListCollectionView, HierarchicalCollectionView, etc.).
 
 FilterFunction implements IFilterFunction and defines a filter function that enforces the specified Matcher.
 
@@ -75,49 +138,31 @@ FilterFunction implements IFilterFunction and defines a filter function that enf
         </AllOf>
     </FilterFunction>
 
-CompositeFilterFunction implements IFilterFunction and is used to combine multiple IFilterFunctions.
+FilterFunctions become more powerful when combined with conditional matchers:
 
-    <CompositeFilterFunction id="compositeFilterFunction" mode="any">
-        <FilterFunction>
-            <HasProperty property="children">
-                <NotNull />
-            </HasProperty>
-        </FilterFunction>
-        <FilterFunction>
-            <HasProperty property="OS">
-                <ContainsString string="Win" />
-                <HasProperty property="length">
-                    <GreaterThan value="3" />
+    <FilterFunction id="enabledFilterFunctions">
+        <AllOf>
+            <Given condition="{ nameCheckBox.selected }" otherwise="true">
+                <HasProperty property="name">
+                    <ContainsString string="{ nameInput.text }" />
                 </HasProperty>
-            </HasProperty>
-        </FilterFunction>
-    </CompositeFilterFunction>
-
-CompositeFilterFunction supports two composition modes: 'any' or 'all'.  
-
-When creating the composite filter function, CompositeFilterFunction ignores any IFilterFunction where enabled='false'.
-
-    <CompositeFilterFunction id="enabledFilterFunctions" mode="all">
-        <FilterFunction enabled="{ nameCheckBox.selected }">
-            <HasProperty property="name">
-                <ContainsString string="{ nameInput.text }" />
-            </HasProperty>
-        </FilterFunction>
-        <FilterFunction enabled="{ addressCheckBox.selected }">
-            <HasProperty property="address">
-                <ContainsString string="{ addressInput.text }" />
-            </HasProperty>
-        </FilterFunction>
-    </CompositeFilterFunction>
+            </Given>
+            <Given condition="{ addressCheckBox.selected }" otherwise="true">
+                <HasProperty property="address">
+                    <ContainsString string="{ addressInput.text }" />
+                </HasProperty>
+            </Given>
+        </AllOf>
+    </FilterFunction>
     
-Example of applying the resulting composite filter function to a collection view:
+Example of applying the resulting filter function to a collection view:
 
     <mx:Script>
         <![CDATA[
 
             protected function applyFilter():void
             {
-                companies.filterFunction = enabledFilterFunctions.filter;
+                companies.filterFunction = enabledFilterFunctions.filterFunction;
                 companies.refresh();
             }
             
@@ -133,18 +178,20 @@ Example of applying the resulting composite filter function to a collection view
         </mx:Array>
     </mx:ArrayCollection>
     
-    <CompositeFilterFunction id="enabledFilterFunctions" mode="all">
-        <FilterFunction enabled="{ nameCheckBox.selected }">
-            <HasProperty property="name">
-                <ContainsString string="{ nameInput.text }" />
-            </HasProperty>
-        </FilterFunction>
-        <FilterFunction enabled="{ addressCheckBox.selected }">
-            <HasProperty property="address">
-                <ContainsString string="{ addressInput.text }" />
-            </HasProperty>
-        </FilterFunction>
-    </CompositeFilterFunction>
+    <FilterFunction id="enabledFilterFunctions">
+        <AllOf>
+            <Given condition="{ nameCheckBox.selected }" otherwise="true">
+                <HasProperty property="name">
+                    <ContainsString string="{ nameInput.text }" />
+                </HasProperty>
+            </Given>
+            <Given condition="{ addressCheckBox.selected }" otherwise="true">
+                <HasProperty property="address">
+                    <ContainsString string="{ addressInput.text }" />
+                </HasProperty>
+            </Given>
+        </AllOf>
+    </FilterFunction>
     
     <mx:Panel
         width="640" height="480">
@@ -195,6 +242,8 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 * Core
     * anything - always matches, useful if you don't care what the object under test is
     * describedAs - decorator to adding custom failure description
+    * evaluate - matches if a specified Boolean condition evaluates to true.
+    * given - conditionally matches a value or Matcher 
     * isA - matches a specific type
     * throws - matches if a function throws the given exception
 

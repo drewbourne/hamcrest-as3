@@ -15,13 +15,13 @@
       </libraryPathEntry>
       <libraryPathEntry kind="3" linkType="1" path="/hamcrest/bin/hamcrest.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/FlexUnit4/bin/FlexUnit4.swc" useDefaultLinkType="false"/>
-      <libraryPathEntry kind="3" linkType="1" path="/FlexUnit4UIRunner/bin/FlexUnit4UIRunner.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/FlexUnit4UIListener/bin/FlexUnit4UIListener.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="HamcrestMXMLExample.mxml"/>
     <application path="HamcrestTestRunner.mxml"/>
+    <application path="HamcrestMXMLExample.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

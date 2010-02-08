@@ -1,6 +1,5 @@
 package org.hamcrest
 {
-    
     import org.hamcrest.collection.EveryTest;
     import org.hamcrest.collection.InArrayTest;
     import org.hamcrest.collection.IsArrayContainingTest;
@@ -11,8 +10,8 @@ package org.hamcrest
     import org.hamcrest.core.AnyOfTest;
     import org.hamcrest.core.CombinableTest;
     import org.hamcrest.core.DescribedAsTest;
-	import org.hamcrest.core.EvaluateTest;
-	import org.hamcrest.core.GivenTest;
+    import org.hamcrest.core.EvaluateTest;
+    import org.hamcrest.core.GivenTest;
     import org.hamcrest.core.IsAnythingTest;
     import org.hamcrest.core.IsNotTest;
     import org.hamcrest.core.ThrowsTest;
@@ -28,10 +27,12 @@ package org.hamcrest
     import org.hamcrest.object.HasPropertyTest;
     import org.hamcrest.object.HasPropertyWithValueTest;
     import org.hamcrest.object.IsEqualTest;
+    import org.hamcrest.object.IsFalseTest;
     import org.hamcrest.object.IsInstanceOfTest;
     import org.hamcrest.object.IsNullTest;
     import org.hamcrest.object.IsSameTest;
     import org.hamcrest.object.IsStrictlyEqualTest;
+    import org.hamcrest.object.IsTrueTest;
     import org.hamcrest.text.EmptyStringTest;
     import org.hamcrest.text.StringContainsTest;
     import org.hamcrest.text.StringEndsWithTest;
@@ -53,8 +54,8 @@ package org.hamcrest
         public var t7:AnyOfTest;
         public var t8:CombinableTest;
         public var t9:DescribedAsTest;
-		public var evaluate:EvaluateTest;
-		public var given:GivenTest;
+        public var evaluate:EvaluateTest;
+        public var given:GivenTest;
         public var t10:EveryTest;
         public var t11:IsAnythingTest;
         public var t12:IsNotTest;
@@ -80,6 +81,8 @@ package org.hamcrest
         public var t24:IsNullTest;
         public var t25:IsSameTest;
         public var strictlyEqualTo:IsStrictlyEqualTest;
+        public var isTrue:IsTrueTest;
+        public var isFalse:IsFalseTest;
         
         // text
         public var t26:StringContainsTest;

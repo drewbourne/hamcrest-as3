@@ -26,6 +26,8 @@ package org.hamcrest
     import org.hamcrest.mxml.object.HasPropertyTest;
     import org.hamcrest.mxml.object.HasPropertyWithValueTest;
     import org.hamcrest.mxml.object.InstanceOfTest;
+    import org.hamcrest.mxml.object.IsFalseTest;
+    import org.hamcrest.mxml.object.IsTrueTest;
     import org.hamcrest.mxml.object.NotNullTest;
     import org.hamcrest.mxml.object.NullTest;
     import org.hamcrest.mxml.object.SameInstanceTest;
@@ -73,6 +75,8 @@ package org.hamcrest
         public var hasPropetyWithValue:HasPropertyWithValueTest;
 //        public var hasProperties:HasPropertiesTest;
         public var instanceOf:InstanceOfTest;
+        public var isTrue:IsTrueTest;
+        public var isFalse:IsFalseTest;
         public var notNull:NotNullTest;
         public var nullTest:NullTest;
         public var sameInstance:SameInstanceTest;

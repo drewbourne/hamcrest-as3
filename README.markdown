@@ -60,7 +60,7 @@ Because Hamcrest describes Matchers using a declarative style, conditional logic
 
 Instead, this imperative style conditional logic:
  
-     if ( condition1 ) {
+    if ( condition1 ) {
         matcher1();
     } else if ( condition2 ) {
         matcher2();
@@ -154,21 +154,19 @@ FilterFunctions become more powerful when combined with conditional matchers:
             </Given>
         </AllOf>
     </FilterFunction>
-    
+
 Example of applying the resulting filter function to a collection view:
 
     <mx:Script>
         <![CDATA[
-
             protected function applyFilter():void
             {
                 companies.filterFunction = enabledFilterFunctions.filterFunction;
                 companies.refresh();
             }
-            
         ]]>
     </mx:Script>
-
+    
     <mx:ArrayCollection id="companies">
         <mx:Array>
             <mx:Object name="Adobe Systems Inc." address="345 Park Ave., San Jose, CA 95110-2704" />

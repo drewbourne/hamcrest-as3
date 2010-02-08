@@ -20,9 +20,12 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="HamcrestMXMLExample.mxml"/>
     <application path="HamcrestTestRunner.mxml"/>
+<<<<<<< HEAD:hamcrest-unit-test/.actionScriptProperties
     <application path="HamcrestFilterFunctionExample.mxml"/>
+=======
+    <application path="HamcrestMXMLExample.mxml"/>
+>>>>>>> johnyanarella/master:hamcrest-unit-test/.actionScriptProperties
   </applications>
   <modules/>
   <buildCSSFiles/>

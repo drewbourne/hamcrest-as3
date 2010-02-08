@@ -11,6 +11,8 @@
   <component class="org.hamcrest.mxml.core.AnyOf"/>
   <component class="org.hamcrest.mxml.core.Anything"/>
   <component class="org.hamcrest.mxml.core.DescribedAs"/>
+  <component class="org.hamcrest.mxml.core.Evaluate"/>
+  <component class="org.hamcrest.mxml.core.Given"/>
   <component class="org.hamcrest.mxml.core.Not"/>
   <component class="org.hamcrest.mxml.date.DateAfter"/>
   <component class="org.hamcrest.mxml.date.DateBefore"/>
@@ -33,7 +35,6 @@
   <component class="org.hamcrest.mxml.text.EndsWith"/>
   <component class="org.hamcrest.mxml.text.MatchesPattern"/>
   <component class="org.hamcrest.mxml.text.StartsWith"/>
-  <component class="org.hamcrest.filter.CompositeFilterFunction"/>  
   <component class="org.hamcrest.filter.FilterFunction"/>  
   <component class="org.hamcrest.validator.MatcherValidator"/>  
 </componentPackage>

@@ -35,6 +35,8 @@
     <classEntry path="org.hamcrest.core.AnyOfMatcher"/>
     <classEntry path="org.hamcrest.core.CombinableMatcher"/>
     <classEntry path="org.hamcrest.core.DescribedAsMatcher"/>
+    <classEntry path="org.hamcrest.core.EvaluateMatcher"/>
+    <classEntry path="org.hamcrest.core.GivenMatcher"/>
     <classEntry path="org.hamcrest.core.IsAnythingMatcher"/>
     <classEntry path="org.hamcrest.core.IsMatcher"/>
     <classEntry path="org.hamcrest.core.IsNotMatcher"/>
@@ -46,6 +48,8 @@
     <classEntry path="org.hamcrest.core.both"/>
     <classEntry path="org.hamcrest.core.describedAs"/>
     <classEntry path="org.hamcrest.core.either"/>
+    <classEntry path="org.hamcrest.core.evaluate"/>
+    <classEntry path="org.hamcrest.core.given"/>
     <classEntry path="org.hamcrest.core.isA"/>
     <classEntry path="org.hamcrest.core.not"/>
     <classEntry path="org.hamcrest.core.throws"/>
@@ -75,6 +79,8 @@
     <classEntry path="org.hamcrest.mxml.core.AnyOf"/>
     <classEntry path="org.hamcrest.mxml.core.Anything"/>
     <classEntry path="org.hamcrest.mxml.core.DescribedAs"/>
+    <classEntry path="org.hamcrest.mxml.core.Evaluate"/>
+    <classEntry path="org.hamcrest.mxml.core.Given"/>
     <classEntry path="org.hamcrest.mxml.core.Not"/>
     <classEntry path="org.hamcrest.mxml.date.DateAfter"/>
     <classEntry path="org.hamcrest.mxml.date.DateBefore"/>
@@ -134,8 +140,6 @@
     <classEntry path="org.hamcrest.text.endsWith"/>
     <classEntry path="org.hamcrest.text.re"/>
     <classEntry path="org.hamcrest.text.startsWith"/>
-    <classEntry path="org.hamcrest.filter.BaseFilterFunction"/>
-    <classEntry path="org.hamcrest.filter.CompositeFilterFunction"/>
     <classEntry path="org.hamcrest.filter.FilterFunction"/>
     <classEntry path="org.hamcrest.filter.IFilterFunction"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>

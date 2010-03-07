@@ -22,11 +22,11 @@ package org.hamcrest.collection
 		[Test]
 		public function matchesACollectionThatIsSortedByFieldValueCaseSensitive():void 
 		{
-			assertMatches("should match list sorted by 'value', case sensitive", 
+			assertMatches("should match array sorted by 'value', case sensitive", 
 				sortedBy("value"), [
 				{ value: "Cats" },
 				{ value: "bats" },
-				{ value: "cats" },				
+				{ value: "cats" },	
 				{ value: "hats" }
 				]);
 		}
@@ -34,7 +34,7 @@ package org.hamcrest.collection
 		[Test]
 		public function matchesACollectionThatIsSortedByFieldValueCaseInsensitive():void 
 		{
-			assertMatches("should match list sorted by 'value', case insensitive", 
+			assertMatches("should match array sorted by 'value', case insensitive", 
 				sortedBy("value", true), [
 				{ value: "Bats" },
 				{ value: "bats" },
@@ -47,7 +47,7 @@ package org.hamcrest.collection
 		[Test]
 		public function matchesACollectionThatIsSortedByNumericFieldValueAscending():void 
 		{
-			assertMatches("should match list sorted by 'value', numeric ascending", 
+			assertMatches("should match array sorted by 'value', numeric ascending", 
 				sortedBy("value", false, false, true), [
 				{ value: 1 },
 				{ value: 2 },
@@ -59,7 +59,7 @@ package org.hamcrest.collection
 		[Test]
 		public function matchesACollectionThatIsSortedByNumericFieldValueDescending():void 
 		{
-			assertMatches("should match list sorted by 'value', numeric descending", 
+			assertMatches("should match array sorted by 'value', numeric descending", 
 				sortedBy("value", false, true, true), [
 				{ value: 100 },
 				{ value: 11 },

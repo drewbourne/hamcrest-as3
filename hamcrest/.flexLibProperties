@@ -22,6 +22,7 @@
     <classEntry path="org.hamcrest.collection.IsArrayContainingMatcher"/>
     <classEntry path="org.hamcrest.collection.IsArrayMatcher"/>
     <classEntry path="org.hamcrest.collection.IsArrayWithSizeMatcher"/>
+    <classEntry path="org.hamcrest.collection.SortedByFieldsMatcher"/>
     <classEntry path="org.hamcrest.collection.SortedByMatcher"/>
     <classEntry path="org.hamcrest.collection.array"/>
     <classEntry path="org.hamcrest.collection.arrayWithSize"/>
@@ -31,6 +32,7 @@
     <classEntry path="org.hamcrest.collection.hasItems"/>
     <classEntry path="org.hamcrest.collection.inArray"/>
     <classEntry path="org.hamcrest.collection.sortedBy"/>
+    <classEntry path="org.hamcrest.collection.sortedByFields"/>
     <classEntry path="org.hamcrest.core.AllOfMatcher"/>
     <classEntry path="org.hamcrest.core.AnyOfMatcher"/>
     <classEntry path="org.hamcrest.core.CombinableMatcher"/>

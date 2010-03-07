@@ -3,7 +3,8 @@ package org.hamcrest.collection
 	import org.hamcrest.Matcher;
 	
 	/**
-	 * Matches if the item being matched is an Array sorted  
+	 * Matches if the item being matched is an Array sorted by the given field, 
+	 * and flags.  
 	 * 
 	 * @param field
 	 * @param caseInsensitive

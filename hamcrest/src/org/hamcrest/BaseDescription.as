@@ -120,15 +120,22 @@ package org.hamcrest
             var separate:Boolean = false;
 
             append(start);
-            list.forEach(function(item:SelfDescribing, i:int, a:Array):void
+            
+            for each (var item:Object in list)
+            {
+                if (separate)
                 {
-                    if (separate)
-                    {
-                        append(separator);
-                    }
-                    appendDescriptionOf(item);
-                    separate = true;
-                });
+                    append(separator);
+                }
+                
+                if (item is SelfDescribing)
+                    appendDescriptionOf(item as SelfDescribing);
+                else
+                    appendValue(item);
+                    
+                separate = true;
+            }
+            
             append(end);
 
             return this;

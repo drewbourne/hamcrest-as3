@@ -8,17 +8,18 @@
 
     <mx:Script>
         <![CDATA[
-            import org.hamcrest.HamcrestSuite;
+            import org.flexunit.listeners.CIListener;
             import org.flexunit.listeners.UIListener;
             import org.flexunit.runner.FlexUnitCore;
+            import org.hamcrest.HamcrestSuite;
 
             private var core:FlexUnitCore;
 
             public function runMe():void
             {
-
                 core = new FlexUnitCore();
                 core.addListener(new UIListener(uiListener));
+                core.addListener(new CIListener());
                 core.run(HamcrestSuite);
             }
         ]]>

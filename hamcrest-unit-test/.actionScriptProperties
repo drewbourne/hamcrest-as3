@@ -16,6 +16,7 @@
       <libraryPathEntry kind="3" linkType="1" path="/hamcrest/bin/hamcrest.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/FlexUnit4/bin/FlexUnit4.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/FlexUnit4UIListener/bin/FlexUnit4UIListener.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/hamcrest-as3/libs"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

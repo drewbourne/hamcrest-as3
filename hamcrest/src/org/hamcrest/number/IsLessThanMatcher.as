@@ -40,8 +40,9 @@ package org.hamcrest.number
 
         override public function describeMismatch(item:Object, mismatchDescription:Description):void
         {
-            mismatchDescription.appendValue(item)
-                .appendText(" was greater than ");
+            mismatchDescription
+                .appendValue(item)
+                .appendText(" was not less than ");
 
             if (_inclusive)
             {

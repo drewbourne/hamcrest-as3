@@ -22,8 +22,6 @@ package org.hamcrest.number
      */
     public function greaterThanOrEqualTo(value:Number):Matcher
     {
-        // composition is a winner
-        // TODO create an actual Matcher so we can include an appropriate mismatch description
-        return describedAs("a value greater than or equal to %0", anyOf(greaterThan(value), equalTo(value)), value);
+        return new IsGreaterThanMatcher(value, true);
     }
 }

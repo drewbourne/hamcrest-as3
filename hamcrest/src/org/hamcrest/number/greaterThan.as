@@ -19,6 +19,6 @@ package org.hamcrest.number
      */
     public function greaterThan(value:Number):Matcher
     {
-        return new IsGreaterThanMatcher(value);
+        return new IsGreaterThanMatcher(value, false);
     }
 }

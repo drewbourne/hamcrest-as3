@@ -19,32 +19,48 @@ package org.hamcrest.number
     public class IsGreaterThanMatcher extends TypeSafeMatcher
     {
         private var _value:Number;
+        private var _inclusive:Boolean;
 
         /**
          * Constructor.
          */
-        public function IsGreaterThanMatcher(value:Number)
+        public function IsGreaterThanMatcher(value:Number, inclusive:Boolean)
         {
             super(Number);
             _value = value;
+            _inclusive = inclusive;
         }
 
         override public function matchesSafely(item:Object):Boolean
         {
-            return Number(item) > _value;
+            return _inclusive
+                ? Number(item) >= _value
+                : Number(item) > _value;
         }
 
         override public function describeMismatch(item:Object, mismatchDescription:Description):void
         {
-            mismatchDescription.appendValue(item)
-                .appendText(" was less than ");
-
+            mismatchDescription
+                .appendValue(item)
+                .appendText(" was not greater than ");
+            
+            if (_inclusive)
+            {
+                mismatchDescription.appendText("or equal to ");    
+            }    
+            
             mismatchDescription.appendValue(_value);
         }
 
         override public function describeTo(description:Description):void
         {
             description.appendText("a value greater than ");
+            
+             if (_inclusive)
+            {
+                description.appendText("or equal to ")
+            }
+            
             description.appendValue(_value);
         }
     }

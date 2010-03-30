@@ -32,6 +32,7 @@ package org.hamcrest
     import org.hamcrest.mxml.object.NullTest;
     import org.hamcrest.mxml.object.SameInstanceTest;
     import org.hamcrest.mxml.text.ContainsStringTest;
+    import org.hamcrest.mxml.text.EmptyStringTest;
     import org.hamcrest.mxml.text.EndsWithTest;
     import org.hamcrest.mxml.text.StartsWithTest;
 
@@ -86,6 +87,7 @@ package org.hamcrest
         public var endsWith:EndsWithTest;
 //        public var matchesPattern:MatchesPatternTest;
         public var startsWith:StartsWithTest;
+        public var emptyString:EmptyStringTest;
 
     }
 }

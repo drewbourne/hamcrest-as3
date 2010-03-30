@@ -33,6 +33,7 @@
   <component class="org.hamcrest.mxml.object.SameInstance"/>
   <component class="org.hamcrest.mxml.text.ContainsString"/>
   <component class="org.hamcrest.mxml.text.EndsWith"/>
+  <component class="org.hamcrest.mxml.text.EmptyString"/>
   <component class="org.hamcrest.mxml.text.MatchesPattern"/>
   <component class="org.hamcrest.mxml.text.StartsWith"/>
   <component class="org.hamcrest.filter.FilterFunction"/>  

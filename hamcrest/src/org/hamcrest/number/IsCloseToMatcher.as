@@ -76,7 +76,15 @@ package org.hamcrest.number
          */
         protected function actualDelta(item:Number):Number
         {
-            return (Math.abs((item - _value)) - _delta);
+            return decimal11(Math.abs(item - _value) - _delta);
+        }
+        
+        /**
+         * Round a Number to 11 decimal places. 
+         */
+        protected function decimal11(value:Number):Number 
+        {
+            return Math.round(value * 100000000000) / 100000000000;
         }
     }
 }

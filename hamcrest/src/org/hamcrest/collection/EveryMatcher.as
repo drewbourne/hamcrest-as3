@@ -28,7 +28,7 @@ package org.hamcrest.collection
          */
         public function EveryMatcher(matcher:Matcher)
         {
-            super(Array);
+            super(Object);
             _matcher = matcher;
         }
 
@@ -44,7 +44,7 @@ package org.hamcrest.collection
             {
                 if (!_matcher.matches(item))
                 {
-                    description.appendText("an item ");
+                    description.appendText("an item ");                        
                     _matcher.describeMismatch(item, description);
                     return false;
                 }

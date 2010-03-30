@@ -39,7 +39,8 @@ package org.hamcrest.collection
          */
         public function IsArrayMatcher(elementMatchers:Array)
         {
-            super(Array);
+            super(Object);
+            
             _elementMatchers = elementMatchers;
         }
 
@@ -48,17 +49,19 @@ package org.hamcrest.collection
          */
         override public function matchesSafely(item:Object):Boolean
         {
-            var array:Array = item as Array;
-
+            var array:Array = toArray(item);
+            
             if (array.length != _elementMatchers.length)
             {
                 return false;
             }
+            
+            function matchesElement(matcher:Matcher, i:int, a:Array):Boolean
+            {
+                return matcher.matches(array[i]);
+            }
 
-            return _elementMatchers.every(function(matcher:Matcher, i:int, a:Array):Boolean
-                {
-                    return matcher.matches(array[i]);
-                });
+            return _elementMatchers.every(matchesElement);
         }
 
         /**
@@ -93,4 +96,22 @@ package org.hamcrest.collection
             return "]";
         }
     }
+}
+
+/**
+ * Converts an Array-like Object to an Array.
+ * 
+ * @param iterable Object
+ * @returns Array
+ */
+internal function toArray(iterable:Object):Array 
+{
+    var result:Array = [];
+	
+	for each (var item:Object in iterable)
+	{
+		result[result.length] = item;
+	}
+	
+	return result;		
 }

@@ -1,6 +1,5 @@
 package org.hamcrest.mxml.collection
 {
-
     import org.hamcrest.Matcher;
     import org.hamcrest.collection.everyItem;
     import org.hamcrest.mxml.BaseMXMLMatcherComposite;

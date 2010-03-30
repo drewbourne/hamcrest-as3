@@ -1,12 +1,9 @@
 package org.hamcrest.collection
 {
-
-    import org.hamcrest.AbstractMatcherTestCase;
     import org.hamcrest.object.equalTo;
 
-    public class IsArrayTest extends AbstractMatcherTestCase
+    public class IsArrayTest extends AbstractArrayMatcherTestCase
     {
-
         [Test]
         public function matchesAnArrayThatMatchesAllTheElementMatchers():void
         {

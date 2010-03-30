@@ -1,11 +1,9 @@
 package org.hamcrest.collection
 {
-
     import org.hamcrest.AbstractMatcherTestCase;
 
-    public class IsArrayWithSizeTest extends AbstractMatcherTestCase
+    public class IsArrayWithSizeTest extends AbstractArrayMatcherTestCase
     {
-
         [Test]
         public function matchesWhenSizeIsCorrect():void
         {

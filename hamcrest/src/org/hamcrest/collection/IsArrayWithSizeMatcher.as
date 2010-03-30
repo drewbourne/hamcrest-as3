@@ -1,8 +1,8 @@
 package org.hamcrest.collection
 {
-    import org.hamcrest.TypeSafeMatcher;
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
+    import org.hamcrest.TypeSafeMatcher;
     
     // TODO arrayWithSize / IsArrayWithSizeMatcher should diagnose mismatch.
     /**
@@ -29,7 +29,8 @@ package org.hamcrest.collection
          */
         public function IsArrayWithSizeMatcher(sizeMatcher:Matcher)
         {
-            super(Array);
+            super(Object);
+            
             _sizeMatcher = sizeMatcher;
         }
         
@@ -38,7 +39,9 @@ package org.hamcrest.collection
          */
         override public function matchesSafely(item:Object):Boolean
         {
-            return _sizeMatcher.matches((item as Array).length);
+            var array:Array = toArray(item);
+            
+            return _sizeMatcher.matches(array.length);
         }
         
         /**
@@ -50,4 +53,22 @@ package org.hamcrest.collection
                 .appendDescriptionOf(_sizeMatcher);
         }
     }
+}
+
+/**
+ * Converts an Array-like Object to an Array.
+ * 
+ * @param iterable Object
+ * @returns Array
+ */
+internal function toArray(iterable:Object):Array 
+{
+    var result:Array = [];
+	
+	for each (var item:Object in iterable)
+	{
+		result[result.length] = item;
+	}
+	
+	return result;		
 }

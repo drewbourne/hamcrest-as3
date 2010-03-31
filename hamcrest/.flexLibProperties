@@ -64,6 +64,8 @@
     <classEntry path="org.hamcrest.date.dateBeforeOrEqual"/>
     <classEntry path="org.hamcrest.date.dateBetween"/>
     <classEntry path="org.hamcrest.date.dateEqual"/>
+    <classEntry path="org.hamcrest.filter.FilterFunction"/>
+    <classEntry path="org.hamcrest.filter.IFilterFunction"/>
     <classEntry path="org.hamcrest.mxml.BaseMXMLMatcher"/>
     <classEntry path="org.hamcrest.mxml.BaseMXMLMatcherComposite"/>
     <classEntry path="org.hamcrest.mxml.BaseMXMLMatcherContainer"/>
@@ -97,6 +99,7 @@
     <classEntry path="org.hamcrest.mxml.object.EqualTo"/>
     <classEntry path="org.hamcrest.mxml.object.HasProperties"/>
     <classEntry path="org.hamcrest.mxml.object.HasProperty"/>
+    <classEntry path="org.hamcrest.mxml.object.HasPropertyChain"/>
     <classEntry path="org.hamcrest.mxml.object.InstanceOf"/>
     <classEntry path="org.hamcrest.mxml.object.IsFalse"/>
     <classEntry path="org.hamcrest.mxml.object.IsTrue"/>
@@ -104,6 +107,7 @@
     <classEntry path="org.hamcrest.mxml.object.Null"/>
     <classEntry path="org.hamcrest.mxml.object.SameInstance"/>
     <classEntry path="org.hamcrest.mxml.text.ContainsString"/>
+    <classEntry path="org.hamcrest.mxml.text.EmptyString"/>
     <classEntry path="org.hamcrest.mxml.text.EndsWith"/>
     <classEntry path="org.hamcrest.mxml.text.MatchesPattern"/>
     <classEntry path="org.hamcrest.mxml.text.StartsWith"/>
@@ -117,6 +121,7 @@
     <classEntry path="org.hamcrest.number.greaterThanOrEqualTo"/>
     <classEntry path="org.hamcrest.number.lessThan"/>
     <classEntry path="org.hamcrest.number.lessThanOrEqualTo"/>
+    <classEntry path="org.hamcrest.object.HasPropertyChainMatcher"/>
     <classEntry path="org.hamcrest.object.HasPropertyMatcher"/>
     <classEntry path="org.hamcrest.object.HasPropertyWithValueMatcher"/>
     <classEntry path="org.hamcrest.object.IsEqualMatcher"/>
@@ -129,6 +134,7 @@
     <classEntry path="org.hamcrest.object.equalTo"/>
     <classEntry path="org.hamcrest.object.hasProperties"/>
     <classEntry path="org.hamcrest.object.hasProperty"/>
+    <classEntry path="org.hamcrest.object.hasPropertyChain"/>
     <classEntry path="org.hamcrest.object.hasPropertyWithValue"/>
     <classEntry path="org.hamcrest.object.instanceOf"/>
     <classEntry path="org.hamcrest.object.isFalse"/>
@@ -150,6 +156,7 @@
     <classEntry path="org.hamcrest.text.endsWith"/>
     <classEntry path="org.hamcrest.text.re"/>
     <classEntry path="org.hamcrest.text.startsWith"/>
+    <classEntry path="org.hamcrest.validator.MatcherValidator"/>
     <classEntry path="org.hamcrest.filter.FilterFunction"/>
     <classEntry path="org.hamcrest.filter.IFilterFunction"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>

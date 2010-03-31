@@ -17,6 +17,11 @@ package org.hamcrest.mxml.object
     [Event(name='valueChanged', type = 'flash.events.Event')]
 
     /**
+     * 
+     */
+    [DefaultProperty('value')]
+    
+    /**
      * MXML façade for hasProperty() / hasPropertyWithValue() Matchers.
      *
      * @see org.hamcrest.object#hasProperty()
@@ -32,7 +37,6 @@ package org.hamcrest.mxml.object
      *
      * @author Drew Bourne
      */
-    [DefaultProperty('value')]
     public class HasProperty extends BaseMXMLMatcherComposite
     {
         private var _property:String;
@@ -46,10 +50,10 @@ package org.hamcrest.mxml.object
             super();
         }
 
+        [Bindable('propertyChanged')]
         /**
          * Property name target object must have.
          */
-        [Bindable('propertyChanged')]
         public function get property():String
         {
             return _property;
@@ -64,10 +68,10 @@ package org.hamcrest.mxml.object
             }
         }
 
+        [Bindable('valueChanged')]
         /**
          * Value or Matcher for the expected value of the property
          */
-        [Bindable('valueChanged')]
         public function get value():*
         {
             return _value;

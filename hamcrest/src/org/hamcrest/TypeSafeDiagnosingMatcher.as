@@ -19,6 +19,8 @@ package org.hamcrest
          */
         public function TypeSafeDiagnosingMatcher(expectedType:Class)
         {
+            super();
+            
             _expectedType = expectedType;
         }
 

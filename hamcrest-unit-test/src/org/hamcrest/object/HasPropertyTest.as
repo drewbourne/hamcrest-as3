@@ -51,6 +51,9 @@ package org.hamcrest.object
         [Test]
         public function describeTo():void
         {
+            assertDescription('has property "property"', 
+                hasProperty("property"));
+            
             assertDescription('has property "property" with <true>',
                 hasProperty("property", equalTo(true)));
         }

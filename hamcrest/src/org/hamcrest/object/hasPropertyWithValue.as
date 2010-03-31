@@ -19,7 +19,8 @@ package org.hamcrest.object
      */
     public function hasPropertyWithValue(propertyName:String, valueOrMatcher:Object):Matcher
     {
-        var valueMatcher:Matcher = valueOrMatcher is Matcher
+        var valueMatcher:Matcher 
+            = valueOrMatcher is Matcher
             ? valueOrMatcher as Matcher
             : equalTo(valueOrMatcher);
         

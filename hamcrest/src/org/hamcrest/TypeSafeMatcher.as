@@ -21,6 +21,8 @@ package org.hamcrest
          */
         public function TypeSafeMatcher(expectedType:Class)
         {
+            super();
+            
             if (expectedType == null)
             {
                 throw new ArgumentError('expectedType must be non null');

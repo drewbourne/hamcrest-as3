@@ -44,8 +44,10 @@ package org.hamcrest.collection
             {
                 if (!_matcher.matches(item))
                 {
-                    description.appendText("an item ");                        
-                    _matcher.describeMismatch(item, description);
+                    description
+                        .appendText("an item ")
+                        .appendMismatchOf(_matcher, item);
+
                     return false;
                 }
             }

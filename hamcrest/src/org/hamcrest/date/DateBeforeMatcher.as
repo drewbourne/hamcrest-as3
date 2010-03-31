@@ -48,10 +48,10 @@ package org.hamcrest.date
          */
         override public function describeMismatch(item:Object, mismatchDescription:Description):void
         {
-            mismatchDescription.appendValue(item)
-                .appendText(" is not before ");
-
-            mismatchDescription.appendValue(_compareDate);
+            mismatchDescription
+                .appendValue(item)
+                .appendText(" is not before ")
+                .appendValue(_compareDate);
         }
 
         /**

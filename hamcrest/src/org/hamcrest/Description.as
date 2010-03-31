@@ -25,6 +25,11 @@ package org.hamcrest
          * Should append the description of a <code>SelfDescribing</code> to the result.
          */
         function appendDescriptionOf(value:SelfDescribing):Description;
+        
+        /**
+         * Should append the description of a <code>SelfDescribing</code> to the result.
+         */
+        function appendMismatchOf(matcher:Matcher, value:*):Description;
 
         /**
          * Should append the value to the result.

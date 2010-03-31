@@ -35,7 +35,16 @@ package org.hamcrest
         {
             return this;
         }
-
+        
+        /**
+         * No-op.
+         * @return this
+         */
+        public function appendMismatchOf(matcher:Matcher, value:*):Description
+        {
+            return this;
+        }
+        
         /**
          * No-op.
          * @return this

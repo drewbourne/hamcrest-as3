@@ -57,7 +57,7 @@ package org.hamcrest.object
             
             if (_valueMatcher && !_valueMatcher.matches(current))
             {
-                _valueMatcher.describeMismatch(current, description);
+                description.appendMismatchOf(_valueMatcher, current);
                 
                 return false;
             }

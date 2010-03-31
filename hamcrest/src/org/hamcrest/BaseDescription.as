@@ -55,6 +55,15 @@ package org.hamcrest
             value.describeTo(this);
             return this;
         }
+        
+        /**
+         * @inheritDoc
+         */
+        public function appendMismatchOf(matcher:Matcher, value:*):Description
+        {
+            matcher.describeMismatch(value, this);
+            return this;
+        }
 
         // TODO document output results for the various types of object.
         /**

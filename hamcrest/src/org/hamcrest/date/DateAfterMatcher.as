@@ -49,10 +49,10 @@ package org.hamcrest.date
          */
         override public function describeMismatch(item:Object, mismatchDescription:Description):void
         {
-            mismatchDescription.appendValue(item)
-                .appendText(" is not after ");
-
-            mismatchDescription.appendValue(_compareDate);
+            mismatchDescription
+                .appendValue(item)
+                .appendText(" is not after ")
+                .appendValue(_compareDate);
         }
 
         /**
@@ -60,7 +60,9 @@ package org.hamcrest.date
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("a date after ").appendValue(_compareDate);
+            description
+                .appendText("a date after ")
+                .appendValue(_compareDate);
         }
     }
 }

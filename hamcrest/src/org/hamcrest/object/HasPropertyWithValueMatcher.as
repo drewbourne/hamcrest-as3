@@ -40,16 +40,20 @@ package org.hamcrest.object
         {
             if (!item)
             {
-                mismatchDescription.appendText('no property ')
-                mismatchDescription.appendValue(_propertyName);
-                mismatchDescription.appendText(' on null object');
+                mismatchDescription
+                    .appendText('no property ')
+                    .appendValue(_propertyName)
+                    .appendText(' on null object');
+                    
                 return false;
             }
             
             if (!item.hasOwnProperty(_propertyName))
             {
-                mismatchDescription.appendText('no property ');
-                mismatchDescription.appendValue(_propertyName);
+                mismatchDescription
+                    .appendText('no property ')
+                    .appendValue(_propertyName);
+
                 return false;
             }
             
@@ -58,10 +62,11 @@ package org.hamcrest.object
             
             if (!valueMatches)
             {
-                mismatchDescription.appendText('property ');
-                mismatchDescription.appendValue(_propertyName);
-                mismatchDescription.appendText(' ');
-                _valueMatcher.describeMismatch(propertyValue, mismatchDescription);
+                mismatchDescription
+                    .appendText('property ')
+                    .appendValue(_propertyName)
+                    .appendText(' ')
+                    .appendMismatchOf(_valueMatcher, propertyValue);
             }
             return valueMatches;
         }

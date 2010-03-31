@@ -65,7 +65,7 @@ package org.hamcrest.core
             {
                 if (error)
                 {
-                    _matcher.describeMismatch(error, mismatchDescription);
+                    mismatchDescription.appendMismatchOf(_matcher, error);
                 }
                 else
                 {

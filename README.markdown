@@ -255,6 +255,7 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
     * sameInstance, strictlyEqualTo - compare objects using ===
     * hasProperty - checks that a property exists and, optionally, that it matches the provided matcher
     * hasProperties - similar to hasProperty, but accepts a dictionary of properties and their associated matchers
+    * hasPropertyChain - checks that a chain of properties exist and optionally that the value matches a provided value
     * instanceOf - test type
     * notNullValue, nullValue - test for null
     
@@ -263,6 +264,8 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
     * arrayWithSize - match an array's size against a number
     * hasItem, hasItems - test a collection contains elements
     * everyItem - test that a matcher matches every item in an array
+    * sortedBy - test an array's elements are sorted a single field
+    * sortedByFields - test an array's elements are sorted by multiple fields
 
 * Number
     * closeTo - test that values are close to a given value
@@ -284,3 +287,4 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 [Downloads](http://github.com/drewbourne/hamcrest-as3/downloads)
 [Issues](http://github.com/drewbourne/hamcrest-as3/issues)
 [Wiki](http://wiki.github.com/drewbourne/hamcrest-as3)
+

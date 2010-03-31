@@ -5,8 +5,8 @@ package org.hamcrest
     import org.hamcrest.collection.IsArrayContainingTest;
     import org.hamcrest.collection.IsArrayTest;
     import org.hamcrest.collection.IsArrayWithSizeTest;
-    import org.hamcrest.collection.SortedByTest;
     import org.hamcrest.collection.SortedByFieldsTest;
+    import org.hamcrest.collection.SortedByTest;
     import org.hamcrest.core.AllOfTest;
     import org.hamcrest.core.AnyOfTest;
     import org.hamcrest.core.CombinableTest;
@@ -25,6 +25,7 @@ package org.hamcrest
     import org.hamcrest.number.CloseToTest;
     import org.hamcrest.number.GreaterThanTest;
     import org.hamcrest.number.LessThanTest;
+    import org.hamcrest.object.HasPropertyChainTest;
     import org.hamcrest.object.HasPropertyTest;
     import org.hamcrest.object.HasPropertyWithValueTest;
     import org.hamcrest.object.IsEqualTest;
@@ -78,6 +79,7 @@ package org.hamcrest
         // object
         public var hasProperty:HasPropertyTest;
         public var hasPropertyWithValue:HasPropertyWithValueTest;
+        public var hasPropertyChain:HasPropertyChainTest;
         public var equalTo:IsEqualTest;
         public var instanceOf:IsInstanceOfTest;
         public var nullValue:IsNullTest;

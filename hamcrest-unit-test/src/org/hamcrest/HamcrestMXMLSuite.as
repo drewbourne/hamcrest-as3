@@ -23,6 +23,7 @@ package org.hamcrest
     import org.hamcrest.mxml.number.LessThanOrEqualToTest;
     import org.hamcrest.mxml.number.LessThanTest;
     import org.hamcrest.mxml.object.EqualToTest;
+    import org.hamcrest.mxml.object.HasPropertyChainTest;
     import org.hamcrest.mxml.object.HasPropertyTest;
     import org.hamcrest.mxml.object.HasPropertyWithValueTest;
     import org.hamcrest.mxml.object.InstanceOfTest;
@@ -74,6 +75,7 @@ package org.hamcrest
         public var equalTo:EqualToTest;
         public var hasPropety:HasPropertyTest;
         public var hasPropetyWithValue:HasPropertyWithValueTest;
+        public var hasPropertyChain:HasPropertyChainTest;
 //        public var hasProperties:HasPropertiesTest;
         public var instanceOf:InstanceOfTest;
         public var isTrue:IsTrueTest;

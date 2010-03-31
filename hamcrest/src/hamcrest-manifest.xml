@@ -27,6 +27,7 @@
   <component class="org.hamcrest.mxml.object.EqualTo"/>
   <component class="org.hamcrest.mxml.object.HasProperties"/>
   <component class="org.hamcrest.mxml.object.HasProperty"/>
+  <component class="org.hamcrest.mxml.object.HasPropertyChain"/>
   <component class="org.hamcrest.mxml.object.InstanceOf"/>
   <component class="org.hamcrest.mxml.object.NotNull"/>
   <component class="org.hamcrest.mxml.object.Null"/>

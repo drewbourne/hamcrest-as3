@@ -37,6 +37,18 @@ package org.hamcrest.object
         /**
          * @inheritDoc
          */
+        override public function describeMismatch(item:Object, mismatchDescription:Description):void
+        {
+            mismatchDescription
+                .appendText("no property ")
+                .appendValue(_propertyName)
+                .appendText(" on ")
+                .appendValue(item);
+        }
+        
+        /**
+         * @inheritDoc
+         */
         override public function describeTo(description:Description):void
         {
             description.appendText("has property ").appendValue(_propertyName);

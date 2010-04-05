@@ -49,5 +49,14 @@ package org.hamcrest.number
         {
             assertDescription("a Number within <0.1> of <3>", closeTo(3, 0.1));
         }
+        
+        [Test]
+        public function describesMismatch():void 
+        {
+            assertMismatch(
+                "<1.94> differed by <0.01>",
+                closeTo(2, 0.05), 
+                1.94);
+        }
     }
 }

@@ -15,10 +15,11 @@ package org.hamcrest.text
          * Constructor
          *
          * @param substring String to search for
+         * @param ignoreCase Indicates if the match should ignore the case of the substring
          */
-        public function StringStartsWithMatcher(substring:String)
+        public function StringStartsWithMatcher(substring:String, ignoreCase:Boolean = false)
         {
-            super(substring);
+            super(substring, ignoreCase);
         }
 
         /**
@@ -26,7 +27,7 @@ package org.hamcrest.text
          */
         override protected function evaluateSubstringOf(s:String):Boolean
         {
-            return (new RegExp('^' + substring)).test(s);
+            return (new RegExp('^' + substring, ignoreCase ? 'i' : null)).test(s);
         }
 
         /**

@@ -7,6 +7,7 @@ package org.hamcrest.text
      * Matches a String if it starts with the given substring.
      *
      * @param substring String to search for
+     * @param ignoreCase Indicates if the match should ignore the case of the substring
      *
      * @see org.hamcrest.text.StringStartsWithMatcher
      *
@@ -17,8 +18,8 @@ package org.hamcrest.text
      *
      * @author Drew Bourne
      */
-    public function startsWith(substring:String):Matcher
+    public function startsWith(substring:String, ignoreCase:Boolean = false):Matcher
     {
-        return new StringStartsWithMatcher(substring);
+        return new StringStartsWithMatcher(substring, ignoreCase);
     }
 }

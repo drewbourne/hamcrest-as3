@@ -16,8 +16,8 @@ package org.hamcrest.text
      *
      * @author Drew Bourne
      */
-    public function containsString(substring:String):Matcher
+    public function containsString(substring:String, ignoreCase:Boolean = false):Matcher
     {
-        return new StringContainsMatcher(substring);
+        return new StringContainsMatcher(substring, ignoreCase);
     }
 }

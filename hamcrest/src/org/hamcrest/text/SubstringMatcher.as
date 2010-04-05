@@ -1,10 +1,10 @@
 package org.hamcrest.text
 {
 
+    import flash.errors.IllegalOperationError;
+    
     import org.hamcrest.Description;
     import org.hamcrest.TypeSafeMatcher;
-
-    import flash.errors.IllegalOperationError;
 
     /**
      * Matcher for Substring matching, provides a default implementation of describeTo.
@@ -17,16 +17,19 @@ package org.hamcrest.text
     public class SubstringMatcher extends TypeSafeMatcher
     {
         private var _substring:String;
+        private var _ignoreCase:Boolean;
 
         /**
          * Constructor
          *
          * @param substring String to search for
+         * @param ignoreCase Indicates if the match should ignore the case of the substring
          */
-        public function SubstringMatcher(substring:String)
+        public function SubstringMatcher(substring:String, ignoreCase:Boolean = false)
         {
             super(String);
             _substring = substring;
+            _ignoreCase = ignoreCase;
         }
 
         /**
@@ -35,6 +38,14 @@ package org.hamcrest.text
         protected function get substring():String
         {
             return _substring;
+        }
+        
+        /**
+         * Indicates if match should ignore the case of the substring
+         */
+        protected function get ignoreCase():Boolean 
+        {
+            return _ignoreCase;
         }
 
         /**

@@ -2,6 +2,7 @@ package org.hamcrest.collection
 {
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
+    import org.hamcrest.TypeSafeDiagnosingMatcher;
     import org.hamcrest.TypeSafeMatcher;
     
     // TODO arrayWithSize / IsArrayWithSizeMatcher should diagnose mismatch.
@@ -18,7 +19,7 @@ package org.hamcrest.collection
      *
      * @author Drew Bourne
      */
-    public class IsArrayWithSizeMatcher extends TypeSafeMatcher
+    public class IsArrayWithSizeMatcher extends TypeSafeDiagnosingMatcher
     {
         private var _sizeMatcher:Matcher;
         
@@ -37,11 +38,21 @@ package org.hamcrest.collection
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object):Boolean
+        override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
         {
             var array:Array = toArray(item);
+            var result:Boolean = true;
             
-            return _sizeMatcher.matches(array.length);
+            if (!_sizeMatcher.matches(array.length))
+            {
+                mismatchDescription
+                    .appendText("size ")
+                    .appendMismatchOf(_sizeMatcher, array.length);
+                    
+                result = false;
+            }
+            
+            return result;
         }
         
         /**
@@ -49,7 +60,8 @@ package org.hamcrest.collection
          */
         override public function describeTo(description:Description):void
         {
-            description.appendText("an Array with size ")
+            description
+                .appendText("an Array with size ")
                 .appendDescriptionOf(_sizeMatcher);
         }
     }

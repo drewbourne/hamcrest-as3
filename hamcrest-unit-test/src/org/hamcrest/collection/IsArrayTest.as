@@ -46,5 +46,14 @@ package org.hamcrest.collection
         {
             assertDescription("[\"a\", \"b\"]", array(equalTo("a"), equalTo("b")));
         }
+        
+        [Test]
+        public function describesMismatches():void 
+        {
+            assertMismatch(
+                "was [\"a\",\"b\",\"d\"]",
+                array("a", "b", "c"), 
+                ['a', 'b', 'd']);
+        }
     }
 }

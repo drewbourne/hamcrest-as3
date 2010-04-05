@@ -3,9 +3,7 @@ package org.hamcrest.collection
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeDiagnosingMatcher;
-    import org.hamcrest.TypeSafeMatcher;
     
-    // TODO arrayWithSize / IsArrayWithSizeMatcher should diagnose mismatch.
     /**
      * Checks the item being matched is an <code>Array</code> and has the expected number of items.
      *

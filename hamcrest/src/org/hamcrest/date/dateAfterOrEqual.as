@@ -4,16 +4,16 @@ package org.hamcrest.date
     import org.hamcrest.core.describedAs;
 
     /**
-     * Matches if the date item is after the given date.
+     * Matches if the date item is after or equal to the given date.
      *
-     * @param value Date the matched number must be after.
+     * @param value Date the matched number must be after or equal to.
      * @return Matcher
      *
      * @see org.hamcrest.date.DateAfterMatcher
      *
      * @example
      * <listing version="3.0">
-     * assertThat( new Date(), dateAfter( new Date( 1920, 1, 1)));
+     * assertThat( new Date(), dateAfterOrEqual( new Date( 1920, 1, 1)));
      * </listing>
      */
     public function dateAfterOrEqual(value:Date):Matcher

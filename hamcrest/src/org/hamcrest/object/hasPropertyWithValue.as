@@ -8,11 +8,13 @@ package org.hamcrest.object
      *
      * @param propertyName Name of the property the item being matched must have.
      *
-     * @see org.hamcrest.object.HasPropertyValueMatcher
-     *
+     * @see org.hamcrest.object#hasProperty()
+     * @see org.hamcrest.object#hasPropertyChain() 
+     * @see org.hamcrest.object.HasPropertyWithValueMatcher
+     * 
      * @example
      * <listing version="3.0">
-     *  assertThat({ id: 1234, data: [1, 2, 3] }, hasPropertyValue("data", everyItem(isA(Number))));
+     *  assertThat({ id: 1234, data: [1, 2, 3] }, hasPropertyWithValue("data", everyItem(isA(Number))));
      * </listing>
      *
      * @author Drew Bourne

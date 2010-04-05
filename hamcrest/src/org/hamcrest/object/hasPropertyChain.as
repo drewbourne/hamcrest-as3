@@ -6,6 +6,8 @@ package org.hamcrest.object
      * Matches an object with properties for each link in the given property 
      * chain, optionally checking for an expected value.
      * 
+     * @see org.hamcrest.object#hasProperty()
+     * @see org.hamcrest.object#hasPropertyWithValue()
      * @see org.hamcrest.object.HasPropertyChainMatcher
      * 
      * @example

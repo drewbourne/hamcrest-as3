@@ -14,7 +14,7 @@ package org.hamcrest.core
      *      systemUnderTest.methodCall(given, bad, args);
      *  }, throws(allOf(
      *      instanceOf(OhNoItsAnError),
-     *      hasPropertyValue("message", "oh no"))));
+     *      hasPropertyWithValue("message", "oh no"))));
      * </listing>
      *
      * @author Drew Bourne

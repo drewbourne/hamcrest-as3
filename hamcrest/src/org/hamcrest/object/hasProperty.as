@@ -8,7 +8,10 @@ package org.hamcrest.object
      * @param propertyName Name of the property the item being matched must have.
      * @param valueOrMatcher Optional value or Matcher to compare the property value against.
      *
+     * @see org.hamcrest.object#hasPropertyWithValue()
+     * @see org.hamcrest.object#hasPropertyChain()
      * @see org.hamcrest.object.HasPropertyMatcher
+     * @see org.hamcrest.object.HasPropertyWithValueMatcher
      *
      * @example
      * <listing version="3.0">

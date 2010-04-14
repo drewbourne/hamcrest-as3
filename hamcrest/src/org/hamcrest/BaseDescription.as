@@ -103,6 +103,10 @@ package org.hamcrest
             {
                 appendValueList("[", ",", "]", value as Array);
             }
+            else if (value is XML)
+            {
+                append(XML(value).toXMLString());
+            }
             else
             {
                 append("<");

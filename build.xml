@@ -15,8 +15,8 @@
 	<!-- Existing -->
 	<property name="src.loc" location="${basedir}/hamcrest/src" />
 	<property name="test.loc" location="${basedir}/hamcrest-unit-test/src" />
-	<property name="lib.loc" location="${basedir}/libs" />
-	<property name="lib.build.loc" location="${lib.loc}/build" />
+	<property name="lib.loc" location="${basedir}/hamcrest-unit-test/libs" />
+	<property name="lib.build.loc" location="${basedir}/libs/build" />
 
 	<!-- Generated -->
 	<property name="dist.loc" location="${basedir}/target" />
@@ -57,7 +57,7 @@
 
 	<target name="test" depends="compile">
 		<!-- FlexUnit config -->
-		<taskdef resource="flexUnitTasks.tasks" classpath="${build.flexunit.loc}/flexUnitTasks-4.0.0.jar" />
+		<taskdef resource="flexUnitTasks.tasks" classpath="${lib.build.loc}/flexUnitTasks-4.0.0.jar" />
 
 		<!-- Test compile -->
 		<mxmlc file="${test.loc}/HamcrestTestRunner.mxml" output="${bin.loc}/HamcrestTestRunner.swf">
@@ -85,7 +85,7 @@
 		</junitreport>
 
 		<!-- FlexPMD config -->
-		<property name="flexpmd.version" value="1.0" />
+		<property name="flexpmd.version" value="1.1" />
 		<path id="flexpmd.base">
 			<pathelement location="${lib.build.loc}/as3-parser-${flexpmd.version}.jar" />
 			<pathelement location="${lib.build.loc}/as3-parser-api-${flexpmd.version}.jar" />
@@ -123,8 +123,7 @@
 		</taskdef>
 
 		<!-- Executions -->
-		<pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" />
-		<!-- <pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" ruleset="${basedir}/pmd-ruleset.xml" /> -->
+		<pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" ruleset="${basedir}/pmd-ruleset.xml" /> 
 
 		<cpd minimumTokenCount="50" outputFile="${report.loc}/cpd.xml">
 			<fileset dir="${src.loc}">

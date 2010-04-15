@@ -57,7 +57,7 @@
 
 	<target name="test" depends="compile">
 		<!-- FlexUnit config -->
-		<taskdef resource="flexUnitTasks.tasks" classpath="${lib.build.loc}/flexUnitTasks-4.0.0.jar" />
+		<taskdef resource="flexUnitTasks.tasks" classpath="${build.flexunit.loc}/flexUnitTasks-4.0.0.jar" />
 
 		<!-- Test compile -->
 		<mxmlc file="${test.loc}/HamcrestTestRunner.mxml" output="${bin.loc}/HamcrestTestRunner.swf">
@@ -124,6 +124,7 @@
 
 		<!-- Executions -->
 		<pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" />
+		<!-- <pmd sourceDirectory="${src.loc}" outputDirectory="${report.loc}" ruleset="${basedir}/pmd-ruleset.xml" /> -->
 
 		<cpd minimumTokenCount="50" outputFile="${report.loc}/cpd.xml">
 			<fileset dir="${src.loc}">

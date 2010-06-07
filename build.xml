@@ -48,6 +48,9 @@
 				<include name="**/*.as" />
 				<include name="**/*.mxml" />
 			</include-sources>
+			<external-library-path append="true" dir="${FLEX_HOME}/frameworks/libs">
+			    <include name="*.swc" />
+			</external-library-path>
 			<source-path path-element="${src.loc}" />
 			<namespace uri="http://hamcrest.org/2009/mxml" manifest="${src.loc}/hamcrest-manifest.xml" />
 			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
@@ -148,7 +151,7 @@
 
 	<target name="package" depends="report">
 		<!-- Create distribution for binaries with docs -->
-		<zip destfile="${dist.loc}/${build.finalName}.bin.zip">
+		<zip destfile="${dist.loc}/${build.finalName}.zip">
 			<zipfileset dir="${doc.loc}" prefix="docs" />
 			<zipfileset dir="${bin.loc}">
 				<include name="${build.finalName}.swc" />

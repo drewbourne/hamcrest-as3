@@ -24,14 +24,13 @@ package org.hamcrest.mxml
         public function BaseMXMLMatcherContainer()
         {
             super();
-            invalidateProperties();
         }
 
+		[ArrayElementType('org.hamcrest.mxml.MXMLMatcher')]
+		[Bindable('matchersChanged')]
         /**
          * Array of MXMLMatchers.
          */
-        [ArrayElementType('org.hamcrest.mxml.MXMLMatcher')]
-        [Bindable('matchersChanged')]
         public function get matchers():Array
         {
             return _matchers;
@@ -41,10 +40,47 @@ package org.hamcrest.mxml
         {
             if (_matchers != value)
             {
+				if (_matchers)
+					removeMatchersEventListeners(_matchers);
+				
                 _matchers = value;
+				
+				if (_matchers)
+					addMatchersEventListeners(_matchers);
+				
                 changed('matchers');
             }
         }
+		
+		protected function addMatchersEventListeners(matchers:Array):void 
+		{
+			for each (var matcher:MXMLMatcher in matchers)
+			{
+				addMatcherEventListeners(matcher);
+			}
+		}
+		
+		protected function removeMatchersEventListeners(matchers:Array):void 
+		{
+			for each (var matcher:MXMLMatcher in matchers)
+			{
+				removeMatcherEventListeners(matcher);
+			}
+		}
 
+		protected function addMatcherEventListeners(matcher:MXMLMatcher):void 
+		{
+			matcher.addEventListener("matchedChanged", matcher_matchedChanged, false, 0, true);
+		}
+		
+		protected function removeMatcherEventListeners(matcher:MXMLMatcher):void 
+		{
+			matcher.removeEventListener("matchedChanged", matcher_matchedChanged);
+		}
+		
+		protected function matcher_matchedChanged(event:Event):void 
+		{
+			invalidateProperties();
+		}
     }
 }

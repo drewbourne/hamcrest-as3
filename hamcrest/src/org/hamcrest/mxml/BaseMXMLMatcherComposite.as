@@ -1,7 +1,7 @@
 package org.hamcrest.mxml
 {
     import flash.events.Event;
-
+    
     import org.hamcrest.Description;
 
     [DefaultProperty('matcher')]
@@ -42,9 +42,31 @@ package org.hamcrest.mxml
         {
             if (_matcher != value)
             {
+				if (_matcher)
+					removeMatcherEventListeners(_matcher);
+				
                 _matcher = value;
+				
+				if (_matcher)
+					addMatcherEventListeners(_matcher);
+				
                 changed('matcher');
             }
         }
+		
+		protected function addMatcherEventListeners(matcher:MXMLMatcher):void 
+		{
+			matcher.addEventListener("matchedChanged", matcher_matchedChanged, false, 0, true);
+		}
+		
+		protected function removeMatcherEventListeners(matcher:MXMLMatcher):void 
+		{
+			matcher.removeEventListener("matchedChanged", matcher_matchedChanged);
+		}
+		
+		protected function matcher_matchedChanged(event:Event):void 
+		{
+			invalidateProperties();
+		}
     }
 }

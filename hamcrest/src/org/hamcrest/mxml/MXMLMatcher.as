@@ -1,13 +1,35 @@
 package org.hamcrest.mxml
 {
+    import flash.events.IEventDispatcher;
+    
     import org.hamcrest.Matcher;
 
+	/**
+	 * Dispatched when the <code>target</code> property changes.
+	 */
+	[Event(name='targetChanged', type = 'flash.events.Event')]
+	
+	/**
+	 * Dispatched when the <code>description</code> property changes.
+	 */
+	[Event(name='descriptionChanged', type = 'flash.events.Event')]
+	
+	/**
+	 * Dispatched when the <code>mismatchDescription</code> property changes.
+	 */
+	[Event(name='mismatchDescriptionChanged', type = 'flash.events.Event')]
+	
+	/**
+	 * Dispatched when the <code>matched</code> property changes.
+	 */
+	[Event(name='matchedChanged', type = 'flash.events.Event')]
+	
     /**
      * Interface for MXML façades to Hamcrest Matchers.
      *
      * @author Drew Bourne
      */
-    public interface MXMLMatcher extends Matcher
+    public interface MXMLMatcher extends Matcher, IEventDispatcher
     {
         /**
          * Value to match against the Matcher.

@@ -54,10 +54,10 @@ package org.hamcrest.mxml
             super();
         }
 
+		[Bindable('targetChanged')]
         /**
          * Target value that should be tested when matching.
          */
-        [Bindable('targetChanged')]
         public function get target():*
         {
             return _target;
@@ -72,10 +72,10 @@ package org.hamcrest.mxml
             }
         }
 
+		[Bindable('descriptionChanged')]
         /**
          * Description of the Matcher.
          */
-        [Bindable('descriptionChanged')]
         public function get description():String
         {
             return _description;
@@ -90,10 +90,10 @@ package org.hamcrest.mxml
             }
         }
 
+		[Bindable('matchedChanged')]
         /**
          * Indicates if the target value matched succesfully.
          */
-        [Bindable('matchedChanged')]
         public function get matched():Boolean
         {
             return _matched;
@@ -108,11 +108,11 @@ package org.hamcrest.mxml
             }
         }
 
+		[Bindable('mismatchDescriptionChanged')]
+		[Bindable('matchedChanged')]
         /**
          * Describes the mismatch when the target value does not match.
          */
-        [Bindable('mismatchDescriptionChanged')]
-        [Bindable('matchedChanged')]
         public function get mismatchDescription():String
         {
             return _mismatchDescription;
@@ -213,9 +213,9 @@ package org.hamcrest.mxml
         protected function evaluateDescription():void
         {
             // TODO cache StringDescription instance?
-            var d:StringDescription = new StringDescription();
-            describeTo(d);
-            setDescription(d.toString());
+            var newDescription:StringDescription = new StringDescription();
+            describeTo(newDescription);
+            setDescription(newDescription.toString());
         }
 
         /**
@@ -224,14 +224,14 @@ package org.hamcrest.mxml
         protected function evaluateMatchTarget():void
         {
             // TODO cache StringDescription instance?
-            var md:StringDescription = new StringDescription();
+            var mismatchDescription:StringDescription = new StringDescription();
             var matchedTarget:Boolean = matches(target);
             if (!matchedTarget)
             {
-                describeMismatch(target, md);
+                describeMismatch(target, mismatchDescription);
             }
-
-            setMismatchDescription(md.toString());
+            
+            setMismatchDescription(mismatchDescription.toString());
             setMatched(matchedTarget);
         }
 

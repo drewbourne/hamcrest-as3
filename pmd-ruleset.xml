@@ -355,10 +355,10 @@ public class UnTypedMetadata
 {
 }]]></example>
   </rule>
-  <rule since="1.1" class="com.adobe.ac.pmd.rules.maintanability.OnlyOneReturnRule" message="A method should have only one exit point, and that should be the last statement in the method">
+  <!-- <rule since="1.1" class="com.adobe.ac.pmd.rules.maintanability.OnlyOneReturnRule" message="A method should have only one exit point, and that should be the last statement in the method">
     <description/>
     <priority>3</priority>
-  </rule>
+  </rule> -->
   <rule since="" class="com.adobe.ac.pmd.rules.maintanability.AlertShowRule" message="Do not call Alert.show directly">
     <description>You should not Alert.show() directly. If an error occurred in the system, you should probably use an ErrorManager to have a consistent way to manage those errors.</description>
     <priority>1</priority>
@@ -402,14 +402,6 @@ public class Foo
 {
 }]]></example>
   </rule>
-  <rule since="" class="com.adobe.ac.pmd.rules.maintanability.forbiddentypes.UseObjectTypeRule" message="Do not use Object class">
-    <description>It is a bad practice to use the dynamic class Object. Prefer using strongly typed object, or marker interface in order to avoid silent compilation errors while refactoring</description>
-    <priority>5</priority>
-    <example><![CDATA[public class Foo
-{
-   public var bar : Object; // VIOLATION      
-}]]></example>
-  </rule>
   <rule since="" class="com.adobe.ac.pmd.rules.maintanability.forbiddentypes.UseDictionaryTypeRule" message="Do not use Dictionnary class">
     <description>It is a bad practice to use the dynamic class Dictionary. Prefer using strongly typed object, or marker interface in order to avoid silent compilation errors while refactoring</description>
     <priority>5</priority>
@@ -424,14 +416,6 @@ public class Foo
     <example><![CDATA[public class MyObject {
    public static const MY_STATIC_CONSTANT : String = "myStaticConstant";
    public const MY_NON_STATIC_CONSTANT : String = "myStaticConstant"; // VIOLATION
-}]]></example>
-  </rule>
-  <rule since="" class="com.adobe.ac.pmd.rules.maintanability.forbiddentypes.UseGenericTypeRule" message="Use strongly typed objects instead of *">
-    <description/>
-    <priority>1</priority>
-    <example><![CDATA[public class Foo
-{
-   public var bar : *; // VIOLATION      
 }]]></example>
   </rule>
   <rule since="" class="com.adobe.ac.pmd.rules.maintanability.UselessOverridenFunctionRule" message="This method is empty. This should be removed ({0})">
@@ -841,10 +825,10 @@ public class UnknownMetaDataAttribute
    }
 }]]></example>
   </rule>
-  <rule since="" class="com.adobe.ac.pmd.rules.style.CopyrightMissingRule" message="The copyright header is missing in this file">
-    <description/>
-    <priority>5</priority>
-  </rule>
+  <!-- <rule since="" class="com.adobe.ac.pmd.rules.style.CopyrightMissingRule" message="The copyright header is missing in this file">
+      <description/>
+      <priority>5</priority>
+    </rule> -->
   <rule since="" class="com.adobe.ac.pmd.rules.style.BadFormatLoggerRule" message="The logger is not correctly formatted because {0}">
     <description/>
     <priority>5</priority>

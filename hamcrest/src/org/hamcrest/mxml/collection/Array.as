@@ -29,6 +29,7 @@ package org.hamcrest.mxml.collection
         public function Array()
         {
             super();
+			invalidateProperties();
         }
 
         /**

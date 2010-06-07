@@ -41,13 +41,13 @@ package org.hamcrest.core
          */
         override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
         {
-            var fn:Function = item as Function;
+            var closure:Function = item as Function;
             var thrown:Boolean = false;
             var error:Error = null;
 
             try
             {
-                fn();
+                closure();
             }
             catch (e:Error)
             {

@@ -82,9 +82,9 @@ package org.hamcrest.mxml.object
 
                 if (val && !(val is MXMLMatcher))
                 {
-                    var m:EqualTo = new EqualTo();
-                    m.value = val;
-                    val = m;
+                    var valueMatcher:EqualTo = new EqualTo();
+                    valueMatcher.value = val;
+                    val = valueMatcher;
                 }
 
                 if (val is MXMLMatcher)

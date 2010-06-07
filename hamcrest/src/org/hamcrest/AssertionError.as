@@ -10,7 +10,6 @@ package org.hamcrest
      */
     public class AssertionError extends Error
     {
-
         private var _cause:Error;
 
         /**

@@ -1,7 +1,6 @@
 package org.hamcrest.core
 {
     import org.hamcrest.Matcher;
-    import org.hamcrest.core.AllOfMatcher;
 
     /**
      * Checks if an item matches all of the given Matchers.

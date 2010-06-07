@@ -73,9 +73,9 @@ package org.hamcrest.collection
             // compare items
             for (var i:int = 0, n:int = original.length; i < n; i++)
             {
-                var o:Object = original[i];
-                var s:Object = sorted[i];
-                if (o !== s)
+                var originalItem:Object = original[i];
+                var sortedItem:Object = sorted[i];
+                if (originalItem !== sortedItem)
                 {
         	        return false;
                 }

@@ -1,5 +1,8 @@
 package org.hamcrest
 {
+	import org.hamcrest.mxml.BaseMXMLMatcherTest;
+    import org.hamcrest.mxml.BaseMXMLMatcherContainerTest;
+	import org.hamcrest.mxml.BaseMXMLMatcherCompositeTest;	
     import org.hamcrest.mxml.collection.ArrayTest;
     import org.hamcrest.mxml.collection.ArrayWithSizeTest;
     import org.hamcrest.mxml.collection.EmptyArrayTest;
@@ -10,6 +13,7 @@ package org.hamcrest
     import org.hamcrest.mxml.core.AllOfTest;
     import org.hamcrest.mxml.core.AnyOfTest;
     import org.hamcrest.mxml.core.AnythingTest;
+    import org.hamcrest.mxml.BaseMXMLMatcherTest;
     import org.hamcrest.mxml.core.DescribedAsTest;
     import org.hamcrest.mxml.core.NotTest;
     import org.hamcrest.mxml.date.DateAfterTest;
@@ -41,6 +45,11 @@ package org.hamcrest
     [RunWith("org.flexunit.runners.Suite")]
     public class HamcrestMXMLSuite
     {
+		// base
+		public var baseMatcher:BaseMXMLMatcherTest;
+		public var baseComposite:BaseMXMLMatcherCompositeTest;
+		public var baseContainer:BaseMXMLMatcherContainerTest;		
+		
         // collection
         public var array:ArrayTest;
         public var arrayWithSize:ArrayWithSizeTest;

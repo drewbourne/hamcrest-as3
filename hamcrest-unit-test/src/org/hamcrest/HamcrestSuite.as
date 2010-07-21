@@ -24,6 +24,8 @@ package org.hamcrest
     import org.hamcrest.number.BetweenTest;
     import org.hamcrest.number.CloseToTest;
     import org.hamcrest.number.GreaterThanTest;
+    import org.hamcrest.number.IsNotANumberTest;
+    import org.hamcrest.number.IsNumberTest;
     import org.hamcrest.number.LessThanTest;
     import org.hamcrest.object.HasPropertyChainTest;
     import org.hamcrest.object.HasPropertyTest;
@@ -75,6 +77,8 @@ package org.hamcrest
         public var closeTo:CloseToTest;
         public var greaterThan:GreaterThanTest;
         public var lessThan:LessThanTest;
+		public var isNumber:IsNumberTest;
+		public var isNotANumber:IsNotANumberTest;
         
         // object
         public var hasProperty:HasPropertyTest;

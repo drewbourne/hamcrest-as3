@@ -26,13 +26,13 @@ package org.hamcrest.mxml.text
         {
             super();
         }
-
+		
         /**
          * @inheritDoc
          */
         override protected function createMatcher():Matcher
         {
-            return startsWith(string);
+            return startsWith(string, ignoreCase);
         }
     }
 }

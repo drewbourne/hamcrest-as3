@@ -32,7 +32,7 @@ package org.hamcrest.mxml.text
          */
         override protected function createMatcher():Matcher
         {
-            return endsWith(string);
+            return endsWith(string, ignoreCase);
         }
     }
 }

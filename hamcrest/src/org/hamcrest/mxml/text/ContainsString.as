@@ -39,7 +39,7 @@ package org.hamcrest.mxml.text
          */
         override protected function createMatcher():Matcher
         {
-            return containsString(string);
+            return containsString(string, ignoreCase);
         }
     }
 }

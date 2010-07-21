@@ -4,7 +4,7 @@ package org.hamcrest.number
     import org.hamcrest.TypeSafeMatcher;
 
     /**
-     * Matches if a value is within +/- the error value from the given value.
+     * Matches if a value is within +/- the delta value from the given value.
      *
      * @see org.hamcrest.number#closeTo()
      *
@@ -31,13 +31,13 @@ package org.hamcrest.number
          * Constructor.
          *
          * @param value
-         * @param error
+         * @param delta
          */
-        public function IsCloseToMatcher(value:Number, error:Number)
+        public function IsCloseToMatcher(value:Number, delta:Number)
         {
             super(Number);
             _value = value;
-            _delta = error;
+            _delta = delta;
         }
 
         /**

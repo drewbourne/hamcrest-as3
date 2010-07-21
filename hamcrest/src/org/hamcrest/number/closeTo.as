@@ -3,10 +3,10 @@ package org.hamcrest.number
     import org.hamcrest.Matcher;
     
     /**
-     * Matches if a value is within +/- the error value from the given value.
+     * Matches if a value is within +/- the delta value from the given value.
      *
      * @param value
-     * @param error
+     * @param delta
      *
      * @see org.hamcrest.number.IsCloseToMatcher
      *
@@ -24,8 +24,8 @@ package org.hamcrest.number
      *
      * @author Drew Bourne
      */
-    public function closeTo(value:Number, error:Number):Matcher
+    public function closeTo(value:Number, delta:Number):Matcher
     {
-        return new IsCloseToMatcher(value, error);
+        return new IsCloseToMatcher(value, delta);
     }
 }

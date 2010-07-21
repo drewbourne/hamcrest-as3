@@ -115,10 +115,13 @@
     <classEntry path="org.hamcrest.number.IsCloseToMatcher"/>
     <classEntry path="org.hamcrest.number.IsGreaterThanMatcher"/>
     <classEntry path="org.hamcrest.number.IsLessThanMatcher"/>
+    <classEntry path="org.hamcrest.number.IsNumberMatcher"/>
     <classEntry path="org.hamcrest.number.between"/>
     <classEntry path="org.hamcrest.number.closeTo"/>
     <classEntry path="org.hamcrest.number.greaterThan"/>
     <classEntry path="org.hamcrest.number.greaterThanOrEqualTo"/>
+    <classEntry path="org.hamcrest.number.isNotANumber"/>
+    <classEntry path="org.hamcrest.number.isNumber"/>
     <classEntry path="org.hamcrest.number.lessThan"/>
     <classEntry path="org.hamcrest.number.lessThanOrEqualTo"/>
     <classEntry path="org.hamcrest.object.HasPropertyChainMatcher"/>
@@ -157,9 +160,7 @@
     <classEntry path="org.hamcrest.text.re"/>
     <classEntry path="org.hamcrest.text.startsWith"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>
-    <classEntry path="org.hamcrest.filter.FilterFunction"/>
-    <classEntry path="org.hamcrest.filter.IFilterFunction"/>
-    <classEntry path="org.hamcrest.validator.MatcherValidator"/>
+    <classEntry path="org.hamcrest.number.IsNotANumberMatcher"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests>

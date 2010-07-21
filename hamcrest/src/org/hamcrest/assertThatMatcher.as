@@ -13,22 +13,33 @@ package org.hamcrest
     {
         if (!matcher.matches(actual))
         {
-            var description:Description = new StringDescription();
+			var errorDescription:Description = new StringDescription();
+            var matcherDescription:Description = new StringDescription();
+			var mismatchDescription:Description = new StringDescription();
 
             if (reason && reason.length > 0)
             {
-                description
+				errorDescription
                     .appendText(reason)
                     .appendText("\n");
             }
 
-            description
+			errorDescription
                 .appendText("Expected: ")
                 .appendDescriptionOf(matcher)
                 .appendText("\n     but: ")
                 .appendMismatchOf(matcher, actual);
 
-            throw new AssertionError(description.toString());
+			matcherDescription.appendDescriptionOf(matcher);
+			
+			mismatchDescription.appendMismatchOf(matcher, actual);
+				
+            throw new AssertionError(
+				errorDescription.toString(), 
+				null, 
+				matcherDescription.toString(), 
+				mismatchDescription.toString(), 
+				actual);
         }
     }
 }

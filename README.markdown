@@ -41,9 +41,9 @@ Most of the Matchers have also been made usable in the Flex MXML context by wrap
     </AllOf>
 
     <mx:TextInput id="numberInput" />
-    <mx:Label text={ numberMatcher.description }"" />
-    <mx:Label text={ numberMatcher.mismatchDescription }"" />
-    <mx:Label text={ numberMatcher.matched }"" />
+    <mx:Label text="{ numberMatcher.description }" />
+    <mx:Label text="{ numberMatcher.mismatchDescription }" />
+    <mx:Label text="{ numberMatcher.matched }" />
 
 ## Conditional Matching with Hamcrest
 

@@ -5,7 +5,6 @@
     <libraryPath defaultLinkType="1">
       <libraryPathEntry kind="4" path=""/>
       <libraryPathEntry kind="3" linkType="1" path="/hamcrest/bin/hamcrest.swc" sourcepath="${DOCUMENTS}/hamcrest-as3/hamcrest/src" useDefaultLinkType="false"/>
-      <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/hamcrest-as3/libs"/>
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
       <libraryPathEntry kind="1" linkType="1" path="${FLEXUNIT_LIB_LOCATION}/version3libs/Common/"/>
       <libraryPathEntry kind="1" linkType="1" path="${FLEXUNIT_LIB_LOCATION}/version3libs/FlexProject/"/>

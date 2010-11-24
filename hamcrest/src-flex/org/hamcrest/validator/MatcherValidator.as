@@ -7,7 +7,7 @@ package org.hamcrest.validator
     import org.hamcrest.Matcher;
     import org.hamcrest.StringDescription;
     
-    [DefaultProperty('matcher')]
+    [DefaultProperty("matcher")]
     
     /**
      * Flex Validator that uses Matchers for validation and errorString.
@@ -28,7 +28,6 @@ package org.hamcrest.validator
      *
      * @author Drew Bourne
      */
-    [Bindable]
     public class MatcherValidator extends Validator
     {
         private var _matcher:Matcher;
@@ -46,6 +45,7 @@ package org.hamcrest.validator
             _errorMessage = "Expected {0} but was {1}";
         }
         
+	    [Bindable]
         /**
          * Matcher to validate value with.
          */
@@ -59,6 +59,7 @@ package org.hamcrest.validator
             _matcher = value;
         }
         
+	    [Bindable]
         /**
          * Error code string to use for invalid ValidationResult.
          */
@@ -72,6 +73,7 @@ package org.hamcrest.validator
             _errorCode = value;
         }
         
+	    [Bindable]
         /**
          * Description of the mismatch to use for invalid ValidationResult.
          */

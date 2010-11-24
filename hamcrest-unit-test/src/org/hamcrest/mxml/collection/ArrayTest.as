@@ -1,7 +1,6 @@
 package org.hamcrest.mxml.collection
 {
     import org.flexunit.assertThat;
-    import org.hamcrest.mxml.collection.Array;
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
     import org.hamcrest.mxml.object.EqualTo;
 

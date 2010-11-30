@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="false" version="1">
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="1">
   <includeClasses>
     <classEntry path="org.hamcrest.AssertionError"/>
     <classEntry path="org.hamcrest.BaseDescription"/>
@@ -161,6 +161,7 @@
     <classEntry path="org.hamcrest.text.startsWith"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>
     <classEntry path="org.hamcrest.number.IsNotANumberMatcher"/>
+    <classEntry path="org.hamcrest.object.HasPropertiesMatcher"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests>

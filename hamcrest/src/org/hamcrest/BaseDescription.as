@@ -107,10 +107,6 @@ package org.hamcrest
             {
                 append(XML(value).toXMLString());
             }
-			else if (value is SelfDescribing)
-			{
-				appendDescriptionOf(value as SelfDescribing);
-			}
             else
             {
                 append("<");

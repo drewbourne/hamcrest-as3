@@ -21,19 +21,21 @@ package org.hamcrest.object
      * 
      * @author Drew Bourne
      */
-    public function hasProperties(object:Object):Matcher
+    public function hasProperties(properties:Object):Matcher
     {
-        var matchers:Array = [];
-        for (var field:String in object)
-        {
-            var value:Object = object[field];
-            var valueMatcher:Matcher = value is Matcher ? value as Matcher : equalTo(value);
-            var propertyMatcher:Matcher = hasPropertyWithValue(field, valueMatcher);
-            matchers.push(propertyMatcher);
-        }
-
-        // TODO determine if this is still the case
-        // NB anonymous objects seem to be iterating their fields in reverse order
-        return allOf.apply(null, matchers.reverse());
+		return new HasPropertiesMatcher(properties);
+		
+//        var matchers:Array = [];
+//        for (var field:String in object)
+//        {
+//            var value:Object = object[field];
+//            var valueMatcher:Matcher = value is Matcher ? value as Matcher : equalTo(value);
+//            var propertyMatcher:Matcher = hasPropertyWithValue(field, valueMatcher);
+//            matchers.push(propertyMatcher);
+//        }
+//
+//        // TODO determine if this is still the case
+//        // NB anonymous objects seem to be iterating their fields in reverse order
+//        return allOf.apply(null, matchers.reverse());
     }
 }

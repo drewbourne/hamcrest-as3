@@ -35,14 +35,14 @@ package org.hamcrest.object
         [Test]
         public function doesNotMatchObjectWithoutNamedProperties():void
         {
-            assertMismatch('No property "nonExistantProperty"',
+            assertMismatch('no property "nonExistantProperty"',
                 hasProperties({
                     nonExistantProperty: anything()
                 }),
                 shouldNotMatch);
         }
         
-        [Test]
+        [Test(expects="ReferenceError")]
         public function doesNotMatchWriteOnlyProperty():void
         {
             assertMismatch('property "writeOnlyProperty" is not readable',
@@ -52,10 +52,20 @@ package org.hamcrest.object
                 shouldNotMatch);
         }
         
+		[Test]
+		public function describeToWithValues():void
+		{
+			assertDescription('has properties "property1":<true>, "property2":<true>',
+				hasProperties({
+					property1: true,
+					property2: true
+				}));
+		}
+		
         [Test]
-        public function describeTo():void
+        public function describeToWithMatchersForValues():void
         {
-            assertDescription('(has property "property1" with <true> and has property "property2" with <true>)',
+            assertDescription('has properties "property1":<true>, "property2":<true>',
                 hasProperties({
                     property1: equalTo(true),
                     property2: equalTo(true)
@@ -65,13 +75,32 @@ package org.hamcrest.object
         [Test]
         public function describesMissingPropertyMismatch():void
         {
-            assertMismatch('No property "honk"',
+            assertMismatch('no property "honk"',
                 hasProperties({
                     honk: anything()
                 }),
                 shouldNotMatch);
         }
     
+		[Test]
+		public function describesMismatchedPropertyValue():void 
+		{
+			assertMismatch('property "property1" was "not expected"', 
+				hasProperties({ property1: 'is expected' }), 
+				shouldNotMatch);
+		}
+		
+		[Test]
+		public function aggregatesMismatchedPropertyValues():void 
+		{
+			assertMismatch('property "property1" was "not expected", property "property2" was "also not expected", no property "property3"', 
+				hasProperties({ 
+					property1: 'is expected', 
+					property2: 'also expected',
+					property3: 'another expected'
+				}), 
+				new PropertyTester("not expected", "also not expected"));
+		}
     }
 }
 

@@ -27,6 +27,7 @@ package org.hamcrest
     import org.hamcrest.number.IsNotANumberTest;
     import org.hamcrest.number.IsNumberTest;
     import org.hamcrest.number.LessThanTest;
+    import org.hamcrest.object.HasPropertiesTest;
     import org.hamcrest.object.HasPropertyChainTest;
     import org.hamcrest.object.HasPropertyTest;
     import org.hamcrest.object.HasPropertyWithValueTest;
@@ -81,6 +82,7 @@ package org.hamcrest
 		public var isNotANumber:IsNotANumberTest;
         
         // object
+		public var hasProperties:HasPropertiesTest;
         public var hasProperty:HasPropertyTest;
         public var hasPropertyWithValue:HasPropertyWithValueTest;
         public var hasPropertyChain:HasPropertyChainTest;

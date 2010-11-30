@@ -2,9 +2,9 @@ package org.hamcrest.object
 {
 	import org.hamcrest.Description;
 	import org.hamcrest.Matcher;
+	import org.hamcrest.SelfDescribing;
 	import org.hamcrest.TypeSafeDiagnosingMatcher;
 	import org.hamcrest.TypeSafeMatcher;
-	import org.hamcrest.mxml.object.EqualTo;
 
 	/**
 	 * Matches an item if every property has a matching value.
@@ -81,13 +81,19 @@ package org.hamcrest.object
 			
 			for each (var field:Object in fields)
 			{
+				var value:* = _properties[field];
+				
 				if (needsComma)
 					description.appendText(", ");
 				
 				description
 					.appendValue(field)
-					.appendText(":")
-					.appendValue(_properties[field]);
+					.appendText(":");
+					
+				if (value is SelfDescribing)
+					description.appendDescriptionOf(value as SelfDescribing)
+				else
+					description.appendValue(value);
 					
 				needsComma = true;
 			}

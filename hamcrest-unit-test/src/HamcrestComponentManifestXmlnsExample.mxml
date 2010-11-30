@@ -1,52 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MatcherValidator 
-    xmlns="http://hamcrest.org/2009/mxml"
-    xmlns:mx="http://www.adobe.com/2006/mxml">
+<validator:MatcherValidator 
+	xmlns="http://hamcrest.org/2009/mxml"
+	xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:collection="org.hamcrest.mxml.collection.*" xmlns:core="org.hamcrest.mxml.core.*" xmlns:date="org.hamcrest.mxml.date.*" xmlns:number="org.hamcrest.mxml.number.*" xmlns:object="org.hamcrest.mxml.object.*" xmlns:text="org.hamcrest.mxml.text.*" xmlns:validator="org.hamcrest.validator.*">
 
-    <!--
-         Example to verify the hamcrest-manifest.xml is correct.
-    -->
+	<!--
+		 Example to verify the hamcrest-manifest.xml is correct.
+	-->
 
-    <AllOf>
-        <!-- collection -->
-        <Array />
-        <ArrayWithSize size="1" />
-        <EmptyArray />
-        <EveryItem />
-        <HasItem />
-        <HasItems />
-        <InArray />
-        <!-- core -->
-        <AllOf />
-        <AnyOf />
-        <Anything />
-        <DescribedAs />
-        <Not />
-        <!-- date -->
-        <DateAfter />
-        <DateBefore />
-        <DateBetween />
-        <DateEqualTo />
-        <!-- number -->
-        <Between />
-        <CloseTo />
-        <GreaterThan />
-        <GreaterThanOrEqualTo />
-        <LessThan />
-        <LessThanOrEqualTo />
-        <!-- object -->
-        <EqualTo />
-        <HasProperties />
-        <HasProperty />
-        <InstanceOf />
-        <NotNull />
-        <Null />
-        <SameInstance />
-        <!-- text -->
-        <ContainsString />
-        <EndsWith />
-        <MatchesPattern />
-        <StartsWith />
-    </AllOf>
+	<core:AllOf>
+		<!-- collection -->
+		<collection:Array />
 
-</MatcherValidator>
+		<collection:ArrayWithSize size="1" />
+
+		<collection:EmptyArray />
+
+		<collection:EveryItem />
+
+		<collection:HasItem />
+
+		<collection:HasItems />
+
+		<collection:InArray />
+		<!-- core -->
+
+		<core:AllOf />
+
+		<core:AnyOf />
+
+		<core:Anything />
+
+		<core:DescribedAs />
+
+		<core:Not />
+
+		<core:Given />
+
+		<core:Evaluate />
+		<!-- date -->
+
+		<date:DateAfter />
+
+		<date:DateBefore />
+
+		<date:DateBetween />
+
+		<date:DateEqualTo />
+		<!-- number -->
+
+		<number:Between />
+
+		<number:CloseTo />
+
+		<number:GreaterThan />
+
+		<number:GreaterThanOrEqualTo />
+
+		<number:LessThan />
+
+		<number:LessThanOrEqualTo />
+		<!-- object -->
+
+		<object:EqualTo />
+
+		<object:HasProperties />
+
+		<object:HasProperty />
+
+		<object:InstanceOf />
+
+		<object:NotNull />
+
+		<object:Null />
+
+		<object:SameInstance />
+		<!-- text -->
+
+		<text:ContainsString />
+
+		<text:EndsWith />
+
+		<text:MatchesPattern />
+
+		<text:StartsWith />
+	</core:AllOf>
+
+</validator:MatcherValidator>

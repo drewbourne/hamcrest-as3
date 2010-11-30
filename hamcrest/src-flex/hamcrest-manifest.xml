@@ -25,6 +25,8 @@
   <component class="org.hamcrest.mxml.number.LessThan"/>
   <component class="org.hamcrest.mxml.number.LessThanOrEqualTo"/>
   <component class="org.hamcrest.mxml.object.EqualTo"/>
+  <component class="org.hamcrest.mxml.object.IsTrue"/>
+  <component class="org.hamcrest.mxml.object.IsFalse"/>  
   <component class="org.hamcrest.mxml.object.HasProperties"/>
   <component class="org.hamcrest.mxml.object.HasProperty"/>
   <component class="org.hamcrest.mxml.object.HasPropertyChain"/>

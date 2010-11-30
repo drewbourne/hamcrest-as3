@@ -3,8 +3,7 @@
       ant -v clean package
    
    The goal of this build is compile the library SWC, generate FlexPMD reports, generate ASDocs, and 
-   bundle a binary distribution.  Please note that FLoxy.swc is a runtime dependency of this library 
-   so it should be included on the classpath along with this library during compilation. 
+   bundle a binary distribution.
 -->
 <project name="hamcrest-as3" basedir="." default="package">
 	<property environment="env" />
@@ -14,6 +13,7 @@
 
 	<!-- Existing -->
 	<property name="src.loc" location="${basedir}/hamcrest/src" />
+	<property name="src.flex.loc" location="${basedir}/hamcrest/src-flex" />
 	<property name="test.loc" location="${basedir}/hamcrest-unit-test/src" />
 	<property name="lib.loc" location="${basedir}/hamcrest-unit-test/libs" />
 	<property name="lib.build.loc" location="${basedir}/libs/build" />
@@ -43,19 +43,38 @@
 
 	<target name="compile" depends="init">
 		<!-- Compile SWC -->
-		<compc output="${bin.loc}/${build.finalName}.swc">
-			<include-sources dir="${src.loc}">
-				<include name="**/*.as" />
-				<include name="**/*.mxml" />
-			</include-sources>
-			<external-library-path append="true" dir="${FLEX_HOME}/frameworks/libs">
-			    <include name="*.swc" />
-			</external-library-path>
-			<source-path path-element="${src.loc}" />
-			<namespace uri="http://hamcrest.org/2009/mxml" manifest="${src.loc}/hamcrest-manifest.xml" />
-			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
-			<compiler.headless-server>true</compiler.headless-server>
-		</compc>
+		<java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true">
+			<jvmarg value="-Xmx512m" />
+			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" />
+			<arg line="-output=${bin.loc}/${build.flexName}.swc" />
+			<arg line="-include-sources+=${src.loc}" />
+			<arg line="-source-path+=${src.loc}" />
+			<arg line="-source-path+=${src.flex.loc}" />
+			<arg line="-namespace=http://hamcrest.org/2009/mxml,${src.flex.loc}/hamcrest-manifest.xml" />
+			<arg line="-include-namespaces http://hamcrest.org/2009/mxml" />
+			<arg line="-compiler.verbose-stacktraces=true" />
+			<arg line="-compiler.headless-server=true" />
+		</java>
+		
+		<!-- Compile SWC AS3-only -->
+		<java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true">
+			<jvmarg value="-Xmx512m" />
+			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" />
+			<arg line="-output=${bin.loc}/${build.as3Name}.swc" />
+			<arg line="-include-sources+=${src.loc}" />
+			<arg line="-source-path+=${src.loc}" />
+			<arg line="-compiler.verbose-stacktraces=true" />
+			<arg line="-compiler.headless-server=true" />
+		</java>
+		
 	</target>
 
 	<target name="test" depends="compile">
@@ -65,7 +84,7 @@
 		<!-- Test compile -->
 		<mxmlc file="${test.loc}/HamcrestTestRunner.mxml" output="${bin.loc}/HamcrestTestRunner.swf">
 			<library-path dir="${bin.loc}" append="true">
-				<include name="${build.finalName}.swc" />
+				<include name="${build.flexName}.swc" />
 			</library-path>
 			<library-path dir="${lib.loc}" append="true">
 				<include name="*.swc" />
@@ -155,9 +174,6 @@
 			<zipfileset dir="${doc.loc}" prefix="docs" />
 			<zipfileset dir="${bin.loc}">
 				<include name="${build.finalName}.swc" />
-			</zipfileset>
-			<zipfileset dir="${lib.loc}" prefix="libs">
-				<include name="FLoxy.swc" />
 			</zipfileset>
 		</zip>
 	</target>

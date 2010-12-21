@@ -170,11 +170,21 @@
 
 	<target name="package" depends="report">
 		<!-- Create distribution for binaries with docs -->
-		<zip destfile="${dist.loc}/${build.finalName}.zip">
-			<zipfileset dir="${doc.loc}" prefix="docs" />
-			<zipfileset dir="${bin.loc}">
-				<include name="${build.finalName}.swc" />
+		<!-- package flex bits -->
+		<zip destfile="${dist.loc}/${build.flexName}.zip">
+			<zipfileset dir="${doc.loc}" prefix="${build.flexName}/docs" />
+			<zipfileset dir="${bin.loc}" prefix="${build.flexName}">
+				<include name="${build.flexName}.swc" />
 			</zipfileset>
 		</zip>
+		
+		<!-- package flex bits -->
+		<zip destfile="${dist.loc}/${build.as3Name}.zip">
+			<zipfileset dir="${doc.loc}" prefix="${build.as3Name}/docs" />
+			<zipfileset dir="${bin.loc}" prefix="${build.as3Name}">
+				<include name="${build.as3Name}.swc" />
+			</zipfileset>
+		</zip>
+		
 	</target>
 </project>

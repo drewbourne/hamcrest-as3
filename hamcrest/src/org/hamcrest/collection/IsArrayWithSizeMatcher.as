@@ -1,8 +1,9 @@
 package org.hamcrest.collection
 {
     import org.hamcrest.Description;
+    import org.hamcrest.DiagnosingMatcher;
     import org.hamcrest.Matcher;
-    import org.hamcrest.TypeSafeDiagnosingMatcher;
+    import org.hamcrest.TypeSafeMatcher;
     
     /**
      * Checks the item being matched is an <code>Array</code> and has the expected number of items.
@@ -17,7 +18,7 @@ package org.hamcrest.collection
      *
      * @author Drew Bourne
      */
-    public class IsArrayWithSizeMatcher extends TypeSafeDiagnosingMatcher
+    public class IsArrayWithSizeMatcher extends DiagnosingMatcher
     {
         private var _sizeMatcher:Matcher;
         
@@ -28,7 +29,7 @@ package org.hamcrest.collection
          */
         public function IsArrayWithSizeMatcher(sizeMatcher:Matcher)
         {
-            super(Object);
+            super();
             
             _sizeMatcher = sizeMatcher;
         }
@@ -36,14 +37,22 @@ package org.hamcrest.collection
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
+        override protected function matchesOrDescribesMismatch(item:Object, description:Description):Boolean
         {
+			// bail out for obvious non-iterable objects
+			if (!isIterable(item))
+			{
+				description.appendText("was ").appendValue(item);
+				return false;
+			}
+			
+			// otherwise convert with for-each to an Array
             var array:Array = toArray(item);
             var result:Boolean = true;
-            
+			
             if (!_sizeMatcher.matches(array.length))
             {
-                mismatchDescription
+                description
                     .appendText("size ")
                     .appendMismatchOf(_sizeMatcher, array.length);
                     
@@ -63,6 +72,28 @@ package org.hamcrest.collection
                 .appendDescriptionOf(_sizeMatcher);
         }
     }
+}
+
+import flash.utils.Proxy;
+import flash.utils.getQualifiedClassName;
+
+/**
+ * Naive checks for an potential iterable objects.
+ */
+internal function isIterable(item:Object):Boolean
+{
+	if (item is Array)
+		return true;
+	
+	// Proxy is often used for for-each iterable objects
+	if (item is Proxy)
+		return true;
+	
+	// Vectors dont with nicely with 'is' unless with know the type it is expecting
+	if (getQualifiedClassName(item).indexOf('__AS3__.vec::Vector') == 0)
+		return true;
+		
+	return false;
 }
 
 /**

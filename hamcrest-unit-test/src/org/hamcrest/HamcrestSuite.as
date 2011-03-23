@@ -21,6 +21,8 @@ package org.hamcrest
     import org.hamcrest.date.DateBetweenTest;
     import org.hamcrest.date.DateEqualTest;
     import org.hamcrest.filter.FilterFunctionTest;
+    import org.hamcrest.number.AtLeastTest;
+    import org.hamcrest.number.AtMostTest;
     import org.hamcrest.number.BetweenTest;
     import org.hamcrest.number.CloseToTest;
     import org.hamcrest.number.GreaterThanTest;
@@ -80,6 +82,8 @@ package org.hamcrest
         public var lessThan:LessThanTest;
 		public var isNumber:IsNumberTest;
 		public var isNotANumber:IsNotANumberTest;
+		public var atLeast:AtLeastTest;
+		public var atMost:AtMostTest;
         
         // object
 		public var hasProperties:HasPropertiesTest;

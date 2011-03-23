@@ -27,15 +27,18 @@ package org.hamcrest.collection
             assertMatches("correct size", emptyArray(), []);
             assertDoesNotMatch("incorrect size", emptyArray(), [ 1 ]);
         }
-		
-		[Test]
-		public function emptyArrayWithVector():void
+
+		CONFIG::FLASH_PLAYER_10
 		{
-			var v:Vector.<Number> = new Vector.<Number>();
-			assertMatches("correct size", emptyArray(), v);
-			
-			v.push(1);
-			assertDoesNotMatch("incorrect size", emptyArray(), v);
+			[Test]
+			public function emptyArrayWithVector():void
+			{
+				var v:Vector.<Number> = new Vector.<Number>();
+				assertMatches("correct size", emptyArray(), v);
+				
+				v.push(1);
+				assertDoesNotMatch("incorrect size", emptyArray(), v);
+			}
 		}
 		
 		[Test]

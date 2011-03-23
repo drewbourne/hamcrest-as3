@@ -69,6 +69,8 @@
     <classEntry path="org.hamcrest.number.IsLessThanMatcher"/>
     <classEntry path="org.hamcrest.number.IsNotANumberMatcher"/>
     <classEntry path="org.hamcrest.number.IsNumberMatcher"/>
+    <classEntry path="org.hamcrest.number.atLeast"/>
+    <classEntry path="org.hamcrest.number.atMost"/>
     <classEntry path="org.hamcrest.number.between"/>
     <classEntry path="org.hamcrest.number.closeTo"/>
     <classEntry path="org.hamcrest.number.greaterThan"/>
@@ -77,6 +79,7 @@
     <classEntry path="org.hamcrest.number.isNumber"/>
     <classEntry path="org.hamcrest.number.lessThan"/>
     <classEntry path="org.hamcrest.number.lessThanOrEqualTo"/>
+    <classEntry path="org.hamcrest.object.HasPropertiesMatcher"/>
     <classEntry path="org.hamcrest.object.HasPropertyChainMatcher"/>
     <classEntry path="org.hamcrest.object.HasPropertyMatcher"/>
     <classEntry path="org.hamcrest.object.HasPropertyWithValueMatcher"/>
@@ -161,6 +164,8 @@
     <classEntry path="org.hamcrest.mxml.text.StartsWith"/>
     <classEntry path="org.hamcrest.mxml.text.StringMXMLMatcher"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>
+    <classEntry path="org.hamcrest.text.containsStrings"/>
+    <classEntry path="org.hamcrest.text.ContainsStringsMatcher"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

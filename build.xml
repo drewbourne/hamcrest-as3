@@ -91,6 +91,7 @@
 			</library-path>
 			<compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
 			<compiler.headless-server>true</compiler.headless-server>
+			<compiler.define name="CONFIG::FLASH_PLAYER_10" value="false" />
 		</mxmlc>
 
 		<!-- Execution -->

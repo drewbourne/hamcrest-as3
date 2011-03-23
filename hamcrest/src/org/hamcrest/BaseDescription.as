@@ -107,6 +107,10 @@ package org.hamcrest
             {
                 append(XML(value).toXMLString());
             }
+			else if (value is Function)
+			{
+				append("<Function>");
+			}
             else
             {
                 append("<");

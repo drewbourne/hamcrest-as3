@@ -87,18 +87,6 @@ package org.hamcrest
                 append(value);
                 append(">");
             }
-            else if (value is int)
-            {
-                append("<");
-                append(value);
-                append(">");
-            }
-            else if (value is uint)
-            {
-                append("<");
-                append(value);
-                append(">");
-            }
             else if (value is Array)
             {
                 appendValueList("[", ",", "]", value as Array);

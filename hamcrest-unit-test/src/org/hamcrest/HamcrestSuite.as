@@ -40,6 +40,7 @@ package org.hamcrest
     import org.hamcrest.object.IsSameTest;
     import org.hamcrest.object.IsStrictlyEqualTest;
     import org.hamcrest.object.IsTrueTest;
+    import org.hamcrest.text.ContainsStringsTest;
     import org.hamcrest.text.EmptyStringTest;
     import org.hamcrest.text.StringContainsTest;
     import org.hamcrest.text.StringEndsWithTest;
@@ -103,6 +104,7 @@ package org.hamcrest
         public var stringEndsWith:StringEndsWithTest;
         public var stringStarteWith:StringStartsWithTest;
         public var emptyString:EmptyStringTest;
+		public var containsStrings:ContainsStringsTest;
         
         // extras
         public var throws:ThrowsTest;

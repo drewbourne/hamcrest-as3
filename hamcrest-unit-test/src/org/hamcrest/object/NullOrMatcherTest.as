@@ -12,7 +12,7 @@
  * Redistributions in binary form must reproduce the above copyright notice, this list of
  * conditions and the following disclaimer in the documentation and/or other materials
  * provided with the distribution.
- * 
+ *
  * Neither the name of the Hamcrest nor the names of its contributors may be used to
  * endorse or promote products derived from this software without specific prior
  * written permission.
@@ -43,7 +43,7 @@ public class NullOrMatcherTest {
   private var matcher:Matcher;
 
   [Test]
-  public function nullOrGreaterThanZero():void {
+  public function nullOrGreaterThanZeroMatcher():void {
     matcher = nullOr(greaterThan(0));
     assertThat(matcher.matches(null));
     assertThat(matcher.matches(1));
@@ -52,13 +52,23 @@ public class NullOrMatcherTest {
   }
 
   [Test]
-  public function nullOrEmptyString():void {
+  public function nullOrEmptyStringMatcher():void {
     matcher = nullOr(emptyString());
 
     assertThat(matcher.matches(null));
     assertThat(matcher.matches(""));
     assertThat(matcher.matches("   "));
     assertThat(matcher.matches("sdlkfjsl"),
+               equalTo(false));
+  }
+
+  [Test]
+  public function nullOrStringLiteralValue():void {
+    matcher = nullOr("abc");
+
+    assertThat(matcher.matches(null));
+    assertThat(matcher.matches("abc"));
+    assertThat(matcher.matches("xyz"),
                equalTo(false));
   }
 

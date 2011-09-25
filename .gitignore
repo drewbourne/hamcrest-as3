@@ -8,3 +8,7 @@ target
 FlexUnitApplication.mxml
 FlexUnitCompilerApplication.mxml
 .FlexUnitSettings
+*.iml
+*.ipr
+*.iws
+.project

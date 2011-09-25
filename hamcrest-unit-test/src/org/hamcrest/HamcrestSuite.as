@@ -36,6 +36,7 @@ package org.hamcrest
     import org.hamcrest.object.IsEqualTest;
     import org.hamcrest.object.IsFalseTest;
     import org.hamcrest.object.IsInstanceOfTest;
+    import org.hamcrest.object.IsInterfaceTest;
     import org.hamcrest.object.IsNullTest;
     import org.hamcrest.object.IsSameTest;
     import org.hamcrest.object.IsStrictlyEqualTest;
@@ -98,6 +99,7 @@ package org.hamcrest
         public var strictlyEqualTo:IsStrictlyEqualTest;
         public var isTrue:IsTrueTest;
         public var isFalse:IsFalseTest;
+		public var isInterface:IsInterfaceTest;
         
         // text
         public var stringContains:StringContainsTest;

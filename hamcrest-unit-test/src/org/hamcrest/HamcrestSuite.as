@@ -40,6 +40,7 @@ package org.hamcrest
     import org.hamcrest.object.IsSameTest;
     import org.hamcrest.object.IsStrictlyEqualTest;
     import org.hamcrest.object.IsTrueTest;
+    import org.hamcrest.object.NullOrMatcherTest;
     import org.hamcrest.text.ContainsStringsTest;
     import org.hamcrest.text.EmptyStringTest;
     import org.hamcrest.text.StringContainsTest;
@@ -98,6 +99,7 @@ package org.hamcrest
         public var strictlyEqualTo:IsStrictlyEqualTest;
         public var isTrue:IsTrueTest;
         public var isFalse:IsFalseTest;
+        public var nullOr:NullOrMatcherTest;
         
         // text
         public var stringContains:StringContainsTest;

@@ -166,6 +166,8 @@
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>
     <classEntry path="org.hamcrest.text.containsStrings"/>
     <classEntry path="org.hamcrest.text.ContainsStringsMatcher"/>
+    <classEntry path="org.hamcrest.object.isInterface"/>
+    <classEntry path="org.hamcrest.object.IsInterfaceMatcher"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

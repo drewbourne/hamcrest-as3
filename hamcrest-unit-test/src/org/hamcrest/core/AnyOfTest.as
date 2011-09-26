@@ -39,13 +39,12 @@ package org.hamcrest.core
         }
 		
 		[Test]
-		public function mismatchDescriptionShouldIncludeMismatchDescriptionFromMismatchedMatchers():void 
+		public function describes_mismatch():void 
 		{
 			var matcher:Matcher = anyOf(hasProperty("length", 3), hasItem("first"));
 			
-			assertMismatch('has property "length" with <3> property "length" was <0> or an Array containing "first" was []', matcher, []);
-			assertMismatch('has property "length" with <3> property "length" was <1> or an Array containing "first" was ["second"]', matcher, ['second']);
-			assertMismatch('has property "length" with <3> property "length" was <2> or an Array containing "first" was ["second","third"]', matcher, ['second', 'third']);
+			assertMismatch('was ["second","third"]', matcher, 
+				['second', 'third']);
 		}
     }
 }

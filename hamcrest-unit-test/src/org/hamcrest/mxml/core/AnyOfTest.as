@@ -64,7 +64,7 @@ package org.hamcrest.mxml.core
         {
             matcher.target = 9;
 
-            assertMismatchDescription("a Number between <2> and <8> was <9> or a Number between <4> and <6> was <9>", matcher);
+            assertMismatchDescription("was <9>", matcher);
         }
     }
 }

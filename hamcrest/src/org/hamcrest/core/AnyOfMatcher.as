@@ -46,30 +46,6 @@ package org.hamcrest.core
 		}
 		
 		/**
-		 * 
-		 */
-		override public function describeMismatch(item:Object, mismatchDescription:Description):void
-		{
-			var join:Boolean = false;
-			
-			for each (var matcher:Matcher in _matchers)
-			{
-				if (!matcher.matches(item))
-				{
-					if (join)
-						mismatchDescription.appendText(" or ")
-					
-					mismatchDescription
-						.appendDescriptionOf(matcher)
-						.appendText(" ")
-						.appendMismatchOf(matcher, item);
-						
-					join = true;
-				}
-			}
-		}
-		
-		/**
 		 * @inheritDoc
 		 */
 		override public function describeTo(description:Description):void

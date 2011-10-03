@@ -95,6 +95,42 @@ package org.hamcrest
             {
                 append(XML(value).toXMLString());
             }
+			else if (value is Date)
+			{
+				var date:Date = value as Date;
+
+				function pad(value:int):String 
+				{
+					return value < 10 
+						? "0" + value.toString(10) 
+						: value.toString(10);
+				}
+				
+				function pad3(value:int):String 
+				{
+					return value < 10 
+						? "00" + value.toString(10)
+						: value < 100 
+						? "0" + value.toString(10) 
+						: value.toString(10);
+				}
+				
+				append("<");
+				append(date.fullYear);
+				append("-");
+				append(pad(date.month + 1));
+				append("-");
+				append(pad(date.date))
+				append("T");
+				append(pad(date.hours));
+				append(":");
+				append(pad(date.minutes));
+				append(":");
+				append(pad(date.seconds));
+				append(".");
+				append(pad3(date.milliseconds))
+				append(">");
+			}
 			else if (value is Function)
 			{
 				append("<Function>");

@@ -50,5 +50,6 @@ package org.hamcrest.date
             description.appendText("a date equal to ").appendValue(_compareDate);
         }
     
+		
     }
 }

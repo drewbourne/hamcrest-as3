@@ -22,7 +22,6 @@
     <application path="HamcrestMXMLExample.mxml"/>
     <application path="HamcrestFilterFunctionExample.mxml"/>
     <application path="FlexUnitCompilerApplication.mxml"/>
-    <application path="FlexUnitApplication.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

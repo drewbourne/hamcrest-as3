@@ -53,6 +53,7 @@ package org.hamcrest
     [RunWith("org.flexunit.runners.Suite")]
     public class HamcrestSuite
     {
+		public var assertThatTest:AssertThatTest;
         public var baseMatcher:BaseMatcherTest;
         public var customMatcher:CustomMatcherTest;
         public var customTypeSafeMatcher:CustomTypeSafeMatcherTest;

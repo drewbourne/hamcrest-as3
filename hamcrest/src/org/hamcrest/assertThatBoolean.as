@@ -15,7 +15,7 @@ package org.hamcrest
     {
         if (!result)
         {
-            throw new AssertionError(reason);
+            throw new AssertionError(reason, null, null, null, result);
         }
     }
 }

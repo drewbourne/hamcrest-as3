@@ -1,5 +1,6 @@
 package org.hamcrest
 {
+	import org.hamcrest.object.equalTo;
 
     /**
      * <code>assertThat</code> accepts four forms of arguments:
@@ -35,25 +36,41 @@ package org.hamcrest
      */
     public function assertThat(... rest):void
     {
-        if (rest.length == 3 && rest[2] is Matcher)
+		// assertThat(message:String, actualValue:*, matcher:Matcher)
+        if (rest.length == 3 
+			&& rest[0] is String 
+			&& rest[2] is Matcher)
         {
             assertThatMatcher(rest[0], rest[1], rest[2]);
         }
+		// assertThat(actualValue:*, matcher:Matcher)
         else if (rest.length == 2 && rest[1] is Matcher)
         {
             assertThatMatcher("", rest[0], rest[1])
         }
-        else if (rest.length == 2)
+		// assertThat(message:String, actualValue:*, expectedValue:*)
+		else if (rest.length == 3 && rest[0] is String)
+		{
+			assertThatMatcher(rest[0], rest[1], equalTo(rest[2]));
+		}
+		// assetThat(message:String, match:Boolean)
+        else if (rest.length == 2 && rest[0] is String && rest[1] is Boolean)
         {
             assertThatBoolean(rest[0], Boolean(rest[1]));
         }
-        else if (rest.length == 1)
+		// assertThat(match:Boolean)
+        else if (rest.length == 1 && rest[0] is Boolean)
         {
             assertThatBoolean("", Boolean(rest[0]));
         }
+		// assertThat(message:String, actualValue:*, expectedValue:*)
+		else if (rest.length == 2)
+		{
+			assertThatMatcher("", rest[0], equalTo(rest[1]));
+		}
         else
         {
-            throw new ArgumentError("Insufficient arguments or incorrect types, received:", rest);
+            throw new ArgumentError("Insufficient arguments or incorrect types, received: <", rest.join(">, <") + ">");
         }
     }
 }

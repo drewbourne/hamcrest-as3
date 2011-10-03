@@ -9,9 +9,10 @@ package org.hamcrest.number
      *
      * @param min Minimum value
      * @param max Maximum value
-     * @param inclusive
-     *    <code>true</code> to allow the value to be equal to the min or max,
-     *    <code>false</code> to require the value to be inside the range of the min and max.
+     * @param exclusive
+     *    <code>false</code> to allow the value to be equal to any number between the min or max,
+     *    <code>true</code> to require the value to be inside the range of the min and max but not equal to min or max.
+	 * 
      * @return Matcher
      *
      * @example
@@ -37,9 +38,9 @@ package org.hamcrest.number
             throw new ArgumentError("max value cannot be less than the min value");
         }
         
-        var matcher:Matcher = !exclusive
-            ? allOf(lessThanOrEqualTo(max), greaterThanOrEqualTo(min))
-            : allOf(lessThan(max), greaterThan(min));
+        var matcher:Matcher = exclusive
+			? allOf(greaterThan(min), lessThan(max))
+			: allOf(greaterThanOrEqualTo(min), lessThanOrEqualTo(max));
         
         var description:String = "a Number between %0 and %1";
         if (exclusive)

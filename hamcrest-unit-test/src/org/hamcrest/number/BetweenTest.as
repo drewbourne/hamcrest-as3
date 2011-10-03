@@ -1,12 +1,10 @@
 package org.hamcrest.number
 {
-
     import org.hamcrest.AbstractMatcherTestCase;
     import org.hamcrest.Matcher;
 
     public class BetweenTest extends AbstractMatcherTestCase
     {
-
         [Test]
         public function betweenInclusive():void
         {

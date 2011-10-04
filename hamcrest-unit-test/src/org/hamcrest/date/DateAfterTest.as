@@ -23,9 +23,14 @@ package org.hamcrest.date
         [Test]
         public function hasAReadableDescription():void
         {
-            assertDescription("a date after <" + new Date(1980, 1, 1) + ">",
-                dateAfter(new Date(1980, 1, 1)));
-            assertDescription("a date after or equal to <" + new Date(1980, 1, 1) + ">",
+			var expectedDate:Date = new Date(1980, 1, 1);
+			
+            assertDescription(
+				"a date after " + describeDate(expectedDate),
+                dateAfter(expectedDate));
+			
+            assertDescription(
+				"a date after or equal to " + describeDate(expectedDate),
                 dateAfterOrEqual(new Date(1980, 1, 1)));
         }
     }

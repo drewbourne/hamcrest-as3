@@ -1,11 +1,9 @@
 package org.hamcrest.date
 {
-
     import org.hamcrest.AbstractMatcherTestCase;
 
     public class DateBeforeTest extends AbstractMatcherTestCase
     {
-
         [Test]
         public function comparesDateValuesUsingDateBefore():void
         {
@@ -23,10 +21,15 @@ package org.hamcrest.date
         [Test]
         public function hasAReadableDescription():void
         {
-            assertDescription("a date before <" + new Date(2000, 1, 1) + ">",
-                dateBefore(new Date(2000, 1, 1)));
-            assertDescription("a date before or equal to <" + new Date(2000, 1, 1) + ">",
-                dateBeforeOrEqual(new Date(2000, 1, 1)));
+			var expectedDate:Date = new Date(1980, 1, 1);
+			
+            assertDescription(
+				"a date before " + describeDate(expectedDate),
+                dateBefore(expectedDate));
+			
+            assertDescription(
+				"a date before or equal to " + describeDate(expectedDate),
+                dateBeforeOrEqual(expectedDate));
         }
     }
 }

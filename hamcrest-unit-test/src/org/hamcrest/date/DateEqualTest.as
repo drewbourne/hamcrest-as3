@@ -1,6 +1,7 @@
 package org.hamcrest.date
 {
     import org.hamcrest.AbstractMatcherTestCase;
+    import org.hamcrest.StringDescription;
 
     public class DateEqualTest extends AbstractMatcherTestCase
     {
@@ -15,9 +16,10 @@ package org.hamcrest.date
         [Test]
         public function describes_the_expected_date_to_millisecond_precision():void
         {
-			var expectedDate:Date = new Date(1980, 1, 1)
+			var expectedDate:Date = new Date(1980, 1, 1);
 			
-            assertDescription("a date equal to <1980-02-01T00:00:00.000>",
+            assertDescription(
+				"a date equal to " + describeDate(expectedDate),
                 dateEqual(expectedDate));
         }
 		
@@ -25,9 +27,10 @@ package org.hamcrest.date
 		public function describes_the_mismatched_date_to_millisecond_precision():void 
 		{
 			var expectedDate:Date = new Date(2002, 1, 1, 0, 0, 0, 1);
-			var actualDate = new Date(2002, 1, 1, 0, 0, 0, 2);
+			var actualDate:Date = new Date(2002, 1, 1, 0, 0, 0, 2);
 			
-			assertMismatch("<2002-02-01T00:00:00.002> is not the same as <2002-02-01T00:00:00.001>", 
+			assertMismatch(
+				describeDate(actualDate) + " is not the same as " + describeDate(expectedDate), 
 				dateEqual(expectedDate), actualDate); 
 		}
     }

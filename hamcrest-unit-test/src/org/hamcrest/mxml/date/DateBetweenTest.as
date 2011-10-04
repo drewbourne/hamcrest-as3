@@ -1,5 +1,6 @@
 package org.hamcrest.mxml.date
 {
+    import org.hamcrest.date.describeDate;
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
@@ -20,7 +21,7 @@ package org.hamcrest.mxml.date
         [Test]
         public function hasDescription():void
         {
-            assertDescription("a date between <" + (new Date(1980, 0, 1)) + "> and <" + (new Date(1990, 0, 1)) + ">", matcher);
+            assertDescription("a date between " + describeDate(matcher.min) + " and " + describeDate(matcher.max), matcher);
         }
 
         [Test]
@@ -52,7 +53,7 @@ package org.hamcrest.mxml.date
         {
             matcher.target = new Date(1991, 5, 8);
 
-            assertMismatchDescription("was <" + (new Date(1991, 5, 8)) + ">", matcher);
+            assertMismatchDescription("was " + describeDate(matcher.target), matcher);
         }
     }
 }

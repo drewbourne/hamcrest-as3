@@ -38,7 +38,8 @@ package org.hamcrest
 				[[], '[]'],
 				[[1, 2, 3], '[<1>,<2>,<3>]'],
 				[new XML(<x y='3'>z</x>), '<x y="3">z</x>'],
-				[function():void {}, '<Function>']
+				[function():void {}, '<Function>'], 
+				[new Date(2000, 1, 1, 6, 7, 8, 9), "<2000-02-01T06:07:08.009>"]
 			];
 		}
 		

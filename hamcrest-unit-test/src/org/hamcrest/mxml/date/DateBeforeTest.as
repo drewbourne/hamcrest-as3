@@ -1,5 +1,6 @@
 package org.hamcrest.mxml.date
 {
+    import org.hamcrest.date.describeDate;
     import org.hamcrest.mxml.AbstractMXMLMatcherTestCase;
 
     /*
@@ -19,7 +20,7 @@ package org.hamcrest.mxml.date
         [Test]
         public function hasDescription():void
         {
-            assertDescription("a date before <" + (new Date(1980, 0, 1)) + ">", matcher);
+            assertDescription("a date before " + describeDate(matcher.date), matcher);
         }
 
         [Test]
@@ -51,7 +52,8 @@ package org.hamcrest.mxml.date
         {
             matcher.target = new Date(2009, 5, 8);
 
-            assertMismatchDescription("<" + (new Date(2009, 5, 8)) + "> is not before <" + (new Date(1980, 0, 1)) + ">",
+            assertMismatchDescription(
+				describeDate(matcher.target) + " is not before " + describeDate(matcher.date),
                 matcher);
         }
     }

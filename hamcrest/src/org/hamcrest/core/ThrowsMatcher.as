@@ -3,6 +3,7 @@ package org.hamcrest.core
     import org.hamcrest.Description;
     import org.hamcrest.Matcher;
     import org.hamcrest.TypeSafeDiagnosingMatcher;
+    import org.hamcrest.TypeSafeMatcher;
 
     /**
      * Matches if the item under test is a Function, and throws an Error matching the given Matcher.
@@ -20,9 +21,10 @@ package org.hamcrest.core
      *
      * @author Drew Bourne
      */
-    public class ThrowsMatcher extends TypeSafeDiagnosingMatcher
+    public class ThrowsMatcher extends TypeSafeMatcher
     {
         private var _matcher:Matcher;
+		private var _thrownError:Error;
 
         /**
          * Constructor.
@@ -31,7 +33,6 @@ package org.hamcrest.core
          */
         public function ThrowsMatcher(matcher:Matcher)
         {
-
             super(Function);
             _matcher = matcher;
         }
@@ -39,8 +40,11 @@ package org.hamcrest.core
         /**
          * @inheritDoc
          */
-        override public function matchesSafely(item:Object, mismatchDescription:Description):Boolean
+        override public function matchesSafely(item:Object):Boolean
         {
+			// reset cached error to ensure matching and mismatch descriptions are correct
+			_thrownError = null;
+			
             var closure:Function = item as Function;
             var thrown:Boolean = false;
             var error:Error = null;
@@ -51,7 +55,8 @@ package org.hamcrest.core
             }
             catch (e:Error)
             {
-                error = e;
+                _thrownError = error = e;
+				
                 if (_matcher.matches(e))
                 {
                     thrown = true;
@@ -63,15 +68,6 @@ package org.hamcrest.core
             }
             finally
             {
-                if (error)
-                {
-                    mismatchDescription.appendMismatchOf(_matcher, error);
-                }
-                else
-                {
-                    mismatchDescription.appendText("was not thrown");
-                }
-
                 return thrown;
             }
         }
@@ -83,5 +79,21 @@ package org.hamcrest.core
         {
             description.appendDescriptionOf(_matcher).appendText(" to be thrown");
         }
+		
+		/**
+		 * @inheritDoc
+		 */
+		override public function describeMismatch(item:Object, mismatchDescription:Description):void
+		{
+			if (_thrownError) 
+			{
+				mismatchDescription.appendMismatchOf(_matcher, _thrownError);
+			}
+			else
+			{
+				mismatchDescription.appendText("was not thrown");
+			}
+			
+		}
     }
 }

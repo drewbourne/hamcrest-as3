@@ -1,7 +1,5 @@
 package org.hamcrest
 {
-
-    // TODO example Matcher implementation  
     /**
      * Describes methods a Matcher is expected to implement.
      *

@@ -2,7 +2,6 @@ package org.hamcrest
 {
     import flash.errors.IllegalOperationError;
 
-    // TODO example TypeSafeDiagnosingMatcher
     /**
      * Matcher that checks the value to be matched is of an expected type before passing it to <code>matchesSafely</code>.
      *

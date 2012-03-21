@@ -46,10 +46,10 @@
 		<java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true">
 			<jvmarg value="-Xmx512m" />
 			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
-			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
+			<!-- <arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
-			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" /> -->
 			<arg line="-output=${bin.loc}/${build.flexName}.swc" />
 			<arg line="-include-sources+=${src.loc}" />
 			<arg line="-source-path+=${src.loc}" />
@@ -64,10 +64,10 @@
 		<java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true">
 			<jvmarg value="-Xmx512m" />
 			<arg line="+flexlib '${FLEX_HOME}/frameworks'" />
-			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
+			<!-- <arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/flex.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
-			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" />
+			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" /> -->
 			<arg line="-output=${bin.loc}/${build.as3Name}.swc" />
 			<arg line="-include-sources+=${src.loc}" />
 			<arg line="-source-path+=${src.loc}" />

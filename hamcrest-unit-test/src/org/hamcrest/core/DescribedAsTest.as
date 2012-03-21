@@ -1,16 +1,13 @@
 package org.hamcrest.core
 {
-
     import org.hamcrest.*;
     import org.flexunit.Assert;
 
     public class DescribedAsTest extends AbstractMatcherTestCase
     {
-
         [Test]
         public function overridesDescriptionOfOtherMatcherWithThatPassedToConstructor():void
         {
-
             var m1:Matcher = describedAs("m1 description", anything());
             var m2:Matcher = describedAs("m2 description", not(anything()));
 
@@ -21,7 +18,6 @@ package org.hamcrest.core
         [Test]
         public function appendsValuesToDescription():void
         {
-
             var matcher:Matcher = describedAs("value 1 = %0, value 2 = %1", anything(), 33, 97);
 
             assertDescription("value 1 = <33>, value 2 = <97>", matcher);
@@ -30,12 +26,19 @@ package org.hamcrest.core
         [Test]
         public function delegatesMatchingToAnotherMatcher():void
         {
-
             var m1:Matcher = describedAs("irrelevant", anything());
             var m2:Matcher = describedAs("irrelevant", not(anything()));
 
             assertTrue(m1.matches(new Object()));
             assertFalse(m2.matches("hi"));
+        }
+
+        [Test]
+        public function overrides_mismatchDescription_with_custom_mismatchDescriptionTemplate():void 
+        {
+            var matcher:Matcher = describedAsWithMismatch("value = %0", "given = %0, expected = %1", not(anything()), 33);
+
+            assertMismatch("given = <42>, expected = <33>", matcher, 42);
         }
     }
 }

@@ -74,7 +74,6 @@
 			<arg line="-compiler.verbose-stacktraces=true" />
 			<arg line="-compiler.headless-server=true" />
 		</java>
-		
 	</target>
 
 	<target name="test" depends="compile">
@@ -83,9 +82,8 @@
 
 		<!-- Test compile -->
 		<mxmlc file="${test.loc}/HamcrestTestRunner.mxml" output="${bin.loc}/HamcrestTestRunner.swf">
-			<library-path dir="${bin.loc}" append="true">
-				<include name="${build.flexName}.swc" />
-			</library-path>
+		  <source-path path-element="${src.loc}" />
+		  <source-path path-element="${src.flex.loc}" />
 			<library-path dir="${lib.loc}" append="true">
 				<include name="*.swc" />
 			</library-path>

@@ -42,6 +42,7 @@
     <classEntry path="org.hamcrest.core.IsAnythingMatcher"/>
     <classEntry path="org.hamcrest.core.IsMatcher"/>
     <classEntry path="org.hamcrest.core.IsNotMatcher"/>
+    <classEntry path="org.hamcrest.core.IsNothingMatcher"/>
     <classEntry path="org.hamcrest.core.ShortcutCombinationMatcher"/>
     <classEntry path="org.hamcrest.core.ThrowsMatcher"/>
     <classEntry path="org.hamcrest.core.allOf"/>
@@ -54,6 +55,7 @@
     <classEntry path="org.hamcrest.core.given"/>
     <classEntry path="org.hamcrest.core.isA"/>
     <classEntry path="org.hamcrest.core.not"/>
+    <classEntry path="org.hamcrest.core.nothing"/>
     <classEntry path="org.hamcrest.core.throws"/>
     <classEntry path="org.hamcrest.date.DateAfterMatcher"/>
     <classEntry path="org.hamcrest.date.DateBeforeMatcher"/>
@@ -100,6 +102,7 @@
     <classEntry path="org.hamcrest.object.isFalse"/>
     <classEntry path="org.hamcrest.object.isFalsey"/>
     <classEntry path="org.hamcrest.object.isInterface"/>
+    <classEntry path="org.hamcrest.object.isNull"/>
     <classEntry path="org.hamcrest.object.isTrue"/>
     <classEntry path="org.hamcrest.object.isTruthy"/>
     <classEntry path="org.hamcrest.object.notNullValue"/>
@@ -120,6 +123,9 @@
     <classEntry path="org.hamcrest.text.endsWith"/>
     <classEntry path="org.hamcrest.text.re"/>
     <classEntry path="org.hamcrest.text.startsWith"/>
+    <classEntry path="org.hamcrest.collection.filterByMatcher"/>
+    <classEntry path="org.hamcrest.collection.indexOfByMatcher"/>
+    <classEntry path="org.hamcrest.collection.rejectByMatcher"/>
     <classEntry path="org.hamcrest.filter.FilterFunction"/>
     <classEntry path="org.hamcrest.filter.IFilterFunction"/>
     <classEntry path="org.hamcrest.mxml.BaseMXMLMatcher"/>
@@ -169,6 +175,10 @@
     <classEntry path="org.hamcrest.mxml.text.StartsWith"/>
     <classEntry path="org.hamcrest.mxml.text.StringMXMLMatcher"/>
     <classEntry path="org.hamcrest.validator.MatcherValidator"/>
+    <classEntry path="org.hamcrest.collection.everyByMatcher"/>
+    <classEntry path="org.hamcrest.collection.someByMatcher"/>
+    <classEntry path="org.hamcrest.collection.indexesOfByMatcher"/>
+    <classEntry path="org.hamcrest.object.isNotNull"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

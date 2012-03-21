@@ -14,13 +14,13 @@ package org.hamcrest.number
 		[Test]
 		public function hasAReadableDescription():void
 		{
-			assertDescription("a value less than or equal to <3>", atMost(3));
+			assertDescription("at most <3>", atMost(3));
 		}
 		
 		[Test]
 		public function hasMismatchDescription():void
 		{
-			assertMismatch("<4> was not less than or equal to <3>", atMost(3), 4);
+			assertMismatch("was <4>", atMost(3), 4);
 		}
 	}
 }

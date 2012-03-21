@@ -1,6 +1,7 @@
 package org.hamcrest.number
 {
     import org.hamcrest.Matcher;
+    import org.hamcrest.core.describedAs;
     
     /**
      * Matches if the item is greater than or equal to the given value
@@ -19,6 +20,6 @@ package org.hamcrest.number
      */
     public function atLeast(value:Number):Matcher
     {
-        return greaterThanOrEqualTo(value);
+        return describedAs("at least %0", greaterThanOrEqualTo(value), value);
     }
 }

@@ -1,6 +1,7 @@
 package org.hamcrest.number
 {
     import org.hamcrest.Matcher;
+    import org.hamcrest.core.describedAs;
     
     /**
      * Matches if the item is less than the given value.
@@ -19,6 +20,6 @@ package org.hamcrest.number
      */
     public function atMost(value:Number):Matcher
     {
-        return lessThanOrEqualTo(value);
+        return describedAs("at most %0", lessThanOrEqualTo(value), value);
     }
 }

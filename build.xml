@@ -50,11 +50,11 @@
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" /> -->
-			<arg line="-output=${bin.loc}/${build.flexName}.swc" />
-			<arg line="-include-sources+=${src.loc}" />
-			<arg line="-source-path+=${src.loc}" />
-			<arg line="-source-path+=${src.flex.loc}" />
-			<arg line="-namespace=http://hamcrest.org/2009/mxml,${src.flex.loc}/hamcrest-manifest.xml" />
+			<arg line="-output='${bin.loc}/${build.flexName}.swc'" />
+			<arg line="-include-sources+='${src.loc}'" />
+			<arg line="-source-path+='${src.loc}'" />
+			<arg line="-source-path+='${src.flex.loc}'" />
+			<arg line="-namespace=http://hamcrest.org/2009/mxml,'${src.flex.loc}/hamcrest-manifest.xml'" />
 			<arg line="-include-namespaces http://hamcrest.org/2009/mxml" />
 			<arg line="-compiler.verbose-stacktraces=true" />
 			<arg line="-compiler.headless-server=true" />
@@ -68,9 +68,9 @@
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/framework.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/rpc.swc'" />
 			<arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs/utilities.swc'" /> -->
-			<arg line="-output=${bin.loc}/${build.as3Name}.swc" />
-			<arg line="-include-sources+=${src.loc}" />
-			<arg line="-source-path+=${src.loc}" />
+			<arg line="-output='${bin.loc}/${build.as3Name}.swc'" />
+			<arg line="-include-sources+='${src.loc}'" />
+			<arg line="-source-path+='${src.loc}'" />
 			<arg line="-compiler.verbose-stacktraces=true" />
 			<arg line="-compiler.headless-server=true" />
 		</java>

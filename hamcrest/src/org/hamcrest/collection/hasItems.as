@@ -23,7 +23,14 @@ package org.hamcrest.collection
      */
     public function hasItems(... rest):Matcher
     {
-        return allOf.apply(null, rest.map(hasItemsIterator));
+        var matchers:Array = rest;
+
+        if (rest.length == 1 && rest[0] is Array)
+        {
+            matchers = rest[0];
+        }
+
+        return allOf.apply(null, matchers.map(hasItemsIterator));
     }
 }
 

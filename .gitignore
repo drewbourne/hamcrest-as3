@@ -12,3 +12,4 @@ FlexUnitCompilerApplication.mxml
 *.ipr
 *.iws
 .project
+.idea

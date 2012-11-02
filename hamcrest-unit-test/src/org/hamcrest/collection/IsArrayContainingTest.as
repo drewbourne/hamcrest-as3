@@ -68,5 +68,13 @@ package org.hamcrest.collection
                 matcher5,
                 [ "e", "c", "b", "d" ]); // 'a' is missing
         }
+
+        [Test]
+        public function matchesAllWithArray() : void{
+            var matcherArray:Array = [equalTo("a"), equalTo("b"), equalTo("c")];
+            var matcher:Matcher = hasItems(matcherArray);
+
+            assertMatches("should match array containing matchers", matcher, ["a", "b", "c"]);
+        }
     }
 }

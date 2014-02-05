@@ -45,7 +45,7 @@ package org.hamcrest.number
          */
         override public function matchesSafely(item:Object):Boolean
         {
-            return (actualDelta(item as Number) <= 0.0);
+            return (actualDelta(item as Number) <= _delta);
         }
 
         /**
@@ -76,7 +76,7 @@ package org.hamcrest.number
          */
         protected function actualDelta(item:Number):Number
         {
-            return decimal11(Math.abs(item - _value) - _delta);
+            return decimal11(Math.abs(item - _value));
         }
         
         /**
